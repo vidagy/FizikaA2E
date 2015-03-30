@@ -1,0 +1,54 @@
+\feladat{3}{
+ \textit{Toroidnak} nevezik azt az eszközt, amikor egy hosszú tekercset gyűrű alakban önmagába visszahajlítunk. A jövő energiaforrásaként emlegetett hidrogén fúziós reaktorok egyik kísérleti példánya az ún. ``Tokamak''. Ez lényegében egy igen nagy mágneses tér létrehozására alkalmas toroid, amelynek középvonalában található a magas hőmérsékletű hidrogéngázból keletkezett plazma. Egy bizonyos tokamak belső sugara $R_1=0,7\,\textrm{m}$, külső sugara pedig $R_2=1,3\,\textrm{m}$. Összesen $N=900$ menet veszi körül a toroid gyűrűt, és minden egyes menetben $I=14000\,\textrm{A}$ áram folyik.
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+ \item Mekkora a mágneses tér erőssége a belső sugár közelében?
+ \item Mekkora a mágneses tér erőssége a középvonalnál?
+ \item Mekkora a mágneses tér erőssége a külső sugár közelében?
+ \end{enumerate}
+}{03fel_01fig}{}
+
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ A mágneses indukciót az Amp\'ere-törvény segítségével számoljuk, amely kimondja:
+ \al{
+  \ointl{\substack{\text{zárt}\\ \text{hurok}}}{}\Bv\,\dd \sv=\mu_0 I_\text{bent}\;,
+ }
+ ahol a bal oldalon a mágneses indukció vonalintegrálja áll egy adott zárt hurok mentén, míg a jobb oldalon a hurok által körbezárt áram előjeles összege szerepel. Ha egy áramot a hurok a jobb kéznek megfelelően ölel körbe, akkor azt pozitív, ha bal kéznek megfelelően, akkor negatív előjellel kell figyelembe venni.
+
+ Ennek alkalmazásához azzal a közelítéssel élünk, hogy a toroid nagyon sűrűn van tekercselve, így a rendszer forgásszimmetrikus annak tengelyére. Ha ez igaz, akkor a kialakuló mágneses tér is forgásszimmetrikus lesz, vagyis a létrejövő $B$ tér nagysága csak az $r$ sugártól függ. 
+
+ Válasszunk egy $r$ sugarú körvonalat zárt huroknak. A körüljárás iránya legyen megegyező a $\Bv$ tér irányával. Mivel $\Bv\parallel \dd\sv$ és a $\Bv$ nagysága független attól, hogy az adott $r$ sugarú kör mentén hol vagyunk, így
+ \al{
+  \ointl{\text{kör}}{}\Bv\,\dd \sv
+   =B(r)\ointl{\text{kör}}{}\dd s
+   =B(r) 2r\pi\;.
+ }
+ A befoglalt áram $r$ függvényében változik. Ha $r<R_1$ akkor a hurkon belül nincs áram, vagyis a mágneses indukció is nulla. Ja $R_1<r<R_2$, akkor $I_\text{bent} = N\cdot I$, hiszen a belső sugár mentén felfele folyik az áram a tekercs meneteiben. Ekkor
+ \al{
+  B(r)=\frac{\mu_0 N I}{2 r\pi}\;.
+ }
+ A $R_2<r$ tartományon szintén az összes körbezárt áram nulla, vagyis ott sincs indukció. Összefoglalva tehát:
+ \al{
+  B(r) = 
+  \begin{cases}
+   0 & r<R_1\\
+   \frac{\mu_0 N I}{2 r\pi} & R_1<r<R_2 \\
+   0 & R_2<r
+  \end{cases}\;.
+ }
+
+ A válasz a feladat három kérdésére:
+ \al{
+  B(R_1)
+   & = 3,6\me{T}\;,
+  &
+  B\left(\frac{R_1+R_2}{2}\right)
+   & = 1,94\me{T}\;,
+  &
+  B(R_2)
+   & = 2,52\me{T}\;.
+ }
+ 
+\fi

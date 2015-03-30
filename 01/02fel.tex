@@ -1,0 +1,40 @@
+\feladat{2}{
+ Adott két vektor: $\av=2\iv-3\jv+\kv$ és $\bv=-\iv-2\jv+4\kv$. Bontsa fel $\av$-t $\bv$-vel párhuzamos és rá merőleges komponensekre! Hegyes- vagy tompaszöget zár be egymással a két vektor?
+}{02fel_01fig}{}
+
+\ifdefined\megoldas
+
+Megoldás: 
+
+ Először elkészítjük a $\bv$ irányú egységvektort: 
+ \begin{align}
+  \ev_\bv
+   &=\frac{\bv}{\abs{\bv}}
+    =\frac{-\iv-2\jv+4\kv}{\sqrt{1+4+16}}
+    =\frac{1}{\sqrt{21}}(-\iv-2\jv+4\kv)\;.
+ \end{align}
+
+ Az $\av$ vektor $\bv$ irányába eső vetületének hosszát a $\bv$ irányába mutató egységvektorral való skalárszorzat adja meg:
+ \begin{align}
+  a_\parallel 
+   &=\av\cdot\ev_\bv
+    =(2\iv-3\jv+\kv)\cdot \frac{1}{\sqrt{21}}(-\iv-2\jv+4\kv)
+    =\frac{1}{\sqrt{21}}(-2+6+4)
+    =\frac{8}{\sqrt{21}}\;,
+ \end{align}
+ vagyis az $\av$ vektor $\bv$ vektorral párhuzamos komponense:
+ \begin{align}
+  \av_\parallel
+   &=a_\parallel \ev_\bv
+    =\frac{8}{21}(-\iv-2\jv+4\kv)\;.
+ \end{align}
+
+ A merőleges komponens az eredeti vektornak és a párhuzamos komponensnek a különbsége:
+ \begin{align}
+  \av_\perp
+   &=\av-\av_\parallel
+    = (2\iv-3\jv+\kv) -\frac{8}{21}(-\iv-2\jv+4\kv)
+    =\frac{50}{21}\iv-\frac{47}{21}\jv-\frac{11}{21}\kv\;.
+ \end{align}
+
+\fi

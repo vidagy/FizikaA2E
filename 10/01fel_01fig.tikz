@@ -1,0 +1,31 @@
+  \tdplotsetmaincoords{60}{20}
+  \begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                      seged/.style={dashed,gray}
+  ]
+  
+   \begin{scope}[tdplot_main_coords]
+
+   % R
+   \draw[dashed,black] (0.45,0,0) arc (0:360:0.45);
+   \draw[->,>=latex] (0,0,0) -- node[below] {$R$} (-0.5*1.45*0.3,-0.866*1.45*0.3,0) ;
+   
+   % r
+   \draw[<-,>=latex] (0,0,0) -- node[below] {$\rv$} (70:0.45);
+   \draw[->,>=latex,thick,darkgreen] (70:0.45) -- node[above] {$\dd \Iv$} +(90+70:0.2);
+   
+   %p
+   \node[red,fill=white,circle,inner sep=-1.5pt] at (0,0,0) {$\boldsymbol\oplus$};
+   \node[below right,red] at (0,0,0) {$p^+$};
+   
+   %e
+   \node[right=4pt,blue] at (50:0.45) {$e^-$};
+   \draw[->,>=latex,darkgreen] (50:0.45) -- node[below left] {$v$} +(-40:0.3);
+   \node[blue,fill=white,circle,inner sep=-1.5pt] at (50:0.45) {$\boldsymbol\ominus$};
+   
+   % dE and dEz vectors   
+   \draw[color=orange,->,>=latex,thick] (0,0,0.08) -- node[right] {$\Bv$} +(0,0,0.81/5);
+   
+   
+   \end{scope}
+
+  \end{tikzpicture} 

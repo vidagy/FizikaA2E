@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+ \ellenallas{(0,0)}{(2.5,0)}{$R$}{(0.0,0.3)}
+ \telep{(2.5,0)}{(4,0)}{$U$}{(0.1,-0.3)}
+ 
+ \draw (0,0) -- (0,3);
+ \draw (4,0) -- (4,3);
+ 
+ \ellenallas{(0,1)}{(2,1)}{$R$}{(0.0,0.3)}
+ \ellenallas{(2,1)}{(4,1)}{$R$}{(0.0,0.3)}
+ 
+ \draw (2,1) -- (2,2) -- (2.25,2);
+ 
+ \draw (2.25,2.4) -- (2.25,1.6);
+ \ellenallas{(2.25,2.4)}{(4,2.4)}{$R$}{(0.0,0.3)}
+ \draw (2.25,1.6) -- (4,1.6);
+ 
+ \ellenallas{(0,3)}{(4,3)}{$R$}{(0.0,0.3)}
+ 
+ \ifdefined\megoldas
+ 
+  \draw[->,>=latex,darkgreen] (3.5,0.1) to[out=0,in=270] node[above left] {$I$} (3.9,0.6); 
+  
+  \node[circle,draw,inner sep=1pt,gray] at (0.65,0.3) {\footnotesize 1};
+  \node[circle,draw,inner sep=1pt,gray] at (0.4,1.3) {\footnotesize 2};
+  \node[circle,draw,inner sep=1pt,gray] at (2.4,1.3) {\footnotesize 3};
+  \node[circle,draw,inner sep=1pt,gray] at (1.4,3.3) {\footnotesize 4};
+  \node[circle,draw,inner sep=1pt,gray] at (2.55,2.7) {\footnotesize 5};
+ 
+ \fi
+\end{tikzpicture}
+ 

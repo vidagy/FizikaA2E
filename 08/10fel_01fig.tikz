@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+ \draw (0,0) -- (0,2);
+ \draw (4,0) -- (4,2);
+ \ellenallas{(0,1)}{(2,1)}{$R_x$}{(0.0,0.3)}
+ \ellenallas{(2,1)}{(4,1)}{$R_3$}{(0.0,0.3)}
+ \ellenallas{(0,2)}{(2,2)}{$R_1$}{(0.0,0.3)}
+ \ellenallas{(2,2)}{(4,2)}{$R_2$}{(0.0,0.3)}
+ \telep{(0,0)}{(4,0)}{$U$}{(0,-0.2)}
+ \kapcsolo{(2,1)}{(2,2)}{$K$}{(0.2,0)}
+ \ifdefined\megoldas
+  \draw[->,>=latex,darkgreen] (3.5,0.1) to[out=0,in=270] node[above left] {\scriptsize $I$} (3.9,0.6); 
+ \fi
+\end{tikzpicture}
+ 

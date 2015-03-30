@@ -1,0 +1,94 @@
+\feladat{1}{
+ Legyen $\av=\iv+2\jv+3\kv$, $\bv=2\iv-3\jv+\kv$ és $\cv=-4\iv+2\jv-\kv$. 
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item Mekkora az $\av$, $\bv$ és $\cv$ vektorok hossza?
+  \item Milyen szöget zár be egymással $\av$ és $\bv$?
+  \item Mekkora az $\av$ és $\cv$ vektorok által kifeszített parallelogramma területe?
+  \item Mekkora a $\bv$ és $\cv$ vektorok által kifeszített háromszög területe?
+  \item Mekkora a három vektor által kifeszített paralelepipedon térfogata?
+ \end{enumerate}
+}{01fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+ \begin{enumerate}[label=\alph*)]
+  \item 
+   A vektorok hosszát a saját magukkal vett skalárszorzatuk gyökeként definiáljuk:
+   \begin{align}
+    a
+     &=\abs{\av}
+      =\sqrt{\av\cdot\av}
+      =\sqrt{(\iv+2\jv+3\kv)\cdot(\iv+2\jv+3\kv)}
+      =\sqrt{1^2+2^2+3^2}\nonumber
+    \\
+     &=\sqrt{14}\;,
+    \\
+    b
+     &=\sqrt{\bv^2}
+      =\sqrt{2^2+(-3)^2+1^2}
+      =\sqrt{14}\;,
+    \\
+    c
+     &=\sqrt{\cv^2}
+      =\sqrt{(-4)^2+2^2+(-1)^2}
+      =\sqrt{21}\;.
+   \end{align}
+  
+  \item
+   $\av$ és $\bv$ szöge, szintén definíció szerint:
+   \begin{align}
+    \cos\alpha
+     &=\frac{\av\cdot\bv}{\abs{\av}\abs{\bv}}
+      =\frac{(\iv+2\jv+3\kv)\cdot(2\iv-3\jv+1\kv)}{\sqrt{14}\sqrt{14}}\nonumber
+    \\
+     &=\frac{1\cdot 2+2\cdot(-3)+3\cdot 1}{14}
+      =-\frac{1}{14}\\
+    \alpha
+     &=94,1^\circ\;.
+   \end{align}
+   
+  \item
+   A parallelogramma területe: $T=a\cdot c\cdot \sin\alpha$, ahol $\alpha$ a két vektor által közbezárt szög. A terület azonban úgy is kiszámítható, mint a két vektor vektoriális szorzatának hossza.
+   \begin{align}
+    \av\times\cv
+     &=\begin{vmatrix}
+        \iv & \jv & \kv \\
+        1 & 2 & 3 \\
+        -4 & 2 & -1
+       \end{vmatrix}\nonumber\\
+     &=\iv\cdot\big(2\cdot(-1)-3\cdot 2\big)-\jv\cdot\big(1\cdot (-1)-3\cdot(-4)\big)+\kv\big(1\cdot 2 -2\cdot(-4)\big)
+      \nonumber\\
+     &=-8\iv-11\jv+10\kv\\
+    T
+     &=\abs{\av\times\cv}
+      =\sqrt{(-8)^2+(-11)^2+10^2}
+      =\sqrt{285}
+      =16,88\;.
+   \end{align}
+  
+  \item 
+    A kifeszített háromszög területét ugyanúgy kell kiszámolni, mint a parallelogramma területét, azonban a háromszögé annak csak a fele,
+    \begin{align}
+     T=\frac{\abs{\bv\times\cv}}{2}\;.
+    \end{align}
+   
+   \marginfigure{01fel_02fig}
+   \item A paralelepipedon térfogatát a három vektor vegyesszorzatával lehet kiszámolni:
+   \begin{align}
+    V=\abs{(\av\times\bv)\cdot\cv}\;.
+   \end{align}
+   Ez a mennyiség egy skalár,  hiszen két vektor skaláris szorzata. A vektorok sorrendje mindegy. Az abszolútérték-jel azért szükséges, mert ha a vektoriális szorzat két tagját felcseréljük, akkor a szorzat előjele megváltozik, azonban a térfogat pozitív mennyiség.
+   \begin{align}
+    V
+     &=\abs{(\av\times\bv)\cdot\cv}
+      =\abs{(\av\times\cv)\cdot\bv}\nonumber
+    \\
+     &=\abs{\big(-8\iv-11\jv+10\kv\big)\cdot\big(2\iv-3\jv+\kv\big)}
+      =\abs{-16+33+10}
+      =27\;.
+   \end{align}
+
+ \end{enumerate}
+
+\fi

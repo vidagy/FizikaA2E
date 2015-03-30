@@ -1,0 +1,56 @@
+\feladat{8}{
+ Tegyük fel, hogy a térben a térfogati töltéssűrűség gömbszimmetrikus, tehát az csak az origótól mért távolságtól függ, vagyis $\varrho(x,y,z)=f\big(\sqrt{x^2+y^2+z^2}\big)$ alakú. Hogyan fejezhető ki az elektromos térerősség $f$ se\-gít\-sé\-gé\-vel?
+}{}{}
+
+\ifdefined\megoldas
+   
+
+ Megoldás: 
+
+ Itt a töltéssűrűség csak az $r=\sqrt{x^2+y^2+z^2}$-től, vagyis az origótól mért távolságtól függ. Így a rendszer 
+ \begin{enumerate}[itemsep=0pt]
+  \item tetszőleges origót átmenő tengely körül tetszőleges szöggel elforgatható,
+  \item tetszőleges az origót tartalmazó síkra tükrözhető
+ \end{enumerate}
+ úgy, hogy a rendszer a transzformáció után önmagába megy át, vagyis a rendszer gömbszimmetrikus. Gondolkodjunk gömbkoordináta-rendszerben, a megfelelő koordináták: $r$, $\vartheta$ és $\varphi$. Az 1. szimmetria következménye, hogy semmilyen mennyiség sem függhet a $\vartheta$ és a $\varphi$ szögektől, a 2. szimmetriáé pedig, hogy a térerősség csak sugárirányba mutathat, azaz
+ \al{
+  \Ev(r,\vartheta,\varphi)
+   &=\Ev(r)
+    =E(r)\ev_\text{r}
+    \;.
+ }
+
+ A megfelelő Gauss-felület egy origó középpontú, $r$ sugarú gömb. A Gauss-tételben szereplő felületi integrál:
+ \al{
+  \iint\limits_{\text{gömb}}\Ev(\rv)\;\dd^2\fv
+   &
+   \overset{(1)}{=}\iint\limits_{\text{gömb}}E(r)\;\dd^2 f
+   \overset{(2)}{=}E(r)\iint\limits_{\text{gömb}}\;\dd^2 f
+    =E(r)\cdot 4r^2\pi\;,
+ }
+ hiszen (1) a gömb felületén számolt felületi integrálnál a felületvektor párhuzamos a térerősséggel minden pontban, illetve mivel a térerősség csak az $r$ koordinátától függ, így a felületen a térerősség nagysága mindenhol ugyanakkora (2), vagyis az kiemelhető az integrálás alól, a felületelemek összege pedig az alaplap felületét adja.
+
+ A körbezárt töltés:
+ \al{
+  \iiint\limits_\text{gömb}\varrho(\rv)\,\dd^3\rv
+   &\overset{(1)}{=}
+    \intl{0}{2\pi}
+    \intl{0}{\pi}
+    \intl{0}{r}  \varrho(r')r'^2\,\sin\vartheta\dd r'\dd\vartheta\dd \varphi
+   \\
+   &\overset{(2)}{=}
+    \intl{0}{\pi}\sin\vartheta\dd \vartheta
+    \intl{0}{2\pi} \dd\varphi
+    \intl{0}{r}\varrho(r')r'^2\,\dd r'
+    \overset{(3)}{=}
+    4\pi\intl{0}{r}r'^2\varrho(r')\,\dd r'\;,
+ }
+ ahol $r$ az integrálás határa és $r'$ az integrálási változó.
+
+ A Gauss-tétel alapján:
+ \al{
+  E(r)
+   =\frac{1}{\ep_0}\frac{1}{r^2}\intl{0}{r}r'^2\varrho(r')\,\dd r'\;.
+ }
+
+ \fi

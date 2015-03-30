@@ -1,0 +1,51 @@
+\tdplotsetmaincoords{76}{18}
+\begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                    seged/.style={dashed,gray}
+]
+
+ \begin{scope}[tdplot_main_coords]
+
+  % axes
+  \draw[axis] (-0.3,0,0) -- (1.5,0,0) node[below] {$x$};
+  \draw[axis] (0,-0.3,0) -- (0,1.5,0) node[right] {$y$};
+  \draw[axis] (0,0,-0.3) -- (0,0,1.5) node[left] {$z$};
+  
+  % élek mögötte
+  \draw[thick] (1,1,0) -- (0,1,0);
+  \draw[thick] (0,1,0) -- (0,0,0);
+  \draw[thick] (0,1,0) -- (0,1,1);
+  
+  %felületvektorok mögötte
+  \draw[very thick, blue, ->,>=latex] (0.5,0.5,0) -- (0.5,0.5,-0.5);
+  \draw[very thick, blue, ->,>=latex] (0.5,1,0.5) -- (0.5, 1.5,0.5) node [right] {$\Av_{(4)}$};
+  \draw[very thick, blue, ->,>=latex] (0,0.5,0.5) -- (-0.5,0.5,0.5) node [above] {$\Av_{(1)}$};
+  
+  %lapok
+  \fill[white,opacity=0.8] (0,0,0) -- (1,0,0) -- (1,0,1) -- (0,0,1) -- cycle;
+  \fill[white,opacity=0.8] (1,0,0) -- (1,1,0) -- (1,1,1) -- (1,0,1) -- cycle;
+  \fill[white,opacity=0.8] (0,0,1) -- (1,0,1) -- (1,1,1) -- (0,1,1) -- cycle;
+ 
+  %élek előtte
+  \draw[thick] (0,0,0) -- (1,0,0);
+  \draw[thick] (1,0,0) -- (1,1,0);
+ 
+  \draw[thick] (0,0,1) -- (1,0,1);
+  \draw[thick] (1,0,1) -- (1,1,1);
+  \draw[thick] (1,1,1) -- (0,1,1);
+  \draw[thick] (0,1,1) -- (0,0,1);
+  
+  \draw[thick] (0,0,0) -- (0,0,1);
+  \draw[thick] (1,0,0) -- (1,0,1);
+  \draw[thick] (1,1,0) -- (1,1,1);
+  
+  %felülvektorok előtte
+  \draw[very thick, blue, ->,>=latex] (0.5,0.5,1) -- (0.5,0.5, 1.5);
+  \draw[very thick, blue, ->,>=latex] (1,0.5,0.5) -- ( 1.5,0.5,0.5) node [below] {$\Av_{(2)}$};
+  \draw[very thick, blue, ->,>=latex] (0.5,0,0.5) -- (0.5,-0.5,0.5) node [below] {$\Av_{(3)}$};
+  
+  \node[below] at (1,0,0) {$a$};
+  \node[left] at (0,0,1) {$L$};
+  
+ \end{scope}
+
+\end{tikzpicture} 

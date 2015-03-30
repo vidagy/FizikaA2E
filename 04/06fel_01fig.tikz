@@ -1,0 +1,40 @@
+\begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                    seged/.style={dashed,gray}
+]
+ \fill[black!15] (-0.7,0) rectangle (5,-3.3);
+ \node[rectangle,rounded corners=2pt, inner sep=2pt, fill=white, opacity=0.6, text opacity=1.0] at (4.2,-2.7) {$\ep_\text{r}>1$};\node[rectangle,rounded corners=2pt, inner sep=2pt, fill=white, opacity=0.6, text opacity=1.0] at (4.2, 2.7) {$\ep_\text{r}=1$};
+
+ \draw[seged] (1.5,1.5) -- (1.5,0.5) -- (0.5,0.5);
+ \draw[blue,->,>=latex,very thick] (0.5,1.5) -- node[left] {$\Ev_{1,\perp}$} (0.5,0.5);
+ \draw[blue,->,>=latex,very thick] (0.5,1.5) -- node[above] {$\Ev_{1,\parallel}$} (1.5,1.5);
+ \draw[blue,->,>=latex,very thick] (0.5,1.5) -- (1.5,0.5) node[right] {$\Ev_{1}$} ;
+ \draw (1.0,1.5) node {\tikz \draw[blue,thick] (0,0) circle (3pt);};
+ 
+ \begin{scope}[xshift=2.7cm]
+  \draw[seged] (1.5,1.5) -- (1.5,0.5) -- (0.5,0.5);
+  \draw[blue,->,>=latex,very thick] (0.5,1.5) -- node[left] {$\Dv_{1,\perp}$} (0.5,0.5);
+  \draw[blue,->,>=latex,very thick] (0.5,1.5) -- node[above] {$\Dv_{1,\parallel}$} (1.5,1.5);
+  \draw[blue,->,>=latex,very thick] (0.5,1.5) -- (1.5,0.5) node[right] {$\Dv_{1}$} ;
+  
+  \draw (0.5,1.0) node {\tikz \draw[blue,thick] (0,0) circle (3pt);};
+ \end{scope}
+ 
+ \begin{scope}[yshift=-2.4cm]
+  \draw[seged] (1.5,1.5) -- (1.5,-0.5) -- (0.5,-0.5);
+  \draw[blue,->,>=latex,very thick] (0.5,1.5) -- node[left] {$\Ev_{2,\perp}$} (0.5,-0.5);
+  \draw[blue,->,>=latex,very thick] (0.5,1.5) -- node[above] {$\Ev_{2,\parallel}$} (1.5,1.5);
+  \draw[blue,->,>=latex,very thick] (0.5,1.5) -- (1.5,-0.5) node[right] {$\Ev_{2}$} ;
+  
+  \draw (1.0,1.5) node {\tikz \draw[blue,thick] (0,0) circle (3pt);};
+ \end{scope}
+ 
+ \begin{scope}[xshift=2.7cm,yshift=-2.4cm]
+  \draw[seged] (1.0,1.5) -- (1.0,0.5) -- (0.5,0.5);
+  \draw[blue,->,>=latex,very thick] (0.5,1.5) -- node[left] {$\Dv_{2,\perp}$} (0.5,0.5);
+  \draw[blue,->,>=latex,very thick] (0.5,1.5) -- node[above] {$\Dv_{2,\parallel}$} (1.0,1.5);
+  \draw[blue,->,>=latex,very thick] (0.5,1.5) -- (1.0,0.5) node[right] {$\Dv_{2}$} ;
+  
+  \draw (0.5,1.0) node {\tikz \draw[blue,thick] (0,0) circle (3pt);};
+ \end{scope}
+ 
+\end{tikzpicture}

@@ -1,0 +1,56 @@
+\feladat{8}{
+ Egy tömegpontra a helyétől függő $\Fv(x,y,z)=a(x\iv+y\kv)+bz^2\jv$ erő hat. Mekkora munkát végez az erőtér, miközben a tömegpont $\rv(t)=ct\iv+dt^2\jv$ szerint mozog $t=0$ időtől $t=T$-ig?
+}{}{}
+
+\ifdefined\megoldas
+
+ A feladat megoldása során egy vonalintegrált kell kiszámítani. Ennek megértéséhez először emlékezzünk vissza arra, hogy mi az a munka. Egy állandó nagyságú $\Fv$ erő munkája egy egyenes vonal mentén történő elmozdulás során megegyezik az $\Fv$ és a test elmozdulásvektorának skalárszorzatával: $W=\Fv\cdot \sv$. A mi esetünkben azonban a testre a tér minden pontjában más-más erő hat, illetve nem egy egyenes, hanem a fent megadott út mentén mozog. Kérdés, hogy ekkor hogyan lehet kiszámolni ezt a mennyiséget. 
+
+ \marginfigure{08fel_01fig}
+ Először is osszuk fel a test mozgását apró elemi lépésekre. A $t$ és a $t+\dd t$ időpillanat között a test az $\rv(t)$ és az $\rv(t+\dd t)$ pontok között mozdul el. Mivel $\dd t$ nagyon rövid idő, ezért az elmozdulást közelíthetjük egy egyenes szakasszal:
+ \eq{
+  \dd \sv=\rv(t+\dd t)-\rv(t)=\frac{\rv(t+\dd t)-\rv(t)}{\dd t}\,\dd t =\vv\,\dd t \;.\label{eq:v}
+ }
+
+ Mivel ez a kis elmozdulás nagyon pici, így az erőt tekinthetjük végig állandóak az elmozdulás során, így az elemi munkát felírhatjuk úgy, mint 
+ \al{
+  \dd W(t)=\Fv(\rv)\cdot\vv\,\dd t=\Fv\big(\rv(t)\big)\cdot\vv(t)\,\dd t\;,
+ }
+ ahol az erőt az $\rv$ helyen kell venni, és az $\rv$ pedig a test helyzete a $t$ időpillanatban. A test sebességét szintén a $t$ időpontban kell venni.
+
+ Ezek ismeretében a teljes munkát úgy írhatjuk fel, mint az elemi munkáknak az összege $t=0$-tól $t=T$-ig:
+ \al{
+  W=\intl{0}{T}\dd W(t)
+   =\intl{0}{T}\Fv\big(\rv(t)\big)\cdot\vv(t)\,\dd t\;.
+ }
+
+ Ennek kiszámításához meg kell határoznunk a test sebességét, amely, ahogy \eqaref{eq:v} egyenletből is látszik, a helyvektor idő szerinti deriváltja:
+ \al{
+  \vv(t)
+   =\der{\rv(t)}{t}
+   =\der{}{t}\big(ct,\,dt^2,\,0\big)
+   =\left(\der{(ct)}{t},\,\der{(dt^2)}{t},\,\der{0}{t}\right)
+   =\big(c,\,2dt,\,0\big)\;,
+ }
+ illetve meg kell határoznunk az $\Fv\big(\rv(t)\big)$ függvényt. Ez nem más, mint az erő értéke azon a helyen, ahol a test a $t$ időpontban van. Ezt úgy kapjuk meg, hogy behelyettesítjük az $x$, $y$ és $z$ változók helyére a test mozgását leíró $x(t)$, $y(t)$ és $z(t)$ függvényeket, amelyeket le tudunk olvasni az $\rv(t)$ megadott alakjából:
+ \al{
+  \Fv\big(\rv(t)\big)
+   &=\Fv\big(x(t),y(t),z(t)\big)
+    =\Fv\Big(ct,dt^2,0\Big)\nonumber
+  \\
+   &=a\Big(ct\iv+dt^2\kv\Big)+b(0)^2\jv
+    =act\iv+adt^2\kv
+    =\big(act,\,0,\,adt^2\big)\;.
+ }
+
+ Ezeket felhasználva már ki tudjuk számolni a fenti integrált:
+ \al{
+  W&=\intl{0}{T}\Fv\big(\rv(t)\big)\cdot\vv(t)\,\dd t
+    =\intl{0}{T}\big(act,\,0,\,adt^2\big)\cdot \big(c,\,2dt,\,0\big)\,\dd t
+    =\intl{0}{T}ac^2t\,\dd t\nonumber
+  \\
+   &=ac^2\left[\frac{t^2}{2}\right]_{0}^{T}
+    =\frac{ac^2}{2}T^2\;.
+ }
+
+\fi

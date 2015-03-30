@@ -1,0 +1,46 @@
+\feladat{1}{
+ Határozza meg az elektrosztatikus és gravitációs kölcsönhatási erők arányát két elektron, illetve két proton esetében. Azonos részecskék kölcsönhatásakor milyen töltés-tömeg aránynál lenne a két erő abszolút értéke azonos?
+}{}{}
+ 
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A Coulomb-erő és a gravitációs erő kifejezése nagyon hasonló:
+ \al{
+  \Fv_\text{C}
+   &=k\frac{Q_1 Q_2}{\abs{\rv_2-\rv_1}^2}\cdot\frac{\rv_2-\rv_1}{\abs{\rv_2-\rv_1}}
+  &
+  \Fv_\text{G}
+   &=\gamma\frac{m_1 m_2}{\abs{\rv_2-\rv_1}^2}\cdot\frac{\rv_2-\rv_1}{\abs{\rv_2-\rv_1}}\;,
+ }
+ ahol $k=\frac{1}{4\pi\ep_0}$, $\ep_0=8,85\cdot 10^{-12}\me{\frac{C^2}{Nm^2}}$, illetve %$\gamma=6,67\cdot 10^{-11}\me{\frac{m^3}{kg\,s}}$. 
+ $\gamma=6,67\cdot 10^{-11}\me{\frac{Nm^2}{kg^2}}$. 
+ Az erők nagyságának aránya tehát
+ \al{
+  \frac{F_\text{C}}{F_\text{G}}
+   =\frac{k Q_1 Q_2}{\gamma m_1 m_2}\;.
+ }
+ Két protonra, illetve két elektronra ezek:
+ \al{
+  Q_\text{p}&=+1,6\cdot 10^{-19}\me{C}\;,
+  &
+  m_\text{p}&=1,67\cdot 10^{-27}\me{kg}\;,
+  &
+  \frac{F_\text{C,p}}{F_\text{G,p}}&=1,24\cdot 10^{36}\;,
+  \\
+  Q_\text{e}&=-1,6\cdot 10^{-19}\me{C}\;,
+  &
+  m_\text{e}&=9,11\cdot 10^{-31}\me{kg}\;,
+  &
+  \frac{F_\text{C,e}}{F_\text{G,e}}&=4,17\cdot 10^{42}\;.
+ }
+
+ A két erő aránya akkor 1, ha
+ \al{
+  1&=\frac{k Q^2}{\gamma m^2}
+  &\Rightarrow&&
+  \frac{Q}{m}&=\sqrt{\frac{\gamma}{k}}=8,6\cdot 10^{-11}\me{\frac{C}{kg}}\;.
+ }
+ 
+\fi

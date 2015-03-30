@@ -1,0 +1,35 @@
+\feladat{8}{
+ Egymástól $d = 10$\,cm távolságban lévő, végtelen kiterjedésű párhuzamos síkok felületi töltéssűrűsége $\sigma_{1}=3\cdot10^{-9}$\,C/m$^{2}$ és $\sigma_{2}=7\cdot10^{-9}$\,C/m$^{2}$. Mekkora a vezetők közötti potenciálkülönbség?
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ \marginfigure{08fel_01fig}
+ Először számoljuk ki, hogy egy síklapnak mi a potenciálja. Azt tudjuk, hogy a térerősség nagysága $E(x)=\frac{\sigma}{2\ep_0}$, ahol $\sigma$ a fémlap felületi töltéssűrűsége. Mivel a térerősség a laptól elfelé mutat, azért ha az irányt is bele szeretnénk foglalni a kifejezésbe, akkor $E(x)=\frac{\sigma}{2\ep_0}\sgn{x}$-et írhatunk, ahol az $\sgn$ függvény az $x$ változó előjelét adja meg. 
+
+ Ehhez a térerősséghez nagyon egyszerűen tudunk potenciált találni. A $\sgn$ függvény az abszolútérték-függvény deriváltja, hiszen annak meredeksége $-1$ a negatív féltengelyen és $+1$ a pozitívon. Így:
+ \al{
+  U(x)
+   =-\intl{}{}E(x)\dd x
+   =-\frac{\sigma}{2\ep_0}\abs{x}+C\;.
+ }
+
+ A két sík által létrehozott potenciál tehát:
+ \al{
+  U_1(x) &=-\frac{\sigma_1}{2\ep_0}\abs{x}\;,
+  &
+  U_2(x) &=-\frac{\sigma_2}{2\ep_0}\abs{x-d}\;.
+ }
+
+ Innen a teljes potenciálfüggvény: $U(x)=U_1(x)+U_2(x)$, és a két lap közötti potenciálkülönbség:
+ \al{
+  U(d)-U(0)
+   &=U_1(d)+U_2(d)-\big(U_1(0)+U_2(0)\big)
+  \\
+   &=-\frac{\sigma_1}{2\ep_0}d+0-\left(0-\frac{\sigma_2}{2\ep_0}d\right)
+    =\frac{\sigma_2-\sigma_1}{2\ep_0}d\;.
+ }
+ 
+\fi

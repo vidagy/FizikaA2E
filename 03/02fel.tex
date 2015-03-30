@@ -1,0 +1,49 @@
+\feladat{2}{
+ Az elektromos térerősség a térben az $\Ev(x,y,z)=az\iv+bx\kv$ függvény szerint változik, ahol $a$ és $b$ adott állandók. Határozzuk meg az elektromos fluxus értékét az $O=(0,0,0)$, $A=(w,0,0)$, $B=(0,h,0)$ csúcspontok által meghatározott $OAB$ háromszögre. 
+}{}{}
+
+\ifdefined\megoldas
+ 
+ \marginfigure{02fel_01fig}
+ 
+ Megoldás: 
+
+ A megoldáshoz az alábbi felületi integrált kell kiszámítani:
+ \al{
+  \Phi=\iint\limits_{OAB}\Ev(\rv)\,\dd^2\fv\;,
+ }
+ ahol az integrálást az $OAB$ háromszögön végezzük, és a $\dd^2\fv$ a felületelem-vektorok a felületre merőlegesek, és nagyságuk megegyezik a hozzájuk tartozó felületdarabkák nagyságával. Irányítsuk a felületet felfelé, vagyis a $\dd^2\fv$ vektorok mutassanak a $z$ irányba. 
+
+ Az integrált Descartes-koordinátarendszerben fogjuk paraméterezni. Ehhez először meg kell határoznunk azt, hogy az $x$ és az $y$ koordináták milyen értékeket vehetnek fel, míg azok bejárják a megadott felületet. Az $x$ koordináta $0$ és $w$ közötti értékeket vehet fel. Minden egyes $x$ értékhez az $y$ koordináta az $OA$ és az $AB$ egyenesek között lehet. Először határozzuk meg az $AB$ egyenes egyenletét: $y(x)=A\cdot x + B$,
+ \al{
+  \left.
+  \begin{array}{c}
+   y(x=w)=0=A\cdot w + B \\
+   y(x=0)=h=A\cdot w + B 
+  \end{array}
+  \right\}
+  &\Rightarrow&&
+  A=-\frac{h}{w} &&
+  B=h\;,
+ } 
+ vagyis az integrálási határok: $x\in [0,w]$, $y\in\left[0,-\frac{h}{w}x+h\right]$.
+
+ Ez alapján az integrál:
+ \al{
+  \Phi
+   &=\intl{0}{w}\intl{0}{-\frac{h}{w}x+h}\Ev(x,y,z)\kv\,\dd y\dd x
+    =\intl{0}{w}\intl{0}{-\frac{h}{w}x+h}(az\iv+bx\kv)\kv\,\dd y\dd x
+  \\
+   &=\intl{0}{w}\intl{0}{-\frac{h}{w}x+h}bx\,\dd y\dd x
+    =\intl{0}{w}bx\Bigg(\intl{0}{-\frac{h}{w}x+h}\,\dd y\Bigg)\dd x
+    =\intl{0}{w}bx\cdot\bigg([y]_{0}^{-\frac{h}{w}x+h}\bigg)\dd x
+  \\
+   &=\intl{0}{w}bx\left(-\frac{h}{w}x+h\right)\dd x
+    =\intl{0}{w}\left(-\frac{bh}{w}x^2+bhx\right)\dd x
+    =\left[-\frac{bh}{3w}x^3+bh\frac{x^2}{2}\right]_{0}^{w}
+  \\
+   &=-\frac{bh}{3w}w^3+bh\frac{w^2}{2}
+    =\frac{1}{6}bhw^2\;.
+ }
+ 
+\fi

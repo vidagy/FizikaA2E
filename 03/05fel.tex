@@ -1,0 +1,45 @@
+\feladat{5}{
+ Milyen erőteret hogy létre két egymásra merőleges végtelen sík, ha rajtuk egyenletesen elosztva $\sigma$ és $2\sigma$ felületi töltéssűrűség van. 
+}{}{}
+
+\ifdefined\megoldas
+   
+
+ Megoldás: 
+
+ \marginfigure{05fel_01fig.tikz}
+  
+ Először határozzuk meg egy $\sigma$ felületi töltéssűrűséggel rendelkező síklap térerősségét. Ehhez is a Gauss-törvényt fogjuk használni. Szimmetriamegfontolások alapján megállíthatjuk, hogy a térerősség csak a síktól való $z$ távolságtól függhet, illetve hogy a térerősségnek erőlegesnek kell lennie a síkra. 
+
+ A Gauss-törvényt egy henger alakú felületre fogjuk felírni. Legyen ennek alapterülete $A$, magassága $2z$, és helyezzük el úgy, hogy a töltött sík ezt pont felezze. A befoglalt töltés $Q_\text{in}=\sigma A$. A térerősségnek felületi integrálja csak a két alaplapon fog járulékot adni, hiszen az a palásttal párhuzamos. Mind a két alaplapon a felületvektor és a térerősség egy irányba mutat, így:
+ \al{
+  \frac{1}{\varepsilon_0}\sigma A
+   &=\iint\limits_{\text{henger}}\Ev(\rv)\;\dd^2\fv
+    =2\iint\limits_{\text{alaplap}}\Ev(z)\;\dd^2\fv
+    =2E(z)A
+  \\
+   E(z)
+    &=\frac{\sigma}{2\ep_0}\;.
+ }
+
+ Tehát láthatjuk, hogy a síktól való távolságtól függetlenül a térerősség állandó nagyságú. 
+
+ Ha két ilyen lemezt merőlegesen állítunk egymásra, akkor az egyes lemezek által létrehozott térerősségeket vektoriálisan össze kell adni. A nagysága mindenhol ugyanakkora:
+ \al{
+  E
+   =\sqrt{E_1^2+E_2^2}
+   =\sqrt{\left(\frac{\sigma}{\ep_0}\right)^2+\left(\frac{\sigma}{2\ep_0}\right)^2}
+   =\frac{\sqrt{5}\sigma}{2\ep_0}\;.
+ }
+ A térerősségvektor:
+ \al{
+  \Ev(x,y)
+   =\begin{cases}
+     \frac{\sigma}{2\ep_0}\big(\phantom{-}1,\phantom{-}2,0\big) & 0<x\;,\;0<y \\
+     \frac{\sigma}{2\ep_0}\big(\!\!-\! 1,\phantom{-}2,0\big) & 0>x\;,\;0<y \\
+     \frac{\sigma}{2\ep_0}\big(\phantom{-}1,\!\!-\!2,0\big) & 0<x\;,\;0>y \\
+     \frac{\sigma}{2\ep_0}\big(\!\!-\! 1,\!\!-\!2,0\big) & 0>x\;,\;0>y 
+    \end{cases}
+ }
+ 
+\fi

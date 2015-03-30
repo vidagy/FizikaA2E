@@ -1,0 +1,64 @@
+\begin{tikzpicture}
+
+ \fill[black] (0,3) circle (0.07);
+ \draw (-0.5,3) -- (0.5,3);
+ \foreach \x in {-0.5,-0.4,...,0.6} {
+  \draw (\x,3) -- +(-0.1,0.2);
+ };
+
+ \draw[thick] (0,3) -- (-1,0);
+ \draw[thick] (0,3) -- node[above right=6pt] {$l$} ( 1,0);
+ 
+ \draw (0,3) -- (0,0.3); 
+ \draw (0,0.6) arc (270:288.43:2.4);
+ \draw (0,3)++(279.22:2.0) node {$\alpha$};
+ \draw[|<->|] (-0.94,-0.4) -- node[below] {$d$} (0.94,-0.4); 
+ 
+ 
+ \draw[blue,very thick,->,>=latex] ( 1,0) -- +( 0.5, 0) node[below] {$F_{\text{C},1}$};
+ \draw[blue,very thick,->,>=latex] (-1,0) -- +(-0.5, 0) node[below] {$F_{\text{C},1}$};
+ 
+ \draw[red,very thick,->,>=latex] ( 1,0) -- +(0,-1.5) node[right] {$m\gv$};
+ \draw[red,very thick,->,>=latex] (-1,0) -- +(0,-1.5) node[right] {$m\gv$};
+ 
+ \draw[black!20!orange!80,very thick,->,>=latex] ( 1,0) -- node[right] {$\Kv_1$} +(-0.6,1.8);
+ \draw[black!20!orange!80,very thick,->,>=latex] (-1,0) -- node[left]  {$\Kv_1$} +( 0.6,1.8);
+ 
+ \fill[gray] (-1,0) circle (0.2);
+ \fill[gray] ( 1,0) circle (0.2);
+ 
+ \begin{scope}[yshift=-5.5cm]
+  \fill[black] (0,3) circle (0.07);
+  \draw (-0.5,3) -- (0.5,3);
+  \foreach \x in {-0.5,-0.4,...,0.6} {
+   \draw (\x,3) -- +(-0.1,0.2);
+  };
+  
+  \fill[black,opacity=0.15] (-2,1.4) -- (-2,-1) -- (2,-1) -- (2,1.4) -- cycle;
+  
+  \draw[thick] (0,3) -- (-1,0);
+  \draw[thick] (0,3) -- node[above right=6pt] {$l$} ( 1,0);
+  
+  \draw (0,3) -- (0,0.3); 
+  \draw (0,0.6) arc (270:288.43:2.4);
+  \draw (0,3)++(279.22:2.0) node {$\alpha$};
+  \draw[|<->|] (-0.94,-0.4) -- node[below] {$d$} (0.94,-0.4); 
+  
+  \draw[blue,very thick,->,>=latex] ( 1,0) -- +( 0.45, 0) node[below] {$F_{\text{C},2}$};
+  \draw[blue,very thick,->,>=latex] (-1,0) -- +(-0.45, 0) node[below] {$F_{\text{C},2}$};
+  
+  \draw[red,very thick,->,>=latex] ( 1,0) -- +(0,-1.5) node[right] {$m\gv$};
+  \draw[red,very thick,->,>=latex] (-1,0) -- +(0,-1.5) node[right] {$m\gv$};
+  
+  \draw[blue!30!red,very thick,->,>=latex] ( 1,0) -- +(0,0.65) node[right] {$\Fv_\text{f}$};
+  \draw[blue!30!red,very thick,->,>=latex] (-1,0) -- +(0,0.65) node[left] {$\Fv_\text{f}$};
+  
+  \draw[black!20!orange!80,very thick,->,>=latex] ( 1,0) -- +(-0.6,1.8) node[below right=8pt] {$\Kv_2$};
+  \draw[black!20!orange!80,very thick,->,>=latex] (-1,0) -- +( 0.6,1.8)  node[below left=8pt]  {$\Kv_2$};
+  
+  \fill[gray] (-1,0) circle (0.2);
+  \fill[gray] ( 1,0) circle (0.2); 
+  
+  \draw[thick] (-2,1.5) -- (-2,-1) -- (2,-1) -- (2,1.5);
+ \end{scope}
+\end{tikzpicture} 

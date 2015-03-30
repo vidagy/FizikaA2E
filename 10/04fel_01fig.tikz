@@ -1,0 +1,14 @@
+ \begin{tikzpicture}
+  
+  \draw[->,>=latex,gray] (-2,0) -- (2,0) node[below] {$x$};
+  \draw[->,>=latex,gray] (0,-1) -- (0,1) node[left] {$y$};
+  
+  \draw[very thick] (-2,0) -- (0,0) -- (0,-2);
+  
+  \draw[->,>=latex,darkgreen,thick] (-0.2,-0.8) to[out=90,in=0,looseness=1.2] (-0.8,-0.2);
+  \node[darkgreen] at (-0.5,-0.5) {$I$};
+  
+  \fill (1.2,0) circle (0.04);
+  \node[below] at (1.2,0) {$P$};
+ \end{tikzpicture}
+ 

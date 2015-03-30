@@ -1,0 +1,20 @@
+\begin{tikzpicture}[
+                   axis/.style={font=\small,>=latex},
+                   seged/.style={gray},
+                   vector/.style={black,thick,>=latex}
+]
+ \draw[axis,->] (-0.5,0) -- (3,0) node[below] {$x$};
+ \draw[axis,->] (0,-0.5) -- (0,3) node[left] {$y$};
+%
+ \draw[seged] (1,0) node[below,black] {$x$}  -- (1,2.5);
+ \draw[seged] (1.7,0) node[below,black] {$x+\dd x$} -- (1.7,2.5);
+ \draw[seged] (0,1) node[left,black] {$y$}  -- (2.5,1);
+ \draw[seged] (0,1.7) node[left,black] {$y+\dd y$} -- (2.5,1.7);
+%
+ \fill[fill=gray!30,draw=black,line width=1pt] (1,1) rectangle (1.7,1.7);
+% 
+ \draw[|<->|] (0.8,1) -- node[left] {$\dd y$} (0.8,1.7);
+ \draw[|<->|] (1,0.8) -- node[below] {$\dd x$} (1.7,0.8);
+%  
+%  \fill[gray,opacity=0.2] (1,1) -- (1,1.7) -- (1.7,1.7) -- (1.7,1);
+\end{tikzpicture} 

@@ -1,0 +1,38 @@
+\feladat{9}{
+ Az $R_1$ és $R_2$ sugarú koncentrikus gömbök közötti térrészt inhomogén szigetelő tölti ki, amelynek permittivitása a középponttól mért távolság függvénye. Milyen függvény szerint kell változnia a permittivitásnak, hogy a kondenzátort feltöltve az elektromos térerősség nagysága az egész térrészben állandó legyen? Mekkora az így kapott kondenzátor kapacitása?
+}{09fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Azt tudjuk, hogy ilyen esetben a dielektromos eltolás a gömbök között:
+ \al{
+  D(r)
+   =\frac{1}{4\pi}\frac{Q}{r^2}\;,
+ }
+ % \marginfigure{}
+ ha a kondenzátort $Q$ töltéssel töltjük fel. A térerősség ebből: $E(r)=\frac{D(r)}{\ep_0\ep_\text{r}(r)}$, vagyis ahhoz, hogy $E(r)$ ne függjön a sugártól, $\ep_\text{r}(r)\sim\frac{1}{r^2}$ kell hogy legyen. Legyen akkor 
+ \al{
+  \ep_\text{r}(r)
+   &=\frac{\tilde\ep}{r^2}
+  &&\Rightarrow&
+  E(r)
+   &=\frac{1}{4\pi\ep_0\tilde\ep}\cdot Q
+  \;.
+ }
+
+ A feszültség a két gömbfelület között:
+ \al{
+  V
+   &=-\intl{R_2}{R_1}E(r')\,\dd r'
+    =-\frac{1}{4\pi\ep_0\tilde\ep}\cdot Q\intl{R_2}{R_1}\,\dd r'
+    =\frac{1}{4\pi\ep_0\tilde\ep}\cdot Q (R_2-R_1)\;,
+ }
+ vagyis a kapacitás:
+ \al{
+  C=\frac{Q}{V}
+   =\frac{4\pi\ep_0\tilde\ep }{R_2-R_1}\;.
+ }
+
+\fi

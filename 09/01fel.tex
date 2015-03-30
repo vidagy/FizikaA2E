@@ -1,0 +1,54 @@
+\feladat{1}{
+ A hurokáramok módszerével határozzuk meg az ábrán látható kapcsolás ágaiban folyó áramokat!
+}{01fel_01fig}{1}
+
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ Az áramkör két ablakból áll, így két hurokáramot tudunk felvenni. Azt azonnal megállapíthatjuk, hogy a keresett áramok és a hurokáramok közötti kapcsolat:
+ \al{
+  I_1&=-\tilde I_2
+  &
+  I_2&=\tilde I_1
+  & 
+  I_3&=\tilde I_1 -\tilde I_2\;.
+ }
+
+ A két hurokra Kirchhoff II. törvénye:
+ \al{
+  0 &= -32\me{V} + \tilde I_1 \cdot 2\me{\Omega}+  (\tilde I_1 -\tilde I_2)\cdot 8\me{\Omega}
+  \\
+  0 &= (\tilde I_2 -\tilde I_1)\cdot 8\me{\Omega}+ \tilde I_2 \cdot 4\me{\Omega} + 20\me{V} \;,
+ }
+ ahol az első egyenletből $\tilde I_1$ kifejezve
+ \al{
+  \tilde I_1
+   &= 3,2\me{A} +0,8\cdot\tilde I_2\;,
+ }
+ majd a másodikba helyettesítve
+ \al{
+  0 &= \tilde I_2 \cdot 12\me{\Omega} - \tilde I_1 \cdot 8\me{\Omega} + 20\me{V}
+  \\
+    &= \tilde I_2 \cdot 12\me{\Omega} - ( 3,2\me{A} +0,8\cdot\tilde I_2) \cdot 8\me{\Omega} + 20\me{V}
+  \\
+    &= \tilde I_2 \cdot 5,6\me{\Omega} - 5,6\me{V}
+  \\
+  \tilde I_2&=1\me{A}\;.
+ }
+ Ezt visszahelyettesítve
+ \al{
+  \tilde I_1=3,2\me{A} +0,8\cdot 1\me{A}
+   = 4\me{A}\;.
+ }
+
+ Az eredetileg kérdezett áramerősségek:
+ \al{
+  I_1&=-1\me{A}
+  &
+  I_2&= 4\me{A}
+  & 
+  I_3&= 3\me{A}\;.
+ } 
+
+\fi

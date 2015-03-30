@@ -1,0 +1,30 @@
+\feladat{4}{
+ Egymástól $d$ távolságban párhuzamosan elhelyezett két igen hosszú fonalat egyenletesen töltök fel $+\lambda$ és $-\lambda$ lineáris töltéssűrűséggel. Határozzuk meg a térerősséget abban a pontban, amely a két fonalat magában foglaló síktól $x$ távolságban fekszik a szimmetriasíkban. 
+}{04fel_01fig}{}
+
+\ifdefined\megoldas
+  
+ 
+Megoldás: 
+
+Az előző feladat megoldása alapján tudjuk, hogy a $\lambda$ töltéssűrűséggel rendelkező vonaltöltés elektromos térerőssége:
+\al{
+ \Ev(r)=\frac{\lambda}{2\pi\ep_0}\frac{1}{r}\;\ev_\text{r}\;.
+}
+
+A két vonaltöltés által létrehozott térerősséget a megfelelő módon vektoriálisan kell összegeznünk. Azt láthatjuk, hogy a térerősség $x$ komponensei kiejtik egymást, így csak a $-y$ irányba mutató vetületeket kell összeadnunk. 
+\al{
+ E(x)
+  &=2E\Bigg(\sqrt{x^2+\left(\frac{d}{2}\right)^2}\Bigg)\cdot\cos\alpha
+   =\frac{\lambda}{\pi\ep_0}\frac{1}{\sqrt{x^2+\left(\frac{d}{2}\right)^2}}\cdot\cos\alpha
+ \\
+  &=\frac{\lambda}{\pi\ep_0}\frac{1}{\sqrt{x^2+\left(\frac{d}{2}\right)^2}}\cdot\frac{\frac{d}{2}}{\sqrt{x^2+\left(\frac{d}{2}\right)^2}}
+   =\frac{\lambda}{2\pi\ep_0}\frac{d}{x^2+\left(\frac{d}{2}\right)^2}\;.
+}
+Vagyis 
+\al{
+ \Ev(x)
+  &=\frac{\lambda}{2\pi\ep_0}\frac{d}{x^2+\left(\frac{d}{2}\right)^2}\cdot(-\ev_\text{y})\;.
+}
+
+\fi

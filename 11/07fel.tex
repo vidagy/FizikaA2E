@@ -1,0 +1,33 @@
+\feladat{7}{
+ Egy $L=30\,\textrm{mH}$ induktivitású, $R=6\,\Omega$ ohmikus ellenállású tekercset egy $U=12\,\textrm{V}$-os feszültségforrásra kapcsolunk. Határozzuk meg az áram időfüggését a kapcsoló átbillentése után!
+}{07fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A feladat megoldása nagyon hasonló a 4. feladatéhoz. Írjuk fel a II. Kirchhoff-törvényt a kapcsoló átkapcsolt állásában:
+ \al{
+  0&=U_L(t)+I(t)R
+  \\
+  0&=L\der{I}{t}+I(t)R
+  \\
+  -\intl{0}{t}\frac{R}{L}\,\dd t'&=\intl{0}{t}\frac{1}{I(t')}\der{I(t')}{t}\,\dd t'
+  \\
+  -\frac{R}{L}t&=\big[\ln I(t')\big]_0^t=\ln\frac{I(t)}{I(0)}
+  \\
+  I(t)&= I(0)\cdot \e^{-\frac{R}{L}t}\;,
+ }
+ ahol $I(0)$ az átkapcsolás pillanatában folyó áram nagysága. Az átkapcsolás előtt, az áramkör állandósult állapotában $I(t)=\frac{U}{R}$ nagyságú állandó nagyságú áram folyt, így
+ \al{
+  I(t)&= \frac{U}{R}\cdot \e^{-\frac{R}{L}t}\;.
+ }
+
+ Az ellenálláson és a tekercsen eső feszültség:
+ \al{
+  U_R(t)&=I(t)R=U\cdot \e^{-\frac{R}{L}t}\;,
+  &
+  U_L(t)&=L\der{I(t)}{t}=-U\frac{R}{L}\cdot \e^{-\frac{R}{L}t}\;.
+ }
+ 
+\fi

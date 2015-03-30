@@ -1,0 +1,44 @@
+\feladat{1}{
+ Állandó, $I=0,1\,\textrm{A}$ erősségű áram tölt egy $a=5\,\textrm{cm}$ élű, $d=4\,\textrm{mm}$ távolságban lévő, négyzet alakú lapokból álló síkkondenzátort.
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+ \item Határozzuk meg az elektromos fluxus $d\Phi_{E}/dt$ változási sebességét a lapok között!
+ \item Mekkora az eltolási áram a lapok között?
+ \end{enumerate}
+}{01fel_01fig}{}
+
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item 
+   Az elektromos fluxus meghatározásához először tudnunk kell, hogy a kondenzátorban mekkora a térerősség:
+   \al{
+    E(t) 
+     =\frac{U(t)}{d}
+     =\frac{Q(t)}{Cd}
+     =\frac{I}{Cd}t\;,
+   }
+   ahonnan
+   \al{
+    \Phi(t)
+     =\intl{}{}\Ev\,\dd^2 \fv
+     =E(t)\cdot A
+     =\frac{I a^2}{Cd}t\;.
+   }
+  
+  \item 
+   Az eltolási 
+   \al{
+    I_\text{eltolás}
+     &=\ep_0\pder{\Phi}{t}
+      =\ep_0\pder{}{t}\left(\frac{I a^2}{Cd}t\right)
+      =\ep_0\frac{I a^2}{Cd}\;,
+   }
+   ahol ha behelyettesítjük a síkkondenzátor kapacitásának értékét, $C=\ep_0\frac{a^2}{d}$,
+   \al{
+    I_\text{eltolás}=I\;.
+   }
+ \end{enumerate}
+ 
+\fi

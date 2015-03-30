@@ -1,0 +1,48 @@
+\begin{tikzpicture}
+ \draw (0,0) -- (0,1);
+ \draw (4,0) -- (4,1);
+ 
+ \ellenallas{(0,1)}{(2,1)}{$R$}{(0.0,0.4)}
+ \tekercs{(2,1)}{(4,1)}{$L$}{(0.0,0.4)}
+ \telep{(0,0)}{(4,0)}{$\ep$}{(0,-0.2)}
+ 
+ \draw[thick,->,>=latex,darkgreen] (2.7,-0.2) -- node[below] {$I$} +(1.1,0);
+ 
+ \node[blue] at (1.85,0.3) {\small $\boldsymbol\ominus$};
+ \node[red] at  (2.2,0.3) {\small $\boldsymbol\oplus$};
+ 
+ \node[blue] at (2.4,1.2) {\small $\boldsymbol\ominus$};
+ \node[red] at  (3.6,1.2) {\small $\boldsymbol\oplus$};
+ 
+ \draw[thick,<-,>=latex,cyan] (2.7,0.7) -- node[below] {$U_L$} +(0.6,0);
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+  \begin{scope}[yshift=-3cm]
+   \draw[dashed,gray] ({1/1.2},1.9) -- +(0,-6.4) node[below,black] {$\frac{L}{R}$};
+   \draw[dashed,gray] (0,1.7) node[black,left] {$\frac{\ep}{R}$} -- (4,1.7);
+   \draw[->,>=latex] (0,0) -- (4,0) node[below] {$t$};
+   \draw[->,>=latex] (0,0) -- (0,2) node[above left] {$I(t)$};
+   \draw[darkgreen,thick,domain=0:3.8] plot (\x,{1.7*(1-exp(-1.2*\x))});
+  \end{scope}
+  
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+  \begin{scope}[yshift=-5.2cm]
+   \draw[dashed,gray] (0,1.6) node[black,left] {$\ep$} -- (4,1.6);
+   \draw[->,>=latex] (0,0) -- (4,0) node[below] {$t$};
+   \draw[->,>=latex] (0,0) -- (0,2) node[left] {$U_R(t)$};
+   \draw[cyan,thick,domain=0:3.8] plot (\x,{1.6*(1-exp(-1.2*\x))});
+  \end{scope}
+  
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+  \begin{scope}[yshift=-7.4cm]
+   \draw[dashed,gray] (0,1.6) node[black,left] {$\ep$} -- (4,1.6);
+   \draw[->,>=latex] (0,0) -- (4,0) node[below] {$t$};
+   \draw[->,>=latex] (0,0) -- (0,2) node[left] {$U_L(t)$};
+   \draw[cyan,thick,domain=0:3.8] plot (\x,{1.6*(exp(-1.2*\x))});
+  \end{scope}
+
+\end{tikzpicture}
+ 

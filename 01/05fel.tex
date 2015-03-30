@@ -1,0 +1,54 @@
+\feladat{5}{
+ Határozzuk meg az 
+ \eq{
+  I=\intl{-\infty}{\infty}\e^{-x^2}\,\dd x\;
+ }
+ integrál értékét!
+}{}{}
+
+\ifdefined\megoldas
+
+ \marginfigure[Descartes-ko\-or\-di\-ná\-ta\-rend\-szer]{05fel_01fig}
+ Számoljuk ki ehelyett az $I^2$ értékét, azt közvetlenül meg tudjuk tenni. Mivel az $I$ egy olyan integrál, amelynek a hasában egy szigorúan pozitív függvény van, így az $I$ értéke biztos, hogy pozitív, vagyis az $I$ megadható úgy, mint a négyzetének a négyzetgyöke.
+ \al{
+  I^2
+   &=\bigg(\intl{-\infty}{\infty}\e^{-x^2}\,\dd x\bigg)\bigg(\intl{-\infty}{\infty}\e^{-y^2}\,\dd y\bigg)
+    =\intl{-\infty}{\infty}\intl{-\infty}{\infty}\e^{-(x^2+y^2)}\,\dd x\dd y
+ }
+ 
+ Erre az $I^2$ integrálra úgy lehet tekinteni, mint az $f(x,y)=\e^{-(x^2+y^2)}$ alatti térfogatra. Az integrálás szemléletes (Riemann értelemben vett) kiszámítási módja az, hogy ezt a térfogatot úgy határozzuk meg, mint a $\dd x \cdot \dd y$ alapterületű, $f(x,y)$ magas hasábok térfogatának összege. 
+ 
+ \marginfigure[Hen\-ger\-ko\-or\-di\-ná\-ta-rend\-szer]{05fel_02fig.tikz}
+ A megoldás kiszámításához azonban az $f(x,y)$ alatti térfogatot célszerű másként felbontani kis hasábokra. Végezzünk el egy koordinátarendszer-transzformációt, térjünk át polárkoordinátákra:
+ \eq{
+  \begin{cases}
+   x=r\cdot \cos\varphi \\
+   y=r\cdot \sin\varphi
+  \end{cases}
+  \qquad \Leftrightarrow
+  \qquad 
+  \begin{cases}
+   r=\sqrt{x^2+y^2} \\
+   \varphi=\arctan{\left(\frac{y}{x}\right)}
+  \end{cases}
+  \;.
+ }
+ 
+ Ekkor az integrandus: $\e^{-(x^2+y^2)}=\e^{r^2(\sin^2\varphi+\cos^2\varphi)}=\e^{r^2}$. Az integrálási hatásokat is az új koordinátákban kell megadni. A teljes síkot akkor fedjük le, ha $r$ $0$-tól végtelenig megy és $\varphi$ pedig $0$-tól $2\pi$-ig.
+ 
+ Kérdés, hogy ekkor hogyan kell tekinteni a kis hasábok alapterületét. Ennek módja, hogy megnézzük, hogy az $r$ és a $\varphi$ koordináta kis változtatásával mekkora területet fedünk le. A kis körgyűrűdarabnak az egyik oldala $\dd r$ hosszú a másik pedig $r\dd \varphi$ (ez a $\dd \varphi$ szög alatt látszódó ív hossza), vagyis területe $r\dd r\dd\varphi$.
+ 
+ Tehát  
+ \al{
+  I^2=\intl{0}{\infty}\intl{0}{2\pi}\e^{-r^2}r\,\dd r\dd \varphi\;. \label{proba}
+ }
+ Mivel $\varphi$ és $r$ teljesen független változó, ezért ez az integrál két egyváltozós integrál szorzata:
+ \al{
+  I^2
+   &=\bigg(\intl{0}{\infty}\e^{-r^2}r\,\dd r\bigg)\bigg(\intl{0}{2\pi}\,\dd \varphi\bigg)
+    =\left[-\frac{1}{2}\e^{-r^2}\right]_{0}^{\infty}\cdot \left[2\pi\right]
+    =\pi\;,
+ }
+ vagyis $I=\sqrt{\pi}$.
+ 
+\fi

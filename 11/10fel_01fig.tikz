@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+ \draw (0,0) -- (0,1);
+ \draw (4,0) -- (4,1);
+ 
+ \ellenallas{(0,1)}{(2,1)}{$R$}{(0.0,0.3)}
+ \tekercs{(2,1)}{(4,1)}{$L$}{(0.0,0.3)}
+ 
+ \draw (0,0) -- (1.8,0);
+ \draw (4,0) -- (2.2,0);
+ 
+ \draw[fill=white] (1.8,0) circle (0.06);
+ \draw[fill=white] (2.2,0) circle (0.06);
+ 
+ \node at (2,0) {\small $\sim$};
+ \node[below=4pt] at (2,0) {$U(t)$};
+ 
+%  \draw[thick,->,>=latex,darkgreen] (2.7,-0.2) -- node[below] {$I$} +(1.1,0);
+\end{tikzpicture}
+ 

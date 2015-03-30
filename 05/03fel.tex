@@ -1,0 +1,26 @@
+\feladat{3}{
+ Mutassuk meg, hogy az $\Ev(x, y, z) = a(y\iv - x\jv)$ elektromos erőtérnek nincsen potenciálja $a\neq0$ esetén, tehát nem lehet álló töltések által keltett erőtér!
+}{}{}
+
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ Egy térerősséghez akkor és csak akkor tartozik potenciál, ha a térerősség rotációmentes, vagyis $\rot\Ev=0$. A feladatban megadott térerősség rotációja:
+ \al{
+  \rot\Ev
+   &=\begin{vmatrix}
+      \iv & \jv & \kv \\
+      \pder{}{x} & \pder{}{y} & \pder{}{z} \\
+      ay & -ax & 0
+     \end{vmatrix}
+   \\
+   &= \left(0-\pder{(-ax)}{z}\right)\cdot \iv
+     -\left(0-\pder{(ay)}{z}\right)\cdot \jv
+     +\left(\pder{(-ax)}{x}-\pder{ay}{y}\right)\cdot \kv
+   \\
+   &=2a \kv\;.
+ }
+ Ez nem nulla, ha $a\neq 0$, vagyis a térerősség nem rotációmentes, azaz nem lehet potenciálfüggvényt sem megadni. 
+
+\fi

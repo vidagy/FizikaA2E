@@ -1,0 +1,21 @@
+\feladat{4}{
+ Az $x-y$ síkbeli koordinátarendszer tengelyei mentén egy, az origóban megtört kábel vezeti az áramot a következő módon: az $y=-\infty$ irányból érkező $I$ áram a koordinátarendszer középpontjáig egyenesen halad, itt a kábel megtörik, és az áram az $x=-\infty$ irányban az $x$ tengely mentén távozik. Mekkora a mágneses tér erőssége az $x$ tengely mentén, az $x>0$ pontokban?
+}{04fel_01fig}{}
+
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ A feladatban szereplő vezető felbontható két darabra. Az azonnal adódik, hogy az $x$ tengellyel párhuzamos rész nem ad mágneses indukciójárulékot a $P$ pontban, hiszen a vezetődarabokat és a $P$ pontot összekötő vektor párhuzamos az áram folyásirányával, vagyis a keresztszorzat nulla lesz. 
+
+ Az $y$ tengellyel párhuzamos rész járulékát pedig a 2. feladat eredménye alapján tudjuk egyszerűen számolni. Szimmetriaokok miatt a félegyenesnek fele akkora mágneses indukciót kell létrehoznia, mint a végtelen hosszú vezetőnek. Annak terét pedig a második feladatban az $\alpha_\text{h}\to\frac{\pi}{2}$ határesetben kapjuk:
+ \al{
+  B_\text{végtelen egyenes}=\lim_{\alpha_\text{h}\to\frac{\pi}{2}} \frac{\mu_0 I}{2\pi x}\sin\alpha_\text{h}
+   =\frac{\mu_0 I}{2\pi x}\;,
+ }
+ ahonnan
+ \al{
+  B(P\text{-ben})=\frac{\mu_0 I}{4\pi x}\;.
+ }
+ 
+\fi

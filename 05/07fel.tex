@@ -1,0 +1,40 @@
+\feladat{7}{
+ $R$ sugarú szigetelő körlemezre $Q$ töltést viszünk fel egyenletes felületi töl\-tés\-sű\-rű\-sé\-get kialakítva. A kör középpontja felett, a kör síkjától $z$ távolságra mekkora a potenciál? Mekkora itt a térerősség?
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A feladat megoldásához felhasználjuk azt, hogy a kiterjedt töltéseloszlást fel tudjuk osztani elemi töltésekre, és a töltésrendszer potenciálját meg tudjuk adni úgy, mint ezek az elemi töltések potenciáljának összege. 
+
+ \marginfigure{07fel_01fig}
+ Dolgozzunk polárkoordináta-rendszerben. Osszuk fel a korongot $\dd r$ széles és $\dd \varphi$ szög alatt látszódó darabokra. Ekkor a $\varphi$ szög $0$-tól $2\pi$-ig futhat, míg a sugár $0$ és $R$ között változhat. Egy ilyen kis darab területe: $\dd A=r\dd r \dd\varphi$, vagyis töltése: $\dd q=\dd A\cdot \sigma=\dd A\cdot \frac{Q}{R^2\pi}=\frac{Q}{R^2\pi}r\dd r\dd\varphi$. 
+
+ Az $(r,\varphi)$ helyen lévő $\dd q$ nagyságú ponttöltés potenciálja a $P$ pontban:
+ \al{
+  \dd U(z)
+   &=\frac{1}{4\pi\ep_0}\frac{\dd q}{\sqrt{r^2+z^2}}\;.
+ }
+ Az összes ponttöltés járulékának összege adja a teljes potenciált. Ne felejtsük, hogy a potenciál skalármennyiség (a tér minden pontjában egy szám, nem vektor), vagyis a járulékok összege is egy szám lesz.
+ \al{
+  U(z)
+   &=\intl{\text{korong}}{}\dd U(z)
+    =\intl{\text{korong}}{}\frac{1}{4\pi\ep_0}\frac{\dd q}{\sqrt{r^2+z^2}}
+    =\intl{0}{R}\intl{0}{2\pi}\frac{1}{4\pi\ep_0}\frac{Q}{R^2\pi}\frac{r}{\sqrt{r^2+z^2}}\dd r\dd\varphi
+  \\
+   &=\frac{1}{4\pi\ep_0}\frac{Q}{R^2\pi}\intl{0}{R}\frac{r}{\sqrt{r^2+z^2}}\dd r\intl{0}{2\pi}\dd\varphi
+    =\frac{1}{2\ep_0}\frac{Q}{R^2\pi}\left[\sqrt{r^2+z^2}\right]_{0}^{R}
+  \\
+   &=\frac{1}{2\ep_0}\frac{Q}{R^2\pi}\left(\sqrt{R^2+z^2}-\abs{z}\right)
+    \;.
+ }
+ A térerősség vektor a potenciál definíciójából előáll. Most $U(z)$ csak a $z$ koordinátától függ, így a térerősségnek is csak $z$ irányú komponense lesz a deriválások miatt.
+ \begin{align}
+  {E_z}(z) &= -\frac{\partial U(z)}{\partial z} 
+            = -\frac{\partial}{\partial z} \left(\frac{1}{2\ep_0}\frac{Q}{R^2\pi}\left(\sqrt{R^2+z^2}-\abs{z}\right)\right) \\
+           &=  \frac{1}{2\ep_0} \frac{Q}{R^2\pi} \left( \sgn(z) - \frac{z}{\sqrt{R^2+z^2}} \right)\;.
+ \end{align}
+
+ 
+\fi

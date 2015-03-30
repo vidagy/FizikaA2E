@@ -1,0 +1,102 @@
+\feladat{8}{
+ Ideális síkkondenzátor fegyverzetei egymástól $d$ távolságra vannak. A kondenzátor belsejében a térerősség $E_{0}$.
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item Hányszorosára változik meg a kondenzátor kapacitása, ha a fegyverzetekkel párhuzamosan egy $\delta d$ vastagságú fémlemezt helyezünk a kondenzátor belsejébe?
+  \item Rajzoljuk fel a térerősséget, mint a fegyverzettől mért távolság függvényét, ha a fémlemez a bal oldali fegyverzettől $d_{0}$ távolságra van!
+  \item Rajzoljuk fel a potenciál változását a hely függvényében az előző összeállításnál! Mekkora a fegyverzetek közötti feszültség?
+  \item Milyen vastag szigetelőlemez hatására változik a síkkondenzátor kapacitása ugyanannyiszorosára, mint a fémlemez esetében, ha $\varepsilon_{r}$ adott?
+ \end{enumerate}
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ \noindent
+ \includegraphics[width=\paperwidth-2.5cm]{08fel_01fig}
+
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item 
+   A fémlemez belsejében a térerősség nulla. Ekkor olyan, mintha két sorosan kapcsolt kondenzátorunk lenne, ahol az egyik $d_0$ a másik pedig $d-d_0-\delta d$ széles. Ennek kapacitása:
+   \al{
+    C
+     =\frac{1}{\frac{1}{\ep_0\frac{A}{d_0}}+\frac{1}{\ep_0\frac{A}{d-d_0-\delta d}}}
+     =\ep_0 \frac{A}{d_0+d-d_0-\delta d}
+     =\ep_0 \frac{A}{d-\delta d}
+    \;,
+   }
+   ahogy azt vártuk is, a hatás olyan, mintha a fegyverzeteket közelebb toltuk volna egymáshoz. Tehát a kapacitás a $\frac{d}{d-\delta d}$-szeresére változik.
+   
+  \item[b-c)]
+   A térerősség és a potenciál:
+   \al{
+    E(x)&=
+     \begin{cases}
+      -E_0 & 0<x<d_0 \\
+      0 & d_0<x<d_0+\delta d \\
+      -E_0 & d_0+\delta d<x<d 
+     \end{cases}
+    \\
+    U(x)&=
+     \begin{cases}
+      E_0\cdot x & 0<x<d_0 \\
+      E_0\cdot d & d_0<x<d_0+\delta d \\
+      E_0\cdot (x-\delta d) & d_0+\delta d<x<d 
+     \end{cases}
+    \;,
+   }
+   ahol nem szabad elfelejteni azt, hogy a fémben a potenciál konstans, és a potenciál folytonos függvény kell, hogy legyen.
+   
+   \item[d)]
+   Egy szigetelő $\ep_\text{r}$ dielektromos állandójú anyag behelyezésénél a térerősség:
+   \al{
+    E(x)&=
+     \begin{cases}
+      -E_0 & 0<x<d_0 \\
+      -\frac{E_0}{\ep_\text{r}} & d_0<x<d_0+\delta d \\
+      -E_0 & d_0+\delta d<x<d 
+     \end{cases}\;.
+   }
+   A potenciált ebben az esetben végigszámoljuk. A szigetelőig természetesen ugyanaz az eredmény, mint az előbb. A szigetelőben:
+   \al{
+    U(x)
+     &=U(d_0)-\intl{d_0}{x}E(x')\,\dd x'
+      =E_0 d_0+\frac{1}{\ep_\text{r}}\intl{d_0}{x}E_0\,\dd x'
+    \\
+     &=E_0 d_0+\frac{1}{\ep_\text{r}}E_0\cdot(x-d_0)\;,
+   }
+   illetve az után:
+   \al{
+    U(x)
+     &=U(d_0+a)-\intl{d_0}{x}E(x')\,\dd x'
+      =E_0 d_0+\frac{1}{\ep_\text{r}}E_0a+\intl{d_0+a}{x}E_0\,\dd x'
+    \\
+     &=E_0 d_0+\frac{1}{\ep_\text{r}}E_0a+E_0\cdot(x-d_0-a)
+    \;.
+   }
+   Összefoglalva
+   \al{
+    U(x)&=
+     \begin{cases}
+      E_0\cdot x & 0<x<d_0 \\
+      E_0 d_0+\frac{1}{\ep_\text{r}}E_0\cdot(x-d_0) & d_0<x<d_0+\delta d \\
+      \frac{1}{\ep_\text{r}}E_0a+E_0\cdot(x-a) & d_0+\delta d<x<d 
+     \end{cases}
+    \;.
+   }
+   
+   Ahhoz, hogy a kapacitás ugyanannyiszorosára változzon az kell, hogy feszültségek megegyezzenek a két esetben:
+   \al{
+    E_0\cdot (d-\delta d)
+     &=\frac{1}{\ep_\text{r}}E_0a+E_0\cdot(d-a)
+    \\
+    -\delta d
+     &=\frac{1}{\ep_\text{r}}a-a
+    \\
+    a
+     &=\left[1-\frac{1}{\ep_\text{r}}\right]^{-1}\delta d
+    \;.
+   }
+ \end{enumerate}
+
+\fi

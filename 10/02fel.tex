@@ -1,0 +1,63 @@
+\feladat{2}{
+ Négyzet alakú, $l=0,4\,\textrm{m}$ élhosszúságú vezető keretben $I=10\, \textrm{A}$ erősségű áram folyik. Számítsuk ki a mágneses tér nagyságát és irányát a keret középpontjában!
+}{}{}
+
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ A keretet fel tudjuk osztani annak négy oldalára, és az eredő indukciót meg tudjuk adni úgy, mint egy oldal indukciójának a négyszerese. Ezután már csak azt kell meghatároznunk, hogy egy $a$ hosszúságú rúd közepétől $d=\frac{a}{2}$ távolságban mekkora az indukció.
+
+ Ennek meghatározásához pedig tekintsük a vezetőszakasz $\dd z$ hosszú darabját. Az $O$ pontban létrejövő mágneses indukció merőleges a vezetőt és az $O$ pontot tartalmazó síkra és befelé mutat. Az összes ilyen darabra a mágneses indukció azonos irányba mutat, így az eredő $\Bv$ kiszámolásához elég a vektorok nagyságát összegezni:
+ \al{
+  \dd B
+   =\frac{\mu_0}{4\pi}\frac{\abs{\dd \Iv\times \rv}}{\abs{\rv}^3}
+   =\frac{\mu_0 I}{4\pi}\frac{\dd z\cdot d}{\left(d^2+z^2\right)^\frac{3}{2}}\;,
+ }
+ 
+ \marginfigure{02fel_01fig}
+ 
+ melyet sajnos nem lehet túl praktikusan összegezni a $z\in\left[-\frac{a}{2},\frac{a}{2}\right]$ tartományon. Emiatt érdemes áttérni szög szerinti paraméterezésre. Ekkor a $\varphi$ szög a $[-\alpha_\text{h},\alpha_\text{h}]$ tartományt járja be, ahol
+ \al{
+  \sin\alpha_\text{h}
+   =\frac{\frac{a}{2}}{\left(d^2+\frac{a^2}{4}\right)^\frac{1}{2}}\;.
+ }
+ 
+ \marginfigure{02fel_02fig}
+
+ A $\dd\varphi$ és a $\dd z$ közötti összefüggést az ábráról olvashatjuk le. A $\varphi$ szögnél lévő $\dd\varphi$ szög alatt látszódó $\dd z$ darab $r=\frac{a}{2\sin\varphi}$ távolságra van az $O$ ponttól, vagyis a kiemelt háromszög befogója $b=r\dd\varphi=\frac{a}{2\sin\varphi}\dd\varphi$. A derékszögű háromszögben $b=\dd z\cos\varphi$, vagyis
+ \al{
+  \dd z
+   =\frac{a}{2\sin\varphi\cos\varphi}\dd\varphi
+   =\frac{\frac{a}{2}}{\tg\varphi\cos^2\varphi}\dd\varphi
+   =\frac{d}{\cos^2\varphi}\dd\varphi\;.
+ }
+ Így a $\dd B$
+ \al{
+  \dd B
+   &=\frac{\mu_0 I}{4\pi}\frac{\dd \varphi\cdot d}{\left(d^2+z^2\right)^\frac{3}{2}}\cdot \frac{d}{\cos^2\varphi}
+    =\frac{\mu_0 I}{4\pi}\frac{\dd \varphi\cdot d}{\left(\frac{d}{\cos\varphi}\right)^3}\cdot \frac{d}{\cos^2\varphi}
+    =\frac{\mu_0 I}{4\pi d}\cos\varphi\dd \varphi\;. 
+ }
+ Melyet integrálva:
+ \al{
+  B
+   &=\intl{\text{vezető}}{}\dd B
+    =\frac{\mu_0 I}{4\pi d}\intl{-\alpha_\text{h}}{\alpha_\text{h}}\cos\varphi\dd \varphi
+    =\frac{\mu_0 I}{4\pi d}\left[\sin\varphi\right]_{-\alpha_\text{h}}^{\alpha_\text{h}}
+    =\frac{\mu_0 I}{2\pi d}\sin\alpha_\text{h}
+  \\
+   &=\frac{\mu_0 I}{2\pi d}\frac{\frac{a}{2}}{\left(d^2+\frac{a^2}{4}\right)^\frac{1}{2}}\;,
+ }
+ és mivel itt $d=\frac{a}{2}$, így
+ \al{
+  B=\frac{\mu_0 I}{2\pi a}\sqrt{2}\;.
+ }
+
+ A teljes hurokra ennek a négyszeresét kapjuk, így
+ \al{
+  B_\text{hurok}
+   =\frac{2\mu_0 I}{\pi a}\sqrt{2}\;.
+ }
+
+\fi

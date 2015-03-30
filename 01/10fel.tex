@@ -1,0 +1,175 @@
+\feladat{10}{
+ Határozzuk meg annak az $R$ sugarú gömbnek a tömegét és a $z$ tengelyre vonatkoztatott tehetetlenségi nyomatékát, amelynek a sűrűsége a $z$ tengely mentén változik: 
+ \eq{
+  \rho(x,y,z)=\rho_0+\alpha\cdot z\;.
+ }
+}{}{}
+
+\ifdefined\megoldas
+ 
+ Ahhoz, hogy meg tudjuk oldani a feladatot, tudnunk kell, hogy hogyan lehet tömeget és tehetetlenségi nyomatékot számolni. Ezeket az alábbi formulák adják meg:
+ \al{
+  &M=\iiint\limits_{\text{test}}\rho(x,y,z)\dd x\dd y\dd z\;,
+  &
+  &\Theta=\iiint\limits_{\text{test}}(x^2+y^2)\rho(x,y,z)\dd x\dd y\dd z\;,
+ }
+ ahol térfogati integrálokat kell kiszámítani. A térfogati integrál azt jelenti, hogy a teret felosztjuk elemi darabokra, Descartes-koordinátákban elemi $\dd x\dd y \dd z$ térfogatú téglatestekre, és összeadjuk az integrandus értékét megszorozva a térfogat nagyságával minden egyes pici téglatestre. Azonban Descartes-koordinátákban az integrált nagyon nehézkes lenne kiszámítani.
+ 
+ Ehelyett a feladatot két különböző módon is megoldjuk, először hen\-ger\-ko\-or\-di\-ná\-ta-rend\-szer\-ben, másodszorra pedig gömbikoordináta-rendszerben. 
+ 
+ {\textbf{ 1. megoldás:}} Mivel a sűrűség hengerszimmetrikus (a $z$ tengely körül forgásszimmetrikus), így talán érdemes bevezetni a hengerkoordinátákat. Az erre való áttérési szabály:
+ \eq{
+  \begin{cases}
+   x=r\cdot \cos\varphi \\
+   y=r\cdot \sin\varphi \\ 
+   z=z
+  \end{cases}
+  \qquad \Leftrightarrow
+  \qquad 
+  \begin{cases}
+   r=\sqrt{x^2+y^2} \\
+   \varphi=\arctan{\left(\frac{y}{x}\right)} \\ 
+   z=z
+  \end{cases}
+  \;.
+ }
+ 
+ \marginfigure[Hen\-ger\-ko\-or\-di\-ná\-ta-rend\-szer]{10fel_01fig.tikz}
+ Az integrandus a tömeg esetében nem változik, a tehetetlenségi nyomatéknál pedig $(x^2+y^2)\rho(x,y,z)=r^2(\rho_0+\alpha\cdot z)$.
+ 
+ Itt is meg kell vizsgálni, hogy a $\dd x\dd y\dd z$ térfogatelem helyett, mekkora lesz az infinitezimális térfogat. A polárkoordinátáknál láttuk, hogy egy $\dd r$ $\dd\varphi$ darabka területe $r\dd r\dd\varphi$, akkor egy ilyen alapú $\dd z$ magas térfogatelem térfogata $r\dd r\dd\varphi\dd z$. Vagyis
+ \al{
+  M
+   &=\iiint\limits_{\text{test}}\rho(r,\varphi,z)\, r\dd r\dd \varphi\dd z
+   =\iiint\limits_{\text{test}}(\rho_0+\alpha\cdot z)\, r\dd r\dd \varphi\dd z\;,\\
+  \Theta
+   &=\iiint\limits_{\text{test}}r^2(\rho_0+\alpha\cdot z)\, r\dd r\dd \varphi\dd z\;.
+ }
+ 
+ Nézzük meg, hogy hogyan tudjuk megadni az integrálási határokat, ha az origó középpontú $R$ sugarú gömböt akarjuk végigpásztázni. A $z$ koordináta $-R$-től $R$-ig megy. Mivel a rendszer forgásszimmetrikus, így a $\varphi$ $z$-től függetlenül minden esetben $0$ és $2\pi$ között vehet fel bármilyen értéket. Az $r$ koordináta viszont nem lehet akármi, annak határa függ attól, hogy milyen $z$ értéknél vagyunk. Könnyen végiggondolható, hogy $z$ magasságban a gömb metszete egy $\sqrt{R^2-z^2}$ sugarú kör, vagyis $r$ 0-tól eddig az értékig mehet. Ez leírva:
+ \al{
+  M
+   &=\intl{0}{2\pi}\intl{-R}{R}\intl{0}{\sqrt{R^2-z^2}}(\rho_0+\alpha\cdot z)\, r\dd r\dd z\dd\varphi\nonumber
+  \\
+   &=\intl{0}{2\pi}\Bigg[\intl{-R}{R}\Bigg(\intl{0}{\sqrt{R^2-z^2}}(\rho_0+\alpha\cdot z)\, r\dd r\Bigg)\dd z\Bigg]\dd\varphi\;.
+ }
+ Itt mivel az $r$ szerinti integrál határa függ $z$-től, ezért ez a két integrál nem emelhető át egymáson. Azonban ezt is igen magától értetődően kell megoldani:
+ \al{
+  M
+   &=\intl{0}{2\pi}\dd\varphi\intl{-R}{R}\Bigg(\intl{0}{\sqrt{R^2-z^2}}(\rho_0+\alpha\cdot z)\, r\dd r\Bigg)\dd z\nonumber
+   \\
+   &=2\pi \intl{-R}{R}\Bigg(\intl{0}{\sqrt{R^2-z^2}}(\rho_0+\alpha\cdot z)\, r\dd r\Bigg)\dd z\nonumber
+   \\
+   &=2\pi \intl{-R}{R}\Bigg(\intl{0}{\sqrt{R^2-z^2}} r\dd r\Bigg)(\rho_0+\alpha\cdot z)\,\dd z
+    =2\pi \intl{-R}{R}\left[\frac{r^2}{2}\right]_{0}^{\sqrt{R^2-z^2}}(\rho_0+\alpha\cdot z)\,\dd z\nonumber
+   \\
+   &=\pi \intl{-R}{R}(R^2-z^2)(\rho_0+\alpha\cdot z)\,\dd z
+    =\pi \intl{-R}{R}(R^2\rho_0+R^2\alpha\cdot z-z^2\rho_0-\alpha z^3)\,\dd z\nonumber
+   \\
+   &=\pi \left[R^2\rho_0\cdot z+R^2\alpha\cdot \frac{z^2}{2}-\frac{z^3}{3}\rho_0-\alpha \frac{z^4}{4}\right]_{-R}^{R}
+    =2\pi \left(\rho_0-\frac{1}{3}\rho_0\right)R^3\nonumber
+   \\
+   &=\frac{4}{3}R^3\pi\cdot \rho_0\;.
+ }
+ A tehetetlenségi nyomaték ugyanígy:
+ \al{
+  \Theta
+   &=\intl{0}{2\pi}\dd\varphi\intl{-R}{R}\intl{0}{\sqrt{R^2-z^2}}r^2\rho(x,y,z)\, r\dd r\dd z
+    =2\pi\intl{-R}{R}\intl{0}{\sqrt{R^2-z^2}}r^3(\rho_0+\alpha\cdot z)\, \dd r\dd z\nonumber
+   \\
+   &=2\pi \intl{-R}{R}\left[\frac{r^4}{4}\right]_{0}^{\sqrt{R^2-z^2}}(\rho_0+\alpha\cdot z)\,\dd z\nonumber
+    =\frac{\pi}{2} \intl{-R}{R}(R^2-z^2)^2(\rho_0+\alpha\cdot z)\,\dd z\nonumber
+   \\
+   &=\rho_0\frac{\pi}{2} \left[R^4z-2R^2\frac{z^3}{3}+\frac{z^5}{5}\right]_{-R}^{R}
+    =R^5\rho_0 \pi \left(1-\frac{2}{3}+\frac{1}{5}\right)\nonumber
+   \\
+   &=\frac{8}{15}R^5\rho_0 \pi \frac{8}{15}
+    =\frac{2}{5}\left(\frac{4}{3}R^3\pi \rho_0\right)R^2
+    =\frac{2}{5}MR^2\;.
+ }
+ 
+ {\textbf{ 2. megoldás:}} Mivel a test határa gömbszimmetrikus ezért akár a gömbi koordinátákat is bevezethetjük. Az erre való áttérési szabály:
+ \marginfigure[Gömb\-ko\-or\-di\-ná\-ta-rend\-szer]{10fel_02fig}
+ \eq{
+  \begin{cases}
+   x=r\cdot \sin\vartheta\cos\varphi \\
+   y=r\cdot \sin\vartheta\sin\varphi \\ 
+   z=r\cdot \cos\vartheta
+  \end{cases}
+  \qquad \Leftrightarrow
+  \qquad 
+  \begin{cases}
+   r=\sqrt{x^2+y^2+z^2} \\
+   \vartheta=\arccos\left(\frac{z}{r}\right) \\
+   \varphi=\arctan{\left(\frac{y}{x}\right)} 
+  \end{cases}
+  \;.
+ }
+ 
+ Levezethető, hogy az infinitezimális térfogat $\dd V=r^2\sin\vartheta\dd r\dd\vartheta\dd\varphi$. Ugyanazt kell tegyük, mint az előbb: be kell helyettesíteni az új koordinátákat a sűrűségfüggvénybe, meg kell határozni az integrálási határokat, majd el kell végezni az egyváltozós integrálokat. 
+ 
+ Mivel egy gömbön belül integrálunk, így az $r$ változó $0\dots R$ tartományon lehet, a $\vartheta$ $0\dots\pi$-ig mehet, a $\varphi$ pedig $0\dots 2\pi$-ig. Így tehát
+ 
+ \al{
+  M
+   &=\intl{0}{2\pi}\intl{0}{\pi}\intl{0}{R}(\rho_0+\alpha\cdot r\cos\vartheta)\, r^2\sin\vartheta\dd r\dd \vartheta\dd\varphi\nonumber
+   \\
+   &=2\pi\intl{0}{\pi}\intl{0}{R}(\rho_0+\alpha\cdot r\cos\vartheta)\, r^2\sin\vartheta\dd r\dd \vartheta\nonumber
+   \\
+   &=2\pi\intl{0}{\pi}\left(\rho_0\left[\frac{r^3}{3}\right]_{0}^{R}+\alpha\cdot \left[\frac{r^4}{4}\right]_{0}^{R}\cos\vartheta\right)\, \sin\vartheta\dd \vartheta\dd\nonumber
+   \\
+   &=\frac{2}{3}\rho_0R^3\pi\intl{0}{\pi}\sin\vartheta\dd \vartheta
+    +2\pi\alpha\cdot\frac{R^4}{4}\intl{0}{\pi}\cos\vartheta\, \sin\vartheta\dd \vartheta\nonumber
+   \\
+   &=\frac{2}{3}\rho_0R^3\pi\left[-\cos\vartheta\right]_{0}^{\pi}
+    +2\pi\alpha\cdot\frac{R^4}{4}\intl{0}{\pi}\frac{1}{2}\sin(2\vartheta)\dd \vartheta\nonumber
+   \\
+   &=\frac{4}{3}R^3\pi\cdot \rho_0
+    +2\pi\alpha\cdot\frac{R^4}{4}\underbrace{\left[\frac{-\cos(2\vartheta)}{4}\right]_{0}^{\pi}}_{0}
+    =\frac{4}{3}R^3\pi\cdot \rho_0\;.
+ }
+ és
+ \al{
+  \Theta
+   &=\intl{0}{2\pi}\intl{0}{\pi}\intl{0}{R}r^2\sin^2\vartheta(\rho_0+\alpha\cdot r\cos\vartheta)\, r^2\sin\vartheta\dd r\dd \vartheta\dd\varphi\nonumber
+   \\
+   &=2\pi\intl{0}{\pi}\intl{0}{R}r^4\sin^3\vartheta(\rho_0+\alpha\cdot r\cos\vartheta)\,\dd r\dd \vartheta\nonumber
+   \\
+   &=2\pi\intl{0}{\pi}\left(\rho_0\left[\frac{r^5}{5}\right]_{0}^{R}+\alpha\cdot \left[\frac{r^6}{6}\right]_{0}^{R}\cos\vartheta\right)\, \sin^3\vartheta\dd \vartheta\nonumber
+   \\
+   &=\frac{2}{5}\rho_0R^5\pi\intl{0}{\pi}\sin^3\vartheta\dd \vartheta
+    +2\pi\alpha\cdot\frac{R^6}{6}\intl{0}{\pi}\cos\vartheta\sin^3\vartheta\, \dd \vartheta\;.
+ }
+ 
+ Itt a második integrált könnyű kiszámítani, ha észrevesszük, hogy megjelent a $\sin^4\vartheta$ deriváltja:
+ \al{
+  \intl{0}{\pi}\cos\vartheta\sin^3\vartheta\, \dd \vartheta
+   &=\left[\frac{\sin^4\vartheta}{4}\right]_{0}^{\pi}=0\;.
+ }
+ Az első integrál kicsit trükkösebb. Használjuk fel a trigonometrikus átalakító képleteket, hogy az előző trükköt ismét tudjuk használni:
+ \al{
+  \intl{0}{\pi}\sin^3\vartheta\,\dd \vartheta
+   &=\intl{0}{\pi}\sin^2\cdot\sin\vartheta\,\dd \vartheta
+    =\intl{0}{\pi}(1-\cos^2\vartheta)\cdot\sin\vartheta\,\dd\vartheta\nonumber
+   \\
+   &=\intl{0}{\pi}\sin\vartheta\,\dd\vartheta
+    -\intl{0}{\pi}\cos^2\vartheta\sin\vartheta\,\dd\vartheta
+    =\left[-\cos\vartheta\right]_{0}^{\pi}
+    +\left[\frac{\cos^3\vartheta}{3}\right]_{0}^{\pi}\nonumber
+   \\
+   &=2-\frac{2}{3}
+    =\frac{4}{3}\;,
+ }
+ tehát
+ \al{
+  \Theta
+   =\frac{2}{5}\left(\frac{4}{3}R^3\pi \rho_0\right)R^2
+   =\frac{2}{5}MR^2\;.
+ }
+ 
+ \newpage
+ \emph{Megjegyzés:}
+ 
+ Láthatjuk, hogy mind a két módszerrel ugyanazt a megoldást kaptuk, ez nem is lehetne másképp, az eredménynek minden esetben függetlennek kell lennie attól, hogy milyen koordináta-rendszert választunk. Vegyük észre, hogy a gömb tömege pont megegyezik egy $\rho_0$ sűrűségű homogén gömb tömegével. Ez magától értetődik hiszen ez egy olyan gömb, amelynek a teteje pont annyival nehezebb, mint amennyivel az alja könnyebb. A tehetetlenségi nyomatéka is megegyezik egy homogén gömbével. Ez is a szimmetria és a speciálisan megválasztott forgástengely következménye. Ha ezeket észrevesszük az elején, akkor egy kis indoklással egy sor integrálás nélkül is megadhatjuk az eredményt. 
+
+\fi

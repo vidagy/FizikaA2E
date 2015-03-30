@@ -1,0 +1,78 @@
+\begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                    seged/.style={dashed,gray}
+]
+  
+ \fill[black!20]  (-0.8,-1.5) rectangle (0.8,1.5);
+ \draw[very thick] (2.2,-1.5) -- (2.2,1.5);
+ 
+ \draw[dashed] (-0.4,-1.3) rectangle (0.4,-0.4);
+ \draw[seged] (0,1.6) -- (0,-1.6);
+ \draw[|<->|] (-0.4,-1.7) -- node[below] {$h$} (0.4,-1.7);
+ \node[left] at (-0.4,-0.85) {$A$};
+ 
+ \draw[thick] (2.2,-0.7) to[out=-30,in=90] +(0.3,-0.6);
+ \draw[thick] (2.3,-0.7)++(0.05,-0.6) -- +(0.3,0);
+ \draw[thick] (2.3,-0.7)++(0.1,-0.65) -- +(0.2,0);
+ \draw[thick] (2.3,-0.7)++(0.15,-0.7) -- +(0.1,0);
+ 
+ \draw[|<->|] ( 0.8,-1.6) -- node[below] {$d$} (2.2,-1.6);
+ \draw[|<->|] (-0.8, 1.6) -- node[above] {$a$} (0.8, 1.6);
+ 
+ \node at (0.3,1) {$\ep_\text{r}$};
+ \node at (0.3,0.2) {$\rho$};
+
+ % plots
+ 
+ \begin{scope}[yshift=-3.5cm]
+  \draw[seged] (-0.8,-0.8) -- (-0.8,0.8);
+  \draw[seged] ( 0.8,-0.8) -- ( 0.8,0.8);
+  \draw[seged] ( 2.2,-0.8) -- ( 2.2,0.8);
+  \draw[->,>=latex] (-1.4,0) -- (3,0) node[below] {$x$}; 
+  \draw[->,>=latex] (0,-0.8) -- (0,0.8) node[left] {$D_\text{diel}(x)$};
+  
+  \draw[domain=-1.3:-0.8,color=blue,thick] plot (\x,{-0.4});
+  \draw[domain=-0.8: 0.8,color=blue,thick] plot (\x,{0.4/0.8*\x});
+  \draw[domain= 0.8: 2.2,color=blue,thick] plot (\x,{0.4});
+  \draw[domain= 2.2: 2.7,color=blue,thick] plot (\x,{0.4});
+ \end{scope}
+ 
+ \begin{scope}[yshift=-5.2cm]
+  \draw[seged] (-0.8,-0.8) -- (-0.8,0.8);
+  \draw[seged] ( 0.8,-0.8) -- ( 0.8,0.8);
+  \draw[seged] ( 2.2,-0.8) -- ( 2.2,0.8);
+  \draw[->,>=latex] (-1.4,0) -- (3,0) node[below] {$x$}; 
+  \draw[->,>=latex] (0,-0.8) -- (0,0.8) node[left] {$D_\text{lap}(x)$};
+  
+  \draw[domain=-1.3:-0.8,color=blue,thick] plot (\x,{ 0.4});
+  \draw[domain=-0.8: 0.8,color=blue,thick] plot (\x,{ 0.4});
+  \draw[domain= 0.8: 2.2,color=blue,thick] plot (\x,{ 0.4});
+  \draw[domain= 2.2: 2.7,color=blue,thick] plot (\x,{-0.4});
+ \end{scope}
+ 
+ \begin{scope}[yshift=-6.9cm]
+  \draw[seged] (-0.8,-0.8) -- (-0.8,0.8);
+  \draw[seged] ( 0.8,-0.8) -- ( 0.8,0.8);
+  \draw[seged] ( 2.2,-0.8) -- ( 2.2,0.8);
+  \draw[->,>=latex] (-1.4,0) -- (3,0) node[below] {$x$}; 
+  \draw[->,>=latex] (0,-0.8) -- (0,0.8) node[left] {$D(x)$};
+  
+  \draw[domain=-1.3:-0.8,color=blue,thick] plot (\x,{0});
+  \draw[domain=-0.8: 0.8,color=blue,thick] plot (\x,{0.4/0.8*\x+0.4});
+  \draw[domain= 0.8: 2.2,color=blue,thick] plot (\x,{0.8});
+  \draw[domain= 2.2: 2.7,color=blue,thick] plot (\x,{0});
+ \end{scope}
+ 
+ \begin{scope}[yshift=-8.6cm]
+  \draw[seged] (-0.8,-0.8) node[below,black] {$-\frac{a}{2}$} -- (-0.8,0.8);
+  \draw[seged] ( 0.8,-0.8) node[below,black] {$\frac{a}{2}$} -- ( 0.8,0.8);
+  \draw[seged] ( 2.2,-0.8) node[below,black] {$\frac{a}{2}+d$} -- ( 2.2,0.8);
+  \draw[->,>=latex] (-1.4,0) -- (3,0) node[below] {$x$}; 
+  \draw[->,>=latex] (0,-0.8) -- (0,0.8) node[left] {$E(x)$};
+  
+  \draw[domain=-1.3:-0.8,color=blue,thick] plot (\x,{0});
+  \draw[domain=-0.8: 0.8,color=blue,thick] plot (\x,{(0.4/0.8*\x+0.4)/1.5});
+  \draw[domain= 0.8: 2.2,color=blue,thick] plot (\x,{0.8});
+  \draw[domain= 2.2: 2.7,color=blue,thick] plot (\x,{0});
+ \end{scope}
+ 
+\end{tikzpicture} 

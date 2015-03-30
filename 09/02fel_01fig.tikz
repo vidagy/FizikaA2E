@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+
+ \ifdefined\megoldas
+  \draw[thick,->,>=latex,darkgreen] (0.4,1.4) to[out=40,in=-20,looseness=5] node[pos=0.8,above] {$\tilde I_1$} (0.4,0.4) ;
+  \draw[thick,->,>=latex,darkgreen] (2.4,1.4) to[out=40,in=-20,looseness=5] node[pos=0.8,above] {$\tilde I_2$} (2.4,0.4) ;
+  \draw[thick,->,>=latex,darkgreen] (4.4,1.4) to[out=40,in=-20,looseness=5] node[pos=0.8,above] {$\tilde I_3$} (4.4,0.4) ;
+ \fi
+  
+ \draw (0,0) -- (6,0);
+ \ellenallas{(2,0)}{(2,2)}{\scriptsize $10\,\Omega$}{(0.65,0.0)}
+ \ellenallas{(4,0)}{(4,2)}{\scriptsize $4\,\Omega$}{(0.55,0.0)}
+ \ellenallas{(0,2)}{(2,2)}{\scriptsize $2\,\Omega$}{(0.0,0.45)}
+ \ellenallas{(2,2)}{(4,2)}{\scriptsize $9\,\Omega$}{(0.0,0.45)}
+ \ellenallas{(4,2)}{(6,2)}{\scriptsize $8\,\Omega$}{(0.0,0.45)}
+ \telep{(0,0)}{(0,2)}{\scriptsize 40\,V}{(0.3,-0.4)}
+ \aramgenerator{(6,0)}{(6,2)}{\scriptsize 1\,A}{(0.45,0)}
+ 
+ \draw[thick,->,>=latex,darkgreen] (1.7,1.2) -- node[left] {\scriptsize $I_1$} (1.7,1.8);
+\end{tikzpicture}
+ 

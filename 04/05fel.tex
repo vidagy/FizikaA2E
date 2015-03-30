@@ -1,0 +1,61 @@
+\feladat{5}{
+ Két koaxiális, igen hosszú fémhenger sugarai $R_{1} = 2$\,cm és $R_{3} = 8$\,cm. A közöttük lévő teret kétféle szigetelő anyag tölti ki úgy, hogy a határfelület a fémhengerekkel koaxiális, $R_{2} = 4$\,cm sugarú hengerfelület. A belső szigetelő relatív permittivitása $\varepsilon_{1r}=5$, a külsőé $\varepsilon_{2r}=2$. A belső fémhengeren $\sigma=4\cdot10^{-10}$\,C/cm$^{2}$ felületi töltéssűrűség van. Mekkora az elektromos eltolás vektorának maximális értéke? Mekkora a maximális térerősség?
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A megoldáshoz szintén a Gauss-törvényt fogjuk használni. Most nem vezetjük végig az előző feladatban részletesen bemutatott gondolatmenetet, de itt is hasonlóan kell eljárnunk. Értelemszerűen ez feladat hengerszimmetrikus. Itt a dielektromos eltolás mindenhol a hengerek tengelyére merőleges és attól elfelé mutat. A megfelelő Gauss-felület itt egy henger lesz, melynek sugara négy tartományra eshet:
+  
+ \begin{description}
+  \item[$r<R_1$:] 
+   Itt a $D(r)=0$. 
+  \item[$R_1<r<R_2$:] 
+   Legyen $l$ hosszú a Gauss-henger. Ez a felső hengernek $A=2\pi R_1\cdot l$ nagyságú felületét tartalmazza, vagyis $Q_\text{in}=\sigma\cdot A=\sigma 2\pi R_1 l$. A $\Dv$ felületi integrálja:
+   \al{
+    \iint\limits_{\text{henger}}\Dv(\rv)\,\dd^2\fv
+     &=\iint\limits_{\text{hengerpalást}}\Dv(\rv)\,\dd^2\fv
+      +2\iint\limits_{\text{alaplap}}\Dv(\rv)\,\dd^2\fv\;,
+   }
+   ahol az alaplapra vett integrál nulla, hiszen ott a felületvektor merőleges a $\Dv$-re, így
+   \al{
+    \iint\limits_{\text{henger}}\Dv(\rv)\,\dd^2\fv
+     &=\iint\limits_{\text{hengerpalást}}\Dv(\rv)\,\dd^2\fv
+      =\iint\limits_{\text{hengerpalást}} D(r)\,\dd^2 f\\
+     &= D(r)\iint\limits_{\text{hengerpalást}}\,\dd^2 f
+      = D(r)2\pi r l\;,
+   }
+   vagyis
+   \al{
+    D(r)=\sigma\frac{R_1}{r}\;.
+   }
+   \marginfigure{05fel_01fig}
+  \item[$R_2<r<R_3$:] 
+   Mivel ezen a tartományon is ugyanannyi töltést tartalmaz a Gauss-felület, így a megoldás itt ugyanaz, mint az $R_1<r<R_2$ tartományon. 
+   
+  \item[$R_3<r$:] 
+   A földelés miatt a külső fémhengeren negatív töltések halmozódnak fel. A felhalmozódott töltés mennyisége ugyanakkora lesz, mint a belső hengeren (emiatt persze a töltéssűrűség nem lesz ugyanakkora). Így összességében a Gauss-felületen belül az össztöltés nulla lesz, tehát $D(r)=0$-t kapunk.
+ \end{description}
+  
+ Összefoglalva:
+ \al{
+  D(x)=
+   \begin{cases}
+     0 & r<R_1 \\
+     \sigma\frac{R_1}{r} & R_1<r<R_3 \\
+     0 & R_3<r
+   \end{cases}
+ }
+ ahonnan
+ \al{
+  E(x)=\frac{D(x)}{\ep_0\ep_\text{r}(x)}=
+   \begin{cases}
+     0 & r<R_1 \\
+     \frac{\sigma}{\ep_0\ep_1}\frac{R_1}{r} & R_1<r<R_2 \\
+     \frac{\sigma}{\ep_0\ep_2}\frac{R_1}{r} & R_2<r<R_3 \\
+     0 & R_3<r
+   \end{cases}
+ }
+
+\fi

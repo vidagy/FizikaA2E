@@ -1,0 +1,23 @@
+\feladat{5}{
+ Legyen a térfogati töltéssűrűség olyan, hogy az csak a $z$ tengelytől mért távolság függvénye, azaz $\varrho(x,y,z)=f\big(\sqrt{x^2+y^2}\big)$ valamilyen $f$ függvényre. Adjuk meg a potenciált a tér minden pontjában.
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A megoldás menete nagyon hasonló az előző feladat megoldásához. Itt is emlékezzünk vissza a 3.~feladatsor 7.~feladatának eredményére:
+ \al{ 
+  \Ev(\rv) = \frac{1}{\ep_0}\frac{1}{r}\intl{0}{r}r'\varrho(r')\,\dd r'\cdot \ev_r\;.
+ }
+
+ A potenciált itt is definíció szerint számoljuk. A potenciál nullpontját a forgástengely mentén ($r=0$) rögzítjük, és a szimmetria miatt sugárirányban integrálunk:
+ \al{ 
+  U(r)
+   &= \underbrace{U(0)}_{=0}-\intl{0}{r}\Ev(\rv')\,\dd\rv'
+    =-\intl{0}{r}\frac{1}{\ep_0}\frac{1}{r'}\intl{0}{r'}r''\varrho(r'')\,\dd r''\cdot\underbrace{(\ev_r\cdot\ev_r)}_{=1}\,\dd r'\nonumber
+  \\
+   &=-\frac{1}{\ep_0}\intl{0}{r}\frac{1}{r'}\intl{0}{r'}r''\varrho(r'')\,\dd r''\,\dd r'\;.
+ }
+ 
+\fi

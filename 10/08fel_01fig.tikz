@@ -1,0 +1,48 @@
+\begin{tikzpicture}
+ % vezetők
+ \draw[thick] (0,0) -- (0,6);
+ \draw[thick] (1,0.75) rectangle +(1.5,4.5);
+ \node[draw,circle,inner sep=0pt] at (2,5.0) {$1$};
+ \node[draw,circle,inner sep=0pt] at (2.25,1.75) {$2$};
+ \node[draw,circle,inner sep=0pt] at (1.5,1.0) {$3$};
+ \node[draw,circle,inner sep=0pt] at (1.25,4.25) {$4$};
+ 
+ % áramok
+ \draw[darkgreen,->,>=latex,thick] (-0.4,3.5) -- node[left] {$I_1$} +(0,0.7);
+ \draw[darkgreen,->,>=latex,thick] (2.5,5.25)++(-0.3,0.3) to[out=0,in=90,looseness=1.4] node[above right] {$I_2$} +(0.6,-0.6);
+ 
+ % távolságok
+ \draw[|<->|,>=latex,gray] (0,0.3) -- node[below] {$c$} +(1,0);
+ \draw[|<->|,>=latex,gray] (1,-0.1) -- node[below] {$a$} +(1.5,0);
+ \draw[|<->|,>=latex,gray] (3.3,0.75) -- node[right] {$b$} +(0,4.5);
+ 
+ %BIF bal
+ \coordinate (A) at (0.85,2.7);
+ \draw[thick,darkgreen,->,>=latex] (A) -- node[left] {$I_2$} +(0,0.5);
+ \draw[thick,red!40!orange!60,->,>=latex] (A) -- +(-0.6,0) node[below] {$\Fv_4$};
+ \node[circle,fill=white,inner sep=-1pt] at (A) {\scriptsize \color{orange} $\boldsymbol\otimes$};
+ \node[below=2pt] at (A) {\color{orange} $\Bv$};
+ 
+ %BIF jobb
+ \coordinate (A) at (2.65,2.7);
+ \draw[thick,darkgreen,->,>=latex] (A) -- node[below right] {$I_2$} +(0,-0.5);
+ \draw[thick,red!40!orange!60,->,>=latex] (A) -- +(0.4,0) node[above] {$\Fv_2$};
+ \node[circle,fill=white,inner sep=-1pt] at (A) {\scriptsize \color{orange} $\boldsymbol\otimes$};
+ \node[above=2pt] at (A) {\color{orange} $\Bv$};
+ 
+ %BIF fent
+ \coordinate (A) at (1.3,5.4);
+ \draw[thick,darkgreen,->,>=latex] (A) -- +(0.5,0) node[above] {$I_2$};
+ \draw[thick,red!40!orange!60,->,>=latex] (A) -- +(0,0.5) node[left] {$\Fv_1$};
+ \node[circle,fill=white,inner sep=-1pt] at (A) {\scriptsize \color{orange} $\boldsymbol\otimes$};
+ \node[left=2pt] at (A) {\color{orange} $\Bv$};
+ 
+ %BIF lent
+ \coordinate (A) at (1.8,0.6);
+ \draw[thick,darkgreen,->,>=latex] (A) -- +(-0.5,0) node[below] {$I_2$};
+ \draw[thick,red!40!orange!60,->,>=latex] (A) -- +(0,-0.5) node[right] {$\Fv_3$};
+ \node[circle,fill=white,inner sep=-1pt] at (A) {\scriptsize \color{orange} $\boldsymbol\otimes$};
+ \node[right=2pt] at (A) {\color{orange} $\Bv$};
+ 
+ \draw [thick,red!40!orange!60,->,>=latex] (1.9,3) -- node[below] {$\Fv_\text{e}$} +(-0.3,0);
+\end{tikzpicture} 

@@ -1,0 +1,530 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fonts 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hungarian related setings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[magyar]{babel}
+\frenchspacing
+\usepackage{icomma}
+\usepackage{indentfirst}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematics related packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{xfrac}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% page layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{fullpage}
+\usepackage[top=1.5cm,bottom=2.2cm,inner=1.5cm,outer=6.75cm,marginparwidth=5.5cm,marginparsep=0.25cm,headheight=24pt,headsep=12pt]{geometry}
+
+\usepackage{fancyhdr}
+\fancypagestyle{cimlap}{
+ \fancyhf{}
+ \cfoot{\thepage}
+ \renewcommand{\headrulewidth}{0pt}
+}
+
+\ifdefined\megoldas
+
+ \fancypagestyle{tobbioldal}{
+  \fancyhf{}
+ %  \renewcommand{\headrulewidth}{0.5pt}
+  \fancyhead[RE,LO]{\TITLE{} -- megoldások}
+  \cfoot{\thepage}
+ }
+ 
+ \pagestyle{tobbioldal}
+ 
+\fi
+
+\usepackage{eso-pic}
+
+% \ifdefined\megoldas
+ \newcommand{\gradientbox}[3]{%
+   \begin{tikzpicture}
+     \node[left color=#1,right color=#2] {#3};
+   \end{tikzpicture}%
+ }
+ \AddToShipoutPicture*{%
+   \AtPageLowerLeft{%
+     \rotatebox{90}{
+       \gradientbox{white!90!green}{green!60!black!20}{%
+         \begin{minipage}{\paperheight}%
+           \hspace*{ \stretch{1} }Utolsó módosítás: \today, \currenttime
+           \hspace*{ \stretch{1} }
+         \end{minipage}%
+       }
+     }%
+   }%
+ }
+% \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% other packages 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{datetime}
+\usepackage{url}
+\usepackage{array}
+\usepackage{ifthen}
+\usepackage{calc}
+\usepackage{multirow}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Graphics settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}
+\usepackage[hypcap=false]{caption}
+\usepackage{marginnote}
+\usepackage{marginfix}
+% \usepackage{wrapfig}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TikZ related packages 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{scopes,arrows,shadings}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections}
+\usetikzlibrary{circuits.ee.IEC}
+\usepackage{tikz-3dplot}
+\usepackage{tikzscale}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TikZ related settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tikzset{line cap=rect}
+\tikzset{
+ vektor/.style={
+  ->,>=latex,thick
+ };
+ %
+ tavolsag/.style={
+  |<->|,gray
+ };
+ %
+ szog/.style={
+  <->,gray
+ };
+ %
+ seged/.style={
+  gray,dashed
+ };
+}
+
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\definecolor{lightblue}{rgb}{0.28,0.76,0.83}
+
+\tikzset{
+ aram/.style={vektor,darkgreen};
+ %
+ tererosseg/.style={vektor,blue};
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paragraph layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\allowdisplaybreaks[4]
+\widowpenalty 10000
+\clubpenalty 10000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DEFINE: \feladat 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\feladat}[4]{
+ \setcounter{section}{#1}
+ \setcounter{equation}{0}
+ \setcounter{figure}{0}
+ 
+ \def\temp{#3}\ifx\temp\empty
+ \else
+  \ifdefined\megoldas
+   \marginfigure{#3}
+  \else
+   \def\temp{#4}\ifx\temp\empty
+   \else
+    \marginfigure{#3}
+   \fi
+  \fi
+ \fi
+ \noindent
+ \begin{center}
+   \begin{tikzpicture}
+     \node[
+       rectangle,
+       rounded corners=3mm,
+       inner sep=8pt,
+       very thick,
+       draw=green!50!black!50,
+       bottom color=white!90!green!10,
+       top color=green!60!black!20,
+       text width=0.95\textwidth,
+       align=justify] {\noindent\makebox[2.0cm]{\textbf{#1. feladat:}} #2};
+   \end{tikzpicture}
+ \end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DEFINE: \marginfigure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\marginfigure}[2][]{
+ \marginpar{
+  \includegraphics[width=5.5cm]{#2}
+  \captionof{figure}{#1}
+ }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Numbering
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\arabic{section}-\arabic{equation}}
+\numberwithin{figure}{section}
+\renewcommand{\thefigure}{\arabic{section}-\Alph{figure}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% referencing
+\newcommand{\eqaref}[1]{\az+\eqref{#1}}
+\newcommand{\Eqaref}[1]{\Az+\eqref{#1}}
+\newcommand{\me}[1]{\mathrm{\, #1}}
+
+% mathematical operators
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\mbf}{\mathbf}
+\newcommand{\tg}{\mathop{\mathrm{tg}}\nolimits}
+\newcommand{\ctg}{\mathop{\mathrm{ctg}}\nolimits}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\newcommand{\arctg}{\mathop{\mathrm{arctg}}\nolimits}
+\newcommand{\tr}{\mathop{\mathrm{Tr}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\newcommand{\tgh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\ctgh}{\mathop{\mathrm{cth}}\nolimits}
+\newcommand{\arcth}{\mathop{\mathrm{arcth}}\nolimits}
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}\nolimits}
+\newcommand{\intdom}{\mathop{\mathrm{int}}\nolimits}
+
+\newcommand{\grad}{\mathop{\vects{\nabla}}\nolimits}
+\newcommand{\divo}{\mathop{\vects{\nabla}}\nolimits}
+\newcommand{\rot}{\mathop{\vects{\nabla}\times}\nolimits}
+
+\newcommand{\Lin}{\mathop{\mathrm{Lin}}\nolimits}
+\newcommand{\T}{\mathop{\mathrm{T}}\nolimits}
+
+% brackets
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\mv}[1]{\left\langle#1\right\rangle}
+
+% equation environments
+\newcommand{\eq}[1]{\begin{equation} #1 \end{equation}}
+\newcommand{\eqn}[1]{\begin{equation} #1 \end{equation}}
+\newcommand{\al}[1]{\begin{align} #1 \end{align}}
+\newcommand{\aln}[1]{\begin{align} #1 \end{align}}
+
+% short notations
+\newcommand{\der}[2]{\frac{\dd #1}{\dd #2}}
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\suml}[2]{\sum\limits_{#1}^{#2}}
+\newcommand{\prodl}[2]{\prod\limits_{#1}^{#2}}
+\newcommand{\intl}[2]{\int\limits_{#1}^{#2}}
+\newcommand{\ointl}[2]{\oint\limits_{#1}^{#2}}
+
+% differentials
+\newcommand{\drh}{\dd^3\vect{r}\,}
+\newcommand{\drkh}{\dd^3\vect{r'}\,}
+\newcommand{\df}{\dd^2\vect{f}\,}
+\newcommand{\ds}{\dd^2\vect{s}\,}
+\newcommand{\ddt}{\dd t\,}
+\newcommand{\drv}{\dd \rv\,}
+
+\newcommand{\dtr}{\dot{\vect{r}}}
+\newcommand{\ddtr}{\ddot{\vect{r}}}
+
+% vectors
+\newcommand{\Av}{\vect{A}}
+\newcommand{\av}{\vect{a}}
+\newcommand{\Bv}{\vect{B}}
+\newcommand{\bv}{\vect{b}}
+\newcommand{\cv}{\vect{c}}
+\newcommand{\Cv}{\vect{C}}
+\newcommand{\dv}{\vect{d}}
+\newcommand{\Dv}{\vect{D}}
+\newcommand{\ev}{\vect{e}}
+\newcommand{\Ev}{\vect{E}}
+\newcommand{\fv}{\vect{f}}
+\newcommand{\Fv}{\vect{F}}
+\newcommand{\gv}{\vect{g}}
+\newcommand{\Gv}{\vect{G}}
+\newcommand{\hv}{\vect{h}}
+\newcommand{\Hv}{\vect{H}}
+\newcommand{\iv}{\vect{i}}
+\newcommand{\Iv}{\vect{I}}
+\newcommand{\jv}{\vect{j}}
+\newcommand{\Jv}{\vect{J}}
+\newcommand{\kv}{\vect{k}}
+\newcommand{\Kv}{\vect{K}}
+\newcommand{\lv}{\vect{l}}
+\newcommand{\Lv}{\vect{L}}
+\newcommand{\Mv}{\vect{M}}
+\newcommand{\emv}{\vect{m}}
+\newcommand{\nv}{\vect{n}}
+\newcommand{\Nv}{\vect{N}}
+\newcommand{\ov}{\vect{o}}
+\newcommand{\Ov}{\vect{O}}
+\newcommand{\pv}{\vect{p}}
+\newcommand{\Pv}{\vect{P}}
+\newcommand{\qv}{\vect{q}}
+\newcommand{\Qv}{\vect{Q}}
+\newcommand{\rv}{\vect{r}}
+\newcommand{\Rv}{\vect{R}}
+\newcommand{\sv}{\vect{s}}
+\newcommand{\Sv}{\vect{S}}
+\newcommand{\tv}{\vect{t}}
+\newcommand{\Tv}{\vect{T}}
+\newcommand{\uv}{\vect{u}}
+\newcommand{\Uv}{\vect{U}}
+\newcommand{\vv}{\vect{v}}
+\newcommand{\Vv}{\vect{V}}
+\newcommand{\wv}{\vect{w}}
+\newcommand{\Wv}{\vect{W}}
+\newcommand{\xv}{\vect{x}}
+\newcommand{\Xv}{\vect{X}}
+\newcommand{\yv}{\vect{y}}
+\newcommand{\Yv}{\vect{Y}}
+\newcommand{\zv}{\vect{z}}
+\newcommand{\Zv}{\vect{Z}}
+
+% vector symbols
+\newcommand{\alv}{\vects{\alpha}}
+\newcommand{\betav}{\vects{\beta}}
+\newcommand{\gammav}{\vects{\gamma}}
+\newcommand{\muv}{\vects{\mu}}
+\newcommand{\Piv}{\vects{\Pi}}
+\newcommand{\sigv}{\vects{\sigma}}
+\newcommand{\omv}{\vects{\omega}}
+
+% vector and operator styles
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vects}[1]{\boldsymbol{#1}}
+\newcommand{\mat}[1]{\underline{\underline{#1}}}
+
+% short motations for constants
+\newcommand{\TC}{T_\text{C}}
+\newcommand{\kB}{k_\text{B}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% hyperref
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+\hypersetup{
+%     bookmarks=true,         % show bookmarks bar?
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+%     pdftoolbar=false,        % show Acrobat’s toolbar?
+%     pdfmenubar=true,        % show Acrobat’s menu?
+%     pdffitwindow=false,     % window fit to page when opened
+%     pdfstartview={FitH},    % fits the width of the page to the window
+%     pdfcenterwindow={true}
+%     pdfdisplaydoctitle={true}
+    pdftitle={Fizika A2E, \feladatsorszam. feladatsor},    % title
+    pdfauthor={Vida Gy\"orgy J\'ozsef},     % author
+%     pdfsubject={},   % subject of the document
+    pdfcreator={PDFLaTeX},   % creator of the document
+% %     pdfproducer={Producer}, % producer of the document
+% %     pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+%     pdfnewwindow=true,      % links in new window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+    linktoc=all
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TikZ áramkörök
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ellenállás 
+
+\newcommand{\ellenallas}[4]{
+ \coordinate (centr) at ($ #1!0.5!#2 $);
+ \coordinate (a) at ($ (centr)!0.5cm!#1 $);
+ \coordinate (b) at ($ (centr)!0.5cm!#2 $);
+ 
+ \coordinate (c) at ($ (a)!0.15cm!90:(b) $);
+ \coordinate (d) at ($ (a)!0.15cm!270:(b) $);
+ \coordinate (e) at ($ (b)!0.15cm!90:(a) $);
+ \coordinate (f) at ($ (b)!0.15cm!270:(a) $);
+ 
+ \draw (c) -- (d) -- (e) -- (f) -- cycle;
+ \draw (centr)++#4 node {#3};
+ \draw #1 -- (a);
+ \draw #2 -- (b);
+}
+
+% tekercs 
+
+\newcommand{\tekercs}[4]{
+ \coordinate (centr) at ($ #1!0.5!#2 $);
+ \coordinate (a) at ($ (centr)!0.5cm!#1 $);
+ \coordinate (b) at ($ (centr)!0.5cm!#2 $);
+ 
+ \draw[decorate,decoration={coil,segment length=6pt,aspect=0.36,amplitude=6pt}] (a) -- (b);
+ \draw (centr)++#4 node {#3};
+ \draw #1 -- (a);
+ \draw #2 -- (b);
+}
+
+% telep
+
+\newcommand{\telep}[4]{
+ \coordinate (centr) at ($ #1!0.5!#2 $);
+ \coordinate (a) at ($ (centr)!0.05cm!#1 $);
+ \coordinate (b) at ($ (centr)!0.05cm!#2 $);
+ 
+ \coordinate (c) at ($ (a)!0.1cm!90:(b) $);
+ \coordinate (d) at ($ (a)!0.1cm!270:(b) $);
+ \coordinate (e) at ($ (b)!0.3cm!90:(a) $);
+ \coordinate (f) at ($ (b)!0.3cm!270:(a) $);
+ 
+ \draw[ultra thick] (c) -- (d);
+ \draw[thin] (e) -- (f) ;
+ \draw (e)++#4 node {#3};
+ \draw #1 -- (a);
+ \draw #2 -- (b);
+}
+
+% kondenzátor
+
+\newcommand{\kapacitas}[4]{
+ \coordinate (centr) at ($ #1!0.5!#2 $);
+ \coordinate (a) at ($ (centr)!0.1cm!#1 $);
+ \coordinate (b) at ($ (centr)!0.1cm!#2 $);
+ 
+ \coordinate (c) at ($ (a)!0.3cm!90:(b) $);
+ \coordinate (d) at ($ (a)!0.3cm!270:(b) $);
+ \coordinate (e) at ($ (b)!0.3cm!90:(a) $);
+ \coordinate (f) at ($ (b)!0.3cm!270:(a) $);
+ 
+ \draw (c) -- (d);
+ \draw (e) -- (f) ;
+ \draw (e)++#4 node {#3};
+ \draw #1 -- (a);
+ \draw #2 -- (b);
+}
+
+%kapcsoló
+
+\newcommand{\kapcsolo}[4]{
+ \coordinate (centr) at ($ #1!0.5!#2 $);
+ \coordinate (a) at ($ (centr)!0.2cm!#1 $);
+ \coordinate (b) at ($ (centr)!0.2cm!#2 $);
+ 
+ \coordinate (c) at ($ (a)!0.1!110:(b) $);
+ \coordinate (d) at ($ (a)!1!30:(b) $);
+ 
+ \draw (c) -- (d);
+ \draw (centr)++#4 node {#3};
+ \draw #1 -- (a);
+ \draw #2 -- (b);
+ 
+ \filldraw[fill=white,draw=black] (a) circle (0.05);
+ \filldraw[fill=white,draw=black] (b) circle (0.05);
+}
+
+%áramgenerátor 
+
+\newcommand{\aramgenerator}[4]{
+ \coordinate (centr) at ($ #1!0.5!#2 $);
+ \coordinate (a) at ($ (centr)!0.3cm!#1 $);
+ \coordinate (b) at ($ (centr)!0.3cm!#2 $);
+ 
+ \coordinate (c) at ($ (a)!0.4cm!270:(b) $);
+ \coordinate (d) at ($ (b)!0.4cm!90:(a) $);
+ \coordinate (e) at ($ (c)!0.5!(d) $);
+ \coordinate (f) at ($ (centr)!0.3cm!270:(b) $);
+ \coordinate (g) at ($ (centr)!0.3cm!90:(b) $);
+ 
+ \draw #1 -- #2;
+ \draw[fill=white] (centr) circle (0.3);
+ \draw[darkgreen,thick,->,>=latex] (c) -- (d);
+ \draw[thick] (f) -- (g);
+ \draw (e)++#4 node {#3};
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               Redefinitions for non megoldás                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifdefined\megoldas
+\else
+
+ \newgeometry{top=1.25cm, bottom=2.2cm, inner=1.25cm, outer=1.25cm, marginparwidth=0cm,marginparsep=0cm}
+ \savegeometry{fsgeometry}
+ 
+ \renewcommand{\feladat}[4]{
+  \setcounter{section}{#1}
+  \setcounter{equation}{0}
+  \setcounter{figure}{0}
+  
+  \def\temp{#3}\ifx\temp\empty
+  \else
+   \ifdefined\megoldas
+    \marginfigure{#3}
+   \else
+    \def\temp{#4}\ifx\temp\empty
+    \else
+     \marginfigure{#3}
+    \fi
+   \fi
+  \fi
+  
+  \noindent\makebox[2.0cm]{\textbf{#1. feladat:}}
+  #2
+  \vspace*{6pt}
+ }
+ 
+ \setlength{\marginparsep}{-5.5cm}
+ \setlength{\marginparwidth}{5.5cm}
+ \renewcommand{\thefigure}{\arabic{section}}
+ \addto\captionsmagyar{\renewcommand{\figurename}{feladat}}
+
+\fi
+

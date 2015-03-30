@@ -1,0 +1,36 @@
+\feladat{2}{
+ Határozzuk meg az ábrán látható kapcsolásban az $I_{1}$ áram értékét a hurokáramok módszerével!
+}{02fel_01fig}{1}
+
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ Az áramgenerátor az áram nagyságának értékét rögzíti, így azt tudjuk azonnal, hogy $\tilde I_3=-1\me{A}$. A másik két hurokra a huroktörvény:
+ \al{
+  0 &= -40\me{V} + \tilde I_1\cdot 2\me{\Omega} + (\tilde I_1-\tilde I_2)\cdot 10\me{\Omega}
+  \\
+  0 &= (\tilde I_2-\tilde I_1)\cdot 10\me{\Omega} + \tilde I_2\cdot 9\me{\Omega} + \big(\tilde I_2 - (-1\me{A})\big)\cdot 4\me{\Omega}\;.
+ }
+
+ Itt szintén az első egyenletből kifejezzük az egyik változót:
+ \al{
+  \tilde I_2 = -4\me{A} + 1,2\cdot \tilde I_1 \;.
+ }
+ majd azt behelyettesítjük a második egyenletbe
+ \al{
+  0 &= \tilde I_2\cdot 23\me{\Omega} - \tilde I_1\cdot 10\me{\Omega} + 4\me{V}
+  \\
+    &= \big( -4\me{A} + 1,2\cdot \tilde I_1\big)\cdot 23\me{\Omega} - \tilde I_1\cdot 10\me{\Omega} + 4\me{V}
+  \\
+    &=-88\me{V}+\tilde I_1\cdot17,6\me{\Omega}
+  \\
+   \tilde I_1 &= 5\me{A}\;.
+ }
+ Ezt visszahelyettesítve:
+ \al{
+  \tilde I_2 = -4\me{A} + 1,2\cdot 5\me{A}=2\me{A} \;,
+ }
+ vagyis az eredetileg kérdezett $I_1$ áram értéke $-5\me{A}$.
+
+\fi

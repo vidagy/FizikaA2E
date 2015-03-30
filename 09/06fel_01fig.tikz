@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+ \draw (0,0) -- (4,0);
+ 
+ \telep{(0,0)}{(0,2)}{12\,V}{(0.1,0.2)}
+ \ellenallas{(2,0)}{(2,2)}{$2\,\Omega$}{(0.4,0.0)}
+ \telep{(4,0)}{(4,2)}{20\,V}{(0.1,0.2)}
+ 
+ \ellenallas{(0,2)}{(2,2)}{$6\,\Omega$}{(0.0,0.3)}
+ \ellenallas{(2,2)}{(4,2)}{$5\,\Omega$}{(0.0,0.3)}
+ 
+ \ellenallas{(0,3)}{(4,3)}{$8\,\Omega$}{(0.0,0.3)}
+ 
+ \draw (0,2) -- (0,3);
+ \draw (4,2) -- (4,3);
+ 
+ \draw[darkgreen,->,>=latex,thick] (1.7,1.8) -- node[left] {\scriptsize $I_1$} (1.7,1.2);
+ 
+\end{tikzpicture}
+ 

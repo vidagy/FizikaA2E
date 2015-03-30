@@ -1,0 +1,61 @@
+\feladat{8}{
+ $R = 1$\,cm sugarú végtelen hosszú körhenger homogén, $\varepsilon_{r}=5$ relatív permittivitású anyagból készült. A hengeren belül $\varrho=5/3\cdot10^{-3}\me{C/m}^{3}$ tértöltés, a hengeren kívül vákuum van. Mekkora a térerősség a tengelytől 0,5\,cm és 1,5\,cm távolságban?
+}{}{}
+
+\ifdefined\megoldas
+ \marginfigure{08fel_01fig}
+ 
+ Megoldás: 
+
+ Az 5.~feladathoz hasonlóan itt is hengerszimmetrikus problémánk van.  A megfelelő Gauss-felület egy $l$ hosszú, a szigetelő hengerrel koaxiális henger alakú felület lesz. A henger sugara két tartományra eshet:
+ \begin{description}
+  \item [$r<R$:]
+   Itt a Gauss-törvény egyik és másik oldala
+   \al{
+    \iiint\limits_\text{henger}\varrho(\rv)\,\dd^3\rv
+     &=\iiint\limits_\text{henger}\varrho\,\dd^3\rv
+      =\varrho\iiint\limits_\text{henger}\,\dd^3\rv
+      =\varrho r^2\pi l\;,\\
+    \iint\limits_\text{henger}\Dv(\rv)\,\dd^2\fv
+     &=\iint\limits_\text{palást}\Dv(\rv)\,\dd^2\fv
+      +2\underbrace{\iint\limits_\text{alaplap}\Dv(\rv)\,\dd^2\fv}_{=0}
+      =\iint\limits_\text{henger}D(r)\,\dd^2 f\\
+     &=D(r)\iint\limits_\text{henger}\,\dd^2 f
+      =D(r)2r\pi l\;,
+   }
+   vagyis:
+   \al{
+    D(r)=\frac{\varrho}{2}r\;.
+   }
+   
+  \item [$R<r$:]
+   Ezen a tartományon a Gauss-felület az egész szigetelő hengert tartalmazza, vagyis $Q_\text{in}=\varrho \cdot R^2\pi l$. A felületi integrál az előző tartományhoz hasonlóan számítható, így
+   \al{
+    D(r)2r\pi l\
+     &=\varrho\cdot R^2\pi l\\
+    D(r)
+     &=\frac{\varrho}{2}\frac{R^2}{r}\;.
+   }
+   
+ \end{description}
+
+ Összegfoglalva:
+ \al{
+  D(x)=
+   \begin{cases}
+     \frac{\varrho}{2}r & r<R \\
+     \frac{\varrho}{2}\frac{R^2}{r} & R<r
+   \end{cases}
+ }
+ ahonnan
+ \al{
+  E(x)=\frac{D(x)}{\ep_0\ep_\text{r}(x)}=
+   \begin{cases}
+     \frac{\varrho}{2\ep_0\ep_\text{r}}r & r<R \\
+     \frac{\varrho}{2\ep_0}\frac{R^2}{r} & R<r
+   \end{cases}
+ }
+
+ A megfelelő sugárértékek behelyettesítésével megkapjuk a feladat kérdésére a közvetlen választ. 
+
+\fi

@@ -1,0 +1,39 @@
+\feladat{10}{
+ Egy $C_1$ kapacitású, $V$ feszültségre töltött kondenzátor egyik fegyverzetét egy $R$ ellenálláson keresztül egy másik, $C_2$ kapacitású töltetlen kondenzátor egyik fegyverzetére kötjük. A két kondenzátor szabad fegyverzeteit rövidre zárjuk.
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item A tranziensek lecsengése után mekkora feszültséget mérhetünk a kondenzátorokon?
+  \item Mekkora az állandósult állapotban a kondenzátorok teljesítménye?
+  \item Mekkora az állandósult állapotban a kondenzátorok energiája?
+ \end{enumerate}
+}{10fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item 
+   Legyen kezdetben $Q_1=C_1 V$ az 1. kondenzátoron a töltés. Az össztöltés megmarad, így az egyensúly beálltával is $Q_1=Q'_1+Q'_2$. Kirchhoff II.\! törvénye értelmében az egyensúlyban $V'_{\text{C},1}=V'_{\text{C},2}=V'$. Innen
+  \al{
+   C_1 V&=C_1 V'+C_2 V'\\
+   V'=\frac{C_1}{C_1+C_2}V\;.
+  }
+  
+  \item
+   Mivel áram nem folyik az állandósult állapotban, így a kondenzátorok teljesítménye nulla.
+
+  \item 
+   A kondenzátorok energiája:
+   \al{
+    E_1
+     &=\frac{1}{2}C_1V'^2
+      =\frac{1}{2}\frac{C_1^3}{(C_1+C_2)^2}V^2
+    \\
+    E_2
+     &=\frac{1}{2}C_2V'^2
+      =\frac{1}{2}\frac{C_2 C_1^2}{(C_1+C_2)^2}V^2\;.
+   }
+  
+ \end{enumerate}
+ 
+\fi

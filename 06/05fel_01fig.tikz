@@ -1,0 +1,77 @@
+\begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                    seged/.style={dashed,gray}
+]
+ \begin{scope}[scale=0.75]
+  \draw[fill,black!15,even odd rule] (0,0) circle (2) (0,0) circle (1);
+  \draw[fill,black!25,even odd rule] (0,0) circle (3) (0,0) circle (2);
+  \draw[->,>=latex] (0,0) -- node[below left=-3pt] {$R$} (-30:1);
+  \draw[->,>=latex] (0,0) -- (25:2) node[pos=0.8,above left=-2pt] {$2R$};
+  \draw[->,>=latex] (0,0) -- node[left=-2pt] {$3R$} (80:3);
+  \draw[thick] (0,0) circle (3);
+  \draw[dashed] (0,0) circle (2);
+  \draw[thick] (0,0) circle (1);
+  \draw (190:1.5) node {$\varepsilon_1$};
+  \draw (190:2.5) node {$\varepsilon_2$};
+  
+ \draw[thick] (-30:3) to[out=-30,in=90] +(0.2,-0.6);
+ \draw[thick] (-30:3)++(0.05,-0.6) -- +(0.3,0);
+ \draw[thick] (-30:3)++(0.1,-0.675) -- +(0.2,0);
+ \draw[thick] (-30:3)++(0.15,-0.75) -- +(0.1,0);
+ \end{scope}
+ 
+ % plots
+ 
+ \begin{scope}[yshift=-4cm,xshift=-1.5cm]
+  \draw[->,>=latex] (-.3,0) -- (4,0) node[below] {$r$}; 
+  \draw[->,>=latex] (0,-0.3) -- (0,1.3) node[left] {$\ep_\text{r}(r)$};
+  \draw[seged] (1.0,-0.3) -- (1.0,1.3);
+  \draw[seged] (2.0,-0.3) -- (2.0,1.3);
+  \draw[seged] (3.0,-0.3) -- (3.0,1.3);
+  
+%   \draw[domain= 0   : 1.0 ,color=blue,thick] plot (\x,{0});
+  \draw[domain= 1.0 : 2.0 ,color=blue,thick] plot (\x,{1.0});
+  \draw[domain= 2.0 : 3.0 ,color=blue,thick] plot (\x,{0.25});
+%   \draw[domain= 3.0 : 3.8 ,color=blue,thick] plot (\x,{0});
+ \end{scope}
+ 
+ \begin{scope}[yshift=-5.7cm,xshift=-1.5cm]
+  \draw[->,>=latex] (-.3,0) -- (4,0) node[below] {$r$}; 
+  \draw[->,>=latex] (0,-0.3) -- (0,1.3) node[left] {$D(r)$};
+  \draw[seged] (1.0,-0.3) -- (1.0,1.3);
+  \draw[seged] (2.0,-0.3) -- (2.0,1.3);
+  \draw[seged] (3.0,-0.3) -- (3.0,1.3);
+  
+  \draw[domain= 0   : 1.0 ,color=blue,thick] plot (\x,{0});
+  \draw[domain= 1.0 : 3.0 ,color=blue,thick] plot (\x,{1.0*pow(\x,-2)});
+  \draw[domain= 3.0 : 3.8 ,color=blue,thick] plot (\x,{0});
+ \end{scope}
+ 
+ \begin{scope}[yshift=-7.4cm,xshift=-1.5cm]
+  \draw[->,>=latex] (-.3,0) -- (4,0) node[below] {$r$}; 
+  \draw[->,>=latex] (0,-0.3) -- (0,1.3) node[left] {$E(r)$};
+  \draw[seged] ( 1.0 ,-0.3) -- ( 1.0 ,1.3);
+  \draw[seged] ( 2.0 ,-0.3) -- ( 2.0 ,1.3);
+  \draw[seged] ( 3.0 ,-0.3) -- ( 3.0 ,1.3);
+  
+  \draw[seged] (0.0,0.75) -- ( 3.8 ,0.75);
+  
+  \draw[domain= 0   : 1.0 ,color=blue,thick] plot (\x,{0});
+  \draw[domain= 1.0 : 2.0 ,color=blue,thick] plot (\x,{3.0*pow(\x,-2)/4.0});
+  \draw[domain= 2.0 : 3.0 ,color=blue,thick] plot (\x,{3.0*pow(\x,-2)});
+  \draw[domain= 3.0 : 3.8 ,color=blue,thick] plot (\x,{0});
+ \end{scope}
+  
+ \begin{scope}[yshift=-9.1cm,xshift=-1.5cm]
+  \draw[->,>=latex] (-.3,0) -- (4,0) node[below] {$r$}; 
+  \draw[->,>=latex] (0,-0.3) -- (0,1.3) node[left] {$U(r)$};
+  \draw[seged] ( 1.0 ,-0.3) node[below,black] {$R$} -- ( 1.0 ,1.3);
+  \draw[seged] ( 2.0 ,-0.3) node[below,black] {$2R$} -- ( 2.0 ,1.3);
+  \draw[seged] ( 3.0 ,-0.3) node[below,black] {$3R$} -- ( 3.0 ,1.3);
+  
+  \draw[domain= 0   : 1.0 ,color=cyan,thick] plot (\x,{3.0*((pow(1.0,-1)-pow(2.0,-1))/4.0+pow(2.0,-1)-pow(3.0,-1))});
+  \draw[domain= 1.0 : 2.0 ,color=cyan,thick] plot (\x,{3.0*((pow(\x,-1)-pow(2.0,-1))/4.0+pow(2.0,-1)-pow(3.0,-1))});
+  \draw[domain= 2.0 : 3.0 ,color=cyan,thick] plot (\x,{3.0*(pow(\x,-1)-pow(3.0,-1))});
+  \draw[domain= 3.0 : 3.8 ,color=cyan,thick] plot (\x,{0});
+ \end{scope}
+ 
+\end{tikzpicture} 

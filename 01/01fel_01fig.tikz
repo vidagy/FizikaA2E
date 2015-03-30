@@ -1,0 +1,33 @@
+\tdplotsetmaincoords{70}{120}
+\begin{tikzpicture}[tdplot_main_coords,font=\small,
+                    axis/.style={>=latex},
+                    seged/.style={gray,dashed},
+                    vector/.style={black,thick,>=latex}
+]
+  \coordinate (A) at (1,2,3);
+  \coordinate (B) at (2,-3,1);
+  \coordinate (C) at (-4,2,-1);
+  
+  \draw[vector,->] (0,0,0) -- node[below] {$\cv$} (C);
+  \draw[thin] (C) -- (-4,2,0);
+  \fill[white,opacity=0.4] (-4,-4,0) -- (4,-4,0) -- (4,4,0) -- (-4,4,0) -- cycle;
+  
+  \foreach \x in {-4,-3,...,4}
+  {
+   \draw[gray] (\x,-4,0) -- (\x,4,0);
+   \draw[gray] (-4,\x,0) -- (4,\x,0);
+  }
+  
+  \draw[axis,->] (-4, 0, 0) -- (4,0,0) node[below left] {$x$};
+  \draw[axis,->] ( 0,-4, 0) -- (0,4,0) node[below right] {$y$};
+  \draw[axis,->] ( 0, 0,-4) -- (0,0,4) node[above] {$z$};
+  
+  \draw[thin] (A) -- (1,2,0);
+  \draw[thin] (B) -- (2,-3,0);
+  
+  \draw[vector,->] (0,0,0) -- node[above] {$\av$} (A);
+  \draw[vector,->] (0,0,0) -- node[below] {$\bv$} (B);
+  
+  \draw[vector,->,blue] (0,0,0) -- node[above right] {$\av\times\cv$} (-8,-11,10);
+  \draw[vector,->,blue] (0,0,0) -- node[above right] {$\av\times\bv$} (11,5,-7);
+\end{tikzpicture} 

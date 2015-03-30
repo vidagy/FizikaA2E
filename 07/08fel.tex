@@ -1,0 +1,51 @@
+\feladat{8}{
+ Egy $V$ feszültségű teleppel sorba kapcsolunk egy $R$ nagyságú ellenállást, egy $C$ kapacitású kondenzátort, valamint egy kapcsolót. Írjuk fel a körben folyó áramot a kapcsoló bekapcsolása után! Mekkora a maximális áram és a kondenzátoron található maximális töltés? Hogy alakul a kondenzátoron és az ellenálláson eső feszültség az idő függvényében?
+}{08fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Felírva a második Kirchhoff-törvényt:
+ \al{
+  0&=I(t)R+V_\text{C}(t)-V\;.
+ }
+ ahol a kondenzátoron eső feszültség:
+ \al{
+  V_\text{C}(t)
+   =\frac{Q_\text{C}(t)}{C}
+   =\frac{1}{C}\intl{0}{t}I(t')\,\dd t'\;,
+ }
+ amit behelyettesítve és idő szerint deriválva:
+ \al{
+  0&=I(t)R+\frac{1}{C}\intl{0}{t}I(t')\,\dd t'-V
+  \\
+  \der{I(t)}{t}&=-\frac{1}{RC}I(t)
+  \\
+  \intl{0}{t}\frac{1}{I(t')}\der{I(t')}{t}\,\dd t'&=-\intl{0}{t}\frac{1}{RC}\,\dd t'
+  \\
+  \big[\ln I(t')\big]_0^t&=-\frac{t}{RC}
+  \\
+  I(t)&=I(0)\e^{-\frac{t}{RC}}\;,
+ }
+ ahol az $I(0)$ a $t=0$ időpontban folyó áram. Mivel ekkor a kondenzátoron még nem található töltés, ezért a teljes $V$ feszültség az ellenálláson esik, vagyis az áram nagysága $I(0)=\frac{V}{R}$, azaz
+ \al{
+  I(t)&=\frac{V}{R}\e^{-\frac{t}{RC}}\;.
+ }
+
+ A kondenzátoron és az ellenálláson eső feszültség:
+ \al{
+  V_\text{C}(t)
+   &=\frac{1}{C}\intl{0}{t}I(t')\,\dd t'
+    =\frac{1}{C}\intl{0}{t}\frac{V}{R}\e^{-\frac{t}{RC}}\,\dd t'
+    =\frac{V}{RC}\left[\frac{\e^{-\frac{t}{RC}}}{-\frac{1}{RC}}\right]_0^t
+    =V\cdot\big(1-\e^{-\frac{t}{RC}}\big)\;,
+  \\
+  V_\text{R}(t)
+   &=I(t)\cdot R
+    =V\cdot\e^{-\frac{t}{RC}}\;.
+ }
+
+ A maximális áram a $t=0$ időpillanatban folyik, ekkor $I(t=0)=\frac{V}{R}$, a kondenzátoron a maximális töltés $t\to\infty$-ben alakul, ekkor $Q_\text{C}^\text{max}=C\cdot V_\text{C}(t\to\infty)=C\cdot V$.
+
+\fi

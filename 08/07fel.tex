@@ -1,0 +1,58 @@
+\feladat{7}{
+ Egy autóakkumulátort töltés céljából $13\,\textrm{V}$ elektromotoros erejű, $0,09\,\Omega$ belső ellenállású töltőre kapcsolunk. Az akkumulátor belső ellenállása $0,01\,\Omega$, elektromotoros ereje $12\,\textrm{V}$.
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item Mekkora a töltőáram?
+  \item Mekkora a töltő által leadott teljesítmény?
+  \item Mennyi az akkumulátor és a töltő melegedésére fordítódó teljesítmény?
+  \item Mennyi az akkumulátor töltésére fordítódó teljesítmény?
+ \end{enumerate}
+}{07fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item 
+   Az akkumulátort úgy dugjuk a töltőre, hogy annak negatív pólusát a töltő negatív pólusához, a pozitívat pedig a pozitívhoz kapcsoljuk. Az áramkör egy hurokból áll. A huroktörvény:
+   \al{
+    0&=-U_\text{töltő}+IR_\text{b,töltő}+IR_\text{b,akku}+U_\text{akku}
+    \\
+    I&=\frac{U_\text{töltő}-U_\text{akku}}{R_\text{b,töltő}+R_\text{b,akku}}
+      =\frac{13\me{V}-12\me{V}}{0,09\me{\Omega}+0,01\me{\Omega}}
+      =10\me{A}\;.
+   }
+   
+  \item
+   A töltő által leadott teljesítmény:
+   \al{
+    P_\text{töltő}
+     =U_\text{töltő}I
+     =13\me{V}\cdot 10\me{A}
+     =130\me{W}\;.
+   }
+  
+  \item
+   Az akkumulátor és a töltő melegedését a belső ellenállásokon termelődő Joule-hő okozza. Ez veszteségként jelenik meg:
+   \al{
+    P_\text{veszteség}
+     &=I^2\cdot R_\text{b,akku}+I^2\cdot R_\text{b,töltő}
+    \\
+     &=(10\me{A})^2\cdot 0,01\me{\Omega)}+(10\me{A})^2\cdot 0,09\me{\Omega)}
+      =10\me{W}\;.
+   }
+   
+  \item 
+   Az akkumulátor töltésére 
+   \al{
+    P_\text{töltés}
+     =U_\text{akku}I
+     =12\me{V}\cdot 10\me{A}
+     =120\me{W}
+   }
+   teljesítmény fordítódik.
+   
+   Vegyük észre, hogy töltő által leadott teljesítmény megegyezik a hasznos teljesítmény és a veszteség összegével: ez egy példa energiamegmaradás törvényére.
+ \end{enumerate}
+
+\fi

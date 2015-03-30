@@ -1,0 +1,37 @@
+\feladat{9}{
+ Egy elektron $2400\,\textrm{V}$ feszültséggel felgyorsítva olyan térrészbe érkezik, ahol a homogén mágneses tér nagysága $1,7\,\textrm{T}$. Az elektron töltésének nagysága $e=1,6\cdot10^{-19}$\,C.
+\begin{enumerate}[label=\alph*),itemsep=0pt]
+\item Mekkora lehet a legnagyobb és a legkisebb erő, amely az elektronra hat?
+\item Mitől függ az erő nagysága?
+\end{enumerate}
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Az elektronra ható Lorentz-erő:
+ \al{
+  \Fv_\text{L}=q\vv\times \Bv=-e\vv\times \Bv\;,
+ }
+ melynek nagysága $F_\text{L}=e vB\sin\varphi$, ahol $\varphi$ a sebesség és a mágneses indukció által bezárt szög. A Lorentz-erő nagysága a bezárt szögtől függ. Ha a bezárt szög $0^\circ$, akkor a Lorentz-erő eltűnik, illetve ha at $\varphi=90^\circ$, akkor az erő maximális. 
+
+ A Lorenzt-erő nagyságának kiszámításához tudnunk kell az elektron sebességét. Ha $U$ feszültséggel gyorsítottuk, akkor az elektron energiája $E=Ue$. Ez megegyezik az elektron mozgási energiájával: 
+ \al{
+  Ue&=\frac{1}{2}mv^2
+  &\Rightarrow
+  &&
+  v&=\sqrt{\frac{2Ue}{m}}\;.
+ }
+
+ A Lorentz-erő maximális értéke
+ \al{
+  F_\text{L}
+  &=evB
+   =eB\sqrt{\frac{2Ue}{m}}
+   =1,7\me{T}\cdot \sqrt{\frac{2 \cdot (1,6\cdot10^{-19}\me{C})^3\cdot 2400\me{V}}{9,11\cdot 10^{-31}\me{kg}}}
+  \\
+  &=7,9\cdot 10^{-12}\me{N}\;.
+ }
+
+\fi

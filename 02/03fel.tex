@@ -1,0 +1,53 @@
+\feladat{3}{
+ A $q_{1}$ és $q_{2}$ pozitív töltéseket az $\rv_{1}$ és $\rv_{2}$ helyvektorokkal megadott pontokban rögzítjük. Az $\rv_{3}$ helyvektorú pontba $q_{3}$ töltést helyezve mindhárom töltésre zérus eredő erő hat. Határozzuk meg $q_{3}$-at és $\rv_{3}$-at!
+}{}{}
+ 
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ \marginfigure{03fel_01fig.tikz}
+ Értelemszerűen a harmadik töltésnek negatívnak kell lennie, illetve ennek a háromnak egy egyenesre kell esnie. 
+
+ Legyen a $q_3$-as töltés az 1-gyes töltéstől $x$ a 2-es töltéstől pedig $y$ távolságra. Ekkor $\rv_3$ felírható úgy mint $\rv_3=\frac{x}{x+y}\rv_1+\frac{y}{x+y}\rv_2$.
+
+ Azt tudjuk, hogy ekkor egyenként a három töltésre az erők eredője nulla:
+ \al{
+  0&=\Fv_{12}+\Fv_{13} &
+  0&=\Fv_{21}+\Fv_{23} &
+  0&=\Fv_{31}+\Fv_{32}\;,
+ }
+ és mivel az erők mind egy egyenesbe esnek, így a nagyságukra felírhatjuk, hogy
+ \al{
+  0&=F_{12}+F_{13} &
+  0&=F_{21}+F_{23} &
+  0&=F_{31}+F_{32}\;.
+ }
+ Ezek részletesen kiírva (majd $k$-val egyszerűsítve)
+ \al{
+  0&=\frac{q_1 q_3}{x^2}-\frac{q_1 q_2}{(x+y)^2} &
+  0&=\frac{q_1 q_2}{(x+y)^2}-\frac{q_2 q_3}{y^2} &
+  0&=\frac{q_1 q_3}{x^2}-\frac{q_2 q_3}{y^2}\;.
+ }
+
+ Az egyenletek átalakítva:
+ \al{
+  \frac{x}{x+y}&=\sqrt{\frac{q_3}{q_2}}&
+  \frac{y}{x+y}&=\sqrt{\frac{q_3}{q_1}}&
+  \frac{x}{y}&=\sqrt{\frac{q_1}{q_2}}\;,
+ }
+ majd az elsőt és a harmadikat felhasználva
+ \al{
+  \frac{x}{x+\sqrt{\frac{q_2}{q_1}}x}&=\sqrt{\frac{q_3}{q_2}}\\
+  1&=\sqrt{\frac{q_3}{q_2}}+\sqrt{\frac{q_3}{q_1}}\\
+  1&=\frac{q_3}{q_2}+\frac{q_3}{q_1}+2\frac{q_3}{\sqrt{q_1 q_2}}\\
+  q_3&=\frac{q_1 q_2}{\big(\sqrt{q_1}+\sqrt{q_2}\big)^2}\;.
+ }
+ Innen pedig már egyszerűen következik, hogy 
+ \al{
+  \rv_3
+   &=\sqrt{\frac{q_3}{q_2}}\rv_1+\sqrt{\frac{q_3}{q_1}}\rv_2
+    =\frac{\sqrt{q_1}}{\sqrt{q_1}+\sqrt{q_2}}\rv_1+\frac{\sqrt{q_2}}{\sqrt{q_1}+\sqrt{q_2}}\rv_2
+ }
+
+\fi

@@ -1,0 +1,53 @@
+\feladat{4}{
+ Mekkorák az ábrán jelölt áramkör egyes ágaiban folyó áramerősségek?
+}{04fel_01fig}{1}
+
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ A megoldás menete megegyezik a 2. feladatban szereplővel. Először felírjuk a csomóponti törvényeket az $A$ és a $B$ csomópontra:
+ \al{
+  A: && 0&=-I_1-I_2-I_3     \label{eq:4-cs1}\\
+  B: && 0&=I_1+I_2+I_3 \;,\label{eq:4-cs2}
+ }
+ majd pedig felírjuk az áramkörben fellelhető összes hurokra a huroktörvényt:
+ \al{
+  U_1-R_1-R_2-U_3-U_2:  && 0&=-U_1+I_1 R_1-I_2 R_2+U_3-U_2   \label{eq:4-h1}\\
+  U_2-U_3-R_2-R_3:      && 0&=U_2-U_3+I_2 R_2-I_3 R_3        \label{eq:4-h2}\\
+  U_1-R_1-R_3:          && 0&=-U_1+I_1 R_1-I_3 R_3           \label{eq:4-h3}
+ }
+
+ Az öt egyenletben három ismeretlen van. Az egyenletrendszer itt is összefüggő: \eqaref{eq:4-cs2} egyenlet \eqaref{eq:4-cs1} $-1$-szerese, illetve \eqaref{eq:4-h1} és \eqaref{eq:4-h2} egyenletek összege \eqaref{eq:4-h3}-at adja.
+
+ A független egyenletrendszer:
+ \al{
+  0&=I_1+I_2+I_3 \\
+  0&=-6\me{V}+I_1\cdot 5\me{\Omega}-I_2\cdot  10\me{\Omega}+12\me{V}-24\me{V}\\
+  0&=24\me{V}-12\me{V}+I_2 \cdot 10\me{\Omega}-I_3 \cdot 100\me{\Omega}\;.
+ }
+ Az elsőből $I_1$ kifejezve, majd a másodikba helyettesítve:
+ \al{
+  0&=-18\me{V}-I_2\cdot 15\me{\Omega}-I_3\cdot 5\me{\Omega}\;,
+ }
+ majd a harmadikat $1,5$-tel megszorozva és ehhez hozzáadva:
+ \al{
+  0&=-18\me{V}-I_2\cdot 15\me{\Omega}-I_3\cdot 5\me{\Omega}+1,5\cdot\big(24\me{V}-12\me{V}+I_2 \cdot 10\me{\Omega}-I_3 \cdot 100\me{\Omega}\big)
+  \\
+  0&=-I_3 \cdot 155\me{\Omega}\\
+  I_3&=0\;.
+ }
+ Ez visszahelyettesítve:
+ \al{
+  0&=12\me{V}+I_2 \cdot 10\me{\Omega}
+  \\
+  I_2&=-1,2\me{A}\;,
+ }
+ illetve
+ \al{
+  I_1=-I_2=1,2\me{A}\;.
+ }
+
+ Tehát az 1-es ellenálláson A nyílnak megfelelő irányba folyik $I_1=1,2\me{A}$, a 2-es ellenálláson szintén $1,2\me{A}$ folyik, de a kezdetben felvettel ellentétes irányban. A 3-as ellenálláson nem folyik áram. 
+
+\fi

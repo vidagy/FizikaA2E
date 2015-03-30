@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+ \draw (0,0) -- (0,2);
+ \draw (4,0) -- (4,2);
+ \fill[black] (2,1) circle (2pt);
+ \fill[black] (2,2) circle (2pt);
+ \fill[black] (0,1) circle (2pt);
+ \node[above] at (2,1) {$A$};
+ \node[above] at (2,2) {$B$};
+ \node[left] at (0,1) {$C$};
+ \ellenallas{(0,1)}{(2,1)}{$R_1$}{(0.0,0.3)}
+ \ellenallas{(2,1)}{(4,1)}{$R_2$}{(0.0,0.3)}
+ \kapacitas{(0,2)}{(2,2)}{$C_1$}{(0,0.8)}
+ \kapacitas{(2,2)}{(4,2)}{$C_2$}{(0,0.8)}
+ \telep{(0,0)}{(4,0)}{$U$}{(0,-0.2)}
+ 
+ \ifdefined\megoldas
+  \draw[->,>=latex,darkgreen] (3.5,0.1) to[out=0,in=270] node[above left] {$I$} (3.9,0.6); 
+ 
+  \node[blue] at (1.85,0.3) {$\ominus$};
+  \node[red] at  (2.2,0.3) {$\oplus$};
+  
+  \node[blue] at (0.75,2.3) {$\ominus$};
+  \node[red] at  (1.25,2.3) {$\oplus$};
+ \fi
+\end{tikzpicture}
+ 

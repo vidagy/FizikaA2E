@@ -1,0 +1,62 @@
+  \tdplotsetmaincoords{60}{20}
+  \begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                      seged/.style={dashed,gray}
+  ]
+  
+   \begin{scope}[scale=5,tdplot_main_coords]
+
+   % axes
+   \draw[axis] (-0.66,0,0) -- (0.66,0,0) node[below right] {$y$};
+   \draw[axis] (0, 0.66,0) -- (0,-0.66,0) node[below] {$x$};
+   \draw[axis] (0,0,-0.21) -- (0,0,1.05) node[above] {$z$};
+   
+   % \dd s
+   \draw[<->] (0.51*0.886,0.51*0.5,0) arc (30:45:0.51);
+   \draw (0.51*0.866,0.51*0.5,0) node[above right]{{ $\dd s$}};
+   
+   % R
+   \draw[line width=1.5pt,black] (0.45,0,0) arc (0:360:0.45);
+   \draw[->,>=latex] (0,0,0) -- node[below] {$R$} (-0.5*1.45*0.3,-0.866*1.45*0.3,0) ;
+   
+   % phi
+   \draw[->] (0,-0.3,0) arc (270:390:0.3);
+   \draw (330:0.2) node {$\varphi$};
+   
+   % \dd\phi and 
+   \draw[<->] (1.2*0.3*0.886,1.2*0.3*0.5,0) arc (30:45:1.2*0.3);
+   \draw (1*0.3*0.866,1*0.3*0.5,0) node[above left] { $\dd \varphi$};
+   \draw[seged] (0,0,0) -- (0.45*0.886,0.45*0.5,0);
+   \draw[seged] (0,0,0) -- (0.45*0.707,0.45*0.707,0);
+   
+   % z
+   \draw (0,0,1.5*0.3) node[left] {$z$};
+   
+   % z^2 + R^2
+   \draw (1.5*0.3*0.793,1.5*0.3*0.609,0) -- node[above right=-2pt] {$z^2+R^2$} (0,0,2.7*0.3);
+   
+   % dE and dEz vectors
+   \tdplotsetrotatedcoords{37.5}{0}{0}
+   \draw[<->,tdplot_rotated_coords] (0,0,1.8*0.3) arc (270:303:0.9*0.3); 
+   \draw[tdplot_rotated_coords] (0,0,1.9*0.3) node[above right] {$\alpha$};
+   
+   \draw[color=blue,->,>=latex,tdplot_rotated_coords,thick] (0,0,2.7*0.3) -- node[below left] { $\dd \Ev$} +(-0.45/5,0,0.81/5);
+   \draw[color=blue,->,>=latex,tdplot_rotated_coords,thick] (0,0,2.7*0.3) -- node[right] {$\dd \Ev_z$} +(0,0,0.81/5);
+   \draw[seged,thin,tdplot_rotated_coords] (0,0,2.7*0.3)++(0,0,0.81/5) -- +(-0.45/5,0,0);
+   \draw[seged,tdplot_rotated_coords] (0,0,2.7*0.3+0.81/5) circle (0.45/5);
+   
+   % P
+   \draw (0,0,2.7*0.3) node {\tikz[tdplot_screen_coords] \fill (0,0) circle (0.07);};
+   \draw (0,0,2.7*0.3) node[below left] {$P$};
+   
+   \end{scope}
+   
+   \begin{scope}[yshift=-5cm]
+    \draw[->,>=latex] (-3,0) -- (3,0) node[below] {$z$}; 
+    \draw[->,>=latex] (0,-2) -- (0,2) node[right] {$E_z(z)$};
+    \draw[color=blue,thick,domain=-3:3,samples=100] plot (\x,{2.5*(\x)/pow((pow(\x,2)+1),1.5)});
+    \draw (1,0.07) -- (1,-0.07) node[below] {$R$};
+    \draw (-1,0.07) -- (-1,-0.07) node[below] {$-R$};
+   \end{scope}
+
+  \end{tikzpicture}
+ 

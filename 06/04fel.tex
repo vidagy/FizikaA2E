@@ -1,0 +1,42 @@
+\feladat{4}{
+ Egy gömbkondenzátor belső, $R_{1}$ sugarú fegyverzetére $Q$ töltést viszünk, a külső, $R_{2}$ sugarú fegyverzetet leföldeljük. Mekkora a feszültség a két fegyverzet között és mekkora a kondenzátor kapacitása?
+}{}{}
+
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ \marginfigure{04fel_01fig}
+
+ A földelés miatt a külső gömbfelületen $-Q$ töltés jelenik meg. Azt már korábbról tudjuk, hogy a térerősség egy ilyen rendszerben:
+ \al{
+  E(r)=
+  \begin{cases}
+   0 & r<R_1\\
+   \frac{1}{4\pi\ep_0}\frac{Q}{r^2} & R_1<r<R_2\\
+   0 & R_2<r
+  \end{cases}\;.
+ }
+ A potenciált a definíció alapján számoljuk. Az előző feladathoz hasonlóan itt is gömbszimmetrikus a probléma, így a potenciál csak a gömbök közepétől mért távolságtól függ, illetve sugárirányú a térerősség, vagyis célszerű az integrálást egy sugárirányú út mentén elvégezni.
+
+ A földelt gömb potenciálja nulla definíció szerint. A másik gömb potenciálja:
+ \al{
+  U(R_1)
+   &=0-\intl{R_2}{R_1}E(r')\,\dd r'
+    =-\intl{R_2}{R_1}\frac{1}{4\pi\ep_0}\frac{Q}{r'^2}\,\dd r'
+    =-\frac{Q}{4\pi\ep_0}\left[-\frac{1}{r'}\right]_{R_2}^{R_1}
+  \\
+   &=\frac{Q}{4\pi\ep_0}\left(\frac{1}{R_1}-\frac{1}{R_2}\right)
+  \;,
+ }
+ vagyis a potenciálkülönbség a két gömb között $V=U(R_1)-0=U(R_1)$.
+
+ A kondenzátor kapacitása:
+ \al{
+  C
+   =\frac{Q}{V}
+   =4\pi\ep_0\frac{1}{\frac{1}{R_1}-\frac{1}{R_2}}
+  \;.
+ }
+ 
+\fi

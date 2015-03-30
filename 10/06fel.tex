@@ -1,0 +1,42 @@
+\feladat{6}{
+ Két hosszú vezetődarabot, melyek tömege méterenként $\mu=40\,\textrm{g}$, szorosan egymás mellé, vízszintesen a mennyezetre függesztünk $l=6\, \textrm{cm}$ hosszú cérnadarabokkal. Mindkét kábelbe $I$ áramot vezetünk, melyek hatására a vezetők egymástól eltávolodnak. Ekkor a két kábelt tartó cérnaszálak $\vartheta = 16^{\circ}$-os szöget zárnak be egymással.
+\begin{enumerate}[label=\alph*),itemsep=0pt]
+\item A két vezetőben azonos vagy ellenkező irányban folyik az áram?
+\item Mekkora az $I$ áramerősség?
+\end{enumerate}
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+ 
+ \marginfigure{06fel_01fig}
+ 
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item
+   A két eset felrajzolásával meggyőződhetünk arról, hogy a vezetékekben ellentétes irányban kell folynia az áramnak. Ha az áram befelé folyik, akkor a bal oldali vezeték által létrehozott mágneses tér lefelé mutat a jobb oldali vezeték helyén. Itt a Lorentz-erő akkor mutat jobbra, vagyis olyan irányba, hogy a vezetéket eltaszítsa a másiktól, ha abban kifelé folyik az áram. A fordított eset is ellenőrizhető, a bal oldali vezetékre is kifele mutató áramot kapunk.
+  \item
+   Vegyünk $s$ hosszúságú vezetékdarabokat. Ha felírjuk az erők egyenlőségét vízszintes és függőleges irányban:
+   \al{
+    x: && 0&=F_\text{L}-K\sin\frac{\vartheta}{2}\\
+    y: && 0&=K\cos\frac{\vartheta}{2}-\mu\cdot s\cdot g\;,
+   }
+   ahonnan $K$-t eliminálva
+   \al{
+    F_\text{L}=\mu s g \cdot\tg\frac{\vartheta}{2}\;.
+   }
+   
+   A Lorentz-erő: $F_\text{L}=B\cdot I\cdot s$, ahol $B$-t az előző feladatok alapján már tudjuk $B=\frac{\mu_0 I}{2\pi d}$. $d$ könnyen meghatározható, hiszen $d=2l\sin\frac{\vartheta}{2}$, amellyel:
+   \al{
+    F_\text{L}
+     =\frac{\mu_0 I^2 s}{4\pi l\sin\frac{\vartheta}{2}}\;.
+   } 
+   A Lorentz-erőre felírt két kifejezés egyenlőségéből:
+   \al{
+    \mu s g \cdot\tg\frac{\vartheta}{2} &= \frac{\mu_0 I^2 s}{4\pi l\sin\frac{\vartheta}{2}}
+    \\
+    I&=\sqrt{\frac{4\pi l \mu g \cdot\tg\frac{\vartheta}{2}\sin\frac{\vartheta}{2}}{\mu_0}}\;.
+   }
+ \end{enumerate}
+
+ \fi

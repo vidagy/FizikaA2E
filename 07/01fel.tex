@@ -1,0 +1,45 @@
+\feladat{1}{
+ $A=3\cdot10^{-6}\,\textrm{m}^2$ keresztmetszetű rézvezetékben $I=10\,\textrm{A}$ áram folyik. Mekkora az elektronok driftsebessége? Tételezzük fel, hogy rézatomonként egy elektron járul hozzá a vezetéshez, a réz sűrűsége $\varrho_\text{Cu}=8960$\,kg/m$^{3}$, moláris tömege $M=63,546$\,g/mol, az elektron töltésének nagysága $e=1,6\cdot10^{-19}$\,C, $N_\text{Avogadro}=6,02\cdot 10^{23}$\,atom/mol.
+}{01fel_01fig}{}
+
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ Vegyünk egy $\dd t$ hosszú időtartamot. Ez alatt az elektronok $v\cdot \dd t$ hosszú elmozdulást tesznek meg a vezető irányában. Írjuk fel a a vezető $v\cdot \dd t$ hosszú szakaszában a vezetésben résztvevő töltések mennyiségét kétféle módon.
+
+ Először számoljuk ki, hogy mennyi a térfogategységre jutó vezetési elektronok száma:
+ \al{
+  n
+   &=\underbrace{\frac{\text{vezetési elektronok száma}}{\text{1 rézatom}}}_{=1} \cdot\frac{\text{rézatomok száma}}{\text{térfogategység}}
+  \\
+   &=1\cdot \underbrace{\frac{\text{rézatomok száma}}{\text{tömegegység}}}_{1/M}\cdot \underbrace{\frac{\text{tömeg}}{\text{térfogategység}}}_{\varrho_\text{Cu}}
+    =1\cdot \frac{\varrho_\text{Cu}}{M}
+ }
+ Innen a vezetési elektronok elektronsűrűsége: 
+ \al{
+  n_e
+   = e\cdot n\;,
+ }
+ vagyis a tartományban található töltésmennyiség:
+ \al{
+  q=n_e\cdot V
+   =e \frac{\varrho_\text{Cu}}{M}\cdot A v\dd t\;.
+ }
+
+ Másrészről pedig tudjuk, hogy a $\dd t$ idő alatt a felület egy keresztmetszetén $q=I\cdot \dd t$ töltés áramlik át. Ezek egyenlőségéből:
+ \al{
+  I\cdot \dd t &=n_e\cdot A v\dd t
+  \\
+  v&=\frac{I}{n_e A}
+  \\
+  v&=\frac{M}{\varrho_\text{Cu}}\frac{I}{eA}
+    =\frac{63,546\me{\frac{g}{mol}}}{8960\me{\frac{kg}{m^3}}}\cdot \frac{10\me{A}}{1,6\cdot10^{-19}\me{C}\cdot 3\cdot10^{-6}\me{m^2}}
+  \\
+   &=1,48\cdot 10^{20}\me{\frac{1}{mol}\frac{m}{s}}
+    =1,48\cdot 10^{20}\frac{1}{6\cdot 10^{23}}\me{\frac{m}{s}}
+    =2.45\cdot 10^{-4}\me{\frac{m}{s}}
+  \;.
+ }
+
+\fi

@@ -1,0 +1,32 @@
+\feladat{1}{
+ Az ábrán látható áramkörben határozzuk meg az $I$ áramerősséget!
+}{01fel_01fig}{1}
+
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ Először ki kell számolnunk az öt ellenállásból álló hálózat eredő ellenállását. Vegyük észre, hogy a 3-as és az 5-ös ellenállás végei rövidre vannak zárva, így azokon sosem folyik áram, vagyis azok nem járulnak hozzá az eredő ellenálláshoz. 
+
+ Így összesem három ellenállás marad, az 1-es, a 2-es és a 4-es, melyek közül a 2-es és a 4-es párhuzamosan vannak kapcsolva:
+ \al{
+  R_{2,4}
+   =\frac{1}{\frac{1}{R_2}+\frac{1}{R_4}}
+   =\frac{1}{2\cdot\frac{1}{R}}
+   =\frac{1}{2}R\;,
+ }
+ illetve ezekkel sorosan van kapcsolva az 1-es:
+ \al{
+  R_\text{e}
+   =R+\frac{1}{2}R
+   =\frac{3}{2}R\;,
+ }
+
+ Innen a telepen átfolyó áram:
+ \al{
+  I=\frac{U}{R_\text{e}}
+   =\frac{U}{\frac{3}{2}R}
+   =\frac{2}{3}\frac{U}{R}\;.
+ }
+
+\fi

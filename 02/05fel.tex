@@ -1,0 +1,35 @@
+\feladat{5}{
+ Két egyenlő sugarú fémgolyócskát $l=1$ méter hosszú fonálon közös pontban felfüggesztünk. Mindkét golyóval azonos $q$ nagyságú töltést közlünk. Az elektromos taszítás hatására $d=20\me{cm}$-re eltávolodnak egymástól. Mekkora a golyók töltése, ha tömegük $m=1\me{g}$?
+}{05fel_01fig.tikz}{}
+ 
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Mivel a golyók nyugalomban vannak, így a rájuk ható erők eredője nulla. Ez felírva az $x$ és $y$ irányú komponensekre:
+ \al{
+  x: && 0&=F_\text{C}-K\sin\alpha&
+  y: && 0&=-mg+K\cos\alpha\;.
+ }
+ A geometria alapján a bezárt szög:
+\al{
+ \sin\alpha &= \frac{d/2}{l}
+ &\Rightarrow&&
+ \tg\alpha
+  &=\frac{\sin\alpha}{\sqrt{1-\sin^2\alpha}}
+   =\frac{d}{\sqrt{4l^2-d^2}}\;,
+}
+és az egyensúlyi egyenletekből
+ \al{
+  F_\text{C}
+   &=k\frac{q^2}{d^2}
+    =mg\tg\alpha
+  \\
+  q
+   &=d\sqrt{\frac{mg}{k}\tg\alpha}
+    =0,2\me{m} \sqrt{\frac{10^{-3}\me{kg}\cdot 10\me{\frac{m}{s^2}}}{9\cdot 10^{9}\me{\frac{N\,m^2}{C^2}}}\cdot \frac{0,2\me{m}}{\sqrt{4\cdot(1\me{m})^2-(0,2\me{m})^2}}}
+  \\
+   &=6,68\cdot 10^{-8}\me{C}\;.
+ }
+ 
+\fi

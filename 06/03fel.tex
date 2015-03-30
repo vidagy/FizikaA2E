@@ -1,0 +1,59 @@
+\feladat{3}{
+ $R_1=10\me{cm}$ sugarú töltött fémgömböt $d=20\me{cm}$ vastag, $\varepsilon_{r}=2$ relatív permittivitású szigetelő réteg vesz körül. Hogyan függ a potenciál a centrumtól mért távolságtól?
+}{}{}
+
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ Használjuk a továbbiakban az $R_2=R_1+d$-t a külső sugár jelölésére. Egy ilyen gömb térerősségének kiszámítását már tárgyaltuk, így itt nem részletezzük. A számolás eredménye:
+ \al{
+  E(r)=
+  \begin{cases}
+   0 & r<R_1\\
+   \frac{1}{4\pi\ep_0\ep_r}\frac{Q}{r^2} & R_1<r<R_2\\
+   \frac{1}{4\pi\ep_0}\frac{Q}{r^2} & R_2<r
+  \end{cases}\;.
+ }
+ \marginfigure{03fel_01fig}
+
+ Számoljuk ki a potenciált a definíció alapján:
+ \al{
+  U(\rv)=U(\rv_0)-\intl{\rv_0}{\rv}\Ev(\rv')\,\dd\rv'\;.
+ }
+ A rendszer szimmetriájából adódóan a potenciál is gömbszimmetrikus lesz, vagyis az csak a gömb középpontjától mért távolságtól függ. Az integrálási utat pedig célszerű sugárirányúnak választani, hiszen a térerősség is sugárirányú. Legyen az $\rv_0$ referenciapont a végtelen távolban, itt a potenciál legyen nulla. Integráljunk onnan egy $r>R_2$ távolságban lévő pontig. Az integrálás során az elemi lépések $\dd\rv'=\dd r'\ev_\text{r}$, így:
+ \al{
+  U(r)
+   =-\intl{\infty}{r}E(r')\,\dd r'
+   =-\intl{\infty}{r}\frac{1}{4\pi\ep_0}\frac{Q}{r'^2}\,\dd r'
+   =-\frac{Q}{4\pi\ep_0}\left[-\frac{1}{r'}\right]_{\infty}^{r}
+   =\frac{1}{4\pi\ep_0}\frac{Q}{r}
+  \;.
+ }
+
+ Ha a gömbhöz közelebb jövünk, vagyis a potenciált az $R_1<r<R_2$ tartományban keressük, akkor ugyanezt az integrált kell elvégeznünk:
+ \al{
+  U(r)
+   &=-\intl{\infty}{r}E(r')\,\dd r'
+    =-\intl{\infty}{R_2}E(r')\,\dd r'-\intl{R_2}{r}E(r')\,\dd r'
+  \\
+   &=\frac{1}{4\pi\ep_0}\frac{Q}{R_2}-\intl{R_2}{r}\frac{1}{4\pi\ep_0\ep_r}\frac{Q}{r^2}\,\dd r'
+    =\frac{1}{4\pi\ep_0}\frac{Q}{R_2}-\frac{Q}{4\pi\ep_0\ep_r}\left[-\frac{1}{r'}\right]_{R_2}^{r}
+  \\
+   &=\frac{1}{4\pi\ep_0}\frac{Q}{R_2}-\frac{1}{4\pi\ep_0\ep_\text{r}}\frac{Q}{R_2}+\frac{1}{4\pi\ep_0\ep_\text{r}}\frac{Q}{r}
+  \;.
+ }
+
+ Az $r<R_1$ tartomány tömör fém. A fémben a feszültség minden pontban ugyanakkora, így odabent megegyezik a felületen lévő feszültséggel. Összefoglalva tehát:
+ \al{
+  U(r)=
+   \begin{cases}
+    \frac{1}{4\pi\ep_0}\frac{Q}{R_2}\left(1-\frac{1}{\ep_\text{r}}\right)+\frac{1}{4\pi\ep_0\ep_\text{r}}\frac{Q}{R_1} & r<R_1\\
+    \frac{1}{4\pi\ep_0}\frac{Q}{R_2}\left(1-\frac{1}{\ep_\text{r}}\right)+\frac{1}{4\pi\ep_0\ep_\text{r}}\frac{Q}{r} & R_1<r<R_2\\
+    \frac{1}{4\pi\ep_0}\frac{Q}{r} & R_2<r
+   \end{cases}
+ }
+
+ \emph{Megjegyzés:} A feszültségnek mindig folytonos függvénynek kell lennie, hiszen azt definíció szerint egy véges értékű függvény (a térerősség) integrálásával állítjuk elő.
+
+\fi

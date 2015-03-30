@@ -1,0 +1,172 @@
+\feladat{9}{
+ A $0 \leq x \leq a$, $0 \leq y \leq a$ térrészben a potenciál
+ \begin{equation*}
+  U(x,y,z)=U_{0}\sin\left(\frac{\pi}{a}x\right)\left(\frac{1}{1-\mathrm{e}^{2\pi}}\mathrm{e}^{\frac{\pi}{a}y}+\frac{1}{1-\mathrm{e}^{-2\pi}}\mathrm{e}^{-\frac{\pi}{a}y}\right)
+ \end{equation*}
+ alakú, ahol $U_{0}$ és $a$ állandók. Mi ebben a térrészben a térerősség? Mennyi töltés van a térrészen belüli $0 \leq z \leq L$ négyzetes oszlopban?
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A térerősség a potenciál negatív gradiense, vagyis
+ \al{
+  \Ev(x,y,z)=-\grad U(x,y,z)
+   =-\left(\pder{U(x,y,z)}{x},\pder{U(x,y,z)}{y},\pder{U(x,y,z)}{z}\right)\;,
+ }
+ ahol
+ \al{
+  -\pder{U(x,y,z)}{x}
+   &=U_{0}\frac{\pi}{a}\cos\left(\frac{\pi}{a}x\right)\left(\frac{1}{1-\mathrm{e}^{2\pi}}\mathrm{e}^{\frac{\pi}{a}y}+\frac{1}{1-\mathrm{e}^{-2\pi}}\mathrm{e}^{-\frac{\pi}{a}y}\right)
+  \\
+  -\pder{U(x,y,z)}{y}
+   &=U_{0}\sin\left(\frac{\pi}{a}x\right)\left(\frac{1}{1-\mathrm{e}^{2\pi}}\frac{\pi}{a}\mathrm{e}^{\frac{\pi}{a}y}+\frac{1}{1-\mathrm{e}^{-2\pi}} \left(-\frac{\pi}{a}\right)\mathrm{e}^{-\frac{\pi}{a}y}\right)
+  \\
+   -\pder{U(x,y,z)}{z}
+    &=0\;,
+ }
+ azaz
+ \al{
+  &\Ev(x,y,z)
+  \\
+   &\quad
+    =-U_{0}\frac{\pi}{a} 
+   \bigg[ 
+    \cos\left(\frac{\pi}{a}x\right) \left(\frac{1}{1-\mathrm{e}^{2\pi}}\mathrm{e}^{\frac{\pi}{a}y}+\frac{1}{1-\mathrm{e}^{-2\pi}}\mathrm{e}^{-\frac{\pi}{a}y}\right),
+  \\
+   &\qquad\qquad\qquad\sin\left(\frac{\pi}{a}x\right)\left(\frac{1}{1-\mathrm{e}^{2\pi}}\mathrm{e}^{\frac{\pi}{a}y}-\frac{1}{1-\mathrm{e}^{-2\pi}}\mathrm{e}^{-\frac{\pi}{a}y}\right),
+  \\
+   &\qquad\qquad\qquad
+    0\bigg]\;.    
+ }
+
+A térrészen belüli töltés kiszámolásához használjuk a Gauss-tételt. Ismerjük a téglatest határain a térerősséget, így a fluxust közvetlenül ki tudjuk számolni, amely a Gauss-tétel értelmében megegyezik a bent található töltés mennyiségével. 
+
+\marginfigure{09fel_01fig}
+
+Mivel a térerősségnek nincsen $z$ komponense, így a téglatest alsó és felső síkján nincsen fluxusjárulék, hiszen ott merőlegesek az $\mathbf{E}$ és a $\mathrm{d}\mathbf{A}$ vektorok. A többi négy oldalt az 
+\al{ 
+ (1)\colon\left\{
+  \begin{array}{c}
+   x=0 \\
+   0<y<a \\
+   0<z<L 
+  \end{array}
+ \right.
+ &&
+ (2)\colon\left\{
+  \begin{array}{c}
+   x=a \\
+   0<y<a \\
+   0<z<L 
+  \end{array}
+ \right.
+ \\
+ (3)\colon\left\{
+  \begin{array}{c}
+   0<x<a \\
+   y=0 \\
+   0<z<L 
+  \end{array}
+ \right.
+ &&       
+ (4)\colon\left\{
+  \begin{array}{c}
+   0<x<a \\
+   y=a \\
+   0<z<L 
+  \end{array}
+ \right.
+}
+egyenletek határozzák meg. 
+
+Az első kettő lap esetén a felület normálisa $\mathbf{e}_x$ irányú, így a skaláris szorzás után csak az elektromos tér $x$ komponense marad meg. Ezen a két felületen az integrálás során az $x$ koordináta végig $0$, illetve az $a$ értéket veszi fel:
+\begin{itemize}
+ \item 
+  Az (1)-es felületen: $\dd\Av_{(1)}=-\dd y\dd z \ev_x$, így:
+  \begin{align}
+   \Phi_{(1)}
+    &=\intl{(1)}{} \Ev(x=0,y,z)\,\dd\Av
+   \\
+    &=
+     \intl{0}{a}\intl{0}{L} -U_0 \frac{\pi}{a} \left(\frac{1}{1-\e^{2\pi}}\e^{\frac{\pi}{a}y} - \frac{1}{1-\e^{-2\pi}}\e^{-\frac{\pi}{a}y}\right) \ev_x (-\dd y\dd z \ev_x) 
+   \\
+    &=
+     U_0 \frac{\pi}{a}\underbrace{\intl{0}{L}  \dd z}_{L}\intl{0}{a}\left(\frac{1}{1-\e^{2\pi}}\e^{\frac{\pi}{a}y} - \frac{1}{1-\e^{-2\pi}}\e^{-\frac{\pi}{a}y}\right)\dd y
+   \\
+    &=
+     U_0 L\left(\frac{\e^\pi-1}{1-\e^{2\pi}} + \frac{\e^{-\pi}-1}{1-\e^{-2\pi}}\right)
+     =
+     -U_0 L
+   \;. 
+  \end{align}
+
+ \item 
+  A (2)-es felületen: $\dd\Av_{(2)}=\dd y\dd z \ev_x$, azaz
+  \begin{align}
+   \Phi_{(2)}
+    &=\intl{(1)}{} \Ev(x=a,y,z)\,\dd\Av
+   \\
+    &=
+     \intl{0}{a}\intl{0}{L} U_0 \frac{\pi}{a} \left(\frac{1}{1-\e^{2\pi}}\e^{\frac{\pi}{a}y} - \frac{1}{1-\e^{-2\pi}}\e^{-\frac{\pi}{a}y}\right) \ev_x (\dd y\dd z \ev_x) 
+   \\
+    &=
+     -U_0 L
+   \;. 
+  \end{align}
+
+ \item 
+  A (3)-as felületen $\dd\Av_{(3)}=-\dd x\dd z \ev_y$, tehát:
+  \begin{align}
+   \Phi_{(3)}
+    &=\int\mathbf{E}(x,y=0,z)\,\mathrm{d}\mathbf{A}
+   \\
+    &=
+     \intl{0}{a}\intl{0}{L} -U_0 \frac{\pi}{a}\sin\left(\frac{\pi}{a}x\right) \left(\frac{1}{1-\mathrm{e}^{2\pi}} - \frac{1}{1-\mathrm{e}^{-2\pi}}\right) \mathbf{e}_y (-\mathrm{d}x\mathrm{d}z\mathbf{e}_y) 
+   \\
+    &=
+     U_0 \frac{\pi}{a}\left(\frac{1}{1-\mathrm{e}^{2\pi}} - \frac{1}{1-\mathrm{e}^{-2\pi}}\right) \underbrace{\intl{0}{L}\mathrm{d}z}_{L} 
+     \underbrace{\intl{0}{a}\sin\left(\frac{\pi}{a}x\right)\,\mathrm{d}x}_{2\frac{a}{\pi}} 
+   \\
+    &=
+     2U_0L  \left(\frac{1}{1-\mathrm{e}^{2\pi}} - \frac{1}{1-\mathrm{e}^{-2\pi}}\right)\;. 
+  \end{align}
+
+ \item
+  Az utolsó esetben $\dd\Av_{(4)}=\dd x\dd z \ev_y$, vagyis:
+  \begin{align}
+   \Phi_{(4)}
+    &=
+     \int \mathbf{E}(x,y=a,z)\,\dd\Av
+   \\
+    &=
+     \intl{0}{a}\intl{0}{L} -U_0\frac{\pi}{a} \sin\left(\frac{\pi}{a}x\right) \left(\frac{\mathrm{e}^\pi}{1-\mathrm{e}^{2\pi}} - \frac{\mathrm{e}^{-\pi}}{1-\mathrm{e}^{-2\pi}}\right) \mathbf{e}_y (\mathrm{d}x\mathrm{d}z\mathbf{e}_y) 
+   \\
+    &=
+     -U_0\frac{\pi}{a} \left(\frac{\mathrm{e}^\pi}{1-\mathrm{e}^{2\pi}} - \frac{\mathrm{e}^{-\pi}}{1-\mathrm{e}^{-2\pi}}\right) 
+      \underbrace{\intl{0}{L}\,\mathrm{d}z}_{L} 
+      \underbrace{\intl{0}{a}\sin\left(\frac{\pi}{a}x\right)\,\mathrm{d}x}_{2\frac{a}{\pi}} 
+   \\
+    &= 
+     -2U_0L  \left(\frac{\mathrm{e}^\pi}{1-\mathrm{e}^{2\pi}} - \frac{\mathrm{e}^{-\pi}}{1-\mathrm{e}^{-2\pi}}\right)\;. 
+  \end{align}
+
+\end{itemize}
+
+Ezek összege adja a teljes fluxust, amelyből az össztöltés:
+\begin{align}
+ Q_\textrm{össz}
+  &=
+    \varepsilon_0\Phi_\text{kocka}
+   =\varepsilon_0 \left(\Phi_{(1)}+\Phi_{(2)}+\Phi_{(3)}+\Phi_{(4)}\right) 
+ \\
+  &=-2\ep_0 U_0 L 
+    +2\ep_0 U_0 L\left(\frac{1-\mathrm{e}^\pi}{1-\mathrm{e}^{2\pi}}-\frac{1-\mathrm{e}^{-\pi}}{1-\mathrm{e}^{-2\pi}}\right)
+ \\
+  &=-2\ep_0 U_0 L 
+    +2\ep_0 U_0 L\frac{-2\mathrm{e}^\pi-\mathrm{e}^{-2\pi}+2\mathrm{e}^{-\pi}+\mathrm{e}^{2\pi}}{2-\mathrm{e}^{2\pi}-\mathrm{e}^{-2\pi}}
+\end{align}
+
+
+\fi

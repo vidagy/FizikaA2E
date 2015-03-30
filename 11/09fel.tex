@@ -1,0 +1,82 @@
+\feladat{9}{
+ $U_\text{eff}=220\,\textrm{V}$-os, 50\,Hz frekvenciájú hálózatról táplált berendezésen átfolyó áram erőssége $I_\text{eff}=2\,\textrm{A}$. A felvett teljesítmény $P=300\,\textrm{W}$.
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+ \item Mekkora az áram és a feszültség fáziskülönbsége?
+ \item Mekkora a berendezés váltóáramú ellenállása?
+ \item Mekkora a berendezés ohmikus ellenállása?
+ \end{enumerate}
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Időfüggő esetben a teljesítményt nem tudjuk egyszerűen úgy számolni, mint az áram és a feszültség szorzatát, hiszen mind a két mennyiség időfüggő, így az így elkészített mennyiség is időfüggő lenne. A teljesítményt így mint egy időátlagot kell elkészítenünk. A $t$-edik pillanatban $\dd t$ idő alatt elvégzett munka $U(t)I(t)\,\dd t$. Ha ezt összegezzük egy véges $t_1$-től $t_2$-ig tartó időintervallumra, akkor megkapjuk a teljes munkát:
+ \al{
+  W(t_1,t_2)=\intl{t_1}{t_2}U(t)I(t)\,\dd t\;,
+ }
+ amelynek felhasználásával az átlagteljesítmény a $[t_1,t_2]$ időintervallumon:
+ \al{
+  P=\frac{1}{t_2-t_1}\intl{t_1}{t_2}U(t)I(t)\,\dd t\;.
+ }
+ Periodikusan változó áramok esetében elég egy periódusra átlagolni:
+ \al{
+  P=\frac{1}{T}\intl{0}{T}U(t)I(t)\,\dd t\;.
+ }
+
+ Nézzük meg, hogy mekkora a teljesítmény, ha $\varphi$ a fáziskülönbség az áram és a feszültség között. Legyen $I(t)=I_0\cos(\omega t)$ és $U(t)=U_0\cos(\omega t+\varphi)$, ahol $\omega=\frac{2\pi}{T}$ akkor
+ \al{
+  P
+   &=\frac{1}{T}\intl{0}{T}U_0 I_0\cos (\omega t)\cos (\omega t+\varphi)\,\dd t
+  \\
+   &=\frac{1}{T}\intl{0}{T}U_0 I_0\cos (\omega t)\big[\cos (\omega t)\cos(\varphi)-\sin (\omega t)\sin(\varphi)\big]\,\dd t
+  \\
+   &=\frac{U_0 I_0}{T}\cos(\varphi)\intl{0}{T}\cos^2(\omega t)\,\dd t 
+    -\frac{U_0 I_0}{T}\sin(\varphi)\intl{0}{T}\cos(\omega t)\sin (\omega t)\,\dd t 
+  \\
+   &=\frac{U_0 I_0}{T}\cos(\varphi)\intl{0}{T}\frac{1+\cos(2\omega t)}{2}\,\dd t 
+    -\frac{U_0 I_0}{T}\sin(\varphi)\intl{0}{T}\frac{1}{2}\sin(2\omega t)\,\dd t 
+  \\
+   &=\frac{U_0 I_0}{T}\cos(\varphi)\left[\frac{t}{2}+\frac{\sin(2\omega t)}{4\omega}\right]_0^T
+    -\frac{U_0 I_0}{T}\sin(\varphi)\left[-\frac{\cos(2\omega t)}{4\omega}\right]_0^T
+  \\
+   &=\frac{U_0 I_0}{T}\cos(\varphi)\left(\frac{T}{2}+\frac{\sin(4\pi)-\sin(0)}{4\omega}\right)
+    +\frac{U_0 I_0}{T}\sin(\varphi)\left(\frac{\cos(4\pi)-\cos(0)}{4\omega}\right)
+  \\
+   &=\frac{U_0 I_0}{2}\cos\varphi
+    =\frac{U_0}{\sqrt{2}}\frac{I_0}{\sqrt{2}}\cos\varphi
+    =U_\text{eff} I_\text{eff}\cos\varphi\;.
+ }
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item 
+   Ez alapján az első kérdésre azonnal megadhatjuk a választ:
+   \al{
+    \cos\varphi
+     &=\frac{P}{U_\text{eff} I_\text{eff}}
+      =\frac{300\me{W}}{220\me{V}\cdot 2\me{A}}
+      =0.682
+     \\
+     \varphi&=47,01^\circ\;.
+   }
+  
+  \item 
+   A berendezés impedanciája:
+   \al{
+    Z=\frac{U_0}{I_0}
+     =\frac{U_\text{eff}}{I_\text{eff}}
+     =\frac{220\me{V}}{2\me{A}}
+     =110\me{\Omega}\;.
+   }
+   
+  \item
+   Az ohmikus ellenállás 
+   \al{
+    R=Z\cos\varphi
+     =\frac{U_\text{eff}}{I_\text{eff}}\cdot \frac{P}{U_\text{eff} I_\text{eff}}
+     = \frac{P}{I^2_\text{eff}}
+     =\frac{300\me{W}}{2\me{A}^2}
+     =75\me{\Omega}\;.
+   }
+ \end{enumerate}
+
+\fi

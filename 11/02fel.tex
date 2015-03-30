@@ -1,0 +1,35 @@
+\feladat{2}{
+ Erős elektromágnes $B=1,6\,\textrm{T}$ erősségű mágneses teret tud létrehozni egy $A=0,2\,\textrm{m}^2$ keresztmetszetű térrészben. A mágnes köré egy $N=200$ menetből álló tekercset helyezünk el, amelynek ki- és bemenete hurokszerűen össze van kötve. Az elektromágnest ezután $T=0,02\,\textrm{s}$ alatt kikapcsoljuk. Mekkora áram fog folyni a tekercsben, ha a tekercset alkotó kábel teljes ellenállása $R=20\,\Omega$?
+}{02fel_01fig}{}
+
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ A Faraday-féle indukciós törvény szerint
+ \al{
+  \ointl{\partial A}{}\Ev\,\dd\sv = -\pder{}{t}\intl{A}{}\Bv\,\dd^2\fv\;,
+ }
+ ahol a jobb oldalon a mágneses indukció felületi integrálja szerepel egy $A$ felületre (a mágneses indukciófluxus), a bal oldalon pedig az elektromos térerősség vonalintegrálja az $A$ felület határa mentén.
+
+ A mágneses indukciófluxus a kezdeti pillanatban:
+ \al{
+  \Phi_0
+   =\intl{A}{}\Bv\,\dd^2\fv
+   =N\cdot\intl{\substack{\text{kereszt-}\\ \text{metszet}}}{}\Bv\,\dd^2\fv
+   =N\cdot BA\;.
+ }
+ A jobb oldalon az elektromos térerősség vonalintegrálja áll, ami az elektromotoros erő, $\ep$. A tekercsben folyó áram:
+ \al{
+  I
+   &=\frac{\ep}{R}
+    =\frac{}{R}\ointl{\partial A}{}\Ev\,\dd\sv
+    =-\frac{1}{R}\pder{}{t}\intl{A}{}\Bv\,\dd^2\fv
+    =-\frac{1}{R}\pder{}{t}(NBA)
+  \\
+   &\approx-\frac{NA}{R}\frac{\Delta B}{\Delta t}
+    =-\frac{200\cdot 0,2\me{m^2}}{20\me{\Omega}}\frac{1,6\me{T}}{0,02\me{s}}
+    =-160\me{A}\;.
+ }
+ 
+\fi

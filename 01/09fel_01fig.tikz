@@ -1,0 +1,32 @@
+\begin{tikzpicture}[
+                      axis/.style={font=\small,>=latex},
+                      seged/.style={mygray},
+                      vector/.style={black,thick,>=latex}
+   ]
+    \draw[axis,->] (-2.2,0) -- (2.5,0) node[below] {$x$};
+    \draw[axis,->] (0,-2.2) -- (0,2.5) node[left] {$y$};
+    
+    \draw (0,0) circle (2.2);
+    \fill (0,0) circle (2pt) node[below left] {O};
+    
+    \draw (0,0) circle (1.2);
+    \draw (0,0) circle (1.6);
+    
+    \fill[even odd rule,gray,opacity=0.2] (0,0) circle (1.2) (0,0) circle (1.6);
+     
+    \draw[->] (0,0) -- (65:1.2);
+    \node at (72:0.8) {$r$};
+    
+    \draw[<->] (45:1.2) -- (45:1.6);
+    \node at (56:1.4) {$\dd r$};
+    
+    \draw[->] (0,0) -- (-20:2);
+    \node[below] at (-20:2) {$R$};
+    
+    \node[right] (T) at (2,2) {$\dd T=2\pi r\dd r$};
+    \node (T2) at (20:1.25) {};
+    \path[->,>=latex] (T) edge [bend left] (T2);
+    
+%         \shade[left color=blue!5!white,right color=blue!40!white,opacity=0.3] (0,0) circle (2);
+   \end{tikzpicture} 
+

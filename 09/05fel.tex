@@ -1,0 +1,56 @@
+\feladat{5}{
+ Határozzuk meg az ábrán látható kapcsolás Th\'evenin-féle helyettesítő képét! Mekkora az eredeti kapcsolásban és a helyettesítő képben a generátorok teljesítménye?
+}{05fel_01fig}{1}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A helyettesítő kép meghatározásához először számoljuk ki, hogy terhelés nélkül mekkora a feszültség az $A$ és a $B$ pontok között. Ehhez a huroktörvény felírva
+ \al{
+  0 &= -30\me{V} +\tilde I_1\cdot 12\me{\Omega} +\tilde I_1\cdot 12\me{\Omega} + 24\me{V} \\
+  \tilde I_1 &= 0,25\me{A}\;.
+ }
+ Ahonnan
+ \al{
+  U_{AB}=-24\me{V}-0,25\me{A}\cdot 12\me{\Omega}=-27\me{V}\;.
+ }
+
+ \marginfigure{05fel_02fig}
+ Ezen kívül számoljuk ki, hogy mekkora az $A$ és a $B$ pontok között folyó áram, ha azok között rövidzár található:
+ \al{
+  0 &= -30\me{V} +\tilde I_1\cdot 12\me{\Omega} +(\tilde I_1-\tilde I_2)\cdot 12\me{\Omega} + 24\me{V} \\
+  0 &= - 24\me{V}+(\tilde I_2-\tilde I_1)\cdot 12\me{\Omega}\;,
+ }
+ ahol a második egyenletből
+ \al{
+  \tilde I_1-\tilde I_2 =-2\me{A}\;,
+ }
+ melyet az első egyenletbe behelyettesítve
+ \al{
+  0 &= -30\me{V} +\tilde I_1\cdot 12\me{\Omega}\\
+  \tilde I_1 &= 2,5\me{A}\;,
+ }
+ illetve
+ \al{
+  \tilde I_2 &= 4,5\me{A}\;.
+ }
+ A rövidzáron így $4,5\me{A}$ folyik. 
+
+ \marginfigure{05fel_03fig}
+ A helyettesítő képben tehát a Th\'evenin ellenállás
+ \al{
+  R_\text{Th}
+   =\frac{U_\text{üres}}{I_\text{rövidzár}}
+   =\frac{27\me{V}}{4,5\me{A}}
+   =6\me{\Omega}\;,
+ }
+ illetve a feszültségforrás $U_\text{Th}=U_\text{üres}=27\me{V}$.
+
+ Azt láthatjuk, hogy az eredeti áramkörben akkor is folyik áram, ha az nincs terhelve, vagyis ha az $A$--$B$ pontokra semmi nincs rákapcsolva. Ez az áram az ellenállásokon $P_\text{veszteség}=24\me{\Omega}\cdot (0,25\me{A})^2=1,5\me{W}$ veszteséget ad. A $30\me{V}$-os generátor $P_{30\me{V}}=30\me{V}\cdot 0,25\me{A}=7,5\me{W}$ teljesítményt ad le, míg a $24\me{V}$-os telepen $P_{24\me{V}}=24\me{V}\cdot 0,25\me{A}=6\me{W}$ teljesítmény esik. 
+
+ Vegyük észre, hogy a $30\me{V}$-os telep itt leadja a teljesítményt, míg a $24\me{V}$-os telepen úgy folyik az áram, hogy az azt tölti, vagyis ez a telep $6\me{W}$-ot felvesz az áramkörből. Láthatjuk, hogy itt is teljesül az energiamegmaradás. 
+
+ Ezzel szemben a helyettesítő képben csak terhelés jelenlétében folyik áram. Innen következik az, hogy az eredeti és a helyettesítő képben a teljesítményviszonyok nem feleltethetőek meg ilyen egyszerűen.
+ 
+\fi

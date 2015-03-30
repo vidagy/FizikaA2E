@@ -1,0 +1,91 @@
+\feladat{8}{Egymással párhuzamosan kötünk egy $U$ feszültségre feltöltött kondenzátort és egy $L$ induktivitású tekercset.
+\begin{enumerate}[label=\alph*),itemsep=0pt]
+ \item Írjuk fel a differenciálegyenletet a kapacitásban tárolt töltésekre!
+ \item Határozzuk meg az egyes elemekre eső feszültség időfüggését!
+\end{enumerate}
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás:
+
+ Tudjuk, hogy a kondenzátor feszültségét megadhatjuk az 
+ \eq{
+  U_\text{C}(t)
+   =\frac{Q(t)}{C}
+   =\frac{1}{C}\left(Q(t=0)+\intl{0}{t}I(t^\prime)\dd t^\prime\right)\;
+ }
+ alakban, ahol $Q(t=0)$ a kondenzátor kezdeti töltése: $Q(t=0)=C\cdot U$, és $I(t)$ az áramkörben folyó áram. A tekercsen eső feszültséget pedig megadhatjuk mint 
+ \eq{
+  U_\text{L}(t)=L\der{I(t)}{t}\;.
+ }
+
+ A II. Kirchhoff-törvényt felírva megkapjuk, hogy
+ \al{
+  0&=U_\text{C}(t)+U_\text{L}(t)\\
+  0&=\left(Q(t=0)+\intl{0}{t}I(t^\prime)\dd t^\prime\right)+L\der{I(t)}{t}\;.
+ }
+
+ \marginfigure{08fel_01fig}
+ 
+ Ennek mindkét oldalát idő szerint deriválva:
+ \al{
+  0&=\frac{1}{C}I(t)+L\der{^2I(t)}{t^2}\\
+  0&=\der{^2I(t)}{t^2}+\frac{1}{LC}I(t)\;.
+ }
+
+ Emellett még azt tudjuk, hogy abban a pillanatban, amikor összeérintettük a kondenzátor és a tekercs kivezetéseit, akkor még éppen nem folyt áram, vagyis $I(t=0)=0$.
+
+ Ennek az egyenletnek a megoldását már korábbról ismerjük. Egy olyan függvényt keresünk, amelynek a második deriváltja önmaga, csak még meg van szorozva egy negatív számmal. A szinusz és a koszinusz függvény ilyen függvény. Legáltalánosabban az alábbi alakban írhatjuk fel az egyenlet megoldását:
+
+ \eq{
+  I(t)=I_0\cdot \sin\big(\omega t + \phi_0\big)\;,
+ }
+ ahol $\omega=\frac{1}{\sqrt{LC}}$, illetve $I_0$ és $\phi_0$ két paraméter, amelyek tetszőleges értéke mellett az előbbi függvény kielégíti a fenti differenciálegyenletet.
+
+ Az $I_0$ és a $\phi_0$ paraméterek értékét a kezdeti feltétel rögzíti, ugyanis tudjuk, hogy $t=0$-ban az áram értéke nulla, illetve hogy kezdetben $U$ feszültségre volt feltöltve a kondenzátor. Az előbbiből:
+ \al{
+  0&=I(t=0)
+    =I_0\cdot \sin\big(\omega\cdot 0 + \phi_0\big)
+    =I_0\cdot \sin\big(\phi_0\big)\\
+  0&=\sin(\phi_0)\\
+  0&=\phi_0\;,
+ }
+ míg az utóbbiból:
+ \al{
+  0&=U_\text{C}(t)+U_\text{L}(t)\\
+  0&=U_\text{C}(0)+U_\text{L}(0)\\
+  0&=U+U_\text{L}(0)\;,
+ }
+ vagyis
+ \al{
+  -U
+   &=U_\text{L}(0)
+    =L\left.\der{I(t)}{t}\right|_{t=0}
+    =L\big(I_0\omega \cdot \cos(\omega t)\big)_{t=0}
+    =I_0 L \omega\\
+   I_0&=-\frac{U}{L\omega}\;.
+ }
+
+ Tehát az áram időfüggése:
+ \al{
+  I(t)=-\frac{U}{L\omega}\sin(\omega t)\;.
+ }
+
+ Ebből már könnyen számolhatjuk a kondenzátor és a tekercs feszültségének időfüggését:
+ \al{
+  U_\text{C}(t)
+   &=U+\frac{1}{C}\intl{0}{t}I(t^\prime)\dd t^\prime
+    =U-\frac{U}{LC\omega}\intl{0}{t}\sin(\omega t^\prime)\dd t^\prime
+  \\
+   &=U-\frac{U}{LC\omega}\left[\frac{-\cos(\omega t^\prime)}{\omega}\right]_{0}^{t}
+    =U+U\big(\cos(\omega t)-1\big)
+    =U\cos(\omega t)\;,
+    \\
+  U_\text{L}(t)
+   &=L\der{I(t)}{t}
+    =L\der{}{t}\Big(-\frac{U}{L\omega}\sin(\omega t)\Big)
+    =-U\cos(\omega t)\;.
+ }
+ 
+\fi

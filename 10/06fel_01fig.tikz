@@ -1,0 +1,57 @@
+\begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                    seged/.style={dashed,gray}
+]
+ \draw[opacity=0.0] (-1.2,0) -- (1.2,0);
+ \coordinate (A) at (270-8:2.0);
+ \coordinate (B) at (270+8:2.0);
+ 
+ %theta
+ \draw[seged] (0,0) -- (0,-1.0);
+ \draw[gray] (0,-0.8) arc (270:278:0.8);
+ \draw[gray,<-] (270+4:0.7) to[out=70,in=190] +(0.5,0.2) node[right=-2pt] {$\frac{\vartheta}{2}$};
+ 
+ %B A körül 
+ \draw[orange,thick,<-,>=latex] (A)++(-50:0.4 ) arc (-50:40:0.4 );
+ \draw[orange,thick,<-,>=latex] (A)++(-45:0.55) arc (-45:35:0.55);
+ \draw[orange,thick,<-,>=latex] (A)++(-40:0.73) arc (-40:30:0.73);
+ 
+ \node[orange] at (0.01,-2.5) {$\Bv$};
+ 
+ % felfüggesztes
+ \draw (-0.2,0) -- (0.2,0);
+ \foreach {\x} in {1,2,...,6}
+ {
+  \draw (-0.2,0)++(0.4/6*\x,0) -- +(-0.07,0.1);
+ }
+ \draw (0,0) -- (A);
+ \draw (0,0) -- node[right] {$l$} (B);
+ 
+ %erok
+ \draw[->,>=latex,red!40!blue!60,thick] (A) -- +(-0.3,0) node[left]  {$\Fv_\text{L}$};
+ \draw[->,>=latex,red!40!blue!60,thick] (B) -- +( 0.3,0) node[right] {$\Fv_\text{L}$};
+ 
+ \draw[->,>=latex,red,thick] (A) -- +(0,-1.0) node[below left]  {$m\gv$};
+ \draw[->,>=latex,red,thick] (B) -- +(0,-1.0) node[below right] {$m\gv$};
+ 
+ \draw[->,>=latex,black!20!orange!80,thick] (A) -- node[left]  {$\Kv$} +(82:0.9);
+ \draw[->,>=latex,black!20!orange!80,thick] (B) -- node[right] {$\Kv$} +(98:0.9);
+ 
+ % vezetekek
+ \fill[white,draw=black] (A) circle (0.1);
+ \fill[white,draw=black] (B) circle (0.1);
+ 
+ % I
+ \node[darkgreen] at (A) {\scriptsize $\boldsymbol \otimes$};
+ \node[darkgreen] at (B) {\scriptsize $\boldsymbol \odot$};
+ 
+ \node[darkgreen,below left =2pt] at (A) {$I$};
+ \node[darkgreen,below right=1pt] at (B) {$I$};
+ 
+ %d
+ \draw[|<->|,>=latex] (0.02,-0.7)++(A) -- node[below] {$d$} +(0.52,0);
+ 
+ 
+ %  \draw[->,>=latex] (0,0,0) -- node[below] {$R$} (-0.5*1.45*0.3,-0.866*1.45*0.3,0) ;
+ 
+
+\end{tikzpicture} 

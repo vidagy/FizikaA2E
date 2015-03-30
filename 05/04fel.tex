@@ -1,0 +1,33 @@
+\feladat{4}{
+ Tegyük fel, hogy a térben a térfogati töltéssűrűség csak az $x$--$y$ síktól mért távolságtól függ, tehát $\varrho(x,y,z)=f\big(\abs{z}\big)$ valamilyen $f$ függvényre. Fejezzük ki $f$ segítségével a potenciált a tér minden pontjában!
+}{}{}
+
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ Használjuk fel a 3.~feladatsor 6.~feladatának eredményét. Ott kiszámoltuk, hogy ebben az esetben a térerősség 
+ \al{ 
+  \Ev(z) = \frac{1}{\ep_0}\intl{0}{z}\varrho(z')\,\dd z'\cdot \sgn(z)\cdot \ev_z\;.
+ }
+
+ A töltéselrendezés szimmetriája miatt a potenciál is szimmetrikus lesz az $x$--$y$ síkra, vagyis $U(z)=U(\abs{z})$. A potenciál a $z>0$ tartományban
+ \al{ 
+  U(z)
+   &= U(0) -\intl{0}{z}\Ev(\rv')\,\dd\rv'\;,
+ }
+ ahol az integrálás egy olyan úton megy végig, amelyik a $z'=0$ magasságban kezdődik, és $z'=z$ magasságig jut. Sok ilyen integrálási út létezik, azonban a potenciálelmélet alaptétele kimondja, hogy a potenciál értéke független ettől az integrálási úttól, az csak a kezdeti és a végponttól függ. Válasszuk akkor ezt az utat úgy, hogy az integrálás a lehető legegyszerűbb legyen: haladjuk a $z$ tengellyel párhuzamosan. 
+ \al{ 
+  U(z)
+   &= U(0) -\intl{0}{z}\Ev(\rv')\ev_z\dd z'
+    = U(0) -\intl{0}{z}\frac{1}{\ep_0}\intl{0}{z'}\varrho(z'')\,\dd z''\cdot \underbrace{\ev_z\cdot\ev_z}_{=1}\dd z'
+ }
+
+
+ Válasszuk a potenciál referenciapontjának az $x$--$y$ síkot, vagyis rögzítsük az $U(z=0)=0$-t. A megoldás így:
+ \al{ 
+  U(z)
+   &= -\frac{1}{\ep_0}\intl{0}{z}\intl{0}{z'}\varrho(z'')\,\dd z''\dd z'\;.
+ }
+ 
+\fi

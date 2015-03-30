@@ -1,0 +1,51 @@
+\begin{tikzpicture}
+ \begin{scope}[yshift=4cm,xshift=1cm,scale=2.5]
+  \draw (0,0) -- (0,1);
+  \draw (2,0) -- (2,1);
+  \kapacitas{(0,0)}{(2,0)}{$C$}{(0,-0.2)}
+  \tekercs{(0,1)}{(2,1)}{$L$}{(0,+0.4)}
+  
+%   %plusz minuszok
+%   \node[blue] at (0.75,0.3) {\small $\boldsymbol\ominus$};
+%   \node[red] at  (1.25,0.3) {\small $\boldsymbol\oplus$};
+%   
+%   \node[blue] at (0.4,1.2) {\small $\boldsymbol\ominus$};
+%   \node[red] at  (1.55,1.2) {\small $\boldsymbol\oplus$};
+  
+ \end{scope}
+ 
+ \begin{scope}[domain=0:7]
+  \draw[dashed,gray] (1.57,1.7) -- (1.57,-10.5) node[below,black] {$\frac{T}{4}$};
+  \draw[dashed,gray] (3.14,1.7) -- (3.14,-10.5) node[below,black] {$\frac{T}{2}$};
+  \draw[dashed,gray] (4.71,1.7) -- (4.71,-10.5) node[below,black] {$\frac{3T}{4}$};
+  \draw[dashed,gray] (6.28,1.7) -- (6.28,-10.5) node[below,black] {$T$};
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+  \draw[dashed,gray] (0,-0.8/0.6) node[left,black] {$-\frac{U}{L\omega}$} -- (7,-0.8/0.6);
+  \draw[dashed,gray] (0,0.8/0.6) node[left,black] {$\frac{U}{L\omega}$} -- (7,0.8/0.6);
+  \draw[->,>=latex] (-0.2,0) -- (7.2,0) node[above] {$t$};
+  \draw[->,>=latex] (0,-1.8) -- (0,1.8) node[above left] {$I(t)$};
+  \draw[color=darkgreen,thick] plot (\x,{-0.8/0.6*sin(\x r)});
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+  \begin{scope}[yshift=-4.5 cm]
+   \draw[dashed,gray] (0,-0.8) node[left,black] {$-U$} -- (7,-0.8);
+   \draw[dashed,gray] (0,0.8) node[left,black] {$U$} -- (7,0.8);
+   \draw[->,>=latex] (-0.2,0) -- (7.2,0) node[below] {$t$};
+   \draw[->,>=latex] (0,-1.8) -- (0,1.8) node[left] {$U_\text{C}(t)$};
+   \draw[cyan,thick] plot (\x,{0.8*cos(\x r)});
+  \end{scope}
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+  \begin{scope}[yshift=-9 cm]
+   \draw[dashed,gray] (0,-0.8) node[left,black] {$-U$} -- (7,-0.8);
+   \draw[dashed,gray] (0,0.8) node[left,black] {$U$} -- (7,0.8);
+   \draw[->,>=latex] (-0.2,0) -- (7.2,0) node[below] {$t$};
+   \draw[->,>=latex] (0,-1.8) -- (0,1.8) node[left] {$U_\text{L}(t)$};
+   \draw[cyan,thick] plot (\x,{-0.8*cos(\x r)});
+  \end{scope}
+ \end{scope}
+\end{tikzpicture} 

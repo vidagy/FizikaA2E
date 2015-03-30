@@ -1,0 +1,33 @@
+\feladat{9}{
+ Az $x$--$y$ síkban végtelen vezető lap helyezkedik el, a $\dv=(0,0,d)$ pontba $Q$ töltést helyezünk. Mi lesz az elektromos térerősség a $z > 0$ féltérben?
+}{}{}
+ 
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A vezető lap ideális fém, vagyis a térerősségnek arra merőlegesnek kell lennie, a fémen belül pedig a térerősség nulla.
+
+ % \marginpar{
+ %  \includegraphics[width=5.5cm]{09fel_01fig}
+ % }
+
+ A feladat megoldásához a tükörtöltések módszerét fogjuk felhasználni. Vegyük észre, hogy a feladat nagyfokú szimmetriával rendelkezik, emiatt a kérdéses térrészben a térerősségnek is nagyon szimmetrikusnak kell lennie. Tudjuk, hogy a szabad térrészben csak a $Q$ az egyetlen töltés. Próbáljuk meg úgy megkonstruálni a szabad térrészben a térerősséget, hogy hipotetikus töltéseket helyezünk a fém belsejébe. Éppen a szimmetria miatt ezt a töltést csak a $Q$ töltés alá a $(0,0,-d)=-\dv$ pontba helyezhetjük el. Legyen ennek töltése $-Q$, hiszen ekkor a $Q$ és $-Q$ töltések egy dipólust adnak, melynek tere olyan, hogy az a kettőt összekötő szakasz felelzősíkjára minden pontban merőleges. Nekünk pont erre van szükségünk, vagyis legyen
+ \al{
+  \Ev_{z>0}(\rv)=k \left(\frac{Q}{\abs{\rv-\dv}^3}(\rv-\dv)-\frac{Q}{\abs{\rv+\dv}^3}(\rv+\dv)\right)\;.
+ }
+
+ Ez tényleg merőleges a $z=0$ síkra, hiszen
+ \al{
+  &\Ev_{z>0}(x,y,z=0)
+  \\
+  &\qquad
+   =k \Bigg(\frac{Q}{(x^2+y^2+d^2)^\frac{3}{2}}\big((x,y,0)-(0,0,d)\big)
+  \\
+  &\qquad\qquad\qquad\qquad
+   -\frac{Q}{(x^2+y^2+d^2)^\frac{3}{2}}\big((x,y,0)+(0,0,d)\big)\Bigg)
+  \\
+  &\qquad=-2k \frac{Q}{(x^2+y^2+d^2)^\frac{3}{2}}(0,0,d)\;.
+ }
+ 
+\fi

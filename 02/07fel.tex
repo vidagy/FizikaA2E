@@ -1,0 +1,42 @@
+\feladat{7}{
+ Egyenletesen töltött, $R$ sugarú körvonal alakú test töltése $Q$. Határozzuk meg az elektromos térerősséget a középponton átmenő, a kör síkjára merőleges tengely mentén!
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ \marginfigure{07fel_01fig.tikz}
+
+ Ezt a feladatot is az előzőhöz hasonló módon oldjuk meg: először felosztjuk a töltéseloszlást kis darabokra, melyeknek terét úgy tudjuk számolni, mintha azok ponttöltések lennének, majd összeadjuk az egyes darabok térerősségjárulékát. 
+
+ Tekintsük a körvonal egy $\dd s$ hosszú darabját. Ennek töltése $\dd q=\lambda\dd s$, ahol $\lambda$ a körvonalon a vonalmenti töltéssűrűség: $\lambda=\frac{Q}{2\pi R}$. Térjünk át a $\varphi$ szerinti paraméterezésre, vagyis indexeljük a kis darabokat azzal, hogy milyen $\varphi$ szöghöz tartoznak. A $\dd\varphi$ szög alatt $\dd s = R\dd\varphi$ körív látszik, vagyis a $\varphi$-nál lévő $\dd\varphi$ hosszú körívszakasz töltése $\dd q(\varphi)=\lambda R \dd\varphi$.
+
+ A $\dd q(\varphi)$ térerősségjárulékának nagysága $\dd E(\varphi)=k\frac{\dd q(\varphi)}{z^2+R^2}$. Ezek a járulékok azonban nem összegezhetőek egyszerűen, ugyanis a különböző darabok térerősségjáruléka nem egyirányú. Általános esetben a járulékoknak az $x$, $y$ és $z$ irányú vetületeit is ki kellene számolni, majd ezeket összeadni. Itt azonban láthatjuk, hogy az egymással szemben lévő darabok vízszintes térerősségjárulékai kiejtik egymást, így csak $z$ irányban lehet eredő térerősség. 
+
+ A $\dd \Ev(\varphi)$ $z$ irányú vetülete: 
+ \al{
+  \dd E_z(\varphi)
+   &=\dd E(\varphi)\cos\alpha
+    =k\frac{\dd q(\varphi)}{z^2+R^2}\cdot\frac{z}{\sqrt{z^2+R^2}}
+    =k\frac{z\dd q(\varphi)}{(z^2+R^2)^{\frac{3}{2}}}
+   \\
+   &=k\frac{z\lambda R \dd\varphi}{(z^2+R^2)^{\frac{3}{2}}}\;,
+ }
+ melyből az eredő térerősség $z$ irányú komponense:
+ \al{
+  E_z(z)
+   &=\intl{0}{2\pi}\dd E_z(\varphi)
+    =\intl{0}{2\pi}k\frac{z\lambda R \dd\varphi}{(z^2+R^2)^{\frac{3}{2}}}
+    =k\frac{z\lambda R}{(z^2+R^2)^{\frac{3}{2}}} \intl{0}{2\pi}\dd\varphi
+  \\
+   &=k\frac{z\lambda R}{(z^2+R^2)^{\frac{3}{2}}}\cdot2\pi
+    =k\frac{Q}{2\pi R}\frac{z R}{(z^2+R^2)^{\frac{3}{2}}}\cdot 2\pi
+    =kQ\frac{z}{(z^2+R^2)^{\frac{3}{2}}}\;,
+ }
+ tehát a térerősség a $z$ tengely mentén:
+ \al{
+  \Ev(z)=\left(0,0,kQ\frac{z}{(z^2+R^2)^{\frac{3}{2}}}\right)\;.
+ }
+ 
+\fi

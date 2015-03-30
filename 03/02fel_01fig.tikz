@@ -1,0 +1,28 @@
+ \tdplotsetmaincoords{70}{28}
+  \begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                      seged/.style={dashed,gray}
+  ]
+  
+   \begin{scope}[tdplot_main_coords]
+
+   \fill[black!15] (0,0,0) -- (1.8,0,0) -- (0,2.3,0) -- cycle;
+   
+    % axes
+    \draw[axis] (0,0,0) -- (3,0,0) node[below right] {$x$};
+    \draw[axis] (0,0,0) -- (0,3,0) node[above] {$y$};
+    \draw[axis] (0,0,0) -- (0,0,3) node[above] {$z$};
+      
+    \draw (0,0,0) node {\tikz[tdplot_screen_coords] \fill (0,0) circle (0.07);};
+    \draw (0,0,0) node[below left] {$O$};
+    \draw (1.8,0,0) node {\tikz[tdplot_screen_coords] \fill (0,0) circle (0.07);};
+    \draw (1.8,0,0) node[below] {$A$};
+    \draw (0,2.3,0) node {\tikz[tdplot_screen_coords] \fill (0,0) circle (0.07);};
+    \draw (0,2.3,0) node[above left] {$B$};
+    
+    \draw (1.8,0,0) -- (0,2.3,0);
+    
+    \node[below] at (0.9,0,0) {$w$}; 
+    \node[above] at (0,1.15,0) {$h$}; 
+   \end{scope}
+   
+  \end{tikzpicture} 

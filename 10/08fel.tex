@@ -1,0 +1,51 @@
+\feladat{8}{
+ Egy hosszú, egyenes vezető és egy téglalap alakúra hajlított vezető keret egy síkban fekszik. A téglalap rövid oldala $a=0,15\,\textrm{m}$, hosszú oldala $b=0,45\,\textrm{m}$. Az egyenes vezető és a téglalap hosszú oldala egymással párhuzamosak, az egyenes vezető és a téglalap közelebbi élének távolsága $c=0,1\,\textrm{m}$. Az egyenes vezetőben folyó áram $I_1=5\,\textrm{A}$, a keretben pedig $I_2=10\,\textrm{A}$ áram kering.
+\begin{enumerate}[label=\alph*),itemsep=0pt]
+\item Számítsuk ki a keret egyes darabjaira ható erőt!
+\item Igaz-e, hogy a keretre ható erők eredője nulla? Magyarázzuk meg az eredményt!
+\end{enumerate}
+}{08fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item 
+   Az egyenes vezető által létrehozott mágneses indukció nagysága
+   \al{
+    B(r)=\frac{\mu_0 I_1}{2\pi r}\;.
+   }
+   
+   Az egyes oldalakra ható Lorentz-erők irányát a jobbkéz szabály segítségével tudjuk meghatározni. A két vezetővel párhuzamos oldalra ható erő nagysága:
+   \al{
+    F_2&=\frac{\mu_0 I_1}{2\pi (a+c)}\cdot I_2\cdot b\;,
+    &
+    F_4&=\frac{\mu_0 I_1}{2\pi c}\cdot I_2\cdot b\;.
+   }
+   
+   A merőleges oldalaknál a mágneses indukció nagysága változik a vezető mentén, így ott lokálisan kell vizsgálni az erőket. A 1-es oldal a végtelen vezetőtől $x$ távolságban lévő $\dd x$ hosszú darabjára ható erő nagysága
+   \al{
+    \dd F_\text{L}
+     =\frac{\mu_0 I_1}{2\pi x}\cdot I_2\cdot \dd x\;,
+   }
+   vagyis a teljes oldalra ható erő:
+   \al{
+    F_1
+     &= \intl{\text{1-es oldal}}{}\dd F_\text{L}
+      = \intl{c}{a+c}\frac{\mu_0 I_1}{2\pi x}\cdot I_2\cdot \dd x
+      = \frac{\mu_0 I_1 I_2}{2\pi }\left[\ln x\right]_{c}^{a+c}
+      = \frac{\mu_0 I_1 I_2}{2\pi }\ln \frac{a+c}{c}\;.
+   }
+   Hasonlóan a 3-as oldalra is ugyanezt az eredményt kapjuk.
+   
+  \item
+   Azt látjuk, hogy az 1-es és a 3-as erő kiejtik egymást, hiszen ugyanakkorák és egymással ellentétes irányúak. Azonban 2-es és 4-es erő nem ugyanakkora, hiszen más távolságban vannak azok az oldalak az egyenes vezetőtől, így más mágneses indukciót éreznek. Az eredőerő:
+   \al{
+    F_e
+     =F_4-F_2
+      =\frac{\mu_0 I_1 I_2 b}{2\pi}\left(\frac{1}{c}-\frac{1}{a+c}\right)\;.
+   }
+ \end{enumerate}
+
+\fi

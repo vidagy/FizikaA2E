@@ -1,0 +1,64 @@
+\feladat{9}{
+ Két párhuzamos, egymástól $a=2\me{cm}$ távolságban lévő végtelen síklap közötti tartományt $\varrho=10^{-5}\me{C/m^{3}}$ töltéssűrűségű, $\varepsilon_{r}=2$ relatív permittivitású anyag tölt ki. Az egyik síklaptól a másikkal ellentétes irányban $d=8\me{cm}$ távolságra egy, az előzőekkel párhuzamos földelt fémlap helyezkedik el. Hogyan változik a térerősség a síklapokra merőleges tengely mentén vett helyzet függvényében?
+}{09fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Számoljuk ki először a szigetelő tartomány dielektromos eltolását. Ehhez vegyünk fel egy $A$ alapterületű $h$ magas hasábot, melynek tengelye merőleges a tartomány felületére és az szimmetrikusan helyezkedik el a tartomány belsejében. Ennek palástjával párhuzamos az eltolás, így a felületi integrál csak az alaplapokon fog járulékot adni. A Gauss-törvény felírva:
+ \begin{description}
+   \item[$h<a$:] 
+   \al{
+    D_\text{diel}\left(\frac{h}{2}\right)\cdot A+D_\text{diel}\left(-\frac{h}{2}\right)\cdot A
+     &=A\cdot h\cdot \varrho\\
+    D_\text{diel}\left(\frac{h}{2}\right)
+     &=\varrho\cdot \frac{h}{2}\\
+    D(x)
+     &=\varrho x\;.
+   }
+   \item[$a<h$:]
+   \al{
+    D_\text{diel}(x)
+     &=\varrho \frac{a}{2}\;.
+   }
+ \end{description}
+
+ A fémlap terének meghatározásához azt kell először meghatározni, hogy az mennyire töltődik fel. A töltéssemlegességet úgy tudja elérni, hogy a felületére akkora felületi töltéssűrűséget halmoz fel, mint amennyi töltés egy ugyanakkora felületű szigetelődarabon van. Így tehát $\sigma_\text{lap}=-\varrho \frac{a}{2}$.
+
+ Összefoglalva
+ \al{
+  D_\text{diel}(x)=
+   \begin{cases}
+              - \frac{\varrho a}{2} & x<-\frac{a}{2} \\
+                \varrho x           & -\frac{a}{2}<x<\frac{a}{2} \\
+     \phantom{-}\frac{\varrho a}{2} & \frac{a}{2}<x
+   \end{cases}
+ }
+ \al{
+  D_\text{lap}(x)=
+   \begin{cases}
+    \phantom{-} \frac{\varrho a}{2} & x< d+\frac{a}{2} \\
+             -  \frac{\varrho a}{2} & d+\frac{a}{2} < x
+   \end{cases}
+ }
+ \al{
+  D(x)=D_{\textrm{diel}}(x)+D_\text{lap}(x)=
+   \begin{cases}
+          0 & x<-\frac{a}{2} \\
+    \varrho\left(x+\frac{a}{2}\right) &  -\frac{a}{2}<x<\frac{a}{2} \\
+    \varrho a &  \frac{a}{2}<x<d+\frac{a}{2}\\
+          0 &  d+\frac{a}{2}<x
+   \end{cases}
+ }
+ \al{
+  E(x)=\frac{D(x)}{\ep_0\ep_\text{r}(x)}=
+   \begin{cases}
+          0 & x<-\frac{d}{2} \\
+    \frac{\varrho}{\ep_0\ep_\text{r}}\left(x+\frac{d}{2}\right) &  -\frac{d}{2}<x<\frac{d}{2} \\
+    \frac{\varrho}{\ep_0} a &  \frac{d}{2}<x<a+\frac{d}{2}\\
+          0 &  a+\frac{d}{2}<x.
+   \end{cases}
+ }
+ 
+\fi

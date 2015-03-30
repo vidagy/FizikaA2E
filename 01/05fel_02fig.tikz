@@ -1,0 +1,35 @@
+\begin{tikzpicture}[
+                      axis/.style={font=\small,>=latex},
+                      seged/.style={gray},
+                      vector/.style={black,thick,>=latex}
+   ]
+ \draw[axis] (-0.5,0) -- (3,0);
+ \draw[axis] (0,-0.5) -- (0,3);
+ 
+%     \draw (0,0) circle (3);
+ 
+ \draw[seged] (0,0) -- (40:3);
+ \draw[seged] (0,0) -- (60:3);
+ \draw[seged] (-10:2) arc (-10:110:2);
+ \draw[seged] (-10:2.5) arc (-10:110:2.5);
+ 
+ \fill[gray,opacity=0.2] (60:2) -- (60:2.5) arc (60:40:2.5) -- (40:2) arc (40:60:2);
+ \fill[gray,opacity=0.3] (60:2.5) -- (60:3) arc (60:40:3) -- (40:2.5) arc (40:60:2.5);
+ \fill[gray,opacity=0.1] (60:0) -- (60:2) arc (60:40:2) -- (40:0);
+ \draw (60:2) -- (60:2.5) arc (60:40:2.5) -- (40:2) arc (40:60:2);
+ 
+ \draw[<->] (40:1.8) arc (40:60:1.8);
+ \node at (50:1.5) {$\dd\varphi$};
+ \draw[<->|] (65:2) -- (65:2.5);
+ \node at (72:2.25) {$\dd r$};
+ \draw[<->] (0:1.2) arc (0:40:1.2);
+ \node at (20:0.9) {$\varphi$};
+ 
+ \draw[->|] (0:0) -- (65:2);
+ \node at (75:1.5) {$r$};
+ 
+ \fill (0,0) circle (1pt) node[below left] {O};
+ 
+%         \shade[left color=blue!5!white,right color=blue!40!white,opacity=0.3] (0,0) circle (2);
+\end{tikzpicture} 
+

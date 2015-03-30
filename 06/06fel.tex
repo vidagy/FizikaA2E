@@ -1,0 +1,39 @@
+\feladat{6}{
+ Számítsuk ki a $h$ hosszúságú, $R_{1} < R_{2} \ll h$ sugarakkal rendelkező hengerkondenzátor kapacitását, ha a hengerek között levegő van!
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Töltsük fel a kondenzátort $Q$ töltéssel. A kapacitás kiszámolásához először szükséges tudnunk a kondenzátor belsejében így kialakuló térerősséget. Ezt is kiszámoltuk már korábban, az eredmény:
+ \al{
+  E(r)
+   &=\begin{cases}
+      0 & r<R_1 \\
+      \frac{Q}{2\pi\ep_0 h}\frac{1}{r} & R_1<r<R_2 \\
+      0 & R_2<r \\
+     \end{cases}
+  \;,
+ }
+ ahol a térerősség sugárirányú. A két henger közötti potenciálkülönbséget a definíció szerint számoljuk, ahol az integrálási út a szélesebb, nulla potenciálú hengertől sugárirányban vezet a kisebb hengerig.
+ \al{
+  U(R_1)
+   &=U(R_2)-\intl{R_2}{R_1}E(r')\,\dd r'
+    =0-\intl{R_2}{R_1}\frac{1}{2\pi\ep_0 h}\frac{Q}{r'}\,\dd r'
+    =-\frac{Q}{2\pi\ep_0 h}\left[\ln{r'}\right]_{R_2}^{R_1}
+  \\
+   &=\frac{Q}{2\pi\ep_0 h}\ln\frac{R_2}{R_1}
+  \;.
+ }
+
+ Vagyis a kapacitás:
+ \al{
+  C
+   =\frac{Q}{V}
+   =\frac{Q}{U(R_1)-U(R_2)}
+   =2\pi\ep_0 h\left[\ln\frac{R_2}{R_1}\right]^{-1}
+  \;.
+ }
+ 
+\fi

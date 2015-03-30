@@ -1,0 +1,62 @@
+\feladat{5}{
+ Koncentrikus fémgömbök között $R < r < 2R$ tartományban $\varepsilon_{1}$ permittivitású, $E_{1kr}$ átütési szilárdságú, a $2R < r < 3R$ tartományban pedig $\varepsilon_{2}=0,25\varepsilon_{1}$ permittivitású, $E_{2kr}=1,1E_{1kr}$ átütési szilárdságú szigetelő van. Mekkora a gömbökre kapcsolható legnagyobb feszültség?
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+ 
+ \marginfigure{05fel_01fig}
+
+ Korábbi tanulmányainkból ismerjük már, hogy hogyan lehet kiszámolni a dielektromos eltolást és a térerősséget. Ezek az adott rendszerben:
+ \al{
+  D(r)&=
+   \begin{cases}
+    0 & r<R_1 \\
+    \frac{1}{4\pi}\frac{Q}{r^2} & 2R<r<3R \\
+    0 & 3R<r
+   \end{cases}
+  &,&&
+  E(r)&=
+   \begin{cases}
+    0 & r<R \\
+    \frac{1}{4\pi\ep_0 \ep_1}\frac{Q}{r^2} & R<r<2R \\
+    \frac{1}{4\pi\ep_0 \ep_2}\frac{Q}{r^2} & 2R<r<3R \\
+    0 & 3R<r
+   \end{cases}
+   \;.
+ }
+
+ Láthatjuk, hogy mind a két tartományban a legkisebb sugárnál a legnagyobb a térerősség, vagyis akkor nem üt át a rendszer, ha $E(R)<E_\text{1kr}$ és $E(2R)<E_\text{2kr}$. A feladat számértékei úgy vannak megadva, hogy $E(R)=E(2R)$, vagyis elégséges, ha 
+ \al{
+  E(R)&<E_\text{1kr} \\
+  \frac{1}{4\pi\ep_0 \ep_1}\frac{Q}{R^2} &< E_\text{1kr} \\
+  Q &< 4\pi\ep_0 \ep_1 R^2 E_\text{1kr}
+  \;.
+ }
+
+ Most már tudjuk, hogy legfeljebb mekkora lehet az a töltés, amit a kondenzátorra felhalmozhatunk. Innen a legnagyobb feszültséget a kondenzátor kapacitásának ismeretében tudjuk megadni:
+ \al{
+  U=\frac{Q}{C}<\frac{1}{C}\cdot 4\pi\ep_0 \ep_1 R^2 E_\text{1kr}\;.
+ }
+
+ A kapacitás egyszerűen számolható, ha észrevesszük, hogy ez a kondenzátor olyan, mintha két kondenzátor lenne sorosan kapcsolva:
+ \al{
+  C=\frac{1}{\frac{1}{C_1}+\frac{1}{C_2}}\;,
+ }
+ ahol a $C_1$ az $R$ és $2R$ sugarú gömbök közötti $\ep_1$ dielektrikummal töltött kondenzátornak, illetve a $C_2$ az $2R$ és $3R$ sugarú gömbök közötti $\ep_2$ dielektrikummal töltött kondenzátor kapacitásának felel meg. Az előző feladat eredményét felhasználva:
+ \al{
+  C
+   =\frac{1}{\frac{1}{\ep_1}\left(\frac{1}{R}-\frac{1}{2R}\right)+\frac{1}{4\pi\ep_0 \ep_2}\left(\frac{1}{2R}-\frac{1}{3R}\right)}
+   =\frac{4\pi\ep_0 R}{\frac{1}{2\ep_1}+\frac{1}{6\ep_2}}\;,
+ }
+ vagyis
+ \al{
+  U
+   &<
+     \left[\frac{1}{4\pi\ep_0 R}\left(\frac{1}{2\ep_1}+\frac{1}{6\ep_2}\right)\right]\cdot 4\pi\ep_0 \ep_1 R^2 E_\text{1kr}
+    =\left(\frac{1}{2}+\frac{1}{6}\frac{\ep_1}{\ep_2}\right)\cdot R E_\text{1kr}
+  \;.
+ }
+
+\fi

@@ -1,0 +1,23 @@
+ \tdplotsetmaincoords{70}{0}
+ \begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                     seged/.style={dashed,gray}
+ ]
+ 
+  \begin{scope}[tdplot_main_coords]
+
+   % axes
+%     \draw[axis] (0,0,0) -- (3,0,0) node[below right] {$x$};
+%     \draw[axis] (0,0,0) -- (0,3,0) node[above] {$y$};
+   \draw[axis] (0,0,-2) -- (0,0,2) node[above] {$z$};
+   
+   \draw[seged] (0,0,-1.2) circle (1.0);
+   \draw[seged] (0,0, 1.2) circle (1.0);
+   
+   \draw[seged] (1,0,1.0) -- node[right,black] {$l$} (1,0,-1.2);
+   \draw[seged] (-1,0,1.0) -- (-1,0,-1.2);
+   
+   \draw[->,>=latex] (0,0,1.2) -- +(20:1.0) node[right] {$r$}; 
+   
+  \end{scope}
+  \draw[opacity=0] (-3,0) -- (3,0);
+ \end{tikzpicture}

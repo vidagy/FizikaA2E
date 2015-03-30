@@ -1,0 +1,32 @@
+\feladat{10}{
+ Az ábrán látható kapcsolásban mekkorának válasszuk az $R_{x}$ ellenállást, hogy a $K$ kapcsoló zárása ne befolyásolja az $I$ áram értékét?
+}{10fel_01fig}{1}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A kapcsoló bekapcsolása akkor nem módosítja a folyó áramot, ha a kapcsoló két vége között bekapcsolt állapotban sem folyik áram, ami akkor lehetséges, ha a két végpont ugyanakkora potenciálú.
+
+ Azt kiszámoltuk korábban, hogy a soros ágakban az ellenállások arányában esik a feszültség, vagyis 
+ \al{
+  U_1&=\frac{R_1}{R_1+R_2}U
+  &
+  U_x&=\frac{R_x}{R_x+R_3}U\;.
+ }
+
+ Akkor lesz ekvipotenciális a kapcsoló két végpontja, ha az $R_1$ és az $R_x$ ellenállásokon ugyanakkora feszültség esik, vagyis ha
+ \al{
+  U_1&=U_x
+  \\
+  \frac{R_1}{R_1+R_2}U&=\frac{R_x}{R_x+R_3}U
+  \\
+  R_1\cdot (R_x+R_3)&=R_x\cdot(R_1+R_2)
+  \\
+  R_1 R_3=R_x R_2
+  \\
+  \frac{R_1}{R_2}&=\frac{R_x}{R_3}\;.
+ }
+ Tehát akkor nem folyik áram a kapcsolón, ha a soros ágakban az ellenállások aránya megegyezik.
+ 
+\fi

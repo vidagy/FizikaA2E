@@ -1,0 +1,68 @@
+\feladat{7}{
+ $R_1=10\me{cm}$ sugarú gömb térfogati töltéssűrűsége $\varrho=300\me{C/m^{3}}$, relatív permittivitása $\varepsilon_{r}=5$. A gömböt körülveszi egy vele koncentrikus fém gömbhéj, amelynek sugarai $R_2=20\me{cm}$ és $R_3=23\me{cm}$. Ábrázolja a térerősség változását a középponttól mért távolság függvényében!
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ \marginfigure{07fel_01fig}
+ A 4.~feladat gondolatmenetét itt is végigvezethetjük. A Gauss-gömb sugara itt az alábbi tartományokba eshet:
+ \begin{description}
+  \item [$r<R_1$:]
+   Itt a Gauss-törvény egyik és másik oldala
+   \al{
+    \iiint\limits_\text{gömb}\varrho(\rv)\,\dd^3\rv
+     &=\iiint\limits_\text{gömb}\varrho\,\dd^3\rv
+      =\varrho\iiint\limits_\text{gömb}\,\dd^3\rv
+      =\varrho\frac{4}{3}r^3\pi\;,\\
+    \iint\limits_\text{gömb}\Dv(\rv)\,\dd^2\fv
+     &=\iint\limits_\text{gömb}D(r)\,\dd^2 f
+      =D(r)\iint\limits_\text{gömb}\,\dd^2 f\\
+     &=D(r)4\pi r^2\;,
+   }
+   vagyis:
+   \al{
+    D(r)=\frac{\varrho}{3}r\;.
+   }
+   
+  \item [$R_1<r<R_2$:]
+   Ezen a tartományon a Gauss-felület az egész szigetelő gömböt tartalmazza, vagyis $Q_\text{in}=\varrho\frac{4}{3}R_1^3\pi(=Q)$. A felületi integrál az előző tartományhoz hasonlóan számítható, így
+   \al{
+    D(r)4\pi r^2\
+     &=\varrho\frac{4}{3}R_1^3\pi\\
+    D(r)
+     &=\frac{\varrho}{3}\frac{R_1^3}{r^2}\;.
+   }
+ \end{description}
+
+ \begin{description}
+  \item [$R_2<r<R_3$:] 
+   Ezen a tartományon a külső félgömbhéj belsejében vagyunk. Az ideális fém belsejében a térerősség és a dielektromos eltolás nulla. Ennek következménye az, hogy a gömbhéj belsejére $-Q$ töltésnek kell felhalmozódnia, hiszen a Gauss-törvény csak így teljesül. Mivel a fém nincs földelve, így a töltésmegmaradás miatt annak külsején $Q$ töltés halmozódik fel. 
+   
+  \item [$R_3<r$:]
+   Itt is összesen $Q+Q-Q=Q$ töltés található a Gauss-felületen belül, vagyis a második tartományhoz hasonló megoldást kapjuk.
+ \end{description}
+
+ Összegfoglalva:
+ \al{
+  D(r)=
+   \begin{cases}
+     \frac{\varrho}{3}r & r<R_1 \\
+     \frac{\varrho}{3}\frac{R_1^3}{r^2} & R_1<r<R_2 \\
+     0 & R_2<r<R_3 \\
+     \frac{\varrho}{3}\frac{R_1^3}{r^2} & R_3<r
+   \end{cases}
+ }
+ ahonnan
+ \al{
+  E(r)=\frac{D(r)}{\ep_0\ep_\text{r}(r)}=
+   \begin{cases}
+     \frac{\varrho}{3\ep_0\ep_\text{r}}r & r<R_1 \\
+     \frac{\varrho}{3\ep_0}\frac{R_1^3}{r^2} & R_1<r<R_2 \\
+     0 & R_2<r<R_3 \\
+     \frac{\varrho}{3\ep_0}\frac{R_1^3}{r^2} & R_3<r
+   \end{cases}
+ }
+
+\fi

@@ -1,0 +1,61 @@
+\feladat{9}{
+ Egy $C=5\,\mu\textrm{F}$ kapacitású kondenzátort $V_0=800\,\textrm{V}$ feszültséggel töltünk fel. A feltöltött kondenzátort egy ellenálláson keresztül sütjük ki. Mekkora az ellenálláson disszipált teljesítmény?
+}{09fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A $t$-edik időpontban disszipált teljesítmény $P(t)=I(t)V_\text{R}(t)$, így ennek kiszámításához először meg kell határoznunk az áramkörben folyó áramot és az ellenálláson első feszültséget.
+
+ Felírva a második Kirchhoff-törvényt az áramkörben:
+ \al{
+  0=I(t)R-V_\text{C}(t)\;,
+ }
+ ahol 
+ \al{
+  V_\text{C}(t)
+   =\frac{Q_\text{C}(t)}{C}
+   =\frac{1}{C}\left(Q_0-\intl{0}{t}I(t')\,\dd t'\right)\;,
+ }
+ hiszen kezdetben a kondenzátor töltése $Q_0=C V_0$, és az áramkörben folyó $I(t)$ áram a kondenzátor töltését csökkenti. Ezt behelyettesítve, majd idő szerint deriválva:
+ \al{
+  0&=I(t)R-\frac{1}{C}\left(Q_0-\intl{0}{t}I(t')\,\dd t'\right)
+  \\
+  \der{I(t)}{t}&=-\frac{1}{RC}I(t)
+  \\
+  \intl{0}{t}\frac{1}{I(t')}\der{I(t)}{t}\,\dd t'&=-\intl{0}{t}\frac{1}{RC}\,\dd t'
+  \\
+  \big[\ln I(t')\big]_0^t&=-\frac{t}{RC}
+  \\
+  I(t)&=I(0)\e^{-\frac{t}{RC}}
+ }
+ Ahol $I(0)$ a kezdeti időpillanatban folyó áram nagysága: $I(0)=\frac{V_0}{R}$
+ \al{
+  I(t)&=\frac{V_0}{R}\e^{-\frac{t}{RC}}\;.
+ }
+
+ Innen az ellenálláson eső feszültség:
+ \al{
+  V_\text{R}(t)
+   =V_0\e^{-\frac{t}{RC}}\;,
+ }
+ illetve a teljesítmény:
+ \al{
+  P(t)
+   =I(t)V_\text{R}(t)
+   =\frac{V_0^2}{R}\e^{-\frac{2t}{RC}}\;.
+ }
+
+ A kondenzátoron lévő töltés:
+ \al{
+  Q_\text{C}(t)
+   &=Q_0-\intl{0}{t}I(t')\,\dd t'
+    =C V_0-\intl{0}{t}I(t')\,\dd t'
+    =C V_0-\intl{0}{t}\frac{V_0}{R}\e^{-\frac{t'}{RC}}\,\dd t'
+  \\
+   &=C V_0-\frac{V_0}{R}\left[\frac{\e^{-\frac{t'}{RC}}}{-\frac{1}{RC}}\right]_0^t
+    =V_0 C\cdot \e^{-\frac{t}{RC}}\;.
+ }
+
+\fi

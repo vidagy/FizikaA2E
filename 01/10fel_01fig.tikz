@@ -1,0 +1,42 @@
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[tdplot_main_coords,font=\small,
+                    axis/.style={>=latex},
+                    seged/.style={black!25},
+                    vector/.style={black,thick,>=latex}
+]
+%  \coordinate (O) at (0,0,0);
+
+  \foreach \x in {0.5,1,...,2}
+  {
+   \draw[seged] (\x,0,0) -- (\x,0,2);
+   \draw[seged] (\x,0,0) -- (\x,2,0);
+  }
+  \foreach \x in {0.5,1,...,2}
+  {
+   \draw[seged] (0,\x,0) -- (0,\x,2);
+   \draw[seged] (0,\x,0) -- (2,\x,0);
+  }
+  \foreach \x in {0.5,1,...,2}
+  {
+   \draw[seged] (0,0,\x) -- (2,0,\x);
+   \draw[seged] (0,0,\x) -- (0,2,\x);
+  }
+  \draw[axis,->] (0,0,0) -- (2.2,0,0) node[below left] {$x$};
+  \draw[axis,->] (0,0,0) -- (0,2.2,0) node[below right] {$y$};
+  \draw[axis,->] (0,0,0) -- (0,0,2.2) node[above] {$z$};
+  
+  \draw[vector,->] (0,0,0) -- node[below=5pt] {$r$} (1,1,1.5);
+  \draw[thin] (1,1,0) -- (1,1,1.5);
+  \draw[thin] (0,0,0) -- (1,1,0);
+  \draw[thin] (0,0,1.5) -- (1,1,1.5);
+  \node[left] at (0,0,1.3) {$z$};
+  \draw[<->] (1.2,0,0) arc (2:45:1.2);
+  \node at (0.75,0.25,0) {$\varphi$};
+%   \tdplotsetrotatedcoords{-45}{90}{0}
+%   \draw[tdplot_rotated_coords,->] (0,0,0) -- (1,0,0) node {$x$};
+%   \draw[tdplot_rotated_coords,->] (0,0,0) -- (0,1,0) node {$y$};
+%   \draw[tdplot_rotated_coords,->] (0,0,0) -- (0,0,1) node {$z$};
+%   \draw[tdplot_rotated_coords,<->] (-1.5,0,0) arc (180:137:1.5);
+%   \node at (0.3,0.3,1) {$\vartheta$};
+  
+\end{tikzpicture}

@@ -1,0 +1,34 @@
+\feladat{5}{
+ Két darab $1,5$\,mm$^{2}$ keresztmetszetű vezetéket sorba kapcsolunk. Az első vezeték $5$\,m hosszú és rézből készült, a második pedig $15$\,m hosszú és alumíniumból készült. Határozzuk meg az összekapcsolt vezetékek ellenállását! $V=2$\,V feszültség hatására mekkora áram folyik a vezetékben? ($\varrho_{\textrm{Cu}}$ = $0,018\,\Omega$mm$^{2}$/m, $\varrho_{\textrm{Al}}=0,027\,\Omega$mm$^{2}$/m)
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A két vezetékdarab ellenállása:
+ \al{
+  R_\text{Cu}
+   &=\varrho_\text{Cu}\frac{l_\text{Cu}}{A}
+    =0,018\me{\Omega \frac{mm^2}{m}}\frac{5\me{m}}{1,5\me{mm^2}}
+    =0,06\me{\Omega}\;,
+  \\
+  R_\text{Al}
+   &=\varrho_\text{Al}\frac{l_\text{Al}}{A}
+    =0,027\me{\Omega \frac{mm^2}{m}}\frac{15\me{m}}{1,5\me{mm^2}}
+    =0,27\me{\Omega}\;.
+ }
+
+ A sorosan kapcsolt vezetékek ellenállása összeadódik, így a teljes vezeték ellenállása:
+ \al{
+  R=R_\text{Cu}+R_\text{Al}
+   =0,33\me{\Omega}\;.
+ }
+ A vezetéken átfolyó áram:
+ \al{
+  I=\frac{V}{R}
+   =\frac{2\me{V}}{0,33\me{\Omega}}
+   =6,06\me{A}\;.
+ }
+
+\fi

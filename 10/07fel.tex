@@ -1,0 +1,30 @@
+\feladat{7}{
+ Egy $R$ sugarú, félkör alakra hajlított vezető hurokban $I$ nagyságú áram folyik. A vezető az $x-y$ síkban fekszik. A mágneses indukció az $y$ tengellyel párhuzamos, és annak pozitív irányába mutat. Számítsuk ki az egyenes, illetve a hajlított szakaszokra ható erő nagyságát!
+}{07fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Az egyenes szakaszra ható erőt nagyon egyszerű kiszámolni, hiszen a vezető végig merőleges a mágneses indukcióra:
+ \al{
+  F_\text{egyenes}=BI\cdot 2R\;,
+ }
+ mely a síkra merőlegesen felfelé mutat. A félkör alakú vezetődarabbal kissé bonyolultabb a helyzet. A $\vartheta$ szög alatt lévő $\dd l=R \dd \vartheta$ hosszú vezetődarab $\vartheta$ szöget zár be a mágneses indukcióval, vagyis ott a Lorentz-erő járulék:
+ \al{
+  \dd \Fv_\text{L}
+   =\dd l\cdot \Iv\times\Bv
+   =R \dd \vartheta\cdot I B \sin\vartheta\cdot (-\ev_\text{z})\;.
+ }
+ Vagyis az összes darab járuléka lefelé mutat. A teljes félkörre ezeket tudjuk összegezni:
+ \al{
+  F_\text{félkör}
+   =\intl{\text{félkör}}{}\dd F_\text{L}
+   =I B R\intl{0}{\pi}\sin\vartheta\, \dd \vartheta 
+   =I B R\left[-\cos\vartheta\right]_{0}^{\pi}
+   =2 I B R\;.
+ }
+
+ Tehát látatjuk, hogy a félkörre és az egyenes részre is ugyanakkora erő hat, csak ellentétes irányban. Ez azt eredményezi, hogy a vezetőhurok el fog fordulni a mágneses térre merőleges irányban.
+ 
+\fi

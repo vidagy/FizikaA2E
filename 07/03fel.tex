@@ -1,0 +1,26 @@
+\feladat{3}{
+ Két $l=15\,\textrm{cm}$ hosszúságú koaxiális henger közötti teret szilícium tölt ki. A belső henger sugara $R_1=0,5\,\textrm{cm}$, a külső hengeré pedig $R_2=1,75\,\textrm{cm}$. Számítsuk ki a hengerpalástok között mérhető ellenállást! A szilícium fajlagos ellenállása $\varrho_\text{Si}=640\,\Omega\textrm{m}$.
+}{03fel_01fig}{}
+
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ A feladat megoldása során megpróbáljuk visszavezetni a problémát az egyszerű esetre. Az áram folyási irányára merőlegesen felosztjuk a vezetőt: válasszunk egy $r$ sugarú, $\dd r$ vastagságú és $l$ hosszú darabot. Ennek ellenállását egyszerűen tudjuk számolni:
+ \al{
+  \dd R(r)
+   &=\varrho_\text{Si}\frac{\dd r}{A}
+    =\varrho_\text{Si}\frac{\dd r}{2r\pi l}\;.
+ } 
+ Az ilyen darabokon egymás után folyik keresztül az áram, vagyis ezek sorosan vannak kapcsolva. A teljes ellenállás az ilyen ellenállások összege:
+ \al{
+  R
+   &=\intl{R_1}{R_2}\dd R(r)
+    =\intl{R_1}{R_2}\varrho_\text{Si}\frac{\dd r}{2r\pi l}
+    =\frac{\varrho_\text{Si}}{2\pi l}\intl{R_1}{R_2}\frac{1}{r}\, \dd r
+    =\frac{\varrho_\text{Si}}{2\pi l}\big[\ln r\big]_{R_1}^{R_2}
+    =\frac{\varrho_\text{Si}}{2\pi l}\ln \frac{R_2}{R_1}
+   \;.
+ }
+ 
+\fi

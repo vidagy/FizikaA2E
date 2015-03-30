@@ -1,0 +1,24 @@
+ \begin{tikzpicture}
+  \draw[->,>=latex,thin] (-0.5,0) -- (3,0) node[below right] {$x$};
+  \draw[->,>=latex,thin] (0,-1) -- (0,3) node[left] {$y$};
+  
+  \fill[blue] (0,0) circle (0.07);
+  \draw (0,0) node[below right] {$q_1$};
+  \fill[blue] (2,0) circle (0.07);
+  \draw (2,0) node[below right] {$q_2$};
+  
+  \draw[dashed,gray] (2,0) -- (0,1);
+  \draw[very thick,blue,->,>=latex] (0,1) -- (0,2.3) node[right] {$\Ev_1$};
+  \draw[very thick,blue,->,>=latex] (0,1) -- (1,0.5) node[above=3pt] {$\Ev_2$};
+
+  \draw (0,0.3) arc (270:360-26.57:0.7);
+  \draw (0,1)++(301.7:0.5) node {$\alpha$};
+  
+  \fill[black] (0,1) circle (0.07) node[left] {$P=(0,y)$};
+  \draw (1,0) node[below] {$d$};
+  
+  \draw[gray,|->,>=stealth] (2.05,-0.7) -- node[below] {$(++)$} (3,-0.7);
+  \draw[gray,<->,>=stealth] (0.05,-0.7) -- node[below] {$(+-)$} (1.95,-0.7);
+  \draw[gray,|->,>=stealth] (-0.05,-0.7) -- node[below] {$(--)$} (-1,-0.7);
+ \end{tikzpicture}
+ 

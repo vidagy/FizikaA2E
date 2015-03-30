@@ -1,0 +1,46 @@
+  \tdplotsetmaincoords{60}{20}
+  \begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                      seged/.style={dashed,gray}
+  ]
+  
+   \begin{scope}[scale=5,tdplot_main_coords]
+
+   % axes
+   \draw[axis] (-0.66,0,0) -- (0.66,0,0) node[below right] {$y$};
+   \draw[axis] (0, 0.66,0) -- (0,-0.66,0) node[below] {$x$};
+   \draw[axis] (0,0,-0.21) -- (0,0,1.05) node[above] {$z$};
+     
+   % R
+   \draw[line width=1.5pt,black] (0.45,0,0) arc (0:360:0.45);
+   \draw[->,>=latex] (0,0,0) -- node[below] {$R$} (-0.5*1.45*0.3,-0.866*1.45*0.3,0) ;
+   
+   \draw[seged,black] (0,0,0) circle (0.25);
+   \draw[seged,black] (0,0,0) circle (0.35);
+   \draw[fill,black,even odd rule,opacity=0.2] (0,0,0) circle (0.25) (0,0,0) circle (0.35);
+   \draw[<->] (40:0.25) node[above] {$\dd r$} -- (40:0.35);
+   \draw[->] (0,0) -- node[above] {$r$} (25:0.25);
+
+   % z
+   \draw (0,0,1.5*0.3) node[left] {$z$};
+   
+   % dE and dEz vectors
+   \tdplotsetrotatedcoords{37.5}{0}{0}
+   
+   \draw[color=blue,->,>=latex,tdplot_rotated_coords,thick] (0,0,2.7*0.3) -- node[right] {$\dd \Ev$} +(0,0,0.81/5);
+   
+   % P
+   \draw (0,0,2.7*0.3) node {\tikz[tdplot_screen_coords] \fill (0,0) circle (0.07);};
+   \draw (0,0,2.7*0.3) node[below left] {$P$};
+   
+   \end{scope}
+   
+   \begin{scope}[yshift=-5cm]
+    \draw[->,>=latex] (-3,0) -- (3,0) node[below] {$z$}; 
+    \draw[->,>=latex] (0,-2) -- (0,2) node[right] {$E_z(z)$};
+    \draw[color=blue,thick,domain=0.001:3,samples=100] plot (\x,{abs(\x)/(\x)-1*(\x)/pow((pow(\x,2)+1),0.5)});
+    \draw[color=blue,thick,domain=-0.001:-3,samples=100] plot (\x,{abs(\x)/(\x)-1*(\x)/pow((pow(\x,2)+1),0.5)});
+    \draw (1,0.07) -- (1,-0.07) node[below] {$R$};
+    \draw (-1,0.07) -- (-1,-0.07) node[below] {$-R$};
+   \end{scope}
+
+  \end{tikzpicture} 

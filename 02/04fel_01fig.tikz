@@ -1,0 +1,31 @@
+ \begin{tikzpicture}
+  
+  \draw[gray] (0,0) rectangle (2,2);
+  
+  \draw (-0.2,1) node {$a$};
+  
+  \fill[red] (1,1) circle (0.07);
+  \draw (1,1) node[below] {$Q$};
+  
+  \draw[blue,very thick,->,>=latex] (2,0)++(0,0) -- +( 0.9  , 0    );
+  \draw[blue,very thick,->,>=latex] (2,0)++(0,0) -- +( 0    ,-0.9    );
+  \draw[blue,very thick,->,>=latex] (2,0)++(0,0) -- +( 0.364,-0.364);
+  
+  \draw[blue,very thick,->,>=latex] (0,2)++(0,0) -- +(-0.9  , 0    );
+  \draw[blue,very thick,->,>=latex] (0,2)++(0,0) -- +( 0    , 0.9    );
+  \draw[blue,very thick,->,>=latex] (0,2)++(0,0) -- +(-0.364, 0.364);
+  
+  \draw[blue,very thick,->,>=latex] (2,2)++(0,0) -- +( 0.9  , 0    );
+  \draw[blue,very thick,->,>=latex] (2,2)++(0,0) -- +( 0    , 0.9    );
+  \draw[blue,very thick,->,>=latex] (2,2)++(0,0) -- +( 0.364, 0.364);
+  
+  \draw[blue,very thick,->,>=latex] (0,0)++(0,0) -- +(-0.9  , 0    );
+  \draw[blue,very thick,->,>=latex] (0,0)++(0,0) -- +( 0    ,-0.9    );
+  \draw[blue,very thick,->,>=latex] (0,0)++(0,0) -- +(-0.364,-0.364);
+  
+  \fill[blue] (0,0) circle (0.07);
+  \fill[blue] (2,0) circle (0.07);
+  \fill[blue] (0,2) circle (0.07);
+  \fill[blue] (2,2) circle (0.07) node[below left] {\color{black} $q$};
+ \end{tikzpicture}
+ 

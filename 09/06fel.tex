@@ -1,0 +1,66 @@
+\feladat{6}{
+ Az ábrán látható kapcsolásban írjuk fel az $I_{1}$ áram meghatározásához szükséges Kirchhoff-egyenleteket, valamint a csomóponti potenciálok módszerével kapott egyenleteket! Az egyiket (lehetőleg az egyszerűbbet) oldjuk is meg!
+}{06fel_01fig}{1}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item 
+   \marginfigure{06fel_02fig}
+   Oldjuk meg először a feladatot a hurokáramok módszerével. A kapcsolási rajban három ablak van, melyekre Kirchhoff II. törvénye:
+   \al{
+    0 &= -12\me{V} + (\tilde I_1 - \tilde I_3) \cdot 6\me{\Omega} + (\tilde I_1 - \tilde I_2) \cdot 2\me{\Omega} \\
+    0 &= (\tilde I_2 - \tilde I_1) \cdot 2\me{\Omega} + (\tilde I_2 - \tilde I_3) \cdot 5\me{\Omega} + 20\me{V}  \\
+    0 &= \tilde I_3 \cdot 8\me{\Omega} + (\tilde I_3 - \tilde I_2) \cdot 5\me{\Omega} + (\tilde I_3 - \tilde I_1) \cdot 6\me{\Omega}\;.
+   }
+   A három egyenlet összegéből:
+   \al{
+    0&= -12\me{V}+20\me{V} + \tilde I_3 \cdot 8\me{\Omega}
+    \\
+    \tilde I_3 &=-1\me{A}\;.
+   }
+   Ezt visszahelyettesítve az első kettőbe, majd azokat rendezve
+   \al{
+    0 &= -6\me{V} + \tilde I_1 \cdot 6\me{\Omega} + (\tilde I_1 - \tilde I_2) \cdot 2\me{\Omega} \\
+    0 &= (\tilde I_2 - \tilde I_1) \cdot 2\me{\Omega} + \tilde I_2 \cdot 5\me{\Omega} + 25\me{V}\;,
+   }
+   ahol az elsőből $\tilde I_2$ kifejezve
+   \al{
+    \tilde I_2 &= -3\me{A} + 4\tilde I_1\;,
+   }
+   melyet beírva a másodikba
+   \al{
+    0 &= (-3\me{A} + 4\tilde I_1 - \tilde I_1) \cdot 2\me{\Omega} + (-3\me{A} + 4\tilde I_1) \cdot 5\me{\Omega} + 25\me{V}
+    \\
+    0 &= 26 \tilde I_1 +4\me{A}
+    \\
+    \tilde I_1&=-\frac{2}{13}\me{A}\;.
+   }
+   Visszahelyettesítve
+   \al{
+    \tilde I_2 &= -3\me{A} - 4\cdot \frac{2}{13}\me{A}
+     =-\frac{47}{13}\me{A}\;.
+   }
+   Innen a keresett $I_1$ áram:
+   \al{
+    I_1
+     =\tilde I_1-\tilde I_2
+     =-\frac{2}{13}\me{A}+\frac{47}{13}\me{A}
+     =\frac{45}{13}\me{A}\;.
+   }
+  \item 
+   \marginfigure{06fel_03fig}
+   Másodszorra pedig oldjuk meg a csomóponti potenciálok módszerével. Itt is rögzítjük az egyik csomópont potenciálját $U_D=0$. A feszültséggenerátorok miatt $U_A=12\me{V}$ és $U_B=20\me{V}$. Így a $C$-re kell csak felírni a csomóponti törvényt:
+   \al{
+    0 &= \frac{U_C-12\me{V}}{6\me{\Omega}}+\frac{U_C}{2\me{\Omega}}+\frac{U_C-20\me{V}}{5\me{\Omega}}
+    \\
+    0 &= 5 U_C - 60\me{V}+15 U_C+ 6 U_C-120\me{V}
+    \\
+    U_C &=\frac{90}{13}\me{V}\;,
+   }
+   vagyis az $I_1$ áram $I_1=\frac{U_C}{2\me{\Omega}}=\frac{45}{13}\me{A}$.
+ \end{enumerate}
+
+\fi

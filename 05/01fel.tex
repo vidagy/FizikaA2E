@@ -1,0 +1,29 @@
+\feladat{1}{
+ Mi a homogén $\Ev$ térerősség potenciálja?
+}{}{}
+
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ A potenciál definíciója: $\Ev(x,y,z)=-\grad U(x,y,z)$, amely kifejtve a három komponensre:
+ \begin{align}
+  E_x(x,y,z)&=-\pder{U(x,y,z)}{x}\\
+  E_y(x,y,z)&=-\pder{U(x,y,z)}{y}\\
+  E_z(x,y,z)&=-\pder{U(x,y,z)}{z}\;,
+ \end{align}
+ ahol a $\partial$ a parciális deriválást jelenti. Homogén térerősség esetében $\Ev=(E_x,E_y,E_z)$. Tehát az $U$ függvénynek olyannak kell lennie, hogy $x$, $y$ és $z$ szerint is deriválva egy-egy konstanst kapunk. Azonnal látszik, hogy az $U(x,y,z)=-E_x\cdot x-E_y\cdot y-E_z\cdot z$ függvény jó választás, hiszen ez mind a három fenti egyenletet kielégíti:
+ \al{
+  -\grad U(x,y,z)
+   &=-\left(\pder{}{x},\pder{}{y},\pder{}{z}\right)(-E_x\cdot x-E_y\cdot y-E_z\cdot z)
+  \\
+   &=(E_x,E_y,E_z)
+    =\Ev\;.
+ }
+
+ Azonban vegyük észre azt is, a fent megadott potenciálfüggvényhez egy tetszőleges konstanst hozzáadhatok, a gradiens nem fog megváltozni, hiszen egy konstans deriváltja nulla. A lehető legáltalánosabb megoldás:
+ \al{
+  U(x,y,z)=-E_x\cdot x-E_y\cdot y-E_z\cdot z+C=-\Ev\rv+C\;.
+ }
+ 
+\fi

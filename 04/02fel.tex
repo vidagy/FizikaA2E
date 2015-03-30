@@ -1,0 +1,45 @@
+\feladat{2}{
+ Két párhuzamos, a közöttük lévő távolsághoz képest nagy kiterjedésű lemez egymástól $d=2\me{cm}$ távolságra helyezkedik el. Az egyik lemezen $\sigma_{1}=-10^{-8}$\,C/m$^{2}$, a másikon $\sigma_{2}=2\cdot10^{-8}$\,C/m$^{2}$ a töltéssűrűség. A közöttük lévő teret $\varepsilon_{r}=2$ relatív permittivitású közeg tölti ki. Határozza meg az elektromos térerősség és az elektromos eltolás irányát és nagyságát a lemezek között és a lemezen kívül!
+}{02fel_01fig.tikz}{}
+
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ Azt tudjuk korábbról, hogy egy $\sigma$ felületi töltéssűrűséggel rendelkező lap térerősségének nagysága $E=\frac{\sigma}{2\ep_0\ep_\text{r}}$, amely a laptól elfelé mutat. A dielektromos eltolás nagysága $D=\ep_0\ep_\text{r}E=\frac{\sigma}{2}$, melynek iránya megegyezik a térerősség irányával.
+
+ Ezeket a mennyiségeket felírva az egyes tartományokra, majd ezeket összeadva:
+ \al{
+  D_1(x)=
+   \begin{cases}
+    \phantom{-} \frac{\sigma}{2} & x<-\frac{d}{2}\;, \\
+             -  \frac{\sigma}{2} & x>-\frac{d}{2}\;,
+   \end{cases}
+ }
+ \al{
+  D_2(x)=
+   \begin{cases}
+             -  \sigma & x< \frac{d}{2}\;, \\
+    \phantom{-} \sigma & x> \frac{d}{2}\;,
+   \end{cases}
+ }
+ \al{
+  D(x)=D_1(x)+D_2(x)=
+   \begin{cases}
+    -\frac{\sigma}{2} & x<-\frac{d}{2}\;, \\
+    -\frac{3\sigma}{2} & -\frac{d}{2}<x<\frac{d}{2}\;, \\
+    \phantom{-}\frac{\sigma}{2} & \frac{d}{2}<x\;,
+   \end{cases}
+ }
+ \al{
+  E(x)=\frac{D(x)}{\ep_0\ep_\text{r}(x)}=
+   \begin{cases}
+    -\frac{\sigma}{2\varepsilon_0} & x<-\frac{d}{2}\;, \\
+    -\frac{3\sigma}{2\varepsilon_0\varepsilon_{\textrm{r}}} & -\frac{d}{2}<x<\frac{d}{2}\;, \\
+    \phantom{-}\frac{\sigma}{2\varepsilon_0} & \frac{d}{2}<x\;.
+   \end{cases}
+ }
+
+ Az egyes mennyiségek előjele adja meg azok irányát: a pozitív előjel azt jelenti, hogy a vektor a $+x$ irányba mutat, a negatív pedig, hogy a $-x$ irányba.
+
+\fi

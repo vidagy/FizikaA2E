@@ -1,0 +1,58 @@
+\feladat{2}{
+ Egy síkkondenzátor dielektrikuma két rétegből áll, amelyek elválasztó felülete a fegyverzetekkel párhuzamos. Számoljuk ki, hogy legfeljebb mekkora feszültséget kapcsolhatunk a kondenzátorra, ha a rétegek vastagsága $d_{1}=0,01$\,m és $d_{2}=0,006$\,m, relatív permittivitása $\varepsilon_{1r}=5,5$ és $\varepsilon_{2r}=2,2$, átütési szilárdsága $E_{1\text{kr}}=3,5\cdot 10^{7}$\,V/m és $E_{2\text{kr}}=3\cdot10^{7}$ V/m.
+}{}{}
+
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ Az előző feladathoz hasonlóan ezt a kondenzátort is úgy tudjuk elképzelni mint két sorba kapcsolt kondenzátort. A két kondenzátor ugyanakkora $Q$ töltésre töltődik fel, hiszen a két belső fegyverzeten lévő töltés összege mindig nulla:
+ \al{
+  Q_1&=Q_2\\
+  C_1 U_1&=C_2 U_2\;.
+ }
+ A rendszeren eső feszültség a két kondenzátoron eső feszültségek összege (felhasználva az előző összefüggést):
+ \al{
+  U&=U_1+U_2
+   =U_1+\frac{C_1}{C_2}U_1
+  \\
+  U
+   &=\left(1+\frac{C_1}{C_2}\right)U_1
+  \\
+   U
+   &=\left(1+\frac{C_2}{C_1}\right)U_2
+  \;.
+ }
+
+ Az átütési szilárdság megadja $U_1$ illetve $U_2$ maximális értékét:
+ \al{
+  U_{1,\text{max}}
+   &=E_{1,\text{kr}}\cdot d_1
+    =3,5\cdot 10^{7}\me{\frac{V}{m}}\cdot 0,01\me{m}
+    =3,5\cdot 10^{5}\me{V}\;,
+  \\
+  U_{2,\text{max}}
+   &=E_{2,\text{kr}}\cdot d_1
+    =3\cdot 10^{7}\me{\frac{V}{m}}\cdot 0,006\me{m}
+    =1,8\cdot 10^{5}\me{V}\;.
+ }
+ A teljes rendszerre kapcsolható maximális feszültség:
+ \al{
+  U_{(1),\text{max}}
+   &=\left(1+\frac{C_1}{C_2}\right)U_{1,\text{max}}
+    =\left(1+\frac{\ep_0\ep_1\frac{A}{d_1}}{\ep_0\ep_2\frac{A}{d_2}}\right)U_{1,\text{max}}
+    =\left(1+\frac{\ep_1 d_2}{\ep_2 d_1}\right)U_{1,\text{max}}
+  \\
+   &=\left(1+\frac{5,5 \cdot 0,006\me{m}}{2,2 \cdot 0,01\me{m}}\right)\cdot 3,5\cdot 10^{5}\me{V}
+    =8,75\cdot 10^{5}\me{V}\;,
+  \\
+  U_{(2),\text{max}}
+   &=\left(1+\frac{C_2}{C_1}\right)U_{2,\text{max}}
+    =\left(1+\frac{\ep_2 d_1}{\ep_1 d_2}\right)U_{2,\text{max}}
+  \\
+   &=\left(1+\frac{2,2 \cdot 0,01\me{m}}{5,5 \cdot 0,006\me{m}}\right)\cdot 1.8\cdot 10^{5}\me{V}
+    =3\cdot 10^{5}\me{V}\;.
+ }
+ A két érték közül legfeljebb a kisebbet, vagyis $30\,000$\,V-ot kapcsolhatjuk a rendszerre, annak érdekében, hogy megelőzzük az átütést. 
+
+\fi

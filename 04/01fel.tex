@@ -1,0 +1,50 @@
+\feladat{1}{
+ Közös pontban azonos hosszúságú szigetelő fonalakon felfüggesztett egyforma, $\varrho_\text{g}$ sűrűségű golyók függnek, mindkettő töltése $q$. A golyók közötti teret $\varepsilon_{r}$ relatív permittivitású, $\varrho_\text{f}$ sűrűségű folyadékkal töltjük ki, eközben a fonalak közötti szög nem változik. Mekkora a golyók sűrűsége?
+}{01fel_01fig.tikz}{}
+
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ Mind a két esetben a testek szimmetrikusan helyezkednek el, így elég, ha csak mindig a bal oldali testet vizsgáljuk. Az első esetben a Newton-törvény $x$ és $y$ irányban:
+ \al{
+  \left.
+  \begin{array}{l}
+   0=K_1\sin\alpha-F_{\text{C},1}\\
+   0=K_1\cos\alpha-mg
+  \end{array}
+  \right \}
+  &&\Rightarrow
+  &&F_{\text{C},1}=mg\tg\alpha=V_\text{g}\varrho_\text{g}g\tg\alpha\;.
+ }
+
+ A második esetben 
+ \al{
+  \left.
+  \begin{array}{l}
+   0=K_2\sin\alpha-F_{\text{C},2}\\
+   0=K_2\cos\alpha-mg+F_\text{f}
+  \end{array}
+  \right \}
+  &&\Rightarrow
+  &&F_{\text{C},2}=(mg-F_\text{f})\tg\alpha=V_\text{g}(\varrho_\text{g}-\varrho_\text{f})g\tg\alpha\;.
+ }
+
+ A két összefüggésből $\tg\alpha$ kifejezve, majd azok egyenlővé téve, illetve a Coulomb-erő behelyettesítve:
+ \al{
+  \frac{F_{\text{C},1}}{V_\text{g}\varrho_\text{g}g}
+   &=\frac{F_{\text{C},2}}{V_\text{g}(\varrho_\text{g}-\varrho_\text{f})g}
+  \\
+  \frac{F_{\text{C},1}}{F_{\text{C},2}}
+   &=\frac{\varrho_\text{g}}{\varrho_\text{g}-\varrho_\text{f}}
+  \\
+  \frac{\frac{1}{4\pi\ep_0}\frac{q^2}{d^2}}{\frac{1}{4\pi\ep_0\ep_\text{r}}\frac{q^2}{d^2}}
+   &=\ep_\text{r}
+    =\frac{\varrho_\text{g}}{\varrho_\text{g}-\varrho_\text{f}}
+  \\
+  \varrho_\text{g}
+ %  &=\varrho_\text{f}\left(1-\frac{1}{\ep_\text{r}}\right)\;.
+  &=\varrho_\text{f}\frac{\ep_\textrm{r}}{\varepsilon_\textrm{r}-1}\;.
+ }
+ 
+\fi

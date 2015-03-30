@@ -1,0 +1,23 @@
+\feladat{10}{
+ Két kondenzátor közül az egyiket $U_1=$300\,V-ra, a másikat $U_2=$100\,V-ra töltjük fel. Összekapcsolva a kondenzátorok azonos pólusait a közös feszültség $U_\text{k}=$250\,V lesz. Határozzuk meg a két kondenzátor kapacitásának arányát!
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Az összekapcsolás után valamennyi töltés kicserélődik a két kondenzátor között. Az új töltések legyenek $Q_1'$ és $Q_2'$. Mivel a két kondenzátor össze van kapcsolva, így a feszültségük azonos: $U_1'=U_2'=U_\text{k}$\;. Azt azonban tudjuk, hogy az össztöltésnek meg kell maradnia:
+ \al{
+  Q_1+Q_2&=Q_1'+Q_2'
+  \\
+  C_1 U_1+C_2 U_2&=C_1 U_1'+C_2 U_2'
+  \\
+  C_1 U_1+C_2 U_2&=(C_1+C_2) U_\text{k}
+  \\
+  \frac{C_1}{C_2} U_1+ U_2&=\left(\frac{C_1}{C_2}+1\right) U_\text{k}
+  \\
+  \frac{C_1}{C_2}&=\frac{U_\text{k}-U_2}{U_1-U_\text{k}}=\frac{250\me{V}-100\me{V}}{300\me{V}-250\me{V}}=3
+  \;.
+ }
+ 
+\fi

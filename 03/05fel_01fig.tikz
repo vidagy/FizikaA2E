@@ -1,0 +1,53 @@
+ \tdplotsetmaincoords{73}{15}
+  \begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                      seged/.style={dashed,gray}
+  ]
+  
+   \begin{scope}[tdplot_main_coords]
+    \draw[seged] (0,0,-1) circle (1.4);
+    \draw[seged] (0,0, 1) circle (1.4) node[black] {$A$};
+    
+    \tdplotsetrotatedcoords{15}{0}{0}
+    \draw[tdplot_rotated_coords,seged] ( 1.4,0,0.0) -- ( 1.4,0,-1.0);
+    \draw[tdplot_rotated_coords,seged] (-1.4,0,0.0) -- (-1.4,0,-1.0);
+    
+    \draw[fill,white,opacity=0.6] (-2.5, -2.5,0) -- (2.5,-2.5,0) -- (2.5,2.5,0) -- (-2.5,2.5,0) -- cycle;
+    \draw (-2.5, -2.5,0) -- (2.5,-2.5,0) -- (2.5,2.5,0) -- (-2.5,2.5,0) -- cycle;
+    
+    \draw[tdplot_rotated_coords,seged] ( 1.4,0,0.0) -- node[right,black] {$z$} ( 1.4,0,1.0);
+    \draw[tdplot_rotated_coords,seged] (-1.4,0,0.0) -- (-1.4,0,1.0);
+    
+    \draw[seged,fill=black!15] (0,0, 0) circle (1.4) node[black] {$Q_\text{in}=\sigma A$};
+   \end{scope}
+   
+   \begin{scope}[yshift=-5cm]
+    \draw[very thick] (-2.5,   0) -- (2.5,  0) node[above] {$2\sigma$};
+    \draw[very thick] (   0,-2.5) -- (  0,2.5) node[right] {$\sigma$};
+    
+    % ++
+    \draw[seged] (1.8,0.7) -- (1.8,2.3) -- (1.0,2.3); 
+    \draw[thick,>=latex,->,blue!50] ( 1, 0.7) -- node[below] {$\Ev_2$}    +( 0.8,   0);
+    \draw[thick,>=latex,->,blue!50] ( 1, 0.7) -- node[left]  {$\Ev_1$}    +(   0, 1.6);
+    \draw[thick,>=latex,->,blue   ] ( 1, 0.7) -- node[right] {$\Ev_{++}$} +( 0.8, 1.6);
+    
+    % +-
+    \draw[seged] (1.8,-0.7) -- (1.8,-2.3) -- (1.0,-2.3); 
+    \draw[thick,>=latex,->,blue!50] ( 1,-0.7) -- node[above] {$\Ev_2$}    +( 0.8,   0);
+    \draw[thick,>=latex,->,blue!50] ( 1,-0.7) -- node[left]  {$\Ev_1$}    +(   0,-1.6);
+    \draw[thick,>=latex,->,blue   ] ( 1,-0.7) -- node[right] {$\Ev_{+-}$} +( 0.8,-1.6);
+    
+    % -+
+    \draw[seged] (-1.8,0.7) -- (-1.8,2.3) -- (-1.0,2.3); 
+    \draw[thick,>=latex,->,blue!50] (-1, 0.7) -- node[below] {$\Ev_2$}    +(-0.8,   0);
+    \draw[thick,>=latex,->,blue!50] (-1, 0.7) -- node[right] {$\Ev_1$}    +(   0, 1.6);
+    \draw[thick,>=latex,->,blue   ] (-1, 0.7) -- node[left]  {$\Ev_{-+}$} +(-0.8, 1.6);
+    
+    % --
+    \draw[seged] (-1.8,-0.7) -- (-1.8,-2.3) -- (-1.0,-2.3); 
+    \draw[thick,>=latex,->,blue!50] (-1,-0.7) -- node[above] {$\Ev_2$}    +(-0.8,   0);
+    \draw[thick,>=latex,->,blue!50] (-1,-0.7) -- node[right] {$\Ev_1$}    +(   0,-1.6);
+    \draw[thick,>=latex,->,blue   ] (-1,-0.7) -- node[left]  {$\Ev_{--}$} +(-0.8,-1.6);
+    
+   \end{scope}
+  \end{tikzpicture}
+ 

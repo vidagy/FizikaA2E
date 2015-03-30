@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+ \draw (0,0) -- (0,1);
+ \draw (4,0) -- (4,1);
+ 
+ \ellenallas{(0,1)}{(2,1)}{$R$}{(0.0,0.3)}
+ \tekercs{(2,1)}{(4,1)}{$L$}{(0.0,0.3)}
+ 
+ \draw (0,0) -- (1.8,0);
+ \draw (4,0) -- (2.2,0);
+ 
+ \draw[fill=white] (1.8,0) circle (0.06);
+ \draw[fill=white] (2.2,0) circle (0.06);
+ 
+ \node at (2,0) {\small $\sim$};
+ \node[below=4pt] at (2,0) {$U(t)$};
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ \begin{scope}[yshift=-2.5cm,xshift=1.25cm]
+  \draw[gray,dashed] (1.5,0) -- (1.5,-1.5) -- (0,-1.5);
+  
+  \draw[<->,>=latex] (0:0.9) arc (0:-45:0.9);
+  \node at (-22.5:0.6) {$\varphi$};
+  
+  \draw[thick,-latex,dashed,black!60] (0,0) -- node[left] {$X_C$} (0,1.5);
+  \draw[thick,-latex] (0,0) -- node[above] {$R$} (1.5,0);
+  \draw[thick,-latex] (0,0) -- node[left] {$X_L$} (0,-1.5);
+  
+  \draw[thick,blue,-latex]  (0,0) -- (1.5,-1.5) node[below right] {$Z$};
+  
+ \end{scope}
+\end{tikzpicture}
+ 

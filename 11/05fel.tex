@@ -1,0 +1,39 @@
+\feladat{5}{
+ $f=50$\,Hz-es áramkörben $R=50\,\Omega$ nagyságú ohmikus ellenállást és ismeretlen önindukciójú tekercset kapcsolunk sorosan. A fázisszög $\varphi=45^\circ$. Mekkora az öninduktivitás, és mekkora kondenzátor beiktatása szünteti meg a fáziskésést?
+}{05fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A forgóvektoros leírásból azonnal látszik, hogy a tekercs impedanciáját megkaphatjuk úgy, mint
+ \al{
+  X_L
+   =R\cdot\tg\varphi
+   =R\cdot\tg 45^\circ
+   =R\;.
+ }
+ A tekercs impedanciája:
+ \al{
+  X_L&=\omega L
+  \\
+  L=\frac{X_L}{\omega}
+   =\frac{R}{2\pi\cdot f}
+   =\frac{50\me{\Omega}}{2\pi\cdot 50\me{Hz}}
+   =\frac{1}{2\pi}\me{H}\;.
+ }
+
+ A kondenzátor impedanciájának meg kell egyeznie az induktivitás impedanciájával, hogy ne legyen fáziskésleltetés, vagyis
+ \al{
+  X_C&=X_L
+  \\
+  \frac{1}{\omega C}&=\omega L
+  \\
+  C
+   &=\frac{1}{\omega^2 L}
+    =\frac{1}{\omega R}
+    =\frac{1}{2\pi\cdot 50\me{Hz}\cdot 50\me{\Omega}}
+    =6,37\cdot 10^{-5}\me{F}\;.
+ }
+ 
+\fi

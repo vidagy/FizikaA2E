@@ -1,0 +1,46 @@
+\tdplotsetmaincoords{70}{120}
+\begin{tikzpicture}[tdplot_main_coords,font=\small,
+                    axis/.style={>=latex},
+                    seged/.style={gray,dashed},
+                    vector/.style={black,thick,>=latex}
+]
+  \coordinate (O) at (0,0,0);
+  \coordinate (A) at (1,2,3);
+  \coordinate (B) at (2,-3,1);
+  \coordinate (C) at (-4,2,-1);
+  \coordinate (AB) at (3,-1,4);
+  \coordinate (AC) at (-3,4,2);
+  \coordinate (BC) at (-2,-1,0);
+  \coordinate (ABC) at (-1,1,3);
+  
+  \draw[vector,->] (0,0,0) -- node[below] {$\cv$} (C);
+  \fill[white,opacity=0.4] (-4,-4,0) -- (4,-4,0) -- (4,4,0) -- (-4,4,0) -- cycle;
+  
+  \foreach \x in {-4,-3,...,4}
+  {
+   \draw[gray] (\x,-4,0) -- (\x,4,0);
+   \draw[gray] (-4,\x,0) -- (4,\x,0);
+  }
+  
+  \draw[axis,->] (-4, 0, 0) -- (4,0,0) node[below left] {$x$};
+  \draw[axis,->] ( 0,-4, 0) -- (0,4,0) node[below right] {$y$};
+  \draw[axis,->] ( 0, 0,-4) -- (0,0,4) node[above] {$z$};
+  
+  \draw[vector,->] (0,0,0) -- node[above] {$\av$} (A);
+  \draw[vector,->] (0,0,0) -- node[below] {$\bv$} (B);
+  
+  \shade[upper left=gray!40,upper right=gray!10,lower left=gray!70,lower right=gray!20] (B) -- (AB) -- (ABC) -- (BC) -- cycle;
+  \shade[upper left=gray!5,upper right=gray!40 ,lower left=gray!50,lower right=gray!70] (C) -- (AC) -- (ABC) -- (BC) -- cycle;
+  \shade[upper left=black!60,upper right=black!40 ,lower left=black!80,lower right=black!60] (O) -- (B) -- (BC) -- (C) -- cycle;
+%   \draw[fill,black!25,draw=black] (O) -- (A) -- (AB) -- (B) -- cycle;
+%   \draw[fill,black!25,draw=black] (O) -- (A) -- (AC) -- (C) -- cycle;
+%   \draw[fill,black!25,draw=black] (O) -- (B) -- (BC) -- (C) -- cycle;
+%   \draw[fill,black!25,draw=black] (A) -- (AB) -- (ABC) -- (AC) -- cycle;
+%   \draw[fill,black!25,draw=black] (B) -- (AB) -- (ABC) -- (BC) -- cycle;
+%   \draw[fill,black!25,draw=black] (C) -- (AC) -- (ABC) -- (BC) -- cycle;
+  
+  \draw (O) -- (B) -- (BC) -- (C) -- cycle;
+  \draw (BC) -- (C) -- (AC) -- (ABC) -- cycle;
+  \draw (B) -- (BC) -- (ABC) -- (AB) -- cycle;
+  
+\end{tikzpicture} 

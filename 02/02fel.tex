@@ -1,0 +1,63 @@
+\feladat{2}{
+ Derékszögű koordinátarendszer $x$ tengelye mentén két töltés található. A $q_{1}= 7\me{\mu C}$ töltés az origóban helyezkedik el, míg a $q_{2}=-5\me{\mu C}$ töltés az origótól $d=0,3\me{m}$ távolságra van.
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item Határozza meg az elektromos térerősséget az $y$ tengely mentén!
+  \item Határozza meg az elektromos térerősséget az $x$ tengely mentén!
+  \item Van-e a tengelyek mentén olyan pont, ahol a térerősség nulla?
+  \item Van-e egyéb olyan pont a síkon, ahol a térerősség nulla?
+  \item Hogyan változik a helyzet, ha $q_{2} = 5\me{\mu C}$ a második töltés?
+ \end{enumerate}
+}{}{}
+ 
+\ifdefined\megoldas
+
+ Megoldás: 
+ \marginfigure{02fel_01fig.tikz}
+
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item 
+   Az $y$ tengely pozitív felén az 1-gyes töltés által kifejtett erő a pozitív irányba mutat, míg a másik töltés terének van $x$ és $y$ irányú komponense is. A térerősség ennek a két járuléknak az összege.
+   \al{
+    \Ev_1^{(+)}(y)
+     &=k\frac{\abs{q_1}}{y^2}\left(0,1,0\right)
+    \\
+    \Ev_2^{(+)}(y)
+     &=k\frac{\abs{q_2}}{y^2+d^2}\left(\sin\alpha,-\cos\alpha,0\right)
+    \\
+     &=k\frac{\abs{q_2}}{y^2+d^2}\left(\frac{d}{\sqrt{y^2+d^2}},-\frac{y}{\sqrt{y^2+d^2}},0\right)\;,
+   }
+   vagyis
+   \al{
+    \Ev^{(+)}(y)
+     =k\left(\frac{\abs{q_2} d}{(y^2+d^2)^\frac{3}{2}},\frac{\abs{q_1}}{y^2}-\frac{\abs{q_2} y}{(y^2+d^2)^\frac{3}{2}},0\right)
+   } 
+   A negatív féltengelyen az $\Ev_1$ megfordul, vagyis lefele fog mutatni, illetve az $\Ev_2$ $y$ irányú járuléka pedig felfele fog mutatni, így 
+   \al{
+    \Ev^{(-)}(y)
+     =k\left(\frac{\abs{q_2}d}{(y^2+d^2)^\frac{3}{2}},-\frac{\abs{q_1}}{y^2}-\frac{\abs{q_2} y}{(y^2+d^2)^\frac{3}{2}},0\right)\;.
+   } 
+   
+  \item
+   Az $x$ tengely mentén:
+   \al{
+    \Ev^{(++)}(x)
+     &=k\left(\frac{\abs{q_1}}{x^2}-\frac{\abs{q_2}}{(x-d)^2},0,0\right)\;,\\
+    \Ev^{(+-)}(x)
+     &=k\left(\frac{\abs{q_1}}{x^2}+\frac{\abs{q_2}}{(x-d)^2},0,0\right)\;,\\
+    \Ev^{(--)}(x)
+     &=k\left(-\frac{\abs{q_1}}{x^2}+\frac{\abs{q_2}}{(x-d)^2},0,0\right)\;,
+   }
+   ahol a felső indexek az ábrán szereplő tartományoknak felelnek meg. 
+   
+  \item
+   
+   Az $y$ tengelyen mentén biztos, hogy nincs, mert ott a térerősségnek mindig van $x$ komponense. Az $x$ tengely mentén pedig van ilyen pont, meg kell keresni az $E(x)=0$ egyenlet megoldását. A $q_1$ és a $q_2$ arányától függően vagy a $(++)$, vagy a $(--)$ tartományon lesz megoldás.
+   
+  \item 
+   Nincs. Csak a távoli végtelenben. 
+   
+  \item 
+   Ekkor sem lesz stabil pont az $y$ tengely mentén. Az $x$ tengely mentén ekkor a stabil hely a két töltés között lesz. 
+ \end{enumerate}
+
+\fi

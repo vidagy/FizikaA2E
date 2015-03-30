@@ -1,0 +1,27 @@
+\feladat{4}{
+ Egy négyzet csúcspontjaiban négy egyforma nagyságú és előjelű töltés helyezkedik el. Mekkora és milyen irányú erő hat egy-egy töltésre? Hova kellene helyezni egy újabb töltést, hogy mindegyik esetén eltűnjön az eredő erő? Mekkora nagyságú és milyen előjelű ez a töltés?
+}{04fel_01fig.tikz}{}
+ 
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ A töltésekre a négyzet átlója mentén hat erő, és mivel a töltések előjele megegyező, így az erők a négyzet középpontjától elfelé mutatnak. Szimmetriaokok miatt mind a négy töltésre ugyanakkora erő fog hatni.
+
+ Az $a$ távolságban lévő töltések egymást $F_a=k\frac{q^2}{a^2}$ erővel taszítják. Az átlósan elhelyezkedő töltések $d=\sqrt{2}a$ távolságra vannak, így azok között $F_d=k\frac{q^2}{2a^2}$ erő hat. Az egy töltésre ható erő kiszámításánál az egyes erőket vektoriálisan kell összeadnunk. Mivel tudjuk, hogy az eredő erő átlóirányú lesz, így elég az egyes erőjárulékok átlóirányú komponensét összeadni, és megkapjuk az eredőerő nagyságát. 
+
+ \al{
+  F=2 F_{a,\parallel}+F_{d,\parallel}
+   =2 F_{a}\cos 45^\circ+F_{d}
+   =2 k\frac{q^2}{a^2}\frac{1}{\sqrt{2}}+k\frac{q^2}{2a^2}
+   =k\frac{q^2}{a^2}\frac{2\sqrt{2}+1}{2}\;.
+ }
+
+ Ha azt szeretnék, hogy ne hasson erő a töltésekre, akkor a négyzet középpontjába kell ezekkel egy ellentétes előjelű töltést helyezni. Annak akkorának kell lennie, hogy ugyanekkora erőt fejtsen ki mindegyik töltésen:
+ \al{
+  k\frac{Qq}{(d/2)^2}&=F=k\frac{q^2}{a^2}\frac{2\sqrt{2}+1}{2}\\
+  k\frac{Qq}{\left(\frac{\sqrt{2}}{2}a\right)^2}&=k\frac{q^2}{a^2}\frac{2\sqrt{2}+1}{2}\\
+  Q&=q\cdot\frac{2\sqrt{2}+1}{4}\;.
+ }
+
+\fi

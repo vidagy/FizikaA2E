@@ -1,0 +1,75 @@
+\feladat{6}{
+ Egy végtelen sík egyik oldalán vákuum van, a másikon $\varepsilon_{r}$ relatív dielektromos állandójú szigetelő. A vákuumban a síktól $d$ távolságra $Q$ ponttöltést helyezünk. Milyen lesz az elektromos térerősség és az elektromos eltolás a térben?
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+ 
+ A megoldás a 2.~feladatsor 9.~feladatához hasonló lesz, itt is a tükörtöltések módszerét fogjuk használni, azonban itt ezt mind a két térrészre el kell végezni. 
+ \marginfigure{06fel_01fig}
+ 
+ A fémlap esetében a határfeltétel kielégítése azt jelentette, hogy a térerősségek merőlegesnek kellett lennie arra. Dielektrikum határfelület esetében azt írhatjuk fel, hogy a dielektromos eltolás merőleges komponense ugyanaz a felület két oldalán, illetve a térerősség párhuzamos komponense halad át változatlanul:
+ \al{ 
+  \Dv_{\perp,1}&=\Dv_{\perp,2}\;,
+  &
+  \Ev_{\parallel,1}&=\Ev_{\parallel,2}\;.
+ }
+ 
+ Ezt a két egyenletet kell majd kielégítenünk a feltételezett tükörtöltésekkel. A vákuumban lévő teret a fémlap esetéhez hasonlóan próbáljuk meg megadni az eredeti, $\dv=(0,0,d)$ helyen lévő, $q$ nagyságú töltés és egy, a $\dv'=(0,0,-d)$ helyen lévő, $q'$ nagyságú töltés terének összegeként:
+ \al{
+  \Dv_\text{vákuum}(\rv)
+   &=\frac{1}{4\pi}\frac{q}{\abs{\rv-\dv}}(\rv-\dv)
+    +\frac{1}{4\pi}\frac{q'}{\abs{\rv-\dv'}}(\rv-\dv')
+  \\
+   &=\frac{1}{4\pi}\frac{q}{\big(x^2+y^2+(z-d)^2\big)^{\frac{3}{2}}}(x,y,z-d)\nonumber
+  \\
+   &\quad+\frac{1}{4\pi}\frac{q'}{\big(x^2+y^2+(z+d)^2\big)^{\frac{3}{2}}}(x,y,z+d)\;.
+ }
+
+ A dielektrikumból csak az eredeti töltés látszik, ott nem várhatunk tükörtöltés megjelenését. Azonban a határfelületen felhalmozódott töltések miatt azt meg kell engedni, hogy a töltés értéke másnak látszódjon:
+ \al{
+  \Dv_\text{diel}(\rv)
+   &=\frac{1}{4\pi}\frac{q''}{\abs{\rv-\dv}}(\rv-\dv)
+  \\
+   &=\frac{1}{4\pi}\frac{q''}{\big(x^2+y^2+(z-d)^2\big)^{\frac{3}{2}}}(x,y,z-d)\;.
+ }
+ 
+ A dielektromos eltolás merőleges ($z$ irányú) komponensének egyenlősége a határfelület ($z=0$) két oldalán:
+ \al{ 
+  \big[\Dv_\text{vákuum}\big]_z(z=0)
+   &=\big[\Dv_\text{diel}\big]_z(z=0)
+  \\
+   \frac{1}{4\pi}\frac{q}{\big(x^2+y^2+d^2\big)^{\frac{3}{2}}}\cdot (-d)
+   +\frac{1}{4\pi}&\frac{q'}{\big(x^2+y^2+d^2\big)^{\frac{3}{2}}}\cdot d\nonumber
+  \\
+   &=
+    \frac{1}{4\pi}\frac{q''}{\big(x^2+y^2+d^2\big)^{\frac{3}{2}}}\cdot (-d)
+  \\
+   q-q'&=q''\;.\label{eq:4fs6f1}
+ }
+ 
+ Illetve a térerősség párhuzamos irányú komponensének egyenlősége a két térrész határán:
+ \al{ 
+  \big[\Ev_\text{vákuum}\big]_{x,y}(z=0)
+   &=\big[\Ev_\text{diel}\big]_{x,y}(z=0)
+  \\
+   \frac{1}{4\pi\ep_0}\frac{q}{\big(x^2+y^2+d^2\big)^{\frac{3}{2}}}\cdot (x,y)
+   +\frac{1}{4\pi\ep_0}&\frac{q'}{\big(x^2+y^2+d^2\big)^{\frac{3}{2}}}\cdot (x,y)\nonumber
+  \\
+   &=
+    \frac{1}{4\pi\ep_0\ep_\text{r}}\frac{q''}{\big(x^2+y^2+d^2\big)^{\frac{3}{2}}}\cdot (x,y)
+  \\
+   q+q'&=\frac{1}{\ep_\text{r}}\cdot q''\;.\label{eq:4fs6f2}
+ }
+ 
+ \Eqaref{eq:4fs6f1} és \eqaref{eq:4fs6f2} egyenletekből $q$ és $q'$ meghatározható:
+ \al{ 
+  q'&=\frac{1-\ep_\text{r}}{1+\ep_\text{r}}q
+  &
+  q''&=\frac{2\ep_\text{r}}{1+\ep_\text{r}}q\;.
+ }
+ 
+ Mivel találtunk olyan $q'$ és $q''$ paramétereket, amelyekkel a határfeltételek kielégíthetőek, így valóban felírható a vákuum térrészben a térerősség úgy, mint két ponttöltés terének az összege, a dielektrikum térrészében pedig úgy, mint egy ponttöltés tere.
+ 
+\fi

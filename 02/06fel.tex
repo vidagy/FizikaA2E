@@ -1,0 +1,23 @@
+\feladat{6}{
+ Vékony, egyenletesen töltött $l$ hosszú egyenes rúd töltése $Q = \lambda l$. Ha\-tá\-roz\-zuk meg az elektromos térerősséget a rúd tengelyén!
+}{}{}
+ 
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A folytonos töltéseloszlás által létrehozott elektromos térerősséget úgy határozzuk meg, hogy azt visszavezetjük a ponttöltésekre. Osszuk fel a rudat nagyon rövid $\dd x$ hosszú darabokra. Az $x$ helyen lévő $\dd x$ hosszú darab töltése $\dd q(x) = \lambda \dd x$. Mivel ennek a kiterjedése nagyon pici, így ezt kezelhetjük úgy, mint egy ponttöltés. Ennek térerősségjáruléka a $P$ pontban $\dd E(x) = k\frac{\dd q}{(l-x+d)^2}$. 
+
+ \marginfigure{06fel_01fig.tikz}
+ Mivel minden darab térerősségjáruléka ugyanabba az irányba mutat, így az eredő térerősség nagyságát úgy kaphatjuk meg, ha az járulékok nagyságát összeadjuk.
+ \al{
+  E(d)
+   &=\intl{0}{l}\dd E(x)
+    =\intl{0}{l}k\frac{\lambda \dd x}{(l-x+d)^2}
+    =\left[\frac{k\lambda}{l-x+d}\right]_{0}^{l}
+    =k\lambda\left(\frac{1}{d}-\frac{1}{d+l}\right)\;.
+ } 
+
+ Ez a mennyiség $d$-ben egy függvény, hiszen a fenti összefüggés felírható tetszőleges $d$ távolságra. A térerősségre csak a rúdon kívül kapunk értelmes kifejezést, ugyanis a térerősség divergál a rúd végénél. Az ábrázolt $E(d)$ függvény tehát a térerősség nagysága. Annak iránya a rúdtól elfelé (a rúd felé) mutat, ha $\lambda$ pozitív (negatív). 
+ 
+\fi

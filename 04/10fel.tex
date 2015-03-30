@@ -1,0 +1,42 @@
+\feladat{10}{
+ Egy $R$ sugarú gömb a sugár függvényében lineárisan változó permittivitású anyagból készült. A relatív permittivitás középen $\varepsilon_{1r}=2$, a felületen pedig $\varepsilon_{2r}=3$. A gömböt homogén $\varrho$ töltéssűrűséggel töltjük fel. Mekkora az elektromos térerősség és az elektromos eltolás a középponttól való távolság függvényében, ha a gömbön kívül vákuum van?
+}{10fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Először adjuk meg a relatív dielektromos állandó sugárfüggését. A lineáris függvény legyen $\ep_\text{r}(r)A\cdot r +B$, így
+  \al{
+  \left.
+  \begin{array}{rl}
+   \ep_{1\text{r}}=&A\cdot 0 +B\\
+   \ep_{2\text{r}}=&A\cdot R +B
+  \end{array}
+  \right\}
+  &&\Rightarrow
+  && A=\frac{\ep_{2\text{r}}-\ep_{1\text{r}}}{R} && B=\ep_{1\text{r}}\;,
+ }
+ vagyis 
+ \al{
+  \ep_\text{r}(r)=\frac{\ep_{2\text{r}}-\ep_{1\text{r}}}{R}\cdot r +\ep_{1\text{r}}\;.
+ } 
+
+ A homogén módon töltött gömb dielektromos eltolását a 7.~feladatban már kiszámítottuk:
+ \al{
+  D(r)=
+   \begin{cases}
+     \frac{\varrho}{3}r & r<R \\
+     \frac{\varrho}{3}\frac{R^3}{r^2} & R<r
+   \end{cases}\;,
+ }
+ melyből a térerősség:
+ \al{
+  E(r)=\frac{D(r)}{\ep_0\ep_\text{r}(r)}=
+  \begin{cases}
+     \frac{\varrho}{3\ep_0}\frac{1}{\frac{\ep_{2\text{r}}-\ep_{1\text{r}}}{R}\cdot r +\ep_{1\text{r}}} r & r<R \\
+     \frac{\varrho}{3\ep_0}\frac{R^3}{r^2} & R<r
+   \end{cases}\;.
+ }
+
+\fi

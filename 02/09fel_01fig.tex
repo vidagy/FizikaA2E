@@ -1,0 +1,43 @@
+\documentclass[tikz]{standalone}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{pgfplots}
+\usepackage{calc}
+
+\pgfplotsset{compat=newest}
+
+\begin{document}
+ \begin{tikzpicture}
+  \begin{axis}[
+               axis equal image=true,
+ %               title={$x \exp(-x^2-y^2)$ and its gradient},
+               domain=-2:2,
+               view={0}{90},
+               axis background/.style={fill=white},
+               xlabel={$z$},
+               ylabel={$y$}
+              ]
+              
+   \addplot3[contour gnuplot={levels={0,0.5,-0.5,1.0,-1.0,2.0,-2.0,3.0,-3.0,4.0,-4.0},
+                    labels=false,
+                    draw color=white},
+            samples=10,
+            thick] 
+    {pow((x-1)^2+y^2,-0.5)-pow((x+1)^2+y^2,-0.5)};
+   
+   \addplot3[blue,
+             quiver={
+                     u={(x-1)*pow((x-1)^2+y^2,-1.5)-(x+1)*pow((x+1)^2+y^2,-1.5)},
+                     v={y*pow((x-1)^2+y^2,-1.5)-y*pow((x+1)^2+y^2,-1.5)},
+                     scale arrows=0.015,
+                    },
+             -latex,
+             samples=17,
+             update limits=false] 
+    {pow((x-1)^2+y^2,-0.5)-pow((x+1)^2+y^2,-0.5)};
+  \end{axis}
+ \end{tikzpicture}
+\end{document}

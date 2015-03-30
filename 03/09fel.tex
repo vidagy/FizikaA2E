@@ -1,0 +1,72 @@
+\feladat{9}{
+ Határozzuk meg az elektromos térerősséget, ha a térfogati töltéssűrűség a következő:
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item $\displaystyle \varrho(x,y,z)=\varrho_0\mathrm{e}^{-\alpha \abs{z}}$
+  \item $\displaystyle \varrho(x,y,z)=\varrho_0\mathrm{e}^{-\frac{x^2+y^2}{\alpha}}$
+  \item $\displaystyle \varrho(x,y,z)=\varrho_0$, ha $x^2+y^2+z^2 < R^2$, illetve $\varrho(x,y,z)=0$ egyébként.
+ \end{enumerate}
+}{}{}
+
+\ifdefined\megoldas
+   
+
+ Megoldás:
+
+ \marginfigure{09fel_01fig}
+ Észrevehetjük, hogy a három sűrűség az előző három feladatnak megfelelő szimmetriával rendelkezik. Így tehát használva az ott levezetett összefüggéseket:
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item 
+   \al{
+    E_\text{a}(z)
+     &=\frac{1}{\ep_0}\intl{0}{z}\varrho(z')\,\dd z'
+      =\frac{\varrho_0}{\ep_0}\intl{0}{z}\mathrm{e}^{-\alpha \abs{z'}}\,\dd z'
+      =\frac{\varrho_0}{\ep_0}\left[\frac{1}{-\alpha}\mathrm{e}^{-\alpha \abs{z'}}\right]_{0}^{z}
+     \\
+     &=\frac{\varrho_0}{\ep_0}\frac{1}{-\alpha}\left(\mathrm{e}^{-\alpha \abs{z}}-1\right)
+      =\frac{\varrho_0}{\alpha\ep_0}\left(1-\mathrm{e}^{-\alpha \abs{z}}\right)\;,
+   }
+   
+   \item 
+   \al{
+    E_\text{b}(r)
+     &=\frac{1}{\ep_0}\frac{1}{r}\intl{0}{r}r'\varrho(r')\,\dd r'
+      =\frac{\varrho_0}{\ep_0}\frac{1}{r}\intl{0}{r}r'\mathrm{e}^{-\frac{r'^2}{\alpha}}\,\dd r'
+      =\frac{\varrho_0}{\ep_0}\frac{1}{r}\left[\frac{-\alpha}{2}\mathrm{e}^{-\frac{r'^2}{\alpha}}\right]_{0}^{r}
+     \\
+     &=\frac{\varrho_0}{\ep_0}\frac{1}{r}\frac{-\alpha}{2}\left(\mathrm{e}^{-\frac{r'^2}{\alpha}}-1\right)
+      =\frac{\alpha\varrho_0}{2\ep_0}\frac{1}{r}\left(1-\mathrm{e}^{-\frac{r'^2}{\alpha}}\right)\;,
+   }
+   
+   \item  Itt két eset lehetséges: egyik, hogy $r<R$:
+   \al{
+    E_\text{c}(r)
+     &=\frac{1}{\ep_0}\frac{1}{r^2}\intl{0}{r}r'^2\varrho(r')\,\dd r'
+      =\frac{1}{\ep_0}\frac{1}{r^2}\intl{0}{r}r'^2\varrho_0\,\dd r'
+      =\frac{1}{r^2}\frac{\varrho_0}{\ep_0}\left[\frac{r'^3}{3}\right]_{0}^{r}
+      =\frac{\varrho_0}{\ep_0}\frac{r}{3}\;,
+   }
+   illetve $r>R$
+   \al{
+    E_\text{c}(r)
+     &=\frac{1}{\ep_0}\frac{1}{r^2}\intl{0}{r}r'^2\varrho(r')\,\dd r'
+      =\frac{1}{\ep_0}\frac{1}{r^2}
+        \Bigg(
+         \intl{0}{R}r'^2\varrho(r')\,\dd r'
+         \underbrace{\intl{R}{r}r'^2\varrho(r')\,\dd r'}_{=0}
+        \Bigg)
+     \\
+     &=\frac{1}{\ep_0}\frac{1}{r^2}\intl{0}{R}r'^2\varrho_0\,\dd r'
+      =\frac{1}{r^2}\frac{\varrho_0}{\ep_0}\left[\frac{r'^3}{3}\right]_{0}^{R}
+      =\frac{\varrho_0}{\ep_0}\frac{1}{r^2}\frac{R^3}{3}\;.
+   }
+   Vagyis 
+   \al{
+    E_\text{c}(r)
+     =\begin{cases}
+       \frac{\varrho_0}{\ep_0}\frac{r}{3} & r<R \\
+       \frac{\varrho_0}{\ep_0}\frac{1}{r^2}\frac{R^3}{3} & R<r
+      \end{cases}\;.
+   }
+ \end{enumerate}
+
+\fi

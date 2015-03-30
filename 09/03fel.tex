@@ -1,0 +1,29 @@
+\feladat{3}{
+ Oldjuk meg az 1. feladatot a csomóponti potenciálok módszerével!
+}{03fel_01fig}{}
+
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ Az áramkörben két csomópont található. Az egyiken rögzítsük a potenciált: a $B$ pontot leföldeljük. Ekkor az $A$ pont potenciálja lesz az egyetlen ismeretlen: $U_A$.
+
+ Az egyetlen független $A$ csomópontra írjuk fel a csomóponti törvényt:
+ \al{
+  0&=\frac{U_A-32\me{V}}{2\me{\Omega}}+\frac{U_A}{8\Omega}+\frac{U_A-20\me{V}}{4\me{\Omega}}
+  \\
+  0&=4 U_A-128\me{V}+ U_A + 2 U_A-40\me{V}
+  \\
+  U_A&=24\me{V}\;.
+ }
+
+ Innen a keresett áramok:
+ \al{
+  I_1 &= \frac{U_A-20\me{V}}{4\me{\Omega}}=1\me{A}
+  \\
+  I_2 &= \frac{U_A-32\me{V}}{2\me{\Omega}}=-4\me{A}
+  \\
+  I_3 &= \frac{U_B-U_A}{8\me{\Omega}}=-3\me{A}\;.
+ }
+ 
+\fi

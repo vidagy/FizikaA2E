@@ -1,0 +1,54 @@
+\begin{tikzpicture}
+  \draw[opacity=0.0] (-2,0) -- (6,0);
+  
+  \node[draw,circle,inner sep=1pt] at (-0.3,1.7) {$1$};
+  
+  \fill[color=black!15] (1,-2) rectangle (2.2,2);
+  \fill[color=black!30] (2.2,-2) rectangle (3,2);
+  
+  \fill[black] (0,0) circle (2pt);
+  \fill[black] (4,0) circle (2pt);
+  \draw[thick] (0,0) -- (1,0);
+  \draw[very thick] (1,2) -- (1,-2);
+  \draw[thick] (3,0) -- (4,0);
+  \draw[very thick] (3,2) -- (3,-2);
+  
+  \node at (1.6,1) {$\varepsilon_{1}$};
+  \node at (2.6,1) {$\varepsilon_{2}$};
+  
+  \node at (0.5,1) {$A$};
+  
+  \draw[<->, >=latex] (1,-2.25) -- node[below] {$d_1$} (2.2,-2.25);
+  \draw[<->, >=latex] (2.2,-2.25) -- node[below] {$d_2$} (3,-2.25);
+  
+  \ifdefined\megoldas
+  \begin{scope}[yshift=-6cm,xshift=-0.5cm]
+   
+   \node at (2.7,2.5) {$\Downarrow$};
+   
+   \fill[color=black!15] (1,-2) rectangle (2.2,2);
+   \fill[color=black!30] (3.2,-2) rectangle (4,2);
+   
+   \fill[black] (0,0) circle (2pt);
+   \fill[black] (5,0) circle (2pt);
+   \draw[thick] (0,0) -- (1,0);
+   \draw[thick] (1,2) -- (1,-2);
+   
+   \draw[very thick] (2.2,2) -- (2.2,-2);
+   \draw[thick] (2.2,0) -- (3.2,0);
+   \draw[very thick] (3.2,2) -- (3.2,-2);
+   
+   \draw[thick] (4,0) -- (5,0);
+   \draw[very thick] (4,2) -- (4,-2);
+   
+   \node at (1.6,1) {$\varepsilon_{1}$};
+   \node at (3.6,1) {$\varepsilon_{2}$};
+   
+   \node at (0.5,1) {$A$};
+   
+   \draw[<->, >=latex] (1,-2.25) -- node[below] {$d_1$} (2.2,-2.25);
+   \draw[<->, >=latex] (3.2,-2.25) -- node[below] {$d_2$} (4,-2.25);
+  \end{scope}
+  \fi
+  
+ \end{tikzpicture} 

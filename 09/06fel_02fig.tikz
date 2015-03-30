@@ -1,0 +1,34 @@
+\begin{tikzpicture}
+ \draw[thick,->,>=latex,darkgreen] (0.4,1.4) to[out=40,in=-20,looseness=5] node[pos=0.8,above] {$\tilde I_1$} (0.4,0.4) ;
+ \draw[thick,->,>=latex,darkgreen] (2.4,1.4) to[out=40,in=-20,looseness=5] node[pos=0.8,above] {$\tilde I_2$} (2.4,0.4) ;
+ \draw[thick,->,>=latex,darkgreen] (1.4,3.4) to[out=40,in=-20,looseness=5] node[pos=0.8,above] {$\tilde I_3$} (1.4,2.4) ;
+
+ \draw (0,0) -- (4,0);
+ 
+ \telep{(0,0)}{(0,2)}{12\,V}{(0.1,0.2)}
+ \ellenallas{(2,0)}{(2,2)}{$2\,\Omega$}{(0.4,0.0)}
+ \telep{(4,0)}{(4,2)}{20\,V}{(0.1,0.2)}
+ 
+ \ellenallas{(0,2)}{(2,2)}{$6\,\Omega$}{(0.0,0.3)}
+ \ellenallas{(2,2)}{(4,2)}{$5\,\Omega$}{(0.0,0.3)}
+ 
+ \ellenallas{(0,4)}{(4,4)}{$8\,\Omega$}{(0.0,0.3)}
+ 
+ \draw (0,2) -- (0,4);
+ \draw (4,2) -- (4,4);
+
+ \fill (2,0) circle (2pt);
+ \fill (0,2) circle (2pt);
+ \fill (4,2) circle (2pt);
+ \fill (2,2) circle (2pt);
+ \node[left] at (0,2) {$A$};
+ \node[right] at (4,2) {$B$};
+ \node[below left] at (2,0) {$D$};
+ \node[above] at (2,2) {$C$};
+ 
+ \draw (2,0) -- (2,-0.4);
+ \draw[thick] (2,-0.4)++(-0.2 ,0) -- +(0.4,0);
+ \draw[thick] (2,-0.5)++(-0.15,0) -- +(0.3,0);
+ \draw[thick] (2,-0.6)++(-0.1 ,0) -- +(0.2,0);
+\end{tikzpicture}
+ 

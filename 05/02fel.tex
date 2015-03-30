@@ -1,0 +1,49 @@
+\feladat{2}{
+ Határozzuk meg az $\Ev(x, y, z) = a(y\iv + x\jv)$ elektromos erőtér potenciálját, ha $a$ állandó, $\iv$ és $\jv$ pedig az $x$ és $y$ tengely irányába mutató egységvektorok!
+}{}{}
+
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ A potenciálfüggvény definíciója alapján a keresett $V(x,y,z)$ függvénynek olyannak kell lenni, amely kielégíti az alábbi egyenleteket:
+ \begin{align}
+  ay&=-\pder{V(x,y,z)}{x} \label{eq:elso} \\
+  ax&=-\pder{V(x,y,z)}{y} \label{eq:masodik} \\
+  0&=-\pder{V(x,y,z)}{z}\;. \label{eq:harmadik}
+ \end{align}
+ 
+ Ezek az egyenletek most kicsit bonyolultabbak, mint a homogén esetben. Kezdjük megoldani ezeket az egyenleteket szépen sorban. Integráljuk az elsőt $x$ szerint:
+ \begin{align}
+  \pder{V(x,y,z)}{x}&=-ay \\
+  \int \pder{V(x,y,z)}{x}\,\dd x &=-\int ay\,\dd x\\
+  V(x,y,z)&=-axy+C_1(y,z)\;,\label{eq:x}
+ \end{align}
+ ahol a $C_1(y,z)$ egy integrálási konstans. Határozatlan integrálásnál egy konstans mindig megjelenik, ám itt a konstans még függhet a másik két koordinátától, hiszen ha deriváljuk \eqaref{eq:x}~egyenleteben szereplő $V(x,y,z)$-t $x$ szerint parciálisan, akkor kielégítjük azt az egyenletet, amiből kiindultunk, a parciális deriválásnál minden csak $y$-tól és $z$-től függő tag kiesik.
+ 
+ \Eqaref{eq:x}~potenciál akkor ezek szerint kielégíti \eqaref{eq:elso}~egyenletet. Most nézzük \eqaref{eq:masodik}~egyenletet. Ebbe már \eqaref{eq:x}~egyenletben szereplő potenciált helyettesítjük be:
+ \begin{align}
+  \pder{V(x,y,z)}{y}&=-ax \\
+  \pder{C_1(y,z)}{y}&=0 \\ 
+  C_1(y,z)&=C_2(z)\;,
+ \end{align}
+ hiszen ha a $C_1(y,z)$ függvény $y$ szerinti deriváltja nulla, akkor az csak $z$-től függhet.  Visszahelyettesítve \eqaref{eq:x}~képletbe:
+ \begin{align}
+  V(x,y,z)&=-axy + C_2(z)\;,\label{eq:y}
+ \end{align}
+ amely már \eqaref{eq:elso} és \eqaref{eq:masodik}~egyenletet is kielégíti.
+
+ A harmadik komponenssel is hasonlóan járunk el:
+ \begin{align}
+  \pder{V(x,y,z)}{z}&=0 \\
+  \pder{C_2(z)}{z}&=0 \\
+  C_2(z)&=C\label{eq:z}\;,
+ \end{align}
+ ahonnan láthatjuk, hogy a $C_2(z)$ egy konstans, ami már semmitől sem függ. Tehát a potenciál:
+ \begin{align}
+  V(x,y,z)&=-axy + C\;.
+ \end{align}
+ 
+ Ha ennek a gradiensét képezzük, akkor valóban elő lehet állítani a megadott térerősséget. Az is látszik, hogy a potenciál egy konstansban bizonytalan. Ez mindig így van, a potenciálfüggvény egy számmal mindig eltolható.
+
+\fi

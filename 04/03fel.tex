@@ -1,0 +1,47 @@
+\feladat{3}{
+ Egymástól $4\me{cm}$ távolságra lévő fémsíkok között olyan dielektrikum van, amelynek relatív permittivitása lineárisan változik $1$-től $2$-ig. A lemezek ellentétesen töltöttek, és a töltéssűrűség abszolút értéke a lemezeken $\sigma=4\cdot10^{-8}\me{C/m^{2}}$. Hogyan változik a térerősség és az elektromos eltolás a síkok között?
+}{03fel_01fig.tikz}{}
+
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ Először a relatív dielektromos állandó helyfüggését kell függvény alakban megadnunk. Azt tudjuk, hogy $x=-\frac{d}{2}$-ben $\ep_\text{r}(x)=1$, és $x=\frac{d}{2}$-ben $\ep_\text{r}(x)=2$, és az a kettő között lineárisan változik. Erre a két pontra kell tehát egyenest illesztenünk. Az egyenes általános alakban felírt egyenlete: $\ep_\text{r}(x)=A\cdot x+B$. Behelyettesítve ebbe a két ismert pontot:
+ \al{
+  \left.
+  \begin{array}{rl}
+   1=&A\cdot\left(-\frac{d}{2}\right)+B\\
+   2=&A\cdot\left(\frac{d}{2}\right)+B
+  \end{array}
+  \right\}
+  &&\Rightarrow
+  && A=\frac{1}{d} && B=\frac{3}{2}\;.
+ }
+
+ A megfelelő a mennyiségeket felírva az egyes tartományokra:
+ \al{
+  \ep_\text{r}(x)=
+   \begin{cases}
+     1 & x<-\frac{d}{2} \\
+     \frac{1}{d}\cdot x+\frac{3}{2} & -\frac{d}{2}<x<\frac{d}{2} \\
+     1 & x>\frac{d}{2}
+   \end{cases}
+ }
+ \al{
+  D(x)=
+   \begin{cases}
+    0 & x<-\frac{d}{2} \\
+    \sigma & -\frac{d}{2}<x<\frac{d}{2} \\
+    0 & x>\frac{d}{2}
+   \end{cases}
+ }
+ \al{
+  E(x)=\frac{D(x)}{\ep_0\ep_\text{r}(x)}=
+   \begin{cases}
+    0 & x<-\frac{d}{2} \\
+    \frac{1}{\ep_0}\frac{\sigma}{\frac{1}{d}\cdot x+\frac{3}{2}} & \frac{d}{2}<x<\frac{d}{2} \\
+    0 & x> \frac{d}{2}
+   \end{cases}
+ }
+ 
+\fi

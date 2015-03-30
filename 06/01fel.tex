@@ -1,0 +1,74 @@
+\feladat{1}{
+ Síkkondenzátor $A$ területű fegyverzetei közötti teret az ábrán látható módokon két dielektrikum tölti ki. Mekkorák a kapacitások, ha a fegyverzetek méretei nagyok a köztük lévő távolsághoz képest?
+}{01fel_01fig}{1}
+
+\marginfigure{01fel_02fig}
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ Először számoljuk ki egy üres, $d$ széles és $A$ felületű fegyverzetekből összeállított síkkondenzátor kapacitását. Ha a kondenzátort $Q$ töltéssel töltöttük fel (azaz az egyik fegyverzeten $Q$, a másikon pedig $-Q$ töltés van), akkor abban a térerősség nagysága mindenhol $E=\frac{\sigma}{\ep_0}=\frac{Q}{A\ep_0}$. A két fegyverzet közötti feszültség, mivel a tér homogén: $U=E\cdot d=\frac{Q}{A\ep_0}\cdot d$. Így a kapacitás:
+ \al{
+  C
+   =\frac{Q}{U}
+   =\ep_0\frac{A}{d}\;.
+ }
+ Ha a kondenzátor valamilyen homogén $\ep_\text{r}$ relatív dielektromos állandójú anyaggal van kitöltve, akkor a térerősség: $E=\frac{\sigma}{\ep_0\ep_\text{r}}$, vagyis a kapacitás:
+ \al{
+  C=\ep_0\ep_\text{r}\frac{A}{d}\;.
+ }
+
+ A feladatban szereplő kondenzátorokban azonban nem homogén a dielektrikum. Ezeket a kondenzátorokat fel tudjuk bontani két-két olyan kondenzátorra, amelyekben már homogén a dielektrikum. 
+
+ Az első esetben a bal és a jobb oldalon különböző térerősség jön létre:
+ \begin{align}
+  E_1 &= \frac{\sigma}{\varepsilon_0\varepsilon_1} & 
+  E_2 &= \frac{\sigma}{\varepsilon_0\varepsilon_2}, 
+ \end{align}
+a két oldal közötti feszültség a két szakaszon eső feszültség összege:
+\begin{align}
+  U &= U_1 + U_2 = E_1d_1 + E_2d_2 
+    = \frac{\sigma}{\varepsilon_0\varepsilon_1}d_1
+     + \frac{\sigma}{\varepsilon_0\varepsilon_2}d_2\;.
+\end{align}
+ A kapacitás pedig a definíció szerint:
+ \begin{align}
+  C &= \frac{Q}{U} 
+     = \frac{\sigma A}{\frac{\sigma}{\varepsilon_0\varepsilon_1}d_1     + \frac{\sigma}{\varepsilon_0\varepsilon_2}d_2} 
+     = \frac{1}{\frac{d_1}{A\varepsilon_0\varepsilon_1}+\frac{d_2}{A\varepsilon_0\varepsilon_2}}
+     = \frac{1}{\frac{1}{C_1}+\frac{1}{C_2}}\;.
+ \end{align}
+A kapott eredmény megfelel annak, hogy két kondenzátort sorba kapcsoltunk volna a szemléletes képnek megfelelően. 
+
+A második esetben osszuk szét a töltést a két részfelületre, így a két térerősség:
+\begin{align}
+ E_1 &= \frac{Q_1}{\varepsilon_0\varepsilon_1A_1} &
+ E_2 &= \frac{Q_1}{\varepsilon_0\varepsilon_2A_2}\;. 
+\end{align}
+Az ezekből adódó feszültségeknek meg kell egyezniük, így szükségszerűen teljesülnie kell annak is, hogy $E_1=E_2=E$.  A kapacitás:
+ \begin{align}
+  C &= \frac{Q}{U} 
+     = \frac{Q_1+Q_2}{U}
+     = \frac{E_1\varepsilon_0\varepsilon_1A_1 + E_2\varepsilon_0\varepsilon_2A_2}{Ed}
+     = \varepsilon_0\varepsilon_1\frac{A_1}{d} + \varepsilon_0\varepsilon_1\frac{A_1}{d}
+     = C_1+C_2\;,
+ \end{align}
+ ahol a résztöltéseket a elektromos terekkel fejeztük ki, majd kihasználtuk a térerősség egyenlőségét. Így végeredményként megkaptuk, hogy ez az elrendezés két párhuzamosan kapcsolt síkkondenzátornak felel meg.
+ 
+%  Az első eset olyan, mintha egy $d_1$ és egy $d_2$ vastag $A$ keresztmetszetű kondenzátor lenne sorosan kapcsolva. A sorosan kapcsolt kondenzátorok kapacitása reciprokosan adódik össze, így a teljes kondenzátor kapacitása:
+%  \al{
+%   C=\frac{1}{\frac{1}{C_1}+\frac{1}{C_2}}
+%    =\frac{1}{\frac{1}{\ep_0\ep_1}\frac{d_1}{A}+\frac{1}{\ep_0\ep_2}\frac{d_1}{A}}
+%    =\ep_0 A\frac{1}{\frac{d_1}{\ep_1}+\frac{d_2}{\ep_2}}
+%   \;.
+%  }
+% 
+%  A második esetben a kondenzátort két egymással párhuzamosan kapcsolt kondenzátorra tudjuk felbontani. Ennek kapacitása:
+%  \al{
+%   C=C_1+C_2
+%    =\ep_0\ep_1\frac{A_1}{d}+\ep_0\ep_2\frac{A_2}{d}
+%    =\ep_0\big(\ep_1 A_1+\ep_2 A_2\big)\frac{1}{d}
+%   \;.
+%  }
+ 
+\fi

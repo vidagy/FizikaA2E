@@ -1,0 +1,35 @@
+\feladat{7}{
+ Egy origó középpontú homogén fémkockában a hőmérséklet egy adott pillanatban a következő módon függ a helytől:
+ \begin{equation*}
+  T(x,y,z)=T_0+T_1\cdot \sin\left(\frac{\pi}{4}+\alpha(x+y)\right)\cdot\mathrm{e}^{\beta z}\;.
+ \end{equation*}
+ Milyen irányú a hőáramlás az origóban, illetve a tér többi pontjában ebben a pillanatban?
+}{}{}
+ 
+\ifdefined\megoldas
+
+ Megoldás:
+
+ A hőáramlás a hőmérséklet gradiensével van kapcsolatban. A Fick-törvény alapján: $\jv_\text{q}=-\lambda\grad T$, ahol $\lambda$ a hővezetési együttható. A feladatunk tehát, hogy kiszámoljuk a feladatban megadott függvény gradiensét. Descartes-koordinátákban $\grad = \left(\pder{}{x},\pder{}{y},\pder{}{z}\right)$, vagyis
+ \al{
+  \grad{T}
+   &=\left(\pder{}{x},\pder{}{y},\pder{}{z}\right)T(x,y,z)
+    =\left(\pder{T(x,y,z)}{x},\pder{T(x,y,z)}{y},\pder{T(x,y,z)}{z}\right)\;,
+ }
+ ahol az egyes komponensek:
+ \al{
+  \pder{T(x,y,z)}{x}
+   &=T_1\alpha\cdot \cos\left(\frac{\pi}{4}+\alpha(x+y)\right)\cdot\mathrm{e}^{\beta z}\;,\\
+  \pder{T(x,y,z)}{y}
+   &=T_1\alpha\cdot \cos\left(\frac{\pi}{4}+\alpha(x+y)\right)\cdot\mathrm{e}^{\beta z}\;,\\
+  \pder{T(x,y,z)}{z}
+   &=T_1\cdot \sin\left(\frac{\pi}{4}+\alpha(x+y)\right)\cdot\beta\mathrm{e}^{\beta z}\;.
+ }
+
+ Így a hőáram:
+ \al{
+  \jv_\text{q}
+   &=-\lambda T_1\mathrm{e}^{\beta z}\cos\left(\frac{\pi}{4}+\alpha(x+y)\right)\cdot \bigg(\alpha ,\alpha, \beta\tg\left(\frac{\pi}{4}+\alpha(x+y)\right) \bigg)\;.
+ }
+
+\fi

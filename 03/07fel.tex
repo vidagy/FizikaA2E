@@ -1,0 +1,61 @@
+\feladat{7}{
+ Legyen a térfogati töltéssűrűség olyan, hogy az csak a $z$ tengelytől mért távolság függvénye, azaz $\varrho(x,y,z)=f\big(\sqrt{x^2+y^2}\big)$ valamilyen $f$ függvényre. Adjuk meg a térerősséget a tér minden pontjában.
+}{}{}
+
+\ifdefined\megoldas
+   
+
+ Megoldás: 
+
+ Ha a töltéssűrűség csak az $r=\sqrt{x^2+y^2}$-től, vagyis a $z$ tengelytől mért távolságtól függ, akkor a rendszer 
+ \begin{enumerate}[itemsep=0pt]
+  \item a $z$ tengellyel párhuzamosan tetszőlegesen eltolható,
+  \item a $z$ tengely körül tetszőleges szöggel elforgatható,
+  \item a $z$ tengelyre merőleges síkra tükrözhető,
+  \item minden a $z$ tengelyt tartalmazó síkra tükrözhető
+ \end{enumerate}
+ úgy, hogy a rendszer a transzformáció után önmagába megy át, vagyis a rendszer hengerszimmetrikus. Érdemes akkor hengerkoordináta-rendszerben gondolkodnunk. Az 1. szimmetria következménye, hogy semmilyen mennyiség sem függhet a $z$ koordinátáktól, a 2. szimmetriáé pedig, hogy a $\varphi$-től sem függhet semmi. A 3. és a 4. szimmetriából adódik, hogy a térerősség  csak sugárirányba mutathat. 
+
+ Ez formálisan felírva:
+ \al{
+  \Ev(r,\varphi,z)
+   &=\Ev(r)
+    =E(r)\ev_\text{r}
+    \;.
+ }
+
+ A megfelelő Gauss-felület egy olyan $r$ sugarú, $l$ hosszú henger, melynek területű alaplapjai párhuzamosak az $x$--$y$ síkkal és tengelye egybeesik a szimmetriatengellyel. A Gauss-tételhez:
+ \al{
+  \iint\limits_{\text{henger}}\Ev(\rv)\;\dd^2\fv
+   &\overset{(1)}{=}
+     \iint\limits_{\text{hengerpalást}}\Ev(\rv)\;\dd^2\fv
+    +2\underbrace{\iint\limits_{\text{alaplap}}\Ev(\rv)\;\dd^2\fv}_{=0}
+    \overset{(2)}{=}2\iint\limits_{\text{palást}}E(r)\;\dd^2 f
+  \\
+   &\overset{(3)}{=}2 E(r)\iint\limits_{\text{palást}}\;\dd^2 f
+    =E(z)\cdot 2r\pi l\;,
+ }
+ hiszen (1) a teljes hengerfelület felosztható a palástra és a két alaplapra, ahol az alaplapokon vett felületi integrál nulla, hiszen ott a felületvektor merőleges a térerősségre, illetve (2) a paláston számolt felületi integrálnál a felületvektor párhuzamos a térerősséggel. Mivel a térerősség csak az $r$ koordinátától függ, így a paláston a térerősség nagysága mindenhol ugyanakkora (3), vagyis az kiemelhető az integrálás alól, a felületelemek összege pedig az alaplap felületét adja.
+
+ A körbezárt töltés:
+ \al{
+  \iiint\limits_\text{henger}\varrho(\rv)\,\dd^3\rv
+   &\overset{(1)}{=}
+    \intl{0}{l}\intl{0}{2\pi}\intl{0}{r}\varrho(r')r'\,\dd r'\dd \varphi\dd z
+    \overset{(2)}{=}
+    \intl{0}{l}\dd z
+    \intl{0}{2\pi} \dd\varphi
+    \intl{0}{r}\varrho(r')r'\,\dd r'
+   \\
+   &\overset{(3)}{=}
+    l\cdot 2\pi\intl{0}{r}\varrho(r')r'\,\dd r'\;,
+ }
+ ahol $r$ az integrálás hatra és $r'$ az integrálási változó.
+
+ A Gauss-tétel alapján:
+ \al{
+  E(r)
+   =\frac{1}{\ep_0}\frac{1}{r}\intl{0}{r}r'\varrho(r')\,\dd r'\;.
+ }
+ 
+\fi

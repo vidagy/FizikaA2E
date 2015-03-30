@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+ \ifdefined\megoldas
+  \draw[thick,->,>=latex,darkgreen] (0.4,1.4) to[out=40,in=-20,looseness=5] node[pos=0.8,above] {$\tilde I_1$} (0.4,0.4) ;
+  \draw[thick,->,>=latex,darkgreen] (2.4,1.4) to[out=40,in=-20,looseness=5] node[pos=0.8,above] {$\tilde I_2$} (2.4,0.4) ;
+ \fi
+ 
+ \draw (0,0) -- (4,0);
+ \ellenallas{(2,0)}{(2,2)}{$8\,\Omega$}{(0.4,0.0)}
+ \ellenallas{(0,2)}{(2,2)}{$2\,\Omega$}{(0.0,0.3)}
+ \ellenallas{(2,2)}{(4,2)}{$4\,\Omega$}{(0.0,0.3)}
+ \telep{(0,0)}{(0,2)}{32\,V}{(0.1,-0.3)}
+ \telep{(4,0)}{(4,2)}{20\,V}{(0.1,-0.3)}
+ 
+ \ifdefined\megoldas
+  \draw[thick,->,>=latex] (-0.2,1.2) -- node[left] {$I_2$}  (-0.2,1.8);
+  \draw[thick,->,>=latex] ( 1.7,1.8) -- node[left] {$I_3$}  ( 1.7,1.2);
+  \draw[thick,->,>=latex] ( 4.2,1.2) -- node[right] {$I_1$} ( 4.2,1.8);
+ \fi
+ 
+\end{tikzpicture}
+ 

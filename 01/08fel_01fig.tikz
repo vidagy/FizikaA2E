@@ -1,0 +1,20 @@
+\definecolor{mygray2}{RGB}{120,120,120}
+\begin{tikzpicture}[
+                      axis/.style={font=\small,>=latex},
+                      seged/.style={mygray2},
+                      vector/.style={black,thick,>=latex},
+                      ero/.style={color=blue,thick,>=latex}
+ ]
+
+ \node[below] (P1) at (0,0) {pálya};
+ \node (P2) at (3,2) {};
+ \path[seged] (P1) edge [out=80,in=220] (P2);
+ 
+ \fill (3,0) circle (2pt) node[below right] {O};
+ 
+ \draw[->,vector] (3,0) -- node[below] {$\rv(t)$} (0.2,0.4);
+ \draw[->,vector] (3,0) -- node[above right] {$\rv(t+\dd t)$} (1.7,1.3);
+ \draw[->,vector] (0.2,0.4) -- node[above left] {$\dd \sv$} (1.7,1.3);
+ \draw[->,ero] (0.2,0.4) -- node[left] {$\Fv\big(\rv(t)\big)$} (0,1.8);
+ 
+\end{tikzpicture} 

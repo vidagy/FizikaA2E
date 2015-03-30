@@ -1,0 +1,60 @@
+\feladat{1}{
+ A homogén, $E$ nagyságú elektromos erőtér a koordinátarendszer $z$ tengelyének irányába mutat. Határozzuk meg az elektromos fluxus értékét az $OABC$ tetraéder minden lapjára külön-külön, ahol az $O$ pont az origót jelenti, $A=(a,0,0)$, $B=(0,b,0)$, $C=(0,0,c)$.
+}{01fel_01fig}{}
+
+\ifdefined\megoldas
+  
+ Megoldás: 
+
+ Az elektromos térerősség fluxusa a térerősség felületi integrálja:
+ \al{
+  \Phi=\iint\limits_{A}\Ev(\rv)\,\dd^2\fv\;.
+ } 
+
+ Ezt a mennyiséget kell kiszámítanunk mind a négy oldalra.
+ \begin{description}
+   \item[$OAB$:] 
+    Először is a felületet kell irányítanunk. Konvenció, hogy a felületelem-vektor a zárt felületből mindig kifelé mutat. A felületelem-vektor a felület síkjára merőleges és nagysága az adott felületelem nagyságával egyezik meg.
+    
+    A fluxus:
+    \al{
+     \Phi_{OAB}
+      =\iint\limits_{OAB}\Ev\,\dd^2\fv
+      \overset{(1)}{=}-\iint\limits_{OAB} E\,\dd^2 f
+      \overset{(2)}{=}-E\iint\limits_{OAB}\,\dd^2 f
+      \overset{(3)}{=}-E\frac{ab}{2}\;,
+    }
+    hiszen (1) a felületelem-vektor erőleges a térerősségre a teljes felületen mindenhol, (2) a térerősség homogén a felület mentén, vagyis az integrálból kiemelhető, illetve (3) a felületelemek nagyságának összege a teljes felületre a felület méretét adja meg. 
+ \end{description}
+
+ \begin{description}
+  \item[$OAC$ és $OBC$:] 
+   A felületi integrál itt nulla, hiszen a felületelem-vektorok merőlegesek a térerősségre, így a skalárszorzatuk nulla. 
+   
+  \item[$ABC$:]
+   Az $OAB$ oldalhoz hasonlóan itt:
+   \al{
+    \Phi_{ABC}
+     =\iint\limits_{ABC}\Ev\,\dd^2\fv
+     =\Ev\iint\limits_{ABC}\,\dd^2\fv
+     =\Ev \Av_{ABC}\;,
+   }
+   ahol $\Av_{ABC}$ a felületvektor. Ezt a háromszög két oldalát megadó vektorból meghatározhatjuk: $\overrightarrow{AB}=(-a,b,0)$, és $\overrightarrow{AB}=(-a,0,c)$, így 
+   \al{
+    \Av_{ABC}
+     &=\frac{1}{2} \overrightarrow{AB}\times\overrightarrow{AC}
+      =\frac{1}{2}
+        \begin{vmatrix}
+         \iv & \jv & \kv \\
+         -a & b & 0 \\
+         -a & 0 & c
+        \end{vmatrix}
+      =\frac{1}{2}(bc,ac,ab)\;,
+    &&
+    \Phi_{ABC}=E\frac{ab}{2}\;.
+   }
+ \end{description}
+
+ Vegyük észre, hogy a teljes felületre a fluxus nulla.
+
+\fi

@@ -1,0 +1,43 @@
+\feladat{8}{
+ Egy 10\,cm sugarú korong egyenletesen töltött, $\sigma = 10^{-5}$\,C/m$^{2}$ töl\-tés\-sű\-rű\-ség\-gel. Határozzuk meg a térerősséget a korong tengelyén, a korong síkjától 5\,cm távolságban!
+}{}{}
+ 
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Az előző feladat megoldása alapján tudjuk, hogy egy $Q$ töltésű, $r$ sugarú töltött körvonal tengelyében, annak síkjától $z$ távolságra a térerősség $z$ irányú, és annak nagysága
+ \al{
+  E_z(z)=kQ\frac{z}{(z^2+r^2)^{\frac{3}{2}}}\;.
+ }
+
+ Vegyük észre, hogy a korong felosztható $r$ sugarú, nagyon vékony $\dd r$ széles körvonalakra. Egy ilyen körvonal töltése $\dd Q=\sigma \dd A$, ahol $\dd A$ a körvonal felülete. Mivel ez nagyon vékony, így területét kiszámolhatjuk úgy, mint a kerületének és a szélességének szorzata: $\dd Q=\sigma\cdot 2 \pi r \dd r$. Felhasználva az előző feladatban levezetett összefüggést, az $r$ sugarú $\dd r$ vastag körív térerősségjáruléka:
+ \marginfigure{08fel_01fig.tikz}
+ \al{
+  \dd E_z(z,r)
+   =k \dd Q\frac{z}{(z^2+r^2)^{\frac{3}{2}}}
+   =k\sigma 2\pi r\dd r\frac{z}{(z^2+r^2)^{\frac{3}{2}}}\;.
+ }
+
+ A teljes $z$ irányú térerősség ezek összege az összes ilyen körívre:
+ \al{
+  E_z(z)
+   &=\intl{0}{R}\dd E_z(z,r)
+    =\intl{0}{R}k\sigma 2\pi r\dd r\frac{z}{(z^2+r^2)^{\frac{3}{2}}}
+    =2\pi k\sigma z\intl{0}{R}\frac{r}{(z^2+r^2)^{\frac{3}{2}}}\dd r\\
+   &=2\pi k\sigma z\left[(-1)\cdot\frac{1}{(z^2+r^2)^{\frac{1}{2}}}\right]_0^R
+    =2\pi k\sigma z\left(\frac{1}{\abs{z}}-\frac{1}{(z^2+R^2)^{\frac{1}{2}}}\right)\\
+   &=2\pi k\sigma \left(\sgn(z)-\frac{z}{(z^2+R^2)^{\frac{1}{2}}}\right)\;.
+ }
+ 
+ \emph{Megjegyzés:}
+ 
+ Láthatjuk, hogy a térerősség nem folytonos függvény, szakadása van ott, ahol átlépünk a felületi töltéseken. A szakadás mértéke kapcsolatban van a felületi töltéssűrűséggel:
+ \al{
+  \lim_{z\to 0+0} E(z) - \lim_{z\to 0-0} E(z)
+   &=4\pi k\sigma
+    = \frac{\sigma}{\ep_0}\;.
+ }
+ Ez a kapcsolat akkor is érvényes, ha a felületi töltéssűrűség helyfüggő.
+ 
+\fi

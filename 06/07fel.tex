@@ -1,0 +1,71 @@
+\feladat{7}{
+ Síkkondenzátor $A$ területű lemezei közötti térrészt olyan dielektrikum tölti ki, amelynek elektromos permittivitása az egyik lemeznél felvett $\varepsilon_{1\text{r}}$ értékről a másik lemeznél felvett $\varepsilon_{2\text{r}}<\varepsilon_{1\text{r}}$ értékig lineárisan csökken. A lemezek közötti távolság $d$. Határozzuk meg a kondenzátor kapacitását!
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+ 
+ \marginfigure{07fel_01fig}
+ 
+ Ennél a feladatnál nem ússzuk meg a térerősség kiszámítását. Ehhez először adjuk meg a dielektrikum állandójának helyfüggését:
+ \al{
+  \ep_\text{r}(x)
+   &=A\cdot x+B
+  \;,&&
+  \begin{array}{c}
+   \ep_\text{r}(-d/2)=-A\frac{d}{2}+B=\ep_{1\text{r}} \\
+   \ep_\text{r}(d/2)=A\frac{d}{2}+B=\ep_{2\text{r}} 
+  \end{array}
+  \;,
+ }
+ \al{
+  A=\frac{\ep_{2\text{r}}-\ep_{1\text{r}}}{d}
+  &&
+  B=\frac{\ep_{1\text{r}}+\ep_{2\text{r}}}{2}
+ } 
+ \al{
+  \ep_\text{r}(x)
+   &=
+   \frac{\ep_{2\text{r}}-\ep_{1\text{r}}}{d}\cdot x +\frac{\ep_{1\text{r}}+\ep_{2\text{r}}}{2}
+  \;.
+ }
+
+ A síkkondenzátorban a térerősség:
+ \al{
+  E(x)
+   =\frac{\sigma}{\ep_0\ep_\text{r}(x)}
+   =\frac{\sigma}{\ep_0}\left(\frac{\ep_{2\text{r}}-\ep_{1\text{r}}}{d}\cdot x +\frac{\ep_{1\text{r}}+\ep_{2\text{r}}}{2}\right)^{-1}
+  \;,
+ }
+ ahonnan a potenciál (ha a nullpontot a bal oldali lemezhez rögzítjük):
+ \al{
+  U&(x)
+  \\
+   &=U(-d/2)-\intl{-\frac{d}{2}}{x}E(x')\,\dd x'
+    =-\intl{-\frac{d}{2}}{x}\frac{\sigma}{\ep_0}\left(\frac{\ep_{2\text{r}}-\ep_{1\text{r}}}{d}\cdot x' +\frac{\ep_{1\text{r}}+\ep_{2\text{r}}}{2}\right)^{-1}\,\dd x'
+  \\
+   &=-\frac{\sigma}{\ep_0}\left[\frac{d}{\ep_{2\text{r}}-\ep_{1\text{r}}}\cdot \ln\left(\frac{\ep_{2\text{r}}-\ep_{1\text{r}}}{d}\cdot x' +\frac{\ep_{1\text{r}}+\ep_{2\text{r}}}{2}\right)\right]_{-\frac{d}{2}}^{x}
+  \;,
+ }
+ vagyis a két lemez közötti feszültség:
+ \al{
+  V
+   &=U(d/2)
+    =-\frac{\sigma}{\ep_0}\left[\frac{d}{\ep_{2\text{r}}-\ep_{1\text{r}}}\cdot \ln\left(\frac{\ep_{2\text{r}}-\ep_{1\text{r}}}{d}\cdot x' +\frac{\ep_{1\text{r}}+\ep_{2\text{r}}}{2}\right)\right]_{-\frac{d}{2}}^{\frac{d}{2}}
+  \\
+   &=\frac{\sigma}{\ep_0}\frac{d}{\ep_{1\text{r}}-\ep_{2\text{r}}}\left[\ln\left(\ep_{2\text{r}}\right)-\ln\left(\ep_{1\text{r}}\right)\right]
+    =\frac{\sigma}{\ep_0}\frac{d}{\ep_{1\text{r}}-\ep_{2\text{r}}}\ln\left(\frac{\ep_{2\text{r}}}{\ep_{1\text{r}}}\right)
+   \;.
+ }
+
+ Vegyük észre, hogy ez a mennyiség negatív ($\sigma>0$ esetén). A kapacitás pozitív mennyiség, így ennek ellentettjével érdemes a kapacitást kiszámolni:
+ \al{
+  C
+   &=\frac{Q}{\abs{V}}
+    =\ep_0\frac{A}{d}\cdot (\ep_{2\text{r}}-\ep_{1\text{r}}) \left[\ln\left(\frac{\ep_{2\text{r}}}{\ep_{1\text{r}}}\right)
+   \right]^{-1}
+  \;.
+ }
+
+\fi

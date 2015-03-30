@@ -1,0 +1,18 @@
+\begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                    seged/.style={dashed,gray}
+]
+ 
+ \draw[thick] (0,0) circle (0.8);
+ \draw[thick] (0,0) circle (1.6);
+ 
+ \node at (200:0.55) {$Q$};
+ \node at (200:2.0) {$-Q$};
+ 
+ \draw[->,>=latex] (0,0) -- node[below] {$R_1$} (0:0.8);
+ \draw[->,>=latex] (0,0) -- node[above,pos=0.7] {$R_2$} (20:1.6);
+ 
+ \draw[thick] (-30:1.6) to[out=-30,in=90] +(0.2,-0.6);
+ \draw[thick] (-30:1.6)++(0.05,-0.6) -- +(0.3,0);
+ \draw[thick] (-30:1.6)++(0.1,-0.65) -- +(0.2,0);
+ \draw[thick] (-30:1.6)++(0.15,-0.7) -- +(0.1,0);
+\end{tikzpicture} 

@@ -1,0 +1,32 @@
+\feladat{10}{
+ Végtelen földelt vezető síktól $d$ távolságra $Q$ ponttöltés helyezkedik el. Ha\-tá\-roz\-zuk meg a síkon a felületi töltéssűrűséget!
+}{}{}
+ 
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Az előző feladatban kiszámoltuk a térerősséget a $z=0$ síkban:
+ \al{
+  \Ev_{z>0}(x,y,z=0)
+   &= \left(0,0,\frac{-2kQd}{(x^2+y^2+d^2)^\frac{3}{2}})\right)\;.
+ }
+
+ Ahogy azt a 9.\ feladatban láttuk, a fém felületén a térerősség és a felületi töltéssűrűség között az alábbi kapcsolat áll fenn:
+ \al{
+  E_\perp=\frac{\sigma}{\ep_0}\;,
+ }
+ ahol $E_\perp$ a fém felületére merőleges térerősség nagysága és $\sigma$ a felületi töltéssűrűség. Ezt felhasználva:
+ \begin{align}
+  \sigma(x,y) &= \ep_0E_\perp(x,y,z=0) = \frac{-2kQ\ep_0 d}{(x^2+y^2+d^2)^\frac{3}{2}}\;.
+ \end{align}
+
+% \al{
+%  \sigma(x,y)
+%   &=\ep_0\Ev_{z>0}(x,y,z=0)
+%    =\left(0,0,\frac{-2kQ\ep_0 d}{(x^2+y^2+d^2)^\frac{3}{2}})\right)\;.
+% }
+
+ Láthatjuk, hogy a töltéssűrűség $Q$-val ellentétes előjelű. Ez érthető, hiszen $Q$ hatására az ellentétes előjelű töltések halmozódnak fel a fém felületén. 
+
+\fi

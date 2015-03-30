@@ -1,0 +1,42 @@
+\feladat{3}{
+ Egy origó középpontú, $R=10$\,cm sugarú, $m=1$\,kg tömegű homogén tömegeloszlású gömbre két erő hat: $\Fv_1=(2\iv+\jv)$\,N, amelynek a támadáspontja $\rv_1=0,1\kv$\,m, és $\Fv_2=(-2\iv-\jv)$\,N, amelynek a támadáspontja $\rv_2=-0,1\kv$\,m. Mi lesz a gömb szöggyorsulás-vektora? $t=1$\,s múlva milyen sebességű lesz az $\rv_1$ helyvektorú pontja?
+}{03fel_01fig}{}
+ 
+\ifdefined\megoldas 
+  
+ Megoldás: 
+
+ A szöggyorsulás kiszámításához először meg kell határoznunk a gömbre ható forgatónyomatékot. Mivel a gömböt forgató két erő szimmetrikusan helyezkedik el, és ezek egymás ellentétei, ezért csak a tömegközéppont körüli forgómozgást fognak előidézni. Tudjuk, hogy ebben az esetben a forgástengely a gömb középpontján fog átmenni, így a forgatónyomatékot is erre vonatkozóan írjuk fel:
+ \al{
+  \Mv
+   & = \rv_1\times\Fv_1 + \rv_2\times\Fv_2
+     = 0,1\kv\times(2\iv+\jv) + (-0,1\kv)\times(-2\iv-\jv)\nonumber
+  \\
+   & = (-0,2\iv+0,4\jv)\me{\left[kg\frac{m^2}{s^2}\right]}\;.
+ }
+
+ A forgatónyomaték a szöggyorsulás-vektor és a tehetetlenségi nyomaték szorzata:
+ \al{ 
+  \Mv = \Theta \betav\;,
+ }
+ ahol a gömb tehetetlenségi nyomatéka $\Theta_\text{gömb}=\frac{2}{5}mR^2=\frac{2}{5}\cdot 1\me{kg}\cdot (0,1\me{m})^2=0,004\me{kg\,m^2}$. Behelyettesítve:
+ \al{ 
+  \betav 
+   &= (-50\iv+100\jv)\me{\frac{1}{s^2}}\;.
+ }
+
+ Ha álló helyzetből indult a gömb, akkor a szögsebesség 1$\me{s}$ múlva:
+ \al{
+  \omv(t=1\me{s})
+   &= \betav\cdot t
+    =(-50\iv+100\jv)\me{\frac{1}{s}}\;,
+ }
+ a kerületi sebesség pedig:
+ \al{ 
+  \vv(1\me{s})
+   &= \omv(t=1\me{s})\times \rv_1
+    =(-50\iv+100\jv)\me{\frac{1}{s}}\times 0,1\kv\me{m}
+    =(10\iv + 5\jv)\me{\frac{m}{s}}\;.
+ }
+ 
+\fi

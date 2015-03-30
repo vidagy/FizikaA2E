@@ -1,0 +1,34 @@
+\tikzset{
+  ring shading/.code args={from #1 at #2 to #3 at #4}{
+    \pgfmathsetmacro{\inner}{25*#2/#4}
+    \pgfmathsetmacro{\innerlow}{\inner-1}
+    \pgfdeclareradialshading{ring}{\pgfpoint{0cm}{0cm}}%
+    {
+      color(0bp)=(white);
+      color(\innerlow bp)=(white);
+      color(\inner bp)=(#1);
+      color(25bp)=(#3);
+      color(50bp)=(black)
+    }
+    \pgfkeysalso{/tikz/shading=ring}
+  },
+}
+
+\begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                    seged/.style={dashed,gray}
+]
+ \begin{scope}[scale=0.75]
+  
+  \shade[shading=ring,ring shading={from black!35 at (1.03) to black!15 at (2.5)}] (0,0) circle (1.0) circle (2.5);
+  
+  \draw[thick] (0,0) circle (2.5);
+  \draw[thick] (0,0) circle (1.0);
+  
+  \draw[->,>=latex] (0,0) -- node[above] {$R_2$} (40:2.5);
+  \draw[->,>=latex] (0,0) -- node[below] {$R_1$} (0:1.0);
+  
+  \node at (150:1.75) {$\ep_\text{r}(r)$};
+  
+ \end{scope}
+ 
+\end{tikzpicture}

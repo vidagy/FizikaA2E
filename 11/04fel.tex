@@ -1,0 +1,78 @@
+\feladat{4}{
+ $L=250\,\textrm{mH}$ induktivitású és $R=0,3\,\Omega$ ellenállású tekercset $\varepsilon =3\,\textrm{V}$ elektromotoros erejű telephez kapcsolunk. Mennyi idő alatt éri el az áram az állandósult érték 50\%-át, illetve 75\%-át? 
+}{}{}
+
+\ifdefined\megoldas
+ 
+ \marginfigure{04fel_01fig}
+ 
+ Megoldás: 
+
+ Először azt kell megvizsgálnunk, hogy mi történik a tekerccsel, ha abban változó áram folyik. A Faraday-féle indukciós törvény alapján abban feszültségnek kell indukálódnia:
+ \al{
+  U_\text{i}
+   &=-\pder{}{t}\intl{}{}\Bv\,\dd^2\fv
+    =-\pder{}{t}(B(t)\cdot A)
+    =-\pder{}{t}\left(\mu_0\frac{N I(t)}{l}\cdot A\right)
+  \\
+   &=-\mu_0\frac{NA}{l}\cdot \der{I(t)}{t}
+    =-L \der{I(t)}{t}\;,
+ }
+ ahol $L$ a tekercsi induktivitása.
+
+ Ennek ismeretében fel tudjuk írni az áramkörben a huroktörvényt:
+ \al{ 
+  0&=-\ep+L\der{I}{t}+I(t)R
+  \\
+  \der{I}{t}&=-\frac{R}{L}\left(I(t)-\frac{\ep}{R}\right)
+  \\
+  \frac{1}{I(t)-\frac{\ep}{R}}\der{I}{t}&=-\frac{R}{L}
+  \\
+  \intl{0}{t}\frac{1}{I(t')-\frac{\ep}{R}}\der{I}{t'}\,\dd t'&=-\intl{0}{t}\frac{R}{L}\,\dd t'
+  \\
+  \left[\ln\left(I(t')-\frac{\ep}{R}\right)\right]_{0}^{t}&=-\frac{R}{L} t
+  \\
+  \ln\left(\frac{I(t)-\frac{\ep}{R}}{I(0)-\frac{\ep}{R}}\right)&=-\frac{R}{L} t
+  \\
+  \frac{I(t)-\frac{\ep}{R}}{I(0)-\frac{\ep}{R}}&=\e^{-\frac{R}{L} t}
+  \\
+  I(t)&=\frac{\ep}{R}\left(1-\e^{-\frac{R}{L} t}\right)\;,
+ }
+ ahol felhasználtuk, hogy $I(0)=0$, hiszen a bekapcsolás pillanatában nem folyt áram.
+
+ Az egyes áramköri elemeken eső feszültség:
+ \al{
+  U_R(t)
+   &=I(t)R
+    =\ep\left(1-\e^{-\frac{R}{L} t}\right)\;,
+  \\
+  U_L(t)
+   &=L\der{I(t)}{t}
+    =\ep\e^{-\frac{R}{L} t}\;.
+ }
+
+ Az áram állandósult értéke:
+ \al{
+  I(\infty)
+   =\lim_{t\to\infty}I(t)
+   =\frac{\ep}{R}\;,
+ }
+ Ennek 50\%-át akkor éri el az áramkör, ha
+ \al{
+  50\%
+    =\frac{1}{2}
+  & =\frac{I(t_{\sfrac{1}{2}})}{I(\infty)}
+    =\frac{\frac{\ep}{R}\left(1-\e^{-\frac{R}{L} t_{\sfrac{1}{2}}}\right)}{\frac{\ep}{R}}
+    =1-\e^{-\frac{R}{L} t_{\sfrac{1}{2}}}
+  \\
+  t_{\sfrac{1}{2}}&=-\frac{L}{R}\ln\frac{1}{2}
+    =\frac{L}{R}\ln 2\;.
+ }
+ Ehhez teljesen hasonlóan a 75\%-os eset:
+ \al{
+  75\% = \frac{3}{4} &= \frac{I(t_{\sfrac{3}{4}})}{I(\infty)}
+  \\
+  t_{\sfrac{3}{4}}&=\frac{L}{R}\ln 4\;.
+ }
+ 
+\fi

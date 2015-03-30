@@ -1,0 +1,42 @@
+\feladat{6}{
+ Mekkora feszültség indukálódik egy Trabant $l=1$\;m széles tetőcsomagtartójában, ha a Trabant sebessége 72\,km/h és a Föld mágneses terének függőleges komponense 30\,$\mu$T?
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás:
+
+ A keletkező feszültséget kiszámolhatjuk az indukciós törvény alapján:
+ \al{
+  \oint\limits_{\substack{\text{keret}\\\text{széle}}}\Ev\dd\rv
+    =-\der{\Phi_\text{m}}{t}
+    =-\der{}{t}\iint\limits_\text{keret}\Bv\dd\Av\;.
+ }
+
+ Kérdés, hogy itt milyen felületet kell választani. Jó gondolat, ha a $t$-edik időpillanatban ez a felület egy olyan téglalap, amelynek az egyik oldala a tetőcsomagtartó az induláskor, az azzal szemközti oldal pedig a tetőcsomagtartó az adott időpillanatban. A felület tehát az a terület, amit a tetőcsomagtartó súrol a kezdeti pillanattól az adott időpillanatig. 
+
+ \marginfigure{06fel_01fig}
+
+ Az indukciós törvényt így fel tudjuk írni, egyedül arra kell figyelni, hogy az integrálás határa lesz itt időfüggő. A bal oldalon a körintegrálban csak ott van $E$ térerősség, ahol van csomagtartó, vagyis a téglalap 4 oldala közül csak egyen. Ott pedig ez az integrál a feszültséget adja meg:
+ \al{
+  \oint\limits_{\substack{\text{keret}\\\text{széle}}}\Ev\dd\rv
+   =\int\limits_\text{vas rész}\Ev\dd\rv
+    =-U(t)\;.
+ }
+
+ A jobb oldalon pedig felhasználhatjuk, hogy az $A(t)$ felület egy sík, a $B$ tér homogén, és ez a kettő egy irányba mutat, vagyis:
+ \al{
+    \der{}{t}\iint\limits_\text{keret}\Bv\dd\Av
+    =-B\der{}{t}\iint\limits_\text{A(t)}\dd\Av
+    =-B\der{}{t}A(t)
+    =-B\der{}{t}\big(l\cdot v t\big)
+    =-Blv\;.
+ }
+
+ A kettőt összeolvasva kapjuk, hogy
+ \al{
+  U(t)=Blv\;,
+ }
+ vagyis a feszültség állandó nagyságú.
+ 
+\fi

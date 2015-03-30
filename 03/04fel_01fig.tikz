@@ -1,0 +1,46 @@
+ \tdplotsetmaincoords{60}{15}
+  \vspace*{-30pt}
+  \begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                      seged/.style={dashed,gray},
+                      scale=1.1
+  ]
+  
+   \begin{scope}[tdplot_main_coords]
+
+    % axes
+    \draw[axis] (-2,0,0) -- (2,0,0) node[below right] {$x$};
+    \draw (0,0,0.07) -- (0,0,-0.07) node[below] {$0$};
+    \draw[axis] (0,-2,0) -- (0, 2,0) node[right] {$y$};
+    
+%     \draw[<->,>=latex] (-1,-1,0) -- node[above left] {$d$} (-1,1,0);
+    \node[left] at (0, 1,0) {$ \frac{d}{2}$};
+    \node[left] at (0,-1,0) {$-\frac{d}{2}$};
+    
+    \draw[very thick] (0, 1,-1.5) -- +(0,0,3) node[above] {$ \lambda$};
+    \draw[very thick] (0,-1,-1.5) -- +(0,0,3) node[above] {$-\lambda$};
+    
+    \draw[seged] (1.7,0,1.5) -- (-1.7,0,1.5) -- (-1.7,0,-1.5) -- (1.7,0,-1.5) -- cycle; 
+    
+    %töltéstől a pontig
+    \draw[seged] (0,-1,0) -- (1.1,0,0);
+    \draw[seged] (0, 1,0) -- (1.1,0,0);
+    
+    %alpha
+    \draw[seged] (1.1,-1,0) -- (1.1,-1.5,0);
+    \draw[seged] (1.1, 0,0)++(0.55,-0.5,0) -- +(0.55,-0.5,0);
+    \draw[seged] (1.1,-1.2,0) arc (270:315:1.2);
+    \draw[seged] (1.1,0,0)++(295.5:1.5) node {$\alpha$};
+    
+    \draw[->,>=latex,very thick,blue!60] (1.1,0,0) -- +( 0.55,-0.5,0);
+    \draw[->,>=latex,very thick,blue!60] (1.1,0,0) -- +(-0.55,-0.5,0);
+    \draw[->,>=latex,very thick,blue]    (1.1,0,0) -- (1.1,-1,0);
+    
+    %vektorok végét összekötő
+    \draw[seged] (1.1,0,0)++(-0.55,-0.5,0) -- (1.1,-1,0) -- (1.65,-0.5,0);
+    
+    \draw (1.1,0,0) node {\tikz[tdplot_screen_coords] \fill (0,0) circle (0.07);};
+    
+   \end{scope}
+   
+  \end{tikzpicture}
+ 

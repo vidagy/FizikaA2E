@@ -1,0 +1,45 @@
+\feladat{3}{
+ Végtelen hosszú egyenes mentén $\lambda$ egyenletes töltéssűrűség van. Határozzuk meg a térerősséget a Gauss-tétel segítségével az egyenestől $d$ távol lévő pontban!
+}{}{}
+
+\ifdefined\megoldas
+  
+ 
+ Megoldás: 
+
+ \marginfigure{03fel_01fig.tikz}
+
+ A Gauss-tétel kimondja, hogy 
+ \al{
+  \iint\limits_{\partial V}\Ev(\rv)\;\dd^2\fv
+   =\frac{1}{\ep_0}\iiint\limits_{V}\varrho(\rv)\,\dd^3\rv=\frac{1}{\ep_0}Q_\text{in}\;,
+ }
+ ahol a bal oldal a térerősség $V$ térfogat felületére való felületi integrálja, míg a jobb oldal a töltéssűrűség a $V$ térfogatra vett integrálja. Ez egy integrális összefüggés, a térerősség egy adott felületre vett integrálját köti össze a felületen felül található töltésmennyiséggel. Nekünk azonban minden egyes pontban (lokálisan) kell megadnunk a térerősséget. Ez akkor tehető meg egyszerűen, ha a rendszer nagyfokú szimmetriával rendelkezik, így a létrejövő térerősség viszonylag egyszerű struktúrával bír. Ekkor egy megfelelően megválasztott Gauss-felülettel gyorsan célt érhetünk.
+
+ Láthatjuk a töltéseloszlás hengerszimmetriával rendelkezik: a $z$ tengely körül tetszőlegesen elforgathatjuk a rendszert, minden olyan síkra, amely tartalmazza a $z$ tengelyt vagy merőleges arra megtükrözhetjük a rendszert, illetve a $z$ tengellyel párhuzamosan tetszőlegesen eltolhatjuk a rendszert, ugyanazt fogjuk látni. A létrejövő térerősségnek is meg kell felelnie ezeknek a szimmetriáknak. 
+ \begin{itemize}
+  \item 
+   Ha hengerkoordináta-rendszerben gondolkozunk, akkor a létrejövő térerősség függhet az $r$, a $\phi$ és a $z$ koordinátáktól. Mivel ugyanazt látjuk, ha a rendszert eltoljuk a $z$ tengely mentén, illetve ha elforgatjuk a $z$ tengely körül, ezért valójában ettől a két mennyiségtől semmi nem függhet. Tehát $\Ev(\rv)=\Ev(r)$.
+  \item
+   Emellett a vektor sem állhat akármilyen irányban. Érezzük, hogy a térerősség sugárirányú lesz, de más nem is lehet a vízszintes és a függőleges tükörsíkok miatt. Emiatt $\Ev(r)=E(r)\ev_\text{r}$, ahol $\ev_\text{r}$ a sugárirányban kifelé mutató egységvektor.
+ \end{itemize}
+
+ Ez alapján már fel tudjuk egyszerűen írni egy henger alakú Gauss-felületre a Gauss-törvényt:
+ \al{
+  \iint\limits_{\text{henger}}\Ev(\rv)\;\dd^2\fv
+   &\overset{(1)}{=}\iint\limits_{\text{hengerpalást}}\Ev(\rv)\;\dd^2\fv+2\underbrace{\iint\limits_{\text{alaplap}}\Ev(\rv)\;\dd^2\fv}_{=0}
+    \overset{(2)}{=}\iint\limits_{\text{hengerpalást}}E(r)\;\dd^2 f
+  \\
+   &\overset{(3)}{=}E(r)\iint\limits_{\text{hengerpalást}}\;\dd^2 f
+    =E(r)\cdot 2 r \pi l\;,
+ }
+ hiszen (1) a teljes hengerfelület felosztható a palástra és a két alaplapra, ahol az alaplapon vett felületi integrál nulla, hiszen ott a felületvektor merőleges a térerősségre, illetve (2) a paláston számolt felületi integrálnál a felületvektor párhuzamos a térerősséggel. Mivel a térerősség csak a sugártól függ, így a paláston a térerősség nagysága ugyanakkora (3), vagyis az kiemelhető az integrálás alól, a felületelemek összege pedig a palást felületét adja.
+
+ A hengerben található töltésmennyiség $Q_\text{in}=\lambda\cdot l$. A kettő egyenlőségéből:
+ \al{
+  E(r)&=\frac{\lambda}{2\pi\ep_0}\frac{1}{r}\;,
+  &
+  \Ev(r)=\frac{\lambda}{2\pi\ep_0}\frac{1}{r}\,\ev_\text{r}\;.
+ }
+
+\fi

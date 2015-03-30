@@ -1,0 +1,40 @@
+\feladat{4}{
+ Egy pontszerű test mozgását az $r(t)$, $\vartheta(t)$, $\varphi(t)$ függvények írják le gömbi koordinátarendszerben. Hogyan néz ki a test sebessége és gyorsulása Descartes-ko\-or\-di\-ná\-ták\-kal megadva?
+}{}{}
+
+\ifdefined\megoldas
+
+ Megoldás:
+
+ Az áttérés a Descartes és a gömbi koordinátarendszer között az alábbi:
+ \begin{align}
+  \begin{cases}
+   x=r\cdot\sin\vartheta\cdot \cos\varphi \\
+   y=r\cdot\sin\vartheta\cdot \sin\varphi \\ 
+   z=z\cdot\cos\vartheta
+  \end{cases}
+  \qquad \Leftrightarrow
+  \qquad 
+  \begin{cases}
+   r=\sqrt{x^2+y^2+z^2} \\
+   \varphi=\arctan{\left(\frac{y}{x}\right)} \\ 
+   \vartheta=\arccos\left(\frac{z}{r}\right)
+  \end{cases}
+  \;.
+ \end{align}
+
+ A sebesség Descartes-koordinátákban:
+ \al{
+  \der{x(t)}{t}
+   &=\dot{x}(t)
+    =\der{}{t}\big(r(t)\cdot\cos\vartheta(t)\cdot\sin\varphi(t)\big) 
+  \\
+   &= \dot{r}(t)\cdot\cos\vartheta(t)\cdot\sin\varphi(t)\nonumber
+  \\
+   &\quad-r(t)\cdot\sin\vartheta(t)\cdot\dot{\vartheta}(t)\cdot\sin\varphi(t)\nonumber
+  \\
+   &\quad+r(t)\cdot\cos\vartheta(t)\cdot\cos\varphi(t)\cdot\dot{\varphi}(t)\;.
+ }
+ A többi komponenst is hasonlóan lehet kiszámolni.
+
+\fi

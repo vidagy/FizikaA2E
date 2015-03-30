@@ -1,0 +1,41 @@
+\feladat{7}{
+ Határozzuk meg az ábrán látható áramkör Norton-féle helyettesítő képét!
+}{07fel_01fig}{1}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A megoldáshoz először ki kell számolnunk, hogy az $A$ és a $B$ pontok között mekkora feszültség esik. Az áramkörben a hrokban $I=\frac{12\me{V}}{4\me{k\Omega}}=3\cdot 10^{-3}\me{A}$ folyik, így az $A$ és a $C$ pont között a feszültségkülönbség $U_{AC}=-2\me{k\Omega}\cdot 3\cdot 10^{-3}\me{A}=-6\me{V}$. A $C$ és a $B$ pont között pedig nincs feszültség, hiszen ott nem folyik áram, így $U_{AB}=U_{AC}+U_{BC}=-6\me{V}$.
+
+ \marginfigure{07fel_02fig}
+ Ezután meg kell határoznunk, hogy a rövidre zárt áramkörben mekkora áram folyik az $A$ és a $B$ pontok között. Rövidzár esetén a teljes terhelő ellenállás:
+ \al{
+  R_\text{e}
+   =2\me{k\Omega}+\frac{1}{\frac{1}{1\me{k\Omega}}+\frac{1}{1\me{k\Omega}+1\me{k\Omega}}}
+   =\frac{8}{3}\me{k\Omega}\;,
+ }
+ vagyis a teljes áram
+ \al{
+  I=\frac{U}{R_\text{e}}
+   =\frac{12\me{V}}{\frac{8}{3}\me{k\Omega}}
+   =4,5\cdot 10^{-3}\me{A}\;.
+ }
+ A párhuzamos ágakban 2:1 arányúak az ellenállások, vagyis a rövidzáron 2 rész a másik ágon 1 rész áram folyik:
+ \al{
+  I_\text{rövidzár}
+   =\frac{2}{3}\cdot 4,5\cdot 10^{-3}\me{A}
+   =3\cdot 10^{-3}\me{A}\;.
+ }
+
+ \marginfigure{07fel_03fig}
+ A Norton-ellenállás innen
+ \al{
+  R_\text{N}
+   =\frac{U_{AB}}{I_\text{rövidzár}}
+   =\frac{6\me{V}}{3\cdot 10^{-3}\me{A}}
+   =2\me{k\Omega}\;.
+ }
+ Tehát a helyettesítő képben $I_\text{N}=3\cdot 10^{-3}\me{A}$ és $R_\text{N}=2\me{k\Omega}$.
+
+\fi

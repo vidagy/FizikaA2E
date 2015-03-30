@@ -1,0 +1,23 @@
+\feladat{9}{
+ Egy $R$ sugarú csőben folyadék áramlik, sebessége mindenhol párhuzamos a cső tengelyével, nagysága csak a cső középvonalától mért $r$ távolságtól függ $v(r)=C\cdot(R^2-r^2)$ módon. Mennyi folyadék áramlik át a cső egy keresztmetszetén $t$ idő alatt?
+}{09fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Tekintsük a csőnek egy keresztmetszetét. A problémát az jelenti, hogy a folyadék áramlási sebessége más a cső pontjain. Osszuk fel a csövet kis körgyűrűkre. Mivel az áramlás hengerszimmetrikus (az áramlás sebessége csak sugártól függ), ezért egy ilyen kis körgyűrűn mindenhol ugyanakkora lesz az áramlási sebesség. 
+ 
+ Egy ilyen körgyűrű területe $\dd T=2\pi r \dd r$. Ezt úgy számolhatjuk ki, mint egy $\dd r$ széles $2\pi r$ hosszú téglalap területét.  Ha $v$ az áramlás sebessége, akkor $t$ idő alatt az áramlás egy frontja $v\cdot t$ távolságot halad előre. $\dd T$ alapterületen ez a $t$ idő alatt $\dd V=\dd T\cdot v\cdot t=2\pi r \dd r v(r) t$ térfogatnyi folyadék áramlik át.
+ 
+ Már csak összegeznünk kell az összes ilyen kis körgyűrűdarabon átfolyt térfogatot:
+ \al{
+  V
+   &=\intl{0}{R}\dd V(r)
+    =\intl{0}{R}2\pi r \dd r v(r) t
+    =2\pi tC\intl{0}{R}r (R^2-r^2) \dd r\nonumber
+ \\
+   &=2\pi tC\left[R^2\frac{r^2}{2}-\frac{r^4}{4}\right]_{0}^{R}
+    =\frac{\pi}{2} tCR^4\;.
+ }
+ Tehát egy csövön átáramló folyadék a mennyisége a cső sugarának negyedik hatványával arányos.
+
+\fi

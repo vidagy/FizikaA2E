@@ -1,0 +1,36 @@
+\feladat{6}{
+ $V$ feszültséget kapcsolunk két sorosan kapcsolt, $R_1$ és $R_2$ nagyságú ellenállásra. Számítsuk ki az egyes ellenállásokon eső feszültségeket! Írjuk fel a feszültségek arányát!
+}{06fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ A két ellenállás eredő ellenállása:
+ \al{
+  R_\text{e}
+   =R_1+R_2\;,
+ }
+ vagyis a teljes átfolyó áram:
+ \al{
+  I=\frac{V}{R_\text{e}}
+   =\frac{V}{R_1+R_2}\;.
+ }
+
+ Az egyik és a másik ellenálláson eső feszültség:
+ \al{
+  V_1
+   &=I\cdot R_1
+    =\frac{R_1}{R_1+R_2}\cdot V
+  &
+  V_2
+   &=I\cdot R_2
+    =\frac{R_2}{R_1+R_2}\cdot V\;,
+ }
+ vagyis a feszültségek aránya:
+ \al{
+  \frac{V_1}{V_2}=\frac{R_1}{R_2}\;.
+ }
+ Soros kapcsolás esetében a feszültségek az ellenállások arányában oszlanak meg.
+
+\fi

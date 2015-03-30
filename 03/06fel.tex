@@ -1,0 +1,61 @@
+\feladat{6}{
+ Tegyük fel, hogy a térben a térfogati töltéssűrűség csak az $x$--$y$ síktól mért távolságtól függ, tehát $\varrho(x,y,z)=f\big(\abs{z}\big)$ valamilyen $f$ függvényre. Fejezzük ki $f$ segítségével a térerősséget a tér minden pontjában.
+}{}{}
+
+\ifdefined\megoldas
+   
+
+ Megoldás: 
+
+ Ahogy azt a 3.\ feladatnál is tettük, most is először szimmetriamegfontolások alapján adunk feltételeket arra, hogy milyen lehet a térerősség alakja, majd ezután egy jól megválasztott Gauss-felülettel fel fogjuk írni a Gauss-tételt. 
+
+ Ha a töltéssűrűség csak az $x$--$y$ síktól mért távolságtól függ, akkor a rendszer 
+ \begin{enumerate}[itemsep=0pt]
+  \item az $x$--$y$ síkkal párhuzamosan tetszőlegesen eltolható
+  \item az $x$--$y$ síkra is tükrözhető
+  \item minden $x$--$y$ síkra merőleges síkra tükrözhető
+ \end{enumerate}
+ úgy, hogy a rendszer a transzformáció után önmagába megy át. Az 1. szimmetria következménye, hogy semmilyen mennyiség sem függhet az $x$ és az $y$ koordinátáktól. A 2. szimmetriából adódik, hogy a térerősség $z$ magasságban ellentétesen áll mint $-z$ magasságban. Végül pedig a 3. szimmetriából látszik, hogy a térerősség csak a $z$ irányba mutathat. 
+
+ Ez formálisan felírva:
+ \al{
+  \Ev(x,y,z)
+   &=\Ev(z)
+    =E(z)\ev_\text{z}
+    =E(\abs{z})
+     \begin{cases}
+      \ev_\text{z} & z>0 \\
+      -\ev_\text{z} & z<0 
+     \end{cases}\;.
+ }
+
+ A megfelelő Gauss-felület egy olyan henger, melynek $A$ területű alaplapjai párhuzamosak az $x$--$y$ síkkal és azok a $z$, illetve a $-z$ magasságnál vannak. A Gauss-tétel két oldalán szereplő mennyiségek:
+ \al{
+  \iint\limits_{\text{henger}}\Ev(\rv)\;\dd^2\fv
+   &\overset{(1)}{=}\underbrace{\iint\limits_{\text{hengerpalást}}\Ev(\rv)\;\dd^2\fv}_{=0}+2\iint\limits_{\text{alaplap}}\Ev(\rv)\;\dd^2\fv
+    \overset{(2)}{=}2\iint\limits_{\text{alaplap}}E(r)\;\dd^2 f
+  \\
+   &\overset{(3)}{=}2 E(z)\iint\limits_{\text{alaplap}}\;\dd^2 f
+    =E(z)\cdot 2 A\;,
+ }
+ hiszen (1) a teljes hengerfelület felosztható a palástra és a két alaplapra, ahol a paláston vett felületi integrál nulla, hiszen ott a felületvektor merőleges a térerősségre, illetve (2) az alaplapokon számolt felületi integrálnál a felületvektor párhuzamos a térerősséggel. Mivel a térerősség csak a $z$ koordinátától függ, így az alaplapon a térerősség nagysága mindenhol ugyanakkora (3), vagyis az kiemelhető az integrálás alól, a felületelemek összege pedig az alaplap felületét adja.
+
+ A körbezárt töltés:
+ \al{
+  \iiint\limits_{V}\varrho(\rv)\,\dd^3\rv
+   &\overset{(1)}{=}
+    \iiint\limits_{V}\varrho(\abs{z'})\,\dd x\dd y\dd z'
+    \overset{(2)}{=}
+    \underbrace{\iint\limits_{A}\dd x\dd y}_{=A}\intl{-z}{z}\varrho(\abs{z'})\,\dd z'
+   \\
+   &\overset{(3)}{=}
+    2A\intl{0}{z}\varrho(z')\,\dd z'\;.
+ }
+
+ A Gauss-tétel alapján:
+ \al{
+  E(z)
+   =\frac{1}{\ep_0}\intl{0}{z}\varrho(z')\,\dd z'\;.
+ }
+ 
+\fi

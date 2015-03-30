@@ -1,0 +1,39 @@
+\tdplotsetmaincoords{75}{120}
+\begin{tikzpicture}[tdplot_main_coords,font=\small,
+                    axis/.style={>=latex},
+                    seged/.style={gray,dashed},
+                    vector/.style={black,thick,>=latex}
+]
+  \coordinate (O) at (0,0,0);
+  \coordinate (A) at (2,-3,1);
+  \coordinate (B) at (-1,-2,4);
+  
+  \coordinate (AM) at (50/21,-47/21,-11/21);
+  \draw[seged] (A) -- (AM);
+  \draw[vector,->,red] (O) -- (AM) node[left=-2pt] {$\av_\perp$};
+  
+  \fill[white,opacity=0.4] (-4,-4,0) -- (4,-4,0) -- (4,4,0) -- (-4,4,0) -- cycle;
+  
+  \foreach \x in {-4,-3,...,4}
+  {
+   \draw[black!20] (\x,-4,0) -- (\x,4,0);
+   \draw[black!20] (-4,\x,0) -- (4,\x,0);
+  }
+  
+  \draw[axis,->] (-4, 0, 0) -- (4,0,0) node[below left] {$x$};
+  \draw[axis,->] ( 0,-4, 0) -- (0,4,0) node[below right] {$y$};
+  \draw[axis,->] ( 0, 0,-4) -- (0,0,4) node[above] {$z$};
+  
+  \draw[thin] (A) -- (2,-3,0);
+  \draw[thin] (B) -- (-1,-2,0);
+  
+  \draw[vector,->] (0,0,0) -- node[below] {$\av$} (A);
+  \draw[vector,->] (0,0,0) -- (B) node[left] {$\bv$};
+  
+  \coordinate (AP) at (-8/21,-16/21,32/21);
+  \draw[seged] (A) -- (AP);
+  \draw[vector,->,red] (O) -- (AP) node[left=-2pt] {$\av_\parallel$};
+  \draw[vector,->,blue] (O) -- (-1/4.58,-2/4.58,4/4.58) node[right] {$\ev_\bv$};
+  
+  
+\end{tikzpicture} 

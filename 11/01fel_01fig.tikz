@@ -1,0 +1,45 @@
+  \tdplotsetmaincoords{70}{20}
+  \begin{tikzpicture}
+  
+   \begin{scope}[tdplot_main_coords]
+
+   % kondi hátulja
+   \draw[thick,black,->,>=stealth] (-2,0,0) -- (-1.6,0,0) node[below] {$I$};
+   \draw[thick,black] (-1.7,0,0) -- (-1,0,0);
+   \draw[thick,black,fill=white] (-1,-1,-1) -- (-1, 1,-1) -- (-1, 1, 1) -- (-1,-1, 1) -- cycle;
+   
+   %vektorok háta
+   \foreach {\x} in {-0.75,-0.25,...,1.0} 
+   {
+    \foreach {\y} in {-0.75,-0.25,...,1.0}
+    {
+     \draw[blue,thick,->,>=stealth] (-1,\x,\y) -- +(0.6,0,0);
+     \draw[blue,thick] (-0.5,\x,\y) -- +(0.5,0,0);
+    }
+   }
+   
+   %közép
+   \draw[dashed,black,fill=white,opacity=0.8] ( 0,-1.2,-1.2) -- ( 0, 1.2,-1.2) -- ( 0, 1.2, 1.2) -- ( 0,-1.2, 1.2) -- cycle;
+   
+   %vektorok eleje
+   \foreach {\x} in {-0.75,-0.25,...,1.0} 
+   {
+    \foreach {\y} in {-0.75,-0.25,...,1.0}
+    {
+     \draw[blue,thick,->,>=stealth] (0,\x,\y) -- +(0.6,0,0);
+     \draw[blue,thick] (0.5,\x,\y) -- +(0.5,0,0);
+    }
+   }
+   
+   %kondi eleje
+   \draw[thick,black,fill=white] ( 1,-1,-1) -- ( 1, 1,-1) -- ( 1, 1, 1) -- ( 1,-1, 1) -- cycle;
+   \draw[thick,black,-<,>=stealth] (2,0,0) -- (1.6,0,0) node[below] {$I$};
+   \draw[thick,black] (1.7,0,0) -- (1,0,0);
+   
+   %feliratok
+   \node[blue] at (0.5,1,1) {$\Ev$};
+   \draw[|<->|,>=latex] (-1,-1.7,-1) -- node[below] {$d$} +(2,0,0);
+   \draw[|<->|,>=latex] ( 1,-1,-1.3) -- node[below right] {$a$} +(0,2,0);
+   \end{scope}
+
+  \end{tikzpicture} 

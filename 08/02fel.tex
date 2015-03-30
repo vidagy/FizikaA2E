@@ -1,0 +1,53 @@
+\feladat{2}{
+ Az ábrán látható áramkörben számítsuk ki az egyes ágakban folyó áram\-erős\-sé\-ge\-ket! 
+}{02fel_01fig}{1}
+
+\ifdefined\megoldas
+ 
+ Megoldás: 
+
+ A megoldáshoz a Kirchhoff törvényeket fogjuk használni. Az áramkör két csomópontot tartalmaz, írjuk fel ezekre a csomóponti törvényt:
+ \al{
+  A: && 0&=I_1-I_2-I_3     \label{eq:2-cs1}\\
+  B: && 0&=-I_1+I_2+I_3 \;.\label{eq:2-cs2}
+ }
+
+ Ezután írjuk fel az áramkörben Kirchhoff II. törvényét. Összesen három hurokra lehet ezt megtenni:
+ \al{
+  U_1-R_1-R_3:     && 0&=-U_1+I_1 R_1+I_3 R_3       \label{eq:2-h1}\\
+  R_3-R_2-U_2:     && 0&=-I_3 R_3+I_2 R_2+U_2       \label{eq:2-h2}\\
+  U_1-R_1-R_2-U_2: && 0&=-U_1+I_1 R_1+I_2 R_2+U_2   \label{eq:2-h3}
+ }
+
+ A Kirchhoff-törvények öt egyenletet adnak, melyek három ismeretlent tartalmaznak ($I_1$, $I_2$ és $I_3$). Ezeknek csak akkor lehet megoldása, ha az egyenletek összefüggőek. Azt azonnal láthatjuk, hogy a csomóponti egyenlet összefüggő, az egyik a másik $-1$-szerese, illetve az is észrevehető, hogy az első két hurokegyenlet összege a harmadikat adja. Tehát ha \eqaref{eq:2-cs1}, \eqaref{eq:2-h1} és \eqaref{eq:2-cs2} egyenletek nem ellentmondóak, akkor egyértelmű megoldást adnak a három ismeretlenre.
+
+ Az egyenletrendszer:
+ \al{
+  0&=I_1-I_2-I_3\\
+  0&=-32\me{V}+I_1 \cdot 2\me{\Omega}+I_3 \cdot 8\me{\Omega}\\
+  0&=-I_3 \cdot 8\me{\Omega}+I_2 \cdot 4\me{\Omega}+20\me{V}\label{eq:2-1}
+ }
+
+ Az első egyenletből $I_1=I_2+I_3$, amit a másodikba behelyettesítve:
+ \al{
+  0&=-32\me{V}+I_2\cdot 2\me{\Omega}+I_3 \cdot 10\me{\Omega}\label{eq:2-2}\;.
+ }
+ \Eqaref{eq:2-2}-es egyenlet kettővel megszorozva, majd abból \eqaref{eq:2-1}-et kivonva:
+ \al{
+  0&=-64\me{V}+I_3 \cdot 20\me{\Omega}-\big(-I_3 \cdot 8\me{\Omega}+20\me{V}\big)\\
+  0&=-84\me{V}+I_3 \cdot 28\me{\Omega}\\
+  I_3&=3\me{A}\;.
+ }
+ Ez visszahelyettesítve \eqaref{eq:2-2}-be:
+ \al{
+  0&=-32\me{V}+I_2\cdot 2\me{\Omega}+3\me{A} \cdot 10\me{\Omega}\\
+  I_2=1\me{A}\;.
+ }
+ \Eqaref{eq:2-cs1} alapján:
+ \al{
+  I_1=4\me{A}\;.
+ }
+
+ Tehát az ellenállásokon az ábrán szereplő nyilak irányában folyik át rendre $4\me{A}$, $1\me{A}$ és $3\me{A}$.
+
+\fi

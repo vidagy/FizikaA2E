@@ -1,0 +1,32 @@
+\feladat{5}{
+ Nagyon hosszú, $R$ sugarú, egyenes kábelben $I_{0}$ áram folyik. Tételezzük fel, hogy az áramsűrűség a vezető egész keresztmetszetében állandó. Hogyan függ a kábel által keltett mágneses tér nagysága a kábel középvonalától mért távolságtól a kábel belsejében az $r<R$ tartományban és az $r>R$ térrészben a kábelen kívül?
+}{05fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ Ennek a feladatnak a megoldásához is az Amp\'ere-törvényt fogjuk használni. A hengerszimmetria miatt válasszunk itt is kör alakú integrálási utat. A $\Bv$ tér itt is érintőirányú lesz és nagysága csak a sugártól függhet. 
+
+ Az Amp\'ere-törvény bal oldalán szereplő vonalintegrál:
+ \al{
+  \ointl{\text{kör}}{}\Bv\,\dd \sv
+   =B(r)\ointl{\text{kör}}{}\,\dd s
+   =B(r)2\pi r\;.
+ }
+
+ Ha $r>R$ akkor a teljes $I$ áramot magába foglalja a hurok: $I_\text{bent}=I$. Azonban ha $r<R$, akkor az áramnak csak egy részét kerüljük meg. Mivel az árameloszlás egyenletes, így a körbezárt felület és a teljes keresztmetszet aránya adja meg bezárt áram mennyiségét:
+ \al{
+  I_\text{bent}(r)=\frac{r^2\pi}{R^2\pi}I\;.
+ }
+
+ Ezek alapján
+ \al{
+  B(r)=
+  \begin{cases}
+   \frac{\mu_0 I}{2\pi}\frac{r}{R^2} & r<R \\
+   \frac{\mu_0 I}{2\pi}\frac{1}{r} & R<r
+  \end{cases}\;.
+ } 
+ 
+\fi

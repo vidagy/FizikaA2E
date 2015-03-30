@@ -1,0 +1,48 @@
+\begin{tikzpicture}
+ 
+ \draw (-1,0) -- (-1,2);
+ \kapcsolo{(3,0)}{(3,2)}{$K$}{(0.3,0)}
+ \ellenallas{(-1,2)}{(3,2)}{$R$}{(0.0,0.3)}
+ \kapacitas{(-1,0)}{(3,0)}{$C$}{(0,-0.2)}
+ 
+ \draw[->,>=latex,darkgreen] (-0.2,0.2) to[out=180,in=270,looseness=1.5] (-0.8,0.8);
+ \node[darkgreen] at (-0.5,0.5) {$I$};
+ 
+ 
+ \begin{scope}[yshift=-3cm,xshift=-1cm]
+  \draw[->,>=latex] (0,0) -- (4,0) node[below] {$t$};
+  \draw[->,>=latex] (0,0) -- (0,2) node[left] {$I(t)$};
+  
+  \draw[darkgreen,thick,domain=0:4] plot (\x,{1.5*(exp(-\x))});
+  \node[left] at (0,1.5) {$\frac{V}{R}$};
+  \draw[dashed, gray] (1.0,1.9) -- (1.0,-0.1) node[below,black] {$RC$};
+ \end{scope}
+ 
+ \begin{scope}[yshift=-5.5cm,xshift=-1cm]
+  \draw[->,>=latex] (0,0) -- (4,0) node[below] {$t$};
+  \draw[->,>=latex] (0,0) -- (0,2) node[left] {$V_\text{R}(t)$};
+  
+  \draw[cyan,thick,domain=0:4] plot (\x,{1.3*(exp(-\x))});
+  \node[left] at (0,1.3) {$V$};
+  \draw[dashed, gray] (1.0,1.9) -- (1.0,-0.1) node[below,black] {$RC$};
+ \end{scope}
+ 
+ \begin{scope}[yshift=-8cm,xshift=-1cm]
+  \draw[->,>=latex] (0,0) -- (4,0) node[below] {$t$};
+  \draw[->,>=latex] (0,0) -- (0,2) node[left] {$Q_\text{C}(t)$};
+  
+  \draw[cyan,thick,domain=0:4] plot (\x,{1.2*(exp(-\x))});
+  \node[left] at (0,1.2) {$CV$};
+  \draw[dashed, gray] (1.0,1.9) -- (1.0,-0.1) node[below,black] {$RC$};
+ \end{scope}
+ 
+ \begin{scope}[yshift=-10.5cm,xshift=-1cm]
+  \draw[->,>=latex] (0,0) -- (4,0) node[below] {$t$};
+  \draw[->,>=latex] (0,0) -- (0,2) node[left] {$P(t)$};
+  
+  \draw[cyan,thick,domain=0:4] plot (\x,{1.5*(exp(-2*\x))});
+  \node[left] at (0,1.5) {$\frac{V^2}{R}$};
+  \draw[dashed, gray] (0.5,1.9) -- (0.5,-0.1) node[below,black] {$\frac{RC}{2}$};
+ \end{scope}
+\end{tikzpicture}
+ 

@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+ 
+ \fill[pattern=north west lines,pattern color=gray!60] (0,0) rectangle (4,3);
+ \fill[pattern=north east lines,pattern color=gray!40] (4,0) rectangle (5,3);
+ 
+ \draw[gray,dashed] (0,0) -- (5,0);
+ \draw[gray,dashed] (0,3) -- (5,3);
+ 
+ \draw (2,1.5) node[rectangle,rounded corners,inner sep=1pt,fill=white,opacity=0.5,text opacity=1.0] {$A(t)$};
+ 
+ \draw[thick] (0,0) -- node[left] {$l$} (0,3);
+ \draw[very thick] (4,0) -- (4,3);
+ \draw[thick] (5,0) -- (5,3);
+ 
+%  \draw[|->|,>=latex] (0,-0.5) -- (4,-0.5) node[below] {$x(t)$};
+%  \draw[|->|,>=latex] (0,-1.2) -- (5,-1.2) node[below] {$x(t+\dd t)$};
+ 
+ \draw[|<->|] (4,3.3) -- node[above] {$v\cdot \dd t$} (5,3.3);
+ 
+ \draw[->,>=latex] (4.0,-0.4) to[out=70,in=270] (4.5,0.5);
+ \node[below] at (4.0,-0.5) {$A(t+\dd t)-A(t)$};
+ 
+\end{tikzpicture} 

@@ -1,0 +1,75 @@
+  \tdplotsetmaincoords{60}{15}
+  \begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                      seged/.style={dashed,gray}
+  ]
+  
+   \begin{scope}[tdplot_main_coords]
+
+   % keret
+   \draw[black, very thick] (0,0,0) -- (3,0,0) -- (3,3,0) -- (0,3,0) -- cycle;
+   
+   % I
+   \tdplotsetrotatedcoords{0}{0}{0}
+   
+   \draw[->,>=latex,looseness=1.4,tdplot_rotated_coords,darkgreen] (-0.3,0.3) to[out=250,in=160] node[below left] {$I$} (0.3,-0.3);
+   
+   % B
+   \node[orange] at (3.5,-0.3,0) {$B$};
+   \newcommand{\radius}{0.4}
+   
+   % (0,0) -- (3,0)
+   \tdplotsetrotatedcoords{0}{90}{0}
+   \newcommand{\beginangle}{80}
+   \newcommand{\arrowangle}{220}
+   \newcommand{\finalangle}{400}
+   
+   \foreach {\xsft} in {0.8,1.2,...,2.2} {
+     \draw[tdplot_rotated_coords,orange,->,>=latex] (0,0,\xsft)++(\beginangle:\radius) arc (\beginangle:\arrowangle:\radius);
+     \draw[tdplot_rotated_coords,orange] (0,0,\xsft)++(\arrowangle:\radius) arc (\arrowangle:\finalangle:\radius);
+   }
+   
+   % (0,3) -- (3,3)
+   \tdplotsetrotatedcoords{180}{90}{0}
+   \renewcommand{\beginangle}{-50}
+   \renewcommand{\arrowangle}{100}
+   \renewcommand{\finalangle}{290}
+   
+   \foreach {\xsft} in {0.8,1.2,...,2.2} {
+     \draw[tdplot_rotated_coords,orange,->,>=latex] (0,-3,-\xsft)++(\beginangle:\radius) arc (\beginangle:\arrowangle:\radius);
+     \draw[tdplot_rotated_coords,orange] (0,-3,-\xsft)++(\arrowangle:\radius) arc (\arrowangle:\finalangle:\radius);
+   }
+   
+   % (3,0) -- (3,3)
+   \tdplotsetrotatedcoords{90}{90}{0}
+   \renewcommand{\beginangle}{34}
+   \renewcommand{\arrowangle}{185}
+   \renewcommand{\finalangle}{374}
+   
+   \foreach {\xsft} in {0.8,1.2,...,2.2} {
+     \draw[tdplot_rotated_coords,orange,->,>=latex] (0,-3,\xsft)++(\beginangle:\radius) arc (\beginangle:\arrowangle:\radius);
+     \draw[tdplot_rotated_coords,orange] (0,-3,\xsft)++(\arrowangle:\radius) arc (\arrowangle:\finalangle:\radius);
+   }
+   
+   % (3,0) -- (3,3)
+   \tdplotsetrotatedcoords{270}{90}{0}
+   \renewcommand{\beginangle}{-14}
+   \renewcommand{\arrowangle}{190}
+   \renewcommand{\finalangle}{324}
+   
+   \foreach {\xsft} in {0.8,1.2,...,2.2} {
+     \draw[tdplot_rotated_coords,orange,->,>=latex] (0,0,-\xsft)++(\beginangle:\radius) arc (\beginangle:\arrowangle:\radius);
+     \draw[tdplot_rotated_coords,orange] (0,0,-\xsft)++(\arrowangle:\radius) arc (\arrowangle:\finalangle:\radius);
+   }
+   
+   % O
+   \node at (1.5,1.5,0) {\tikz[tdplot_screen_coords] \fill (0,0) circle (0.07);};
+   \node[above left] at (1.5,1.5,0) {$O$};
+   
+   \draw[thin,dashed] (1.5,1.5,0) -- node[above left=-3pt] {$\frac{a}{2}$} (1.5,0,0);
+   \draw[thin,dashed] (1.5,1.5,0) -- (3,0,0);
+   \draw[thin,dashed] (1.5,1.5,0)++(0,-0.8) arc (270:315:0.8);
+   \node at (1.7,1.0,0) {$\alpha_\text{h}$};
+   
+   \end{scope}
+   
+  \end{tikzpicture} 

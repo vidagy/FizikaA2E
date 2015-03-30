@@ -1,0 +1,54 @@
+\feladat{10}{
+ Sorosan kapcsolunk egy elhanyagolható ohmikus ellenállású, $L=0,5\,\textrm{H}$ önindukciójú tekercset egy $R=50\,\Omega$-os ellenállással, majd rákapcsoljuk az $U_\text{eff}=220\,\textrm{V}$-os, $f=50$\,Hz frekvenciájú váltakozó feszültségű hálózatra.
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+ \item Mekkora a kör ellenállása (impedanciája)?
+ \item Mekkora áram folyik a körben?
+ \item Mekkora az ohmikus ellenállásra, illetve a tekercsre jutó feszültség?
+ \item Mekkora az áram és a feszültség közötti fáziskülönbség?
+ \end{enumerate}
+}{10fel_01fig}{}
+
+\ifdefined\megoldas
+
+ Megoldás: 
+
+ \begin{enumerate}[label=\alph*),itemsep=0pt]
+  \item 
+   A kör impedanciája
+   \al{
+    Z
+     &=\sqrt{X_L^2+R^2}
+      =\sqrt{(\omega L)^2+R^2}
+      =\sqrt{(2\pi f\cdot L)^2+R^2}
+   \\
+     &=\sqrt{(2\pi 50\me{}Hz\cdot 0,5\me{H})^2+(50\me{\Omega})^2}
+      =164,9\me{\Omega}\;.
+   }
+   
+  \item 
+   Az áram maximális értéke
+   \al{
+    I_0
+     =\frac{\sqrt{2}U_\text{eff}}{Z}
+     =\frac{\sqrt{2}\cdot 220\me{V}}{164,85\me{\Omega}}
+     =1,89\me{A}\;.
+   }
+  \item 
+   Az egyes feszültségek:
+   \al{
+    U_R&=I_0R=1,89\me{A}\cdot 50\me{\Omega}=94,4\me{V}
+    \\
+    U_L&=I_0 X_L=1,89\me{A}\cdot 2\pi\cdot 50\me{f}\cdot 0,5\me{H}=148,2\me{V}\;.
+   }
+  
+  \item 
+   A fáziskülönbség
+   \al{ 
+    \varphi
+     =\arccos\frac{R}{Z}
+     =\arccos\frac{50\me{\Omega}}{164,9\me{\Omega}}
+     =72,34^\circ\;.
+   }
+ \end{enumerate}
+
+\fi

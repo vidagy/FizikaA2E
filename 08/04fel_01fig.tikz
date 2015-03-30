@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+ \draw (0,0) -- (0,2);
+ \draw (4,0) -- (4,2);
+ \ellenallas{(0,2)}{(4,2)}{$100\,\Omega$}{(0.0,0.3)}
+ \ellenallas{(2,0)}{(4,0)}{$5\,\Omega$}{(0.0,0.3)}
+ \ellenallas{(2,1)}{(4,1)}{$10\,\Omega$}{(0.0,0.3)}
+ \telep{(0,0)}{(2,0)}{6\,V}{(0,-0.2)}
+ \telep{(1,1)}{(0,1)}{24\,V}{(0,0.2)}
+ \telep{(1,1)}{(2,1)}{12\,V}{(0,0.8)}
+ 
+ \ifdefined\megoldas
+  
+  \node[circle,draw,inner sep=1pt,gray] at (2.35,0.4) {\footnotesize 1};
+  \node[circle,draw,inner sep=1pt,gray] at (2.35,1.4) {\footnotesize 2};
+  \node[circle,draw,inner sep=1pt,gray] at (1.35,2.4) {\footnotesize 3};
+  
+  \node[circle,draw,inner sep=1pt,gray] at (0.25,0.7) {\footnotesize 2};
+  \node[circle,draw,inner sep=1pt,gray] at (1.35,0.7) {\footnotesize 3};
+  \node[circle,draw,inner sep=1pt,gray] at (0.8,0.25) {\footnotesize 1};
+  
+  \draw[thick,->,>=latex,darkgreen] (3.0,-0.25) -- node[below] {$I_1$} (3.8,-0.25);
+  \draw[thick,->,>=latex,darkgreen] (3.0, 1.5) -- node[above] {$I_2$} (3.8, 1.5);
+  \draw[thick,->,>=latex,darkgreen] (3.0, 2.1) -- node[above] {$I_3$} (3.8, 2.1);
+ \fi
+ 
+ \fill (0,1) circle (0.06);
+ \fill (4,1) circle (0.06);
+ \node[left] at  (0,1) {$A$};
+ \node[right] at (4,1) {$B$};
+\end{tikzpicture}
+ 

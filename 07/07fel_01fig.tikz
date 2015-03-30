@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+ \draw[opacity=0.0] (-1,0) -- (3,0);
+ 
+ \draw (0,0) -- (0,2);
+ \draw (2,0) -- (2,2);
+ \ellenallas{(0,1)}{(2,1)}{$R_2$}{(0.0,0.3)}
+ \ellenallas{(0,2)}{(2,2)}{$R_1$}{(0.0,0.3)}
+ \telep{(0,0)}{(2,0)}{$V$}{(0,-0.2)}
+ 
+\end{tikzpicture}
+ 
