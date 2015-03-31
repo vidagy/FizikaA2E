@@ -14,9 +14,9 @@
 
  Ezután írjuk fel az áramkörben Kirchhoff II. törvényét. Összesen három hurokra lehet ezt megtenni:
  \al{
-  U_1-R_1-R_3:     && 0&=-U_1+I_1 R_1+I_3 R_3       \label{eq:2-h1}\\
-  R_3-R_2-U_2:     && 0&=-I_3 R_3+I_2 R_2+U_2       \label{eq:2-h2}\\
-  U_1-R_1-R_2-U_2: && 0&=-U_1+I_1 R_1+I_2 R_2+U_2   \label{eq:2-h3}
+  V_1\to R_1\to R_3:        && 0&=-V_1+I_1 R_1+I_3 R_3       \label{eq:2-h1}\\
+  R_3\to R_2\to V_2:        && 0&=-I_3 R_3+I_2 R_2+V_2       \label{eq:2-h2}\\
+  V_1\to R_1\to R_2\to V_2: && 0&=-V_1+I_1 R_1+I_2 R_2+V_2   \label{eq:2-h3}
  }
 
  A Kirchhoff-törvények öt egyenletet adnak, melyek három ismeretlent tartalmaznak ($I_1$, $I_2$ és $I_3$). Ezeknek csak akkor lehet megoldása, ha az egyenletek összefüggőek. Azt azonnal láthatjuk, hogy a csomóponti egyenlet összefüggő, az egyik a másik $-1$-szerese, illetve az is észrevehető, hogy az első két hurokegyenlet összege a harmadikat adja. Tehát ha \eqaref{eq:2-cs1}, \eqaref{eq:2-h1} és \eqaref{eq:2-cs2} egyenletek nem ellentmondóak, akkor egyértelmű megoldást adnak a három ismeretlenre.
@@ -41,11 +41,11 @@
  Ez visszahelyettesítve \eqaref{eq:2-2}-be:
  \al{
   0&=-32\me{V}+I_2\cdot 2\me{\Omega}+3\me{A} \cdot 10\me{\Omega}\\
-  I_2=1\me{A}\;.
+  I_2&=1\me{A}\;.
  }
  \Eqaref{eq:2-cs1} alapján:
  \al{
-  I_1=4\me{A}\;.
+  I_1&=4\me{A}\;.
  }
 
  Tehát az ellenállásokon az ábrán szereplő nyilak irányában folyik át rendre $4\me{A}$, $1\me{A}$ és $3\me{A}$.

@@ -4,7 +4,7 @@ img_extIsRegExp=false
 img_extensions=.eps .jpg .jpeg .png .pdf .ps .fig .gif
 kileprversion=2
 kileversion=2.1.3
-lastDocument=01fel.tex
+lastDocument=04fel_01fig.tikz
 masterDocument=
 name=gyak_08
 pkg_extIsRegExp=false
@@ -154,33 +154,33 @@ order=1
 
 [item:01fel.tex]
 archive=true
-column=19
+column=18
 encoding=UTF-8
 highlight=LaTeX
-line=15
+line=20
 mode=LaTeX
 open=true
 order=7
 
 [item:01fel_01fig.tikz]
 archive=true
-column=20
+column=49
 encoding=UTF-8
 highlight=LaTeX
-line=18
+line=13
 mode=LaTeX
 open=true
 order=1
 
 [item:02fel.tex]
 archive=true
-column=16
+column=2
 encoding=UTF-8
 highlight=LaTeX
-line=2
+line=39
 mode=LaTeX
-open=false
-order=5
+open=true
+order=8
 
 [item:02fel_01fig.tikz]
 archive=true
@@ -194,23 +194,23 @@ order=2
 
 [item:03fel.tex]
 archive=true
-column=44
+column=0
 encoding=UTF-8
 highlight=LaTeX
-line=12
+line=21
 mode=LaTeX
-open=false
-order=2
+open=true
+order=9
 
 [item:04fel.tex]
 archive=true
-column=16
+column=66
 encoding=UTF-8
 highlight=LaTeX
-line=2
+line=15
 mode=LaTeX
-open=false
-order=4
+open=true
+order=10
 
 [item:04fel_01fig.tikz]
 archive=true
@@ -224,40 +224,40 @@ order=3
 
 [item:05fel.tex]
 archive=true
-column=0
+column=34
 encoding=UTF-8
 highlight=LaTeX
-line=0
+line=25
 mode=LaTeX
-open=false
-order=1
+open=true
+order=11
 
 [item:06fel.tex]
 archive=true
-column=0
-encoding=UTF-8
-highlight=LaTeX
-line=0
-mode=LaTeX
-open=false
-order=2
-
-[item:07fel.tex]
-archive=true
-column=44
-encoding=UTF-8
-highlight=LaTeX
-line=14
-mode=LaTeX
-open=false
-order=4
-
-[item:07fel_01fig.tikz]
-archive=true
-column=6
+column=52
 encoding=UTF-8
 highlight=LaTeX
 line=11
+mode=LaTeX
+open=true
+order=12
+
+[item:07fel.tex]
+archive=true
+column=7
+encoding=UTF-8
+highlight=LaTeX
+line=48
+mode=LaTeX
+open=true
+order=13
+
+[item:07fel_01fig.tikz]
+archive=true
+column=10
+encoding=UTF-8
+highlight=LaTeX
+line=16
 mode=LaTeX
 open=true
 order=4
@@ -269,55 +269,55 @@ encoding=UTF-8
 highlight=LaTeX
 line=2
 mode=LaTeX
-open=false
-order=0
+open=true
+order=14
 
 [item:09fel.tex]
 archive=true
-column=16
+column=173
 encoding=UTF-8
 highlight=LaTeX
-line=2
+line=36
 mode=LaTeX
-open=false
-order=5
+open=true
+order=15
 
 [item:09fel_01fig.tikz]
 archive=true
-column=4
+column=24
 encoding=UTF-8
 highlight=LaTeX
-line=23
+line=13
 mode=LaTeX
 open=true
 order=5
 
 [item:10fel.tex]
 archive=true
-column=16
+column=10
 encoding=UTF-8
 highlight=LaTeX
-line=2
+line=19
 mode=LaTeX
-open=false
-order=0
+open=true
+order=16
 
 [item:10fel_01fig.tikz]
 archive=true
-column=3
+column=0
 encoding=UTF-8
 highlight=LaTeX
-line=11
+line=7
 mode=LaTeX
 open=true
 order=6
 
 [item:gyak_08.tex]
 archive=true
-column=4
+column=9
 encoding=UTF-8
 highlight=LaTeX
-line=11
+line=29
 mode=LaTeX
 open=true
 order=0
@@ -329,22 +329,22 @@ JumpList=
 ViMarks=.,484,1,[,483,0,],484,58
 
 [view-settings,view=0,item:01fel.tex]
-CursorColumn=19
-CursorLine=15
+CursorColumn=18
+CursorLine=20
 JumpList=
-ViMarks=.,28,13,[,28,13,],28,13
+ViMarks=.,28,21,[,28,21,],28,21
 
 [view-settings,view=0,item:01fel_01fig.tikz]
-CursorColumn=20
-CursorLine=18
+CursorColumn=49
+CursorLine=13
 JumpList=
-ViMarks=.,28,3,[,28,0,],28,3
+ViMarks=.,2,25,[,2,25,],2,25
 
 [view-settings,view=0,item:02fel.tex]
-CursorColumn=16
-CursorLine=2
+CursorColumn=2
+CursorLine=39
 JumpList=
-ViMarks=.,2,15,[,2,15,],2,15
+ViMarks=.,47,5,[,47,5,],47,5
 
 [view-settings,view=0,item:02fel_01fig.tikz]
 CursorColumn=1
@@ -353,16 +353,16 @@ JumpList=
 ViMarks=.,21,0,[,20,1,],21,0
 
 [view-settings,view=0,item:03fel.tex]
-CursorColumn=44
-CursorLine=12
+CursorColumn=0
+CursorLine=21
 JumpList=
-ViMarks=.,12,19,[,12,19,],12,43
+ViMarks=.,62,67,[,62,67,],62,67
 
 [view-settings,view=0,item:04fel.tex]
-CursorColumn=16
-CursorLine=2
+CursorColumn=66
+CursorLine=15
 JumpList=
-ViMarks=.,2,15,[,2,15,],2,15
+ViMarks=.,0,0,[,0,0,],52,2
 
 [view-settings,view=0,item:04fel_01fig.tikz]
 CursorColumn=4
@@ -371,28 +371,28 @@ JumpList=
 ViMarks=.,23,3,[,23,1,],23,3
 
 [view-settings,view=0,item:05fel.tex]
-CursorColumn=0
-CursorLine=0
+CursorColumn=34
+CursorLine=25
 JumpList=
-ViMarks=.,29,2,[,29,0,],29,2
+ViMarks=.,24,2,[,24,2,],24,2
 
 [view-settings,view=0,item:06fel.tex]
-CursorColumn=0
-CursorLine=0
-JumpList=
-ViMarks=.,19,0,[,19,0,],19,0
-
-[view-settings,view=0,item:07fel.tex]
-CursorColumn=44
-CursorLine=14
-JumpList=
-ViMarks=.,14,19,[,14,19,],14,43
-
-[view-settings,view=0,item:07fel_01fig.tikz]
-CursorColumn=6
+CursorColumn=52
 CursorLine=11
 JumpList=
-ViMarks=.,12,0,[,12,0,],12,1
+ViMarks=.,16,44,[,16,44,],16,44
+
+[view-settings,view=0,item:07fel.tex]
+CursorColumn=7
+CursorLine=48
+JumpList=
+ViMarks=.,48,6,[,48,6,],48,6
+
+[view-settings,view=0,item:07fel_01fig.tikz]
+CursorColumn=10
+CursorLine=16
+JumpList=
+ViMarks=.,8,25,[,8,25,],8,25
 
 [view-settings,view=0,item:08fel.tex]
 CursorColumn=44
@@ -401,31 +401,31 @@ JumpList=
 ViMarks=.,2,19,[,2,19,],2,43
 
 [view-settings,view=0,item:09fel.tex]
-CursorColumn=16
-CursorLine=2
+CursorColumn=173
+CursorLine=36
 JumpList=
-ViMarks=.,2,15,[,2,15,],2,15
+ViMarks=.,39,56,[,39,56,],39,56
 
 [view-settings,view=0,item:09fel_01fig.tikz]
-CursorColumn=4
-CursorLine=23
+CursorColumn=24
+CursorLine=13
 JumpList=
-ViMarks=.,23,3,[,23,1,],23,3
+ViMarks=.,13,23,[,13,23,],13,23
 
 [view-settings,view=0,item:10fel.tex]
-CursorColumn=16
-CursorLine=2
+CursorColumn=10
+CursorLine=19
 JumpList=
-ViMarks=.,2,15,[,2,15,],2,15
+ViMarks=.,21,43,[,21,43,],21,43
 
 [view-settings,view=0,item:10fel_01fig.tikz]
-CursorColumn=3
-CursorLine=11
+CursorColumn=0
+CursorLine=7
 JumpList=
-ViMarks=.,11,3,[,11,1,],11,3
+ViMarks=.,7,23,[,7,23,],7,23
 
 [view-settings,view=0,item:gyak_08.tex]
-CursorColumn=4
-CursorLine=11
+CursorColumn=9
+CursorLine=29
 JumpList=
-ViMarks=.,6,0,[,6,0,],6,0
+ViMarks=.,29,8,[,29,3,],29,8

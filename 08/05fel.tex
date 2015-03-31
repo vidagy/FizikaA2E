@@ -1,5 +1,5 @@
 \feladat{5}{
- Két ellenállás közül az egyik $40$\,k$\Omega$ nagyságú és $4\,\textrm{W}$ teljesítményű, a másik $10$\,k$\Omega$ nagyságú és szintén $4\,\textrm{W}$ teljesítményű. Mekkora feszültséget kapcsolhatunk maximálisan az ellenállásokra, ha sorba kötjük őket?
+ Két ellenállás közül az egyik $R_1=40$\,k$\Omega$ nagyságú és $P_1=4\,\textrm{W}$ teljesítményű, a másik $R_2=10$\,k$\Omega$ nagyságú és szintén $P_2=4\,\textrm{W}$ teljesítményű. Mekkora feszültséget kapcsolhatunk maximálisan az ellenállásokra, ha sorba kötjük őket?
 }{}{}
 
 \ifdefined\megoldas
@@ -8,7 +8,7 @@
 
  Ha sorba kapcsoljuk őket, akkor ugyanakkora áram folyik át rajtuk. Számoljuk ki az egyik és a másik esetben is ezt a kritikus értéket, és a kettő közül a kisebbik lehet a maximális rákapcsolt áram. 
 
- A teljesítmény: $P=UI=I^2 R$ felhasználva az $R=U/I$ Ohm-törvényt. A megadott teljesítmények névleges teljesítmények: ezek azt jelentik, hogy legfeljebb mekkora teljesítményt vesznek fel a hálózatból a fogyasztók. Innen a legnagyobb átfolyatható áramok:
+ A teljesítmény: $P=VI=I^2 R$ felhasználva az $R=V/I$ Ohm-törvényt. A megadott teljesítmények névleges teljesítmények: ezek azt jelentik, hogy legfeljebb mekkora teljesítményt vesznek fel a hálózatból a fogyasztók. Innen a legnagyobb átfolyatható áramok:
  \al{
   I_{1,\text{max}}
    &=\sqrt{\frac{P_1}{R_1}}
@@ -22,7 +22,7 @@
  }
  tehát a teljes áramkörön $I_\text{max}=0,01\me{A}$ folyhat át. Ekkor a teljes áramkörre kapcsolt feszültség:
  \al{
-  U=I_\text{max} R_1+I_\text{max} R_2
+  V=I_\text{max} R_1+I_\text{max} R_2
    =0,01\me{A}\cdot 50\me{k\Omega}
    =500\me{V}\;.
  }

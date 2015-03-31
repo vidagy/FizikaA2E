@@ -1,5 +1,5 @@
 \feladat{3}{
- Egy $U_{0}$ elektromotoros erejű, $R_\text{b}$ belső ellenállású telepre egy $R$ nagyságú ellenállást kötünk. 
+ Egy $V_{0}$ elektromotoros erejű, $R_\text{b}$ belső ellenállású telepre egy $R$ nagyságú ellenállást kötünk. 
  \begin{enumerate}[label=\alph*),itemsep=0pt]
  \item Mekkora terhelő ellenállás esetén lesz maximális a telepből kivett teljesítmény?
  \item Mikor maximális a hatásfok?
@@ -12,55 +12,55 @@
 
  \begin{enumerate}[label=\alph*),itemsep=0pt]
   \item
-   A hasznos teljesítmény az, ami a telepre kapcsolt $R$ ellenálláson esik: $P_\text{hasznos}=U_R\cdot I$. Ehhez először ki kell számolni az $R$ ellenálláson eső feszültséget, és az áramkörben folyó áramot. 
+   A hasznos teljesítmény az, ami a telepre kapcsolt $R$ ellenálláson esik: $P_\text{hasznos}=V_R\cdot I$. Ehhez először ki kell számolni az $R$ ellenálláson eső feszültséget, és az áramkörben folyó áramot. 
 
    A telepet terhelő eredő ellenállás: $R_\text{e}=R+R_\text{b}$, vagyis az áram:
    \al{
-    I=\frac{U}{R_\text{e}}
-    =\frac{U}{R+R_\text{b}}\;.
+    I=\frac{V}{R_\text{e}}
+    =\frac{V}{R+R_\text{b}}\;.
    }
 
    Mivel ez egy soros feszültségosztó, így az ellenálláson eső feszültség:
    \al{
-    U_R=\frac{R}{R+R_\text{b}} U\;.
+    V_R=\frac{R}{R+R_\text{b}} V\;.
    }
    Ezek alapján a hasznos teljesítmény:
    \al{
     P_\text{hasznos}
-     = \frac{R}{(R+R_\text{b})^2} U^2\;.
+     = \frac{R}{(R+R_\text{b})^2} V^2\;.
    }
 
    Ennek a maximumát keressük az $R$ változtatása mellet. Ehhez deriváljuk a kifejezést $R$ szerint:
    \al{
     \der{P_\text{hasznos}}{R}
-     &=\der{}{R}\left(\frac{R}{(R+R_\text{b})^2} U^2\;.\right)
-      =U^2\cdot\left(\frac{1}{(R+R_\text{b})^2}-2\frac{R}{(R+R_\text{b})^3}\right)\;.
+     &=\der{}{R}\left(\frac{R}{(R+R_\text{b})^2} V^2\;.\right)
+      =V^2\cdot\left(\frac{1}{(R+R_\text{b})^2}-2\frac{R}{(R+R_\text{b})^3}\right)\;.
    }
    A szélsőérték meglétének feltétele, hogy az első derivált nulla legyen:
    \al{
-    0&=U^2\cdot\left(\frac{1}{(R+R_\text{b})^2}-2\frac{R}{(R+R_\text{b})^3}\right)\\
+    0&=V^2\cdot\left(\frac{1}{(R+R_\text{b})^2}-2\frac{R}{(R+R_\text{b})^3}\right)\\
     0&=1-2\frac{R}{R+R_\text{b}}\\
     R&=R_\text{b}\;.
    }
    Ahhoz, hogy ez egy maximum legyen, elégséges azt megvizsgálni, hogy a második derivált negatív-e ezen a helyen:
    \al{
     \der{^2 P_\text{hasznos}}{R^2}
-     &=U^2\cdot\der{}{R}\left(\frac{1}{(R+R_\text{b})^2}-2\frac{R}{(R+R_\text{b})^3}\right)\\
-     &=U^2\cdot\left(-2\frac{1}{(R+R_\text{b})^3}-2\frac{1}{(R+R_\text{b})^3}+6\frac{R}{(R+R_\text{b})^4}\right)\;,
+     &=V^2\cdot\der{}{R}\left(\frac{1}{(R+R_\text{b})^2}-2\frac{R}{(R+R_\text{b})^3}\right)\\
+     &=V^2\cdot\left(-2\frac{1}{(R+R_\text{b})^3}-2\frac{1}{(R+R_\text{b})^3}+6\frac{R}{(R+R_\text{b})^4}\right)\;,
     \\
     \left.\der{^2 P_\text{hasznos}}{R^2}\right|_{R=R_\text{b}}
-     &=U^2\cdot\left(-4\frac{1}{8 R_\text{b}^3}+6\frac{R_\text{b}}{16 R_\text{b}^4}\right)
-      =-U^2\cdot \frac{1}{8 R_\text{b}^3} < 0\;.
+     &=V^2\cdot\left(-4\frac{1}{8 R_\text{b}^3}+6\frac{R_\text{b}}{16 R_\text{b}^4}\right)
+      =-V^2\cdot \frac{1}{8 R_\text{b}^3} < 0\;.
    }
 
    Valóban negatív, vagyis a teljesítmény tényleg maximális.
 
   \item
-   A hatásfok a hasznos teljesítmény és a teljes befektetett teljesítmény aránya. A telep által leadott teljesítmény itt $P_\text{telep}=UI$, vagyis 
+   A hatásfok a hasznos teljesítmény és a teljes befektetett teljesítmény aránya. A telep által leadott teljesítmény itt $P_\text{telep}=VI$, vagyis 
    \al{
     \eta
      =\frac{P_\text{hasznos}}{P_\text{telep}}
-     =\frac{\frac{R}{(R+R_\text{b})^2} U^2}{\frac{1}{R+R_\text{b}} U^2}
+     =\frac{\frac{R}{(R+R_\text{b})^2} V^2}{\frac{1}{R+R_\text{b}} V^2}
      =\frac{R}{R+R_\text{b}}\;.
    }
  \end{enumerate}

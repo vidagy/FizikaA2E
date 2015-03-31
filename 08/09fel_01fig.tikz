@@ -11,7 +11,7 @@
  \ellenallas{(2,1)}{(4,1)}{$R_2$}{(0.0,0.3)}
  \kapacitas{(0,2)}{(2,2)}{$C_1$}{(0,0.8)}
  \kapacitas{(2,2)}{(4,2)}{$C_2$}{(0,0.8)}
- \telep{(0,0)}{(4,0)}{$U$}{(0,-0.2)}
+ \telep{(0,0)}{(4,0)}{$V$}{(0,-0.2)}
  
  \ifdefined\megoldas
   \draw[->,>=latex,darkgreen] (3.5,0.1) to[out=0,in=270] node[above left] {$I$} (3.9,0.6); 
