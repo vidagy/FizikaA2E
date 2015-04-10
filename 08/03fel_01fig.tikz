@@ -1,0 +1,13 @@
+\begin{tikzpicture}[axis/.style={font=\small,->,>=latex},
+                    seged/.style={dashed,gray}
+]
+ 
+  \draw[->,>=latex] (-1.3,0) -- (3.0,0) node[below] {$R$}; 
+  \draw[->,>=latex] (0,-1.2) -- (0,1.0) node[right] {$\eta(R)$};
+  \draw[seged] (0.0, 0.7) node [black,left] {$1$} -- ( 3.0,0.7);
+  \draw (-1.0,0.05) -- (-1.0,-0.05) node[below] {$-R_\text{b}$};
+  \draw ( 1.0,0.05) -- ( 1.0,-0.05) node[below] {$R_\text{b}$};
+  
+  \draw[domain=-0.6: 3.0,color=blue,thick,samples=30] plot (\x,{0.7*(\x/(\x+1.0))});
+
+\end{tikzpicture} 
