@@ -8,6 +8,7 @@
   \draw (-1.0,0.05) -- (-1.0,-0.05) node[below] {$-R_\text{b}$};
   \draw ( 1.0,0.05) -- ( 1.0,-0.05) node[below] {$R_\text{b}$};
   
-  \draw[domain=-0.6: 3.0,color=blue,thick,samples=30] plot (\x,{0.7*(\x/(\x+1.0))});
+  \draw[domain= 0.0: 3.0,color=blue,thick,samples=30] plot (\x,{0.7*(\x/(\x+1.0))});
+  \draw[domain=-0.6: 0.0,color=blue,thick,dashed,samples=30] plot (\x,{0.7*(\x/(\x+1.0))});
 
 \end{tikzpicture} 
