@@ -14,7 +14,7 @@
  \draw[fill=white] (4,3) circle (0.08);
  \node[above] at (4,3) {$B$};
  
- \fill (2,3) circle (2pt);
+ \fill (2,3) circle (2pt) node [above] {$C$};
  \fill (2,0) circle (2pt);
 \end{tikzpicture}
  
