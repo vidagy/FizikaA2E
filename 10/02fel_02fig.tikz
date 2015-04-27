@@ -49,16 +49,21 @@
   
  \end{scope}
  
- \begin{scope}[xshift=0.8cm,yshift=1.5cm]
+ \begin{scope}[xshift=0.8cm,yshift=1.8cm]
   \draw (0,0) -- (59:1.6*0.857) -- (0,1.6*1) --  cycle;
   \node[left] at (0,1.6*0.5) {$\dd z$};
-  \node[below right] at (59:1.6*0.4285) {$b=\frac{a}{2\sin\varphi}\dd\varphi$};
+  \node[below right] at (59:2.2*0.4285) {$b=\frac{d}{\cos\varphi}\dd\varphi$};
   
   \draw[<->] (59:1.6*0.5) arc (59:90:1.6*0.5);
-  \node at (74.5:1.6*0.3) {$\varphi$};
+  \node at (74.5:2.1*0.3) {$\varphi$};
+  
+  \draw[<->] (90:0.4) arc (90:-31:0.4);
+  \node at (90-60.5:0.22) {$\beta$};
+  \draw[seged] (0,0) -- (-31:1.5);
+  \draw[seged] (59:1.6*0.857) -- ++(-35:1.5);
  \end{scope}
  
  %nyilak
-  \draw[red!50!orange,opacity=0.6,->,>=stealth] (0.1,1.3) to[out=70,in=210] (0.7,1.8);
+ \draw[red!50!orange,opacity=0.6,->,>=stealth] (0.1,1.3) to[out=70,in=210] (0.7,2.1);
  
 \end{tikzpicture} 

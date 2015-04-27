@@ -8,33 +8,36 @@
 
  A keretet fel tudjuk osztani annak négy oldalára, és az eredő indukciót meg tudjuk adni úgy, mint egy oldal indukciójának a négyszerese. Ezután már csak azt kell meghatároznunk, hogy egy $a$ hosszúságú rúd közepétől $d=\frac{a}{2}$ távolságban mekkora az indukció (lásd 2-B.~ábra).
 
- Ennek meghatározásához pedig tekintsük a vezetőszakasz $\dd z$ hosszú darabját. Az $O$ pontban létrejövő mágneses indukció merőleges a vezetőt és az $O$ pontot tartalmazó síkra és befelé mutat. Az összes ilyen darabra a mágneses indukció azonos irányba mutat, így az eredő $\Bv$ kiszámolásához elég a vektorok nagyságát összegezni:
+ Ennek meghatározásához pedig tekintsük a vezetőszakasz $\dd z$ hosszú darabját. Az $O$ pontban létrejövő mágneses indukció merőleges a vezetőt és az $O$ pontot tartalmazó síkra és befelé mutat. Az összes ilyen darabra a mágneses indukció azonos irányba mutat, így az eredő $\Bv$ kiszámolásához elég a vektorok nagyságát összegezni. Ehhez $\dd \Iv = I\cdot \dd z\,\ev_z$:
  \marginfigure{02fel_01fig}
  \al{
-  \dd B
-   =\frac{\mu_0}{4\pi}\frac{\abs{\dd \Iv\times \rv}}{\abs{\rv}^3}
-   =\frac{\mu_0 I}{4\pi}\frac{\dd z\cdot d}{\left(d^2+z^2\right)^\frac{3}{2}}\;,
+  \dd B(z)
+   &=\frac{\mu_0}{4\pi}\frac{\abs{\dd \Iv\times \rv}}{\abs{\rv}^3}
+    =\frac{\mu_0}{4\pi}\frac{\dd I\cdot r\cdot \sin\beta}{r^3}\;,
  }
- melyet sajnos nem lehet túl praktikusan összegezni a $z\in\left[-\frac{a}{2},\frac{a}{2}\right]$ tartományon úgy, hogy a $z$-t használjuk, mint futó változót. Érdemes áttérni szög szerinti paraméterezésre. Ekkor a $\varphi$ szög a $[-\alpha_\text{h},\alpha_\text{h}]$ tartományt járja be, ahol
+ \marginfigure{02fel_02fig}
+ ahol $\beta$ a $\dd \zv$ és a vezetődarabot az $O$-val összekötő vektor közé zárt szög. A geometriai elrendezésből láthatjuk, hogy $\beta=90^\circ+\varphi$, vagyis $\sin\beta = \sin(90^\circ+\varphi) = \cos\varphi$, tehát
+ \al{
+  \dd B(z)
+   &=\frac{\mu_0}{4\pi}\cdot I\dd z\cdot \frac{1}{d^2+z^2} \cdot \frac{d}{\sqrt{d^2+z^2}}
+    =\frac{\mu_0 Id}{4\pi}\cdot \frac{1}{\left(d^2+z^2\right)^{\frac{3}{2}}}\,\dd z\;,
+ }
+ melyet sajnos nem lehet túl praktikusan összegezni a $z\in\left[-\frac{a}{2},\frac{a}{2}\right]$ tartományon úgy, hogy a $z$-t használjuk, mint integrálási változót. Érdemes áttérni szög szerinti paraméterezésre. Ekkor a $\varphi$ szög a $[-\alpha_\text{h},\alpha_\text{h}]$ tartományt járja be, ahol
  \al{
   \sin\alpha_\text{h}
    =\frac{\frac{a}{2}}{\sqrt{d^2+\frac{a^2}{4}}}\;.
  }
- 
- \marginfigure{02fel_02fig}
 
- A $\dd\varphi$ és a $\dd z$ közötti összefüggést az ábráról olvashatjuk le. A $\varphi$ szögnél lévő $\dd\varphi$ szög alatt látszódó $\dd z$ darab $r=\frac{a}{2\sin\varphi}$ távolságra van az $O$ ponttól, vagyis a kiemelt háromszög befogója $b=r\dd\varphi=\frac{a}{2\sin\varphi}\dd\varphi$. A derékszögű háromszögben $b=\dd z\cos\varphi$, vagyis
+ A $\dd\varphi$ és a $\dd z$ közötti összefüggést az ábráról olvashatjuk le. A $\varphi$ szögnél lévő $\dd\varphi$ szög alatt látszódó $\dd z$ darab $r=\frac{d}{\cos\varphi}$ távolságra van az $O$ ponttól, vagyis a kiemelt háromszög befogója $b=r\dd\varphi=\frac{d}{\cos\varphi}\dd\varphi$. A derékszögű háromszögben $b=\dd z\cos\varphi$, vagyis
  \al{
   \dd z
-   =\frac{a}{2\sin\varphi\cos\varphi}\dd\varphi
-   =\frac{\frac{a}{2}}{\tg\varphi\cos^2\varphi}\dd\varphi
    =\frac{d}{\cos^2\varphi}\,\dd\varphi\;.
  }
- Így a $\dd B$
+ Így
  \al{
-  \dd B
-   &=\frac{\mu_0 I}{4\pi}\frac{\dd \varphi\cdot d}{\left(d^2+z^2\right)^\frac{3}{2}}\cdot \frac{d}{\cos^2\varphi}
-    =\frac{\mu_0 I}{4\pi}\frac{\dd \varphi\cdot d}{\left(\frac{d}{\cos\varphi}\right)^3}\cdot \frac{d}{\cos^2\varphi}
+  \dd B(\varphi)
+   &=\frac{\mu_0 Id}{4\pi}\cdot \frac{1}{r^3}\cdot \frac{d}{\cos^2\varphi}\dd\varphi
+    =\frac{\mu_0 Id}{4\pi}\cdot \frac{1}{\left(\frac{d}{\cos\varphi}\right)^3}\cdot \frac{d}{\cos^2\varphi}\dd\varphi
     =\frac{\mu_0 I}{4\pi d}\cos\varphi\,\dd \varphi\;. 
  }
  Melyet integrálva:
