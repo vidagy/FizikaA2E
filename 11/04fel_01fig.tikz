@@ -11,8 +11,11 @@
  \node[blue] at (1.85,0.3) {\small $\boldsymbol\ominus$};
  \node[red] at  (2.2,0.3) {\small $\boldsymbol\oplus$};
  
- \node[blue] at (2.4,1.2) {\small $\boldsymbol\ominus$};
- \node[red] at  (3.6,1.2) {\small $\boldsymbol\oplus$};
+ \node[blue] at (2.3,1.2) {\small $\boldsymbol\ominus$};
+ \node[red] at  (3.5,1.2) {\small $\boldsymbol\oplus$};
+ 
+ \node[blue] at (0.35,1.2) {\small $\boldsymbol\ominus$};
+ \node[red] at  (1.65,1.2) {\small $\boldsymbol\oplus$};
  
  \draw[thick,<-,>=latex,cyan] (2.7,0.7) -- node[below] {$U_L$} +(0.6,0);
 

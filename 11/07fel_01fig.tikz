@@ -30,10 +30,14 @@
  \node[blue] at (1.45,-0.2) {\small $\boldsymbol\ominus$};
  \node[red] at  (1.85,-0.2) {\small $\boldsymbol\oplus$};
  
- \node[blue] at (2.35,1.2) {\small $\boldsymbol\ominus$};
- \node[red] at  (3.55,1.2) {\small $\boldsymbol\oplus$};
+ \node[red] at (2.35,1.2) {\small $\boldsymbol\oplus$};
+ \node[blue] at  (3.55,1.2) {\small $\boldsymbol\ominus$};
  
- \draw[vektor,cyan] (2.7,0.7) -- node[below] {$U_L$} +(0.6,0);
+ \node[blue] at (0.35,1.2) {\small $\boldsymbol\ominus$};
+ \node[red] at  (1.65,1.2) {\small $\boldsymbol\oplus$};
+ 
+ 
+ \draw[->,>=latex,thick,cyan] (2.7,0.7) -- node[below] {$U_L$} +(0.6,0);
  
 %  \draw[thick,->,>=latex,darkgreen] (2.7,-0.2) -- node[below] {$I$} +(1.1,0);
  
