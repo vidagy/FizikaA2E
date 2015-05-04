@@ -12,15 +12,15 @@
  \al{
   U_\text{i}
    &=-\pder{}{t}\intl{}{}\Bv\,\dd^2\fv
-    =-\pder{}{t}(B(t)\cdot A)
-    =-\pder{}{t}\left(\mu_0\frac{N I(t)}{l}\cdot A\right)
+    =-\pder{}{t}(B(t)\cdot A\cdot N)
+    =-\pder{}{t}\left(\mu_0\frac{N^2 I(t)}{l}\cdot A\right)
   \\
-   &=-\mu_0\frac{NA}{l}\cdot \der{I(t)}{t}
+   &=-\mu_0\frac{N^2A}{l}\cdot \der{I(t)}{t}
     =-L \der{I(t)}{t}\;,
  }
  ahol $L$ a tekercsi induktivitása.
 
- Ennek ismeretében fel tudjuk írni az áramkörben a huroktörvényt:
+ Ennek ismeretében fel tudjuk írni az áramkörben a huroktörvényt, figyelve arra, hogy a tekercsen eső feszültség ellentettje a tekercsben indukálódott feszültségnek:
  \al{ 
   0&=-\ep+L\der{I}{t}+I(t)R
   \\
