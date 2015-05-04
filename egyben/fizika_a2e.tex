@@ -1,5 +1,6 @@
 \documentclass[11pt,a4paper,twoside]{article}
 \usepackage{titling}
+\usepackage{changepage}
 
 \newcommand{\feladatsorszam}{1}
 \newcommand{\megoldas}{1}
@@ -17,6 +18,17 @@
 
 \begin{document}
 
+ \pagestyle{empty}
+ 
+ \begin{adjustwidth}{0cm}{-5.75cm}
+  \input{titlepage}
+  \cleardoublepage
+  \input{preface}
+  \cleardoublepage
+ \end{adjustwidth}
+ 
+ \pagestyle{fancy}
+ 
  \renewcommand{\feladatsorszam}{1}
  \maketitle
  \thispagestyle{cimlap}
